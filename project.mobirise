@@ -1,0 +1,751 @@
+{
+  "settings": {
+    "id": 1486682,
+    "title": "",
+    "timeLastAccess": 1747197152885,
+    "domains": [
+      {
+        "id": 0,
+        "name": "ocllink.mobirisesite.com",
+        "status": {
+          "type": "success",
+          "name": "Deployed",
+          "description": "Deployed"
+        }
+      }
+    ],
+    "licenses": [],
+    "publicUrl": "https://ocllink.mobirisesite.com/",
+    "resourcesUrl": "https://r.mobirisesite.com/1486682/",
+    "path": "@PROJECT_PATH@",
+    "name": "Сайт для выбора ресторана из 6 и перехода на страницу с опросами.",
+    "currentPage": "vhod.html",
+    "ai": {
+      "prompt": "нужен сайт для 6 ресторанов в начале нужно выбрать ресторан после выбора он переходить на другую страницу где будут ссылки на опросы\n",
+      "imageSearchQuery": "food"
+    },
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "styling": {
+        "backgroundColor": "#ffffff",
+        "primaryColor": "#D90429",
+        "secondaryColor": "#ef233c",
+        "successColor": "#20AC6B",
+        "infoColor": "#0AA3C2",
+        "warningColor": "#CC9900",
+        "dangerColor": "#AE1E2C",
+        "mainFont": "Golos Text",
+        "display1Font": "Golos Text",
+        "display1Size": 5,
+        "display2Font": "Golos Text",
+        "display2Size": 4,
+        "display5Font": "Golos Text",
+        "display5Size": 2.5,
+        "display7Font": "Golos Text",
+        "display7Size": 1.4,
+        "display4Font": "Golos Text",
+        "display4Size": 1.2,
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": true,
+        "isScrollToTopButton": false
+      },
+      "settings": [
+        {
+          "type": "title",
+          "title": "Site Styles"
+        },
+        {
+          "type": "subtitle",
+          "title": "Colors"
+        },
+        {
+          "var": "backgroundColor",
+          "type": "color",
+          "title": "Background",
+          "groupName": "colors",
+          "default": "#ffffff"
+        },
+        {
+          "var": "primaryColor",
+          "type": "color",
+          "title": "Primary",
+          "groupName": "colors",
+          "default": "#9fe870"
+        },
+        {
+          "type": "colors",
+          "title": "Buttons and Links",
+          "groupName": "colors",
+          "set": [
+            {
+              "var": "secondaryColor",
+              "default": "#ffd7ef"
+            },
+            {
+              "var": "successColor",
+              "default": "#3a341c"
+            },
+            {
+              "var": "infoColor",
+              "default": "#320707"
+            },
+            {
+              "var": "warningColor",
+              "default": "#a0e2e1"
+            },
+            {
+              "var": "dangerColor",
+              "default": "#ffea64"
+            }
+          ]
+        },
+        {
+          "type": "subtitle",
+          "title": "Fonts"
+        },
+        {
+          "var": "mainFont",
+          "default": "Inter Tight"
+        },
+        {
+          "type": "group",
+          "rule": ".mbr-fonts-style, [mbr-buttons], [mbr-menu]",
+          "title": "Title 1",
+          "name": "display-1",
+          "set": [
+            {
+              "type": "font",
+              "var": "display1Font",
+              "default": "Inter Tight"
+            },
+            {
+              "type": "range",
+              "min": 0.4,
+              "max": 12,
+              "step": 0.2,
+              "var": "display1Size",
+              "default": 5
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "rule": ".mbr-fonts-style, [mbr-buttons], [mbr-menu]",
+          "title": "Title 2",
+          "name": "display-2",
+          "set": [
+            {
+              "type": "font",
+              "var": "display2Font",
+              "default": "Inter Tight"
+            },
+            {
+              "type": "range",
+              "min": 0.4,
+              "max": 6,
+              "step": 0.2,
+              "var": "display2Size",
+              "default": 4
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "rule": ".mbr-fonts-style, [mbr-buttons], [mbr-menu]",
+          "title": "Title 3",
+          "name": "display-5",
+          "set": [
+            {
+              "type": "font",
+              "var": "display5Font",
+              "default": "Inter Tight"
+            },
+            {
+              "type": "range",
+              "min": 0.4,
+              "max": 3,
+              "step": 0.2,
+              "var": "display5Size",
+              "default": 2
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "rule": ".mbr-fonts-style, [mbr-buttons], [mbr-menu]",
+          "title": "Text",
+          "name": "display-7",
+          "set": [
+            {
+              "type": "font",
+              "var": "display7Font",
+              "default": "Inter Tight"
+            },
+            {
+              "type": "range",
+              "min": 0.4,
+              "max": 2,
+              "step": 0.2,
+              "var": "display7Size",
+              "default": 1.4
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "rule": ".mbr-fonts-style, [mbr-buttons], [mbr-menu]",
+          "title": "Menu",
+          "name": "display-4",
+          "set": [
+            {
+              "type": "font",
+              "var": "display4Font",
+              "default": "Inter Tight"
+            },
+            {
+              "type": "range",
+              "min": 0.4,
+              "max": 2,
+              "step": 0.2,
+              "var": "display4Size",
+              "default": 1.4
+            }
+          ]
+        },
+        {
+          "type": "subtitle",
+          "title": "Options"
+        },
+        {
+          "var": "isRoundedImages",
+          "type": "switch",
+          "title": "Rounded Corners",
+          "default": true
+        },
+        {
+          "var": "isRoundedButtons",
+          "type": "switch",
+          "title": "Rounded Buttons",
+          "default": true
+        },
+        {
+          "var": "isLargeButtons",
+          "type": "switch",
+          "title": "Large Buttons",
+          "default": true
+        },
+        {
+          "var": "isGhostButtonBorder",
+          "default": true
+        },
+        {
+          "var": "underlinedLinks",
+          "type": "switch",
+          "title": "Underlined Links",
+          "default": false
+        },
+        {
+          "var": "isAnimatedOnScroll",
+          "type": "switch",
+          "title": "Animation on Scroll",
+          "default": false
+        },
+        {
+          "var": "isScrollToTopButton",
+          "type": "switch",
+          "title": "Scroll to Top Button",
+          "default": false
+        }
+      ],
+      "dynamicStyles": "@isPublish: false;\n\n@btn-font-size: 1rem;\n@btn-border-radius: 4px;\n@btn-padding-y: 1.25rem;\n@btn-padding-x: 2rem;\n\n@btn-font-size-sm: .8rem;\n@btn-border-radius-sm: 4px;\n@btn-padding-y-sm: .6rem;\n@btn-padding-x-sm: 1.2rem;\n\n@btn-font-size-md: .8rem;\n@btn-border-radius-md: 4px;\n@btn-padding-y-md: .6rem;\n@btn-padding-x-md: 1.2rem;\n\n@btn-font-size-lg: 1rem;\n@btn-border-radius-lg: 4px;\n@btn-padding-y-lg: 1.25rem;\n@btn-padding-x-lg: 2rem;\n\n.btn when (@isGhostButtonBorder) {\n    border-width: 2px;\n}\n\nimg,\n.card-wrap,\n.card-wrapper,\n.video-wrapper,\n.mbr-figure iframe,\n.google-map iframe,\n.slide-content,\n.plan,\n.card,\n.item-wrapper {\n\n    & when not (@isRoundedImages) {\n        border-radius: 0 !important;\n    }\n\n    & when (@isRoundedImages) {\n        border-radius: 2rem !important;\n    }\n}\n\n.video-wrapper {\n    overflow: hidden;\n}\n\n// .btn when not (@isLargeButtons) {\n//     padding: 0.75rem 1.5rem !important;\n// }\n\n// .btn when (@isLargeButtons) {\n//     @media (max-width: 767px) {\n//         padding: 0.75rem 1.5rem !important;\n//     }\n// }\n\n// BACKGROUND\n\nbody {\n    background-color: @backgroundColor;\n}\n\n// fix for builder\n& when not (@isPublish) {\n    .is-builder .template {\n        background-color: @backgroundColor;\n    }\n}\n\n// FONTS\n\nbody {\n    font-family: @mainFont;\n}\n\n.display-1 {\n    font-family: @display1Font;\n    font-size: @display1Size *1rem;\n    line-height: 1;\n\n    >.mbr-iconfont {\n        font-size: @display1Size *1.25rem;\n    }\n}\n\n.display-2 {\n    font-family: @display2Font;\n    font-size: @display2Size *1rem;\n    line-height: 1;\n\n    >.mbr-iconfont {\n        font-size: @display2Size *1.25rem;\n    }\n}\n\n.display-4 {\n    font-family: @display4Font;\n    font-size: @display4Size *1rem;\n    line-height: 1.5;\n\n    >.mbr-iconfont {\n        font-size: @display4Size *1.25rem;\n    }\n}\n\n.display-5 {\n    font-family: @display5Font;\n    font-size: @display5Size *1rem;\n    line-height: 1.5;\n\n    >.mbr-iconfont {\n        font-size: @display5Size *1.25rem;\n    }\n}\n\n.display-7 {\n    font-family: @display7Font;\n    font-size: @display7Size *1rem;\n    line-height: 1.3;\n\n    >.mbr-iconfont {\n        font-size: @display7Size *1.25rem;\n    }\n}\n\n/* ---- Fluid typography for mobile devices ---- */\n\n/* 1.4 - font scale ratio ( bootstrap == 1.42857 ) */\n/* 100vw - current viewport width */\n/* (48 - 20)  48 == 48rem == 768px, 20 == 20rem == 320px(minimal supported viewport) */\n/* 0.65 - min scale variable, may vary */\n\n\n@media (max-width: 992px) {\n    .display-1 {\n        font-size: @display1Size * 0.8rem;\n    }\n}\n\n@media (max-width: 768px) {\n    .display-1 {\n        @display1Size-min: @display1Size - (@display1Size - 1) * 0.65;\n        font-size: @display1Size * 0.7rem;\n        font-size:~\"calc( @{display1Size-min}rem + (@{display1Size} - @{display1Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.1 * (@{display1Size-min}rem + (@{display1Size} - @{display1Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-2 {\n        @display2Size-min: @display2Size - (@display2Size - 1) * 0.65;\n        font-size: @display2Size * 0.8rem;\n        font-size:~\"calc( @{display2Size-min}rem + (@{display2Size} - @{display2Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.3 * (@{display2Size-min}rem + (@{display2Size} - @{display2Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-4 {\n        @display4Size-min: @display4Size - (@display4Size - 1) * 0.65;\n        font-size: @display4Size * 0.8rem;\n        font-size:~\"calc( @{display4Size-min}rem + (@{display4Size} - @{display4Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display4Size-min}rem + (@{display4Size} - @{display4Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-5 {\n        @display5Size-min: @display5Size - (@display5Size - 1) * 0.65;\n        font-size: @display5Size * 0.8rem;\n        font-size:~\"calc( @{display5Size-min}rem + (@{display5Size} - @{display5Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display5Size-min}rem + (@{display5Size} - @{display5Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n\n    .display-7 {\n        @display7Size-min: @display7Size - (@display7Size - 1) * 0.65;\n        font-size: @display7Size * 0.8rem;\n        font-size:~\"calc( @{display7Size-min}rem + (@{display7Size} - @{display7Size-min}) * ((100vw - 20rem) / (48 - 20)))\";\n        line-height:~\"calc( 1.4 * (@{display7Size-min}rem + (@{display7Size} - @{display7Size-min}) * ((100vw - 20rem) / (48 - 20))))\";\n    }\n}\n\n@media (min-width: 992px) and (max-width: 1400px) {\n    .display-1 {\n        @display1Size-min: @display1Size - (@display1Size - 1) * 0.65;\n        font-size: @display1Size * 0.7rem;\n        font-size:~\"calc( @{display1Size-min}rem + (@{display1Size} - @{display1Size-min}) * ((100vw - 62rem) / (87 - 62)))\";\n        line-height:~\"calc( 1.1 * (@{display1Size-min}rem + (@{display1Size} - @{display1Size-min}) * ((100vw - 62rem) / (87 - 62))))\";\n    }\n\n    .display-2 {\n        @display2Size-min: @display2Size - (@display2Size - 1) * 0.65;\n        font-size: @display2Size * 0.8rem;\n        font-size:~\"calc( @{display2Size-min}rem + (@{display2Size} - @{display2Size-min}) * ((100vw - 62rem) / (87 - 62)))\";\n        line-height:~\"calc( 1.3 * (@{display2Size-min}rem + (@{display2Size} - @{display2Size-min}) * ((100vw - 62rem) / (87 - 62))))\";\n    }\n\n    .display-4 {\n        @display4Size-min: @display4Size - (@display4Size - 1) * 0.65;\n        font-size: @display4Size * 0.8rem;\n        font-size:~\"calc( @{display4Size-min}rem + (@{display4Size} - @{display4Size-min}) * ((100vw - 62rem) / (87 - 62)))\";\n        line-height:~\"calc( 1.4 * (@{display4Size-min}rem + (@{display4Size} - @{display4Size-min}) * ((100vw - 62rem) / (87 - 62))))\";\n    }\n\n    .display-5 {\n        @display5Size-min: @display5Size - (@display5Size - 1) * 0.65;\n        font-size: @display5Size * 0.8rem;\n        font-size:~\"calc( @{display5Size-min}rem + (@{display5Size} - @{display5Size-min}) * ((100vw - 62rem) / (87 - 62)))\";\n        line-height:~\"calc( 1.4 * (@{display5Size-min}rem + (@{display5Size} - @{display5Size-min}) * ((100vw - 62rem) / (87 - 62))))\";\n    }\n\n    .display-7 {\n        @display7Size-min: @display7Size - (@display7Size - 1) * 0.65;\n        font-size: @display7Size * 0.8rem;\n        font-size:~\"calc( @{display7Size-min}rem + (@{display7Size} - @{display7Size-min}) * ((100vw - 62rem) / (87 - 62)))\";\n        line-height:~\"calc( 1.4 * (@{display7Size-min}rem + (@{display7Size} - @{display7Size-min}) * ((100vw - 62rem) / (87 - 62))))\";\n    }\n}\n\n/* Buttons */\n.button-variant(@background) {\n    @color: contrast(@background, darken(@background, 50%), #ffffff, 60%);\n    @border: @background;\n    @active-color: @color;\n    @active-border: @active-background;\n\n    @active-background: if(eq(@background, @color),\n            #fafafa,\n            lighten(@background, 10%));\n\n    &,\n    &:active {\n        background-color: @background !important;\n        border-color: @border !important;\n        color: @color !important;\n        box-shadow: none;\n    }\n\n    &:hover,\n    &:focus,\n    &.focus,\n    &.active {\n        color: inherit;\n        background-color: @active-background !important;\n        border-color: @active-border !important;\n        box-shadow: none;\n    }\n\n    &.disabled,\n    &:disabled {\n        color: @active-color !important;\n        background-color: @active-background !important;\n        border-color: @active-border !important;\n    }\n}\n\n.button-outline-variant(@color) {\n    @active-color: contrast(@color, darken(@color, 50%), #ffffff, 60%);\n    @active-background: @color;\n    @new-color: if(eq(@color, @active-color),\n            #fafafa,\n            darken(@color, 17%));\n\n    &,\n    &:active {\n        background-color: transparent !important;\n\n        & when (@isGhostButtonBorder) {\n            border-color: @color;\n        }\n\n        & when not (@isGhostButtonBorder) {\n            border-color: transparent;\n        }\n\n        color: @color;\n    }\n\n    &:hover,\n    &:focus,\n    &.focus,\n    &.active {\n        color: @new-color !important;\n        background-color: transparent !important;\n\n        & when (@isGhostButtonBorder) {\n            border-color: @new-color !important;\n        }\n\n        & when not (@isGhostButtonBorder) {\n            border-color: transparent !important;\n        }\n\n        box-shadow: none !important;\n    }\n\n    &.disabled,\n    &:disabled {\n        color: @active-color !important;\n        background-color: @active-background !important;\n        border-color: @active-background !important;\n    }\n}\n\n.plan-variant(@className, @color) {\n    &@{className} {\n\n        .mbr-plan-subtitle,\n        .mbr-plan-price-desc {\n            @max: max(red(@color), green(@color), blue(@color));\n\n            & when (@max > 200) {\n                color: lighten(@color, 40%);\n            }\n\n            & when (@max > 85) and (@max <=200) {\n                color: lighten(@color, 25%);\n            }\n\n            & when (@max > 50) and (@max <=85) {\n                color: lighten(@color, 45%);\n            }\n\n            & when (@max <=50) {\n                color: lighten(@color, 70%);\n            }\n        }\n    }\n}\n\n.button-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius) {\n    padding: @btn-padding-y @btn-padding-x;\n    border-radius: @btn-border-radius;\n}\n\n.btn {\n    .button-size(@btn-padding-y, @btn-padding-x, @btn-font-size, @btn-border-radius);\n    & when not (@isLargeButtons) {\n        padding: 0.75rem 1.5rem;\n    }\n    & when (@isLargeButtons) {\n        @media (max-width: 767px) {\n            padding: 0.75rem 1.5rem;\n        }\n    }\n}\n\n.btn-sm {\n    .button-size(@btn-padding-y-sm, @btn-padding-x-sm, @btn-font-size-sm, @btn-border-radius-sm);\n}\n\n.btn-md {\n    .button-size(@btn-padding-y-md, @btn-padding-x-md, @btn-font-size-md, @btn-border-radius-md);\n}\n\n.btn-lg {\n    .button-size(@btn-padding-y-lg, @btn-padding-x-lg, @btn-font-size-lg, @btn-border-radius-lg);\n}\n\n.bg-primary {\n    background-color: @primaryColor !important;\n}\n\n.bg-success {\n    background-color: @successColor !important;\n}\n\n.bg-info {\n    background-color: @infoColor !important;\n}\n\n.bg-warning {\n    background-color: @warningColor !important;\n}\n\n.bg-danger {\n    background-color: @dangerColor !important;\n}\n\n.btn-primary {\n    .button-variant(@primaryColor);\n}\n\n.btn-secondary {\n    .button-variant(@secondaryColor);\n}\n\n.btn-info {\n    .button-variant(@infoColor);\n}\n\n.btn-success {\n    .button-variant(@successColor);\n}\n\n.btn-warning {\n    .button-variant(@warningColor);\n}\n\n.btn-danger {\n    .button-variant(@dangerColor);\n}\n\n.btn-white {\n    .button-variant(#eff0ec);\n}\n\n.btn-black {\n    .button-variant(#232323);\n}\n\n.btn-primary-outline {\n    .button-outline-variant(@primaryColor);\n}\n\n.btn-secondary-outline {\n    .button-outline-variant(@secondaryColor);\n}\n\n.btn-info-outline {\n    .button-outline-variant(@infoColor);\n}\n\n.btn-success-outline {\n    .button-outline-variant(@successColor);\n}\n\n.btn-warning-outline {\n    .button-outline-variant(@warningColor);\n}\n\n.btn-danger-outline {\n    .button-outline-variant(@dangerColor);\n}\n\n.btn-black-outline {\n    .button-outline-variant(#232323);\n}\n\n.btn-white-outline {\n    .button-outline-variant(#fafafa);\n}\n\n.text-primary {\n    color: @primaryColor !important;\n}\n\n.text-secondary {\n    color: @secondaryColor !important;\n}\n\n.text-success {\n    color: @successColor !important;\n}\n\n.text-info {\n    color: @infoColor !important;\n}\n\n.text-warning {\n    color: @warningColor !important;\n}\n\n.text-danger {\n    color: @dangerColor !important;\n}\n\n.text-white {\n    color: #fafafa !important;\n}\n\n.text-black {\n    color: #232323 !important;\n}\n\na.text-primary:hover,\na.text-primary:focus,\na.text-primary.active {\n    color: darken(@primaryColor, 20%) !important;\n}\n\na.text-secondary:hover,\na.text-secondary:focus,\na.text-secondary.active {\n    color: darken(@secondaryColor, 20%) !important;\n}\n\na.text-success:hover,\na.text-success:focus,\na.text-success.active {\n    color: darken(@successColor, 20%) !important;\n}\n\na.text-info:hover,\na.text-info:focus,\na.text-info.active {\n    color: darken(@infoColor, 20%) !important;\n}\n\na.text-warning:hover,\na.text-warning:focus,\na.text-warning.active {\n    color: darken(@warningColor, 20%) !important;\n}\n\na.text-danger:hover,\na.text-danger:focus,\na.text-danger.active {\n    color: darken(@dangerColor, 20%) !important;\n}\n\na.text-white:hover,\na.text-white:focus,\na.text-white.active {\n    color: darken(#fafafa, 20%) !important;\n}\n\na.text-black:hover,\na.text-black:focus,\na.text-black.active {\n    color: darken(#232323, 20%) !important;\n}\n\n& when (@underlinedLinks) {\n    a[class*=\"text-\"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-caption) {\n        transition: 0.2s;\n        position: relative;\n        background-image: linear-gradient(currentColor 50%, currentColor 50%);\n        background-size: 10000px 2px;\n        background-repeat: no-repeat;\n        background-position: 0 1.2em;\n    }\n}\n\n& when not (@underlinedLinks) {\n    a[class*=\"text-\"]:not(.nav-link):not(.dropdown-item):not([role]):not(.navbar-caption) {\n        position: relative;\n        background-image: transparent;\n        background-size: 10000px 2px;\n        background-repeat: no-repeat;\n        background-position: 0px 1.2em;\n        background-position: -10000px 1.2em;\n\n        &:hover {\n            transition: background-position 2s ease-in-out;\n            background-image: linear-gradient(currentColor 50%, currentColor 50%);\n            background-position: 0px 1.2em;\n        }\n    }\n}\n\n.nav-tabs .nav-link {\n    &.active {\n        color: @primaryColor;\n    }\n\n    &:not(.active) {\n        color: #232323;\n    }\n}\n\n.alert-success {\n    background-color: #70c770;\n}\n\n.alert-info {\n    background-color: @infoColor;\n}\n\n.alert-warning {\n    background-color: @warningColor;\n}\n\n.alert-danger {\n    background-color: @dangerColor;\n}\n\n.mbr-section-btn .btn:not(.btn-form) {\n    & when (@isRoundedButtons) {\n        border-radius: 100px;\n    }\n}\n\n.mbr-gallery-filter li a when(@isRoundedButtons) {\n    border-radius: 100px !important;\n}\n\n.mbr-gallery-filter {\n    li.active .btn {\n        background-color: @primaryColor;\n        border-color: @primaryColor;\n        color: contrast(@primaryColor, darken(@primaryColor, 45%), #ffffff, 60%);\n\n        &:focus {\n            box-shadow: none;\n        }\n    }\n}\n\n.nav-tabs .nav-link when(@isRoundedButtons) {\n    border-radius: 100px !important;\n}\n\na,\na:hover {\n    color: @primaryColor;\n}\n\n.mbr-plan-header {\n    .plan-variant(~'.bg-primary', @primaryColor);\n    .plan-variant(~'.bg-success', @successColor);\n    .plan-variant(~'.bg-info', @infoColor);\n    .plan-variant(~'.bg-warning', @warningColor);\n    .plan-variant(~'.bg-danger', @dangerColor);\n}\n\n/* Scroll to top button*/\n.scrollToTop_wraper when not(@isScrollToTopButton) {\n    display: none;\n}\n\n#scrollToTop a when (@isScrollToTopButton) and (@isRoundedButtons) {\n    border-radius: 100px;\n}\n\n.form-control {\n    .display-7;\n    font-weight: 400;\n    & when(@isRoundedButtons) {\n        border-radius: 40px !important;\n    }\n    &:hover,\n    &:focus {\n        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.07) 0px 1px 3px 0px, rgba(0, 0, 0, 0.03) 0px 0px 0px 1px;\n        border-color: @primaryColor !important;\n    }\n}\n\n.form-control:-webkit-input-placeholder {\n    .display-7;\n    font-weight: 400;\n}\n\nblockquote {\n    border-color: @primaryColor;\n}\n\n/* Forms */\n.mbr-form {\n    .input-group-btn .btn when(@isRoundedButtons) {\n        border-radius: 100px !important;\n\n        &:hover {\n            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2);\n        }\n    }\n\n    .input-group-btn button[type=\"submit\"] when (@isRoundedButtons) {\n        border-radius: 100px !important;\n        padding: 1rem 3rem;\n\n        &:hover {\n            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .2);\n        }\n    }\n}\n\n//formstyler\n.jq-selectbox li:hover,\n.jq-selectbox li.selected {\n    background-color: @primaryColor;\n    color: contrast(@primaryColor, #000000, #ffffff, 60%)\n}\n\n.jq-number__spin {\n    transition: 0.25s ease;\n}\n\n.jq-number__spin:hover {\n    border-color: @primaryColor;\n}\n\n.jq-selectbox .jq-selectbox__trigger-arrow,\n.jq-number__spin.minus:after,\n.jq-number__spin.plus:after {\n    transition: 0.4s;\n    border-top-color: #232323;\n    border-bottom-color: #232323;\n}\n\n.jq-selectbox:hover .jq-selectbox__trigger-arrow,\n.jq-number__spin.minus:hover:after,\n.jq-number__spin.plus:hover:after {\n    border-top-color: @primaryColor;\n    border-bottom-color: @primaryColor;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,\n.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current {\n    color: contrast(@primaryColor, #000, #fff, 30%) !important;\n    background-color: @primaryColor !important;\n    box-shadow: none !important;\n}\n\n.xdsoft_datetimepicker .xdsoft_calendar td:hover,\n.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div:hover {\n    color: contrast(@secondaryColor, #000, #fff, 30%) !important;\n    background: @secondaryColor !important;\n    box-shadow: none !important\n}\n\n//lazyload\n.lazy-bg {\n    background-image: none !important;\n}\n\n.lazy-placeholder:not(section),\n.lazy-none {\n    display: block;\n    position: relative;\n    padding-bottom: 56.25%;\n    width: 100%;\n    height: auto;\n}\n\niframe.lazy-placeholder,\n.lazy-placeholder:after {\n    content: '';\n    position: absolute;\n    width: 200px;\n    height: 200px;\n    background: transparent no-repeat center;\n    background-size: contain;\n    top: 50%;\n    left: 50%;\n    transform: translateX(-50%) translateY(-50%);\n    @fillSVG: replace(\"@{primaryColor}\", \"#\", \"%23\");\n    background-image: url(\"data:image/svg+xml;charset=UTF-8,%3csvg width='32' height='32' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg' stroke='@{fillSVG}' %3e%3cg fill='none' fill-rule='evenodd'%3e%3cg transform='translate(16 16)' stroke-width='2'%3e%3ccircle stroke-opacity='.5' cx='16' cy='16' r='16'/%3e%3cpath d='M32 16c0-9.94-8.06-16-16-16'%3e%3canimateTransform attributeName='transform' type='rotate' from='0 16 16' to='360 16 16' dur='1s' repeatCount='indefinite'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/svg%3e\");\n}\n\nsection.lazy-placeholder:after {\n    opacity: 0.5;\n}\n\nbody {\n    overflow-x: hidden;\n}\n\na {\n    transition: color 0.6s;\n}\n\n@media (max-width: 1400px) {\n    .container {\n        max-width: 100%;\n        @media (min-width: 768px) {\n            padding-left: 32px;\n            padding-right: 32px;\n        }\n    }\n    .container-fluid {\n        @media (min-width: 768px) {\n            padding-left: 32px;\n            padding-right: 32px;\n        }\n    }\n}\n\n@media (max-width: 767px) {\n    .container-fluid {\n        padding-left: 16px;\n        padding-right: 16px;\n    }\n}",
+      "additionalSetColors": [
+        "#ef233c",
+        "#009bd7"
+      ]
+    },
+    "versionFirst": "5.9.4",
+    "versionPublish": "6.0.1",
+    "siteFonts": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap",
+        "name": "Golos Text",
+        "css": "'Golos Text', sans-serif"
+      }
+    ],
+    "uniqCompNum": 59,
+    "imageResize": true,
+    "imageSearchQuery": "food",
+    "favicon": false,
+    "mbrsiteDomain": "ocllink",
+    "usedWebp": false,
+    "robotsSwitcher": true,
+    "sitemapSwitcher": false,
+    "sitemapSwitcherAuto": "on",
+    "siteUrl": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "screenshot": "screenshot.png",
+    "robotsText": "User-agent: *\r\nDisallow: /cgi-bin\r\n",
+    "google-analytics": "<script>\n  document.addEventListener(\"DOMContentLoaded\", function () {\n    const cardGrid = document.getElementById(\"cardGrid\");\n    const search = document.getElementById(\"search\");\n\n    const total = 40;\n    const links = Array.from({ length: total }, (_, i) => ({\n      title: `Опрос ${i + 1}`,\n      url: \"#\"\n    }));\n\n    function renderCards(list) {\n      cardGrid.innerHTML = '';\n      list.forEach(item => {\n        const div = document.createElement('div');\n        div.className = 'card';\n        div.dataset.title = item.title.toLowerCase();\n        div.innerHTML = `\n          <h3>${item.title}</h3>\n          <a href=\"${item.url}\" target=\"_blank\">Пройти опрос</a>\n        `;\n        cardGrid.appendChild(div);\n      });\n    }\n\n    search.addEventListener('input', () => {\n      const term = search.value.trim().toLowerCase();\n      const filtered = links.filter(item => item.title.toLowerCase().includes(term));\n      renderCards(filtered);\n    });\n\n    renderCards(links);\n  });\n</script>\n"
+  },
+  "pages": {
+    "vhod.html": {
+      "settings": {
+        "main": true,
+        "title": "Выбор ресторана и переход к опросам: отзывы о ресторанах",
+        "meta_descr": "Необходим веб-сайт для шести ресторанов. Пользователь выбирает ресторан, затем переходит на страницу со ссылками на опросы, чтобы оставить свой отзыв и предложения. Удобный интерфейс.",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "_styles": {
+            "display": "flex",
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)",
+              ".mbr-overlay": {
+                "background-color": "@overlayColor",
+                "opacity": "@overlayOpacity"
+              }
+            },
+            "@media (min-width: 768px)": {
+              "align-items": "~\"@{verticalAlign}\"",
+              ".row": {
+                "justify-content": "~\"@{horizontalAlign}\""
+              },
+              ".content-wrap": {
+                "padding": "1rem 3rem"
+              }
+            },
+            "@media (max-width: 991px) and (min-width: 768px)": {
+              ".content-wrap": {
+                "min-width": "50%"
+              }
+            },
+            "@media (max-width: 767px)": {
+              "-webkit-align-items": "center",
+              "align-items": "~\"@{verticalAlign}\"",
+              ".mbr-row": {
+                "-webkit-justify-content": "center",
+                "justify-content": "center"
+              },
+              ".content-wrap": {
+                "width": "100%"
+              }
+            },
+            ".mbr-section-title, .mbr-section-subtitle": {
+              "text-align": "center"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "center"
+            },
+            ".mbr-section-title": {
+              "text-align": "center"
+            }
+          },
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header16\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"24\" step=\"1\" value=\"20\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"3\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show / Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <select title=\"Vertical Align\" name=\"verticalAlign\" condition=\"fullScreen\">\n      <option value=\"flex-start\">Top</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Bottom</option>\n    </select>\n    <select title=\"Horizontal Align\" name=\"horizontalAlign\">\n      <option value=\"flex-start\">Left</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Right</option>\n    </select>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"https://r.mobirisesite.com/1486682/assets/images/photo-1515003197210-e0cd71810b5f.jpeg\" parallax>\n      <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=2Gg6Seob5Mg\" selected>\n      <input type=\"color\" title=\"Color\" value=\"#260a30\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' && overlay\">\n    <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"bg.type!='color' && overlay\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row\">\n      <div class=\"content-wrap col-12 col-md-{{contentWidth}}\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mbr-white mb-4\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\"><b>Единая платформа&nbsp;&nbsp;</b></h1>\n        <h2 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mb-4\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubtitle\"><b>OCL</b></h2>\n        <p class=\"mbr-fonts-style mbr-text mbr-white mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><i>Одна платформа 6 ресторанов</i></p>\n        <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-white-outline\" href=\"index.html#hero-17-uKtQauaUOD\" data-app-placeholder=\"Введите Текст\"></a></div>\n      </div>\n    </div>\n  </div>\n</section>ё",
+          "_name": "header17",
+          "_sourceTheme": "startm5",
+          "_cid": "uKtQauaUOD",
+          "_anchor": "hero-17-uKtQauaUOD",
+          "alias": false,
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            }
+          },
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section style=\"background: linear-gradient(to right, #0f2027, #203a43, #2c5364); padding: 60px 20px;\">\n  <style>\n    .restaurant-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n      gap: 24px;\n      max-width: 1000px;\n      margin: auto;\n    }\n\n    .restaurant-card {\n      background-color: rgba(0,0,0,0.4);\n      border-radius: 16px;\n      overflow: hidden;\n      box-shadow: 0 8px 20px rgba(0,0,0,0.3);\n      transition: transform 0.3s ease;\n      display: flex;\n      flex-direction: column;\n    }\n\n    .restaurant-card:hover {\n      transform: scale(1.03);\n    }\n\n    .restaurant-card img {\n      width: 100%;\n      height: 180px;\n      object-fit: cover;\n    }\n\n    .caption {\n      padding: 20px;\n      text-align: center;\n      color: #fff;\n    }\n\n    .caption h3 {\n      font-size: 20px;\n      margin-bottom: 12px;\n      color: #fff;\n    }\n\n    .caption a {\n      background-color: transparent;\n      border: 2px solid #fff;\n      padding: 10px 20px;\n      border-radius: 8px;\n      color: #fff;\n      text-decoration: none;\n      font-weight: bold;\n      transition: all 0.3s;\n      display: inline-block;\n    }\n\n    .caption a:hover {\n      background-color: #fff;\n      color: #000;\n    }\n  </style>\n\n  <h2 style=\"text-align: center; color: #fff; margin-bottom: 40px;\">Выберите ресторан</h2>\n\n  <div class=\"restaurant-grid\">\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png\" alt=\"Технопарк\">\n      <div class=\"caption\">\n        <h3>Технопарк</h3>\n        <a href=\"surveys/testt.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/abde105e-82d6-45a0-81c3-df00f9273ee1.png-634x951.png\" alt=\"Донецкая\">\n      <div class=\"caption\">\n        <h3>Донецкая</h3>\n        <a href=\"form-donetskaya.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png\" alt=\"Горький\">\n      <div class=\"caption\">\n        <h3>Горький</h3>\n        <a href=\"form-gorky.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png\" alt=\"ГЭС 5\">\n      <div class=\"caption\">\n        <h3>ГЭС 5</h3>\n        <a href=\"form-ges5.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png\" alt=\"Октябрь\">\n      <div class=\"caption\">\n        <h3>Октябрь</h3>\n        <a href=\"form-oktyabr.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/abde105e-82d6-45a0-81c3-df00f9273ee1.png-634x951.png\" alt=\"Азия Молл\">\n      <div class=\"caption\">\n        <h3>Азия Молл</h3>\n        <a href=\"form-asia.html\">Пройти опрос</a>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "uLua5wZrJM",
+          "_anchor": "custom-html-1d",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            }
+          },
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<div id=\"thanksList\" class=\"thanks-scroll\"></div>\r\n\r\n<script type=\"module\">\r\n  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';\r\n\r\n  const supabase = createClient(\r\n    'https://crlwzepfuszhouuackyc.supabase.co',\r\n    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI'\r\n  );\r\n\r\n  const list = document.getElementById('thanksList');\r\n\r\n  async function loadMessages() {\r\n    const { data, error } = await supabase\r\n      .from('thanks')\r\n      .select('*')\r\n      .order('created_at', { ascending: false });\r\n\r\n    if (error) {\r\n      console.error('Ошибка загрузки:', error);\r\n      return;\r\n    }\r\n\r\n    list.innerHTML = data.map(entry => `\r\n      <div class=\"thanks-card\">\r\n        <h3>${entry.name}</h3>\r\n        <p>${entry.message}</p>\r\n        <button onclick=\"likeMessage(${entry.id}, ${entry.likes ?? 0})\">\r\n          ❤️ ${entry.likes ?? 0}\r\n        </button>\r\n      </div>\r\n    `).join('');\r\n  }\r\n\r\n  window.likeMessage = async (id, currentLikes) => {\r\n    const { error } = await supabase\r\n      .from('thanks')\r\n      .update({ likes: currentLikes + 1 })\r\n      .eq('id', id);\r\n\r\n    if (!error) {\r\n      loadMessages();\r\n    } else {\r\n      console.error('Ошибка лайка:', error);\r\n    }\r\n  };\r\n\r\n  loadMessages();\r\n</script>\r\n\r\n<style>\r\n  .thanks-scroll {\r\n    max-height: 880px; /* ~8 карточек */\r\n    overflow-y: auto;\r\n    padding-right: 10px;\r\n  }\r\n\r\n  .thanks-card {\r\n    background: #1e1e1e;\r\n    border-radius: 16px;\r\n    padding: 20px;\r\n    margin-bottom: 20px;\r\n    box-shadow: 0 4px 12px rgba(0,0,0,0.3);\r\n    animation: fadeInUp 0.6s ease;\r\n  }\r\n\r\n  .thanks-card h3 {\r\n    margin: 0 0 5px;\r\n    color: #FFA500;\r\n  }\r\n\r\n  .thanks-card p {\r\n    margin: 0;\r\n    color: #ccc;\r\n  }\r\n\r\n  .thanks-card button {\r\n    margin-top: 10px;\r\n    background: none;\r\n    border: none;\r\n    color: #FFA500;\r\n    font-size: 16px;\r\n    cursor: pointer;\r\n  }\r\n\r\n  .thanks-card button:hover {\r\n    color: #FF6347;\r\n  }\r\n\r\n  @keyframes fadeInUp {\r\n    from { opacity: 0; transform: translateY(20px); }\r\n    to { opacity: 1; transform: translateY(0); }\r\n  }\r\n</style>\r\n",
+          "_cid": "uLtIJebM6E",
+          "_anchor": "custom-html-17",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = \"color\")": {
+              "background-color": "if(@transparentBg, transparent, @bg-value)"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-iconfont": {
+              "font-size": "1.2rem !important",
+              "font-family": "'Moririse2' !important",
+              "color": "white",
+              "transition": "all 0.3s",
+              "transform": "rotate(180deg)",
+              "padding-left": "0.5rem"
+            },
+            ".panel-group": {
+              "border": "none"
+            },
+            ".card-header": {
+              "padding": "0rem",
+              "@media (max-width: 767px)": {
+                "padding": "0rem"
+              }
+            },
+            ".panel-body": {
+              "padding": "0rem",
+              "padding-bottom": "0.5rem",
+              "margin-top": "1rem"
+            },
+            ".img-col": {
+              "padding": "0"
+            },
+            ".img-item": {
+              "height": "100%"
+            },
+            "img": {
+              "height": "100%",
+              "object-fit": "cover"
+            },
+            ".collapsed": {
+              "span": {
+                "transform": "rotate(0deg)"
+              }
+            },
+            ".panel-title": {
+              "display": "flex",
+              "align-items": "center",
+              "justify-content": "space-between"
+            },
+            "p": {
+              "margin-bottom": "0.3rem"
+            },
+            ".panel-title-edit": {
+              "color": "#000000"
+            },
+            ".card .card-header": {
+              "background-color": "transparent",
+              "margin-bottom": "0",
+              "border": "0",
+              "border-radius": "2rem"
+            },
+            ".card": {
+              "background": "@items",
+              "padding": "2.25rem",
+              "border-radius": "2rem",
+              "margin-bottom": "1rem",
+              "@media (max-width: 767px)": {
+                "padding": "2rem 1.5rem",
+                "margin-bottom": "1rem"
+              },
+              "@media (min-width: 992px) and (max-width: 1200px)": {
+                "margin-bottom": "1rem",
+                "padding": "2rem 1.5rem"
+              }
+            },
+            ".panel-text": {
+              "color": "#000000"
+            },
+            ".mbr-section-title": {
+              "text-align": "center",
+              "color": "#000000"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#000000",
+              "text-align": "center"
+            },
+            ".panel-title-edit, .mbr-iconfont": {
+              "color": "#000000"
+            }
+          },
+          "_customHTML": "<section data-bs-version=\"5.1\" style=\"background: linear-gradient(to right, #0f2027, #203a43, #2c5364); padding: 50px 20px;\">\r\n  <style>\r\n    .faq-container {\r\n      max-width: 800px;\r\n      margin: auto;\r\n      font-family: 'Segoe UI', sans-serif;\r\n    }\r\n\r\n    .faq-title {\r\n      font-size: 30px;\r\n      font-weight: bold;\r\n      text-align: center;\r\n      color: #fff;\r\n      margin-bottom: 40px;\r\n    }\r\n\r\n    .faq-card {\r\n      background: #1f1f1f;\r\n      border-radius: 16px;\r\n      margin-bottom: 16px;\r\n      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);\r\n      overflow: hidden;\r\n      transition: all 0.3s ease;\r\n    }\r\n\r\n    .faq-question {\r\n      padding: 16px 20px;\r\n      cursor: pointer;\r\n      display: flex;\r\n      justify-content: space-between;\r\n      align-items: center;\r\n      font-weight: 600;\r\n      font-size: 16px;\r\n      color: #fff;\r\n    }\r\n\r\n    .faq-question:hover {\r\n      background-color: #2e2e2e;\r\n    }\r\n\r\n    .faq-answer {\r\n      max-height: 0;\r\n      overflow: hidden;\r\n      transition: max-height 0.4s ease;\r\n      background: #2a2a2a;\r\n      padding: 0 20px;\r\n      color: #ccc;\r\n    }\r\n\r\n    .faq-answer.open {\r\n      padding: 16px 20px;\r\n      max-height: 500px;\r\n    }\r\n\r\n    .arrow {\r\n      transition: transform 0.3s ease;\r\n      color: #ccc;\r\n    }\r\n\r\n    .arrow.open {\r\n      transform: rotate(180deg);\r\n    }\r\n  </style>\r\n\r\n  <div class=\"faq-container\">\r\n    <div class=\"faq-title\">Часто задаваемые вопросы</div>\r\n\r\n    <div class=\"faq-card\">\r\n      <div class=\"faq-question\" onclick=\"toggleFaq(this)\">\r\n        Где можно посмотреть отчеты?\r\n        <span class=\"arrow\">▼</span>\r\n      </div>\r\n      <div class=\"faq-answer\">Отчеты можно посмотреть в конце опросов.</div>\r\n    </div>\r\n\r\n    <div class=\"faq-card\">\r\n      <div class=\"faq-question\" onclick=\"toggleFaq(this)\">\r\n        Как найти ваш web адрес?\r\n        <span class=\"arrow\">▼</span>\r\n      </div>\r\n      <div class=\"faq-answer\">Сайт находится по адресу www.ocllink.online или можно отсканировать QR в ресторане.</div>\r\n    </div>\r\n\r\n    <div class=\"faq-card\">\r\n      <div class=\"faq-question\" onclick=\"toggleFaq(this)\">\r\n        Что делать если нету нужного OCL?\r\n        <span class=\"arrow\">▼</span>\r\n      </div>\r\n      <div class=\"faq-answer\">Можно написать мне WhatsApp ссылка внизу страницы.</div>\r\n    </div>\r\n\r\n    <div class=\"faq-card\">\r\n      <div class=\"faq-question\" onclick=\"toggleFaq(this)\">\r\n        Как часто обновляется рейтинг?\r\n        <span class=\"arrow\">▼</span>\r\n      </div>\r\n      <div class=\"faq-answer\">Рейтинг обновляется каждый день автоматически.</div>\r\n    </div>\r\n\r\n    <div class=\"faq-card\">\r\n      <div class=\"faq-question\" onclick=\"toggleFaq(this)\">\r\n        Есть ли у сайта ограничения?\r\n        <span class=\"arrow\">▼</span>\r\n      </div>\r\n      <div class=\"faq-answer\">Да, у каждого опроса ежемесячный лимит на 200 ответов.</div>\r\n    </div>\r\n  </div>\r\n\r\n  <script>\r\n    function toggleFaq(el) {\r\n      const answer = el.nextElementSibling;\r\n      const arrow = el.querySelector('.arrow');\r\n      answer.classList.toggle('open');\r\n      arrow.classList.toggle('open');\r\n    }\r\n  </script>\r\n</section>\r\n",
+          "_name": "list01",
+          "_sourceTheme": "startm5",
+          "_cid": "uKtQaubPYn",
+          "_anchor": "faq-1-uKtQaubPYn",
+          "alias": false,
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            }
+          },
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section style=\"background-color: #121212; padding: 50px 20px;\">\r\n  <style>\r\n    .daily-tip-title {\r\n      text-align: center;\r\n      color: #FFD700;\r\n      font-size: 28px;\r\n      font-weight: bold;\r\n      margin-bottom: 30px;\r\n    }\r\n\r\n    .daily-tip {\r\n      max-width: 700px;\r\n      margin: auto;\r\n      font-size: 20px;\r\n      font-style: italic;\r\n      color: #ffd700;\r\n      background: #2c2c2c;\r\n      padding: 20px 30px;\r\n      border-radius: 16px;\r\n      box-shadow: 0 4px 12px rgba(0,0,0,0.4);\r\n      text-align: center;\r\n      opacity: 0;\r\n      transform: translateY(20px);\r\n      animation: fadeInTip 1s ease forwards;\r\n    }\r\n\r\n    @keyframes fadeInTip {\r\n      to {\r\n        opacity: 1;\r\n        transform: translateY(0);\r\n      }\r\n    }\r\n  </style>\r\n\r\n  <div class=\"daily-tip-title\">💬 Совет дня</div>\r\n  <div class=\"daily-tip\" id=\"dailyTip\">Загрузка совета...</div>\r\n\r\n  <script>\r\n    const tips = [\r\n      \"Улыбка на кассе — половина отличного обслуживания 😊\",\r\n      \"Сначала срок годности — потом выкладка!\",\r\n      \"Чистый гриль = вкусный бургер 🍔\",\r\n      \"Помогай команде — даже если это не твоя зона 🙌\",\r\n      \"Салфетки и соусы — мелочь, но важны!\",\r\n      \"Проверь наличие подносов и перчаток перед час-пиком!\",\r\n      \"Если сомневаешься — уточни у менеджера 🧠\",\r\n      \"Поддерживай порядок не только за собой, но и рядом 🧼\",\r\n      \"Позитив передаётся клиенту быстрее, чем заказ 😉\"\r\n    ];\r\n\r\n    const randomTip = tips[Math.floor(Math.random() * tips.length)];\r\n    document.getElementById(\"dailyTip\").textContent = `💡 ${randomTip}`;\r\n  </script>\r\n</section>\r\n",
+          "_cid": "uLu6LYz98p",
+          "_anchor": "custom-html-1c",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            }
+          },
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section style=\"background: #0f0f0f; padding: 60px 20px;\">\r\n  <div style=\"max-width: 600px; margin: auto;\">\r\n    <h2 style=\"text-align: center; color: #ffc107; font-weight: bold; font-size: 28px;\">📬 Обратная связь</h2>\r\n\r\n    <form id=\"feedbackForm\" style=\"background-color: #1a1a1a; padding: 30px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);\">\r\n\r\n      <label style=\"color: #ffc107;\">Ресторан:</label>\r\n      <select name=\"restaurant\" required style=\"width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: none; background: #2a2a2a; color: white;\">\r\n        <option value=\"Октябрь\">Октябрь</option>\r\n        <option value=\"Горький\">Горький</option>\r\n        <option value=\"Технопарк\">Технопарк</option>\r\n        <option value=\"Азия Молл\">Азия Молл</option>\r\n        <option value=\"Донецкая\">Донецкая</option>\r\n        <option value=\"ГЭС5\">ГЭС5</option>\r\n      </select>\r\n\r\n      <label style=\"color: #ffc107;\">Ваше имя:</label>\r\n      <input type=\"text\" name=\"sender\" required style=\"width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: none; background: #2a2a2a; color: white;\">\r\n\r\n      <label style=\"color: #ffc107;\">Сообщение:</label>\r\n      <textarea name=\"message\" required style=\"width: 100%; height: 120px; padding: 12px; margin-bottom: 20px; border-radius: 10px; border: none; background: #2a2a2a; color: white;\"></textarea>\r\n\r\n      <button type=\"submit\" style=\"background-color: #ffc107; color: black; padding: 12px 24px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%;\">Отправить</button>\r\n    </form>\r\n\r\n    <div id=\"formStatus\" style=\"margin-top: 20px; text-align: center; color: #ffc107;\"></div>\r\n\r\n    <!-- ВСПЛЫВАЮЩАЯ ПАНЕЛЬ -->\r\n    <div id=\"toast\" style=\"\r\n      visibility: hidden;\r\n      min-width: 250px;\r\n      background-color: #28a745;\r\n      color: white;\r\n      text-align: center;\r\n      border-radius: 8px;\r\n      padding: 16px;\r\n      position: fixed;\r\n      z-index: 1000;\r\n      left: 50%;\r\n      bottom: 30px;\r\n      transform: translateX(-50%);\r\n      font-weight: bold;\r\n      opacity: 0;\r\n      transition: opacity 0.5s, bottom 0.5s;\r\n    \">✅ Сообщение отправлено!</div>\r\n\r\n  </div>\r\n</section>\r\n\r\n<script>\r\nfunction showToast(text, color = \"#28a745\") {\r\n  const toast = document.getElementById(\"toast\");\r\n  toast.innerText = text;\r\n  toast.style.backgroundColor = color;\r\n  toast.style.visibility = \"visible\";\r\n  toast.style.opacity = \"1\";\r\n  toast.style.bottom = \"50px\";\r\n\r\n  setTimeout(() => {\r\n    toast.style.opacity = \"0\";\r\n    toast.style.bottom = \"30px\";\r\n    setTimeout(() => {\r\n      toast.style.visibility = \"hidden\";\r\n    }, 500);\r\n  }, 3000);\r\n}\r\n\r\ndocument.getElementById(\"feedbackForm\").addEventListener(\"submit\", async function(e) {\r\n  e.preventDefault();\r\n\r\n  const form = e.target;\r\n  const data = {\r\n    restaurant: form.restaurant.value,\r\n    sender: form.sender.value,\r\n    message: form.message.value,\r\n    date: new Date().toISOString().split(\"T\")[0]\r\n  };\r\n\r\n  const url = \"https://sheetdb.io/api/v1/h29xk2y9u8i4g\"; // ⬅️ ВСТАВЬ ТВОЙ ID SheetDB\r\n\r\n  try {\r\n    await fetch(url, {\r\n      method: \"POST\",\r\n      headers: { \"Content-Type\": \"application/json\" },\r\n      body: JSON.stringify({ data })\r\n    });\r\n\r\n    showToast(\"✅ Сообщение отправлено!\");\r\n    form.reset();\r\n  } catch (err) {\r\n    showToast(\"❌ Ошибка отправки.\", \"#dc3545\");\r\n  }\r\n});\r\n</script>\r\n",
+          "_cid": "uMaIyydjUN",
+          "_anchor": "custom-html-1l",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            }
+          },
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section style=\"background-color: #121212; padding: 40px 20px;\">\n  <style>\n    .container {\n      max-width: 800px;\n      margin: 0 auto;\n      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n      color: #f9f9f9;\n    }\n\n    .title-block {\n      background: #1d1d1d;\n      border: 1px solid rgba(255, 255, 255, 0.08);\n      border-radius: 15px;\n      padding: 30px;\n      margin-bottom: 30px;\n      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);\n      text-align: center;\n      animation: fadeIn 0.8s ease;\n    }\n\n    .title-block h1 {\n      font-size: 44px;\n      margin: 0;\n      color: #FFD700;\n    }\n\n    .block {\n      background: #1d1d1d;\n      border: 1px solid rgba(255, 255, 255, 0.08);\n      border-radius: 15px;\n      padding: 25px;\n      margin-bottom: 25px;\n      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);\n      transition: transform 0.3s ease;\n      animation: fadeIn 0.8s ease;\n    }\n\n    .block:hover {\n      transform: translateY(-5px);\n    }\n\n    .block h2 {\n      color: #FFA500;\n      margin-top: 0;\n    }\n\n    ul {\n      padding-left: 20px;\n    }\n\n    ul li {\n      margin-bottom: 10px;\n    }\n\n    .creator-block {\n      display: flex;\n      align-items: center;\n      gap: 20px;\n      flex-wrap: wrap;\n    }\n\n    .creator-img {\n      width: 120px;\n      height: 120px;\n      border-radius: 15px;\n      object-fit: cover;\n      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);\n    }\n\n    .creator-info h3 {\n      margin: 0;\n      color: #FFD700;\n    }\n\n    .creator-info p {\n      margin: 5px 0 0;\n      color: #ccc;\n    }\n\n    @keyframes fadeIn {\n      from { opacity: 0; transform: translateY(20px); }\n      to { opacity: 1; transform: translateY(0); }\n    }\n  </style>\n\n  <div class=\"container\">\n    <div class=\"title-block\">\n      <h1>О проекте</h1>\n    </div>\n\n    <div class=\"block\">\n      <h2>Зачем мы это делаем?</h2>\n      <p>Этот сайт создан для мотивации, вдохновения и признания сотрудников. Он объединяет в себе всё важное: рейтинги, благодарности, новости и опросы. Всё это — красиво, понятно и доступно с любого устройства.</p>\n    </div>\n\n    <div class=\"block\">\n      <h2>Наши преимущества</h2>\n      <ul>\n        <li><strong>Рейтинг ресторанов:</strong> прозрачный и обновляемый каждый день.</li>\n        <li><strong>Стена благодарности:</strong> яркие и живые сообщения от коллег с анимацией и аватарками.</li>\n        <li><strong>Новости:</strong> свежие события и объявления в красивом оформлении.</li>\n        <li><strong>Опросы:</strong> быстрые формы обратной связи через Google Таблицы.</li>\n        <li><strong>Автоматизация:</strong> всё обновляется без вмешательства человека.</li>\n        <li><strong>Удобство:</strong> сайт отлично выглядит на всех устройствах.</li>\n      </ul>\n    </div>\n\n    <div class=\"block\">\n      <h2>Что дальше?</h2>\n      <p>Мы продолжаем развивать проект — в будущем появятся достижения, индивидуальные рейтинги, новые инструменты взаимодействия и ещё больше поводов для гордости каждым рестораном и сотрудником.</p>\n    </div>\n\n    <div class=\"block creator-block\">\n      <img src=\"@PROJECT_PATH@/assets/images/photo-5280595512736739927-y.jpg-240x160.jpg\" alt=\"Создатель проекта\" class=\"creator-img\">\n      <div class=\"creator-info\">\n        <h3>Создатель проекта</h3>\n        <p>Тот, кто вдохновляет, проектирует и реализует ❤️</p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "uKueZvguUq",
+          "_anchor": "custom-html-2",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "_styles": {
+            "padding-top": "(@paddingTop * 1rem)",
+            "padding-bottom": "(@paddingBottom * 1rem)",
+            "& when (@bg-type = 'color')": {
+              "background-color": "if(@transparentBg, transparent, @bg-value)"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".row": {
+              "@media (max-width: 992px)": {
+                ".map-wrapper": {
+                  "margin-top": "2rem"
+                }
+              },
+              "@media (max-width: 767px)": {
+                ".map-wrapper": {
+                  "margin-top": "1rem"
+                }
+              }
+            },
+            ".google-map": {
+              "height": "100%",
+              "position": "relative",
+              "iframe": {
+                "height": "100%",
+                "width": "100%",
+                "@media (max-width: 992px)": {
+                  "min-height": "350px"
+                }
+              },
+              "[data-state-details]": {
+                "color": "#6b6763",
+                "height": "1.5em",
+                "margin-top": "-0.75em",
+                "padding-left": "1.25rem",
+                "padding-right": "1.25rem",
+                "position": "absolute",
+                "text-align": "center",
+                "top": "50%",
+                "width": "100%"
+              },
+              "&[data-state]": {
+                "background": "#e9e5dc"
+              },
+              "&[data-state=\"loading\"]": {
+                "[data-state-details]": {
+                  "display": "none"
+                }
+              }
+            },
+            ".card-wrapper": {
+              "padding": "2.25rem",
+              "background": "@cardsBg",
+              "@media (min-width: 992px) and (max-width: 1200px)": {
+                "padding": "1.5rem"
+              },
+              "@media (max-width: 767px)": {
+                "padding": "2rem 1.5rem"
+              }
+            },
+            "ul": {
+              "list-style-type": "none",
+              "padding": "0",
+              "margin": "0"
+            },
+            ".content-head": {
+              "max-width": "800px"
+            },
+            ".list, .item-wrap": {
+              "color": "#000000",
+              "text-align": "center"
+            },
+            ".mbr-section-title": {
+              "color": "#232323"
+            }
+          },
+          "_customHTML": "<section data-bs-version=\"5.1\" style=\"background-color: #121212; padding: 60px 20px;\">\r\n  <style>\r\n    .contact-container {\r\n      max-width: 800px;\r\n      margin: auto;\r\n      color: #f0f0f0;\r\n      font-family: 'Segoe UI', sans-serif;\r\n      text-align: center;\r\n    }\r\n\r\n    .contact-container h2 {\r\n      font-size: 32px;\r\n      color: #FFD700;\r\n      margin-bottom: 30px;\r\n    }\r\n\r\n    .contact-info {\r\n      font-size: 16px;\r\n      margin-bottom: 20px;\r\n      line-height: 1.6;\r\n    }\r\n\r\n    .contact-info span {\r\n      display: block;\r\n      margin-bottom: 6px;\r\n    }\r\n\r\n    .contact-info .label {\r\n      font-weight: bold;\r\n      color: #FFA500;\r\n    }\r\n\r\n    .map-wrapper {\r\n      margin-top: 30px;\r\n      border-radius: 12px;\r\n      overflow: hidden;\r\n      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);\r\n    }\r\n\r\n    iframe {\r\n      width: 100%;\r\n      height: 300px;\r\n      border: none;\r\n    }\r\n  </style>\r\n\r\n  <div class=\"contact-container\">\r\n    <h2>Наши контакты</h2>\r\n\r\n    <div class=\"contact-info\">\r\n      <span><span class=\"label\">Телефон:</span> +996 (550) 880-451</span>\r\n      <span><span class=\"label\">WhatsApp:</span> +996 (550) 880-451</span>\r\n      <span><span class=\"label\">Email:</span> kfc_tp@fooddream.kg</span>\r\n      <span><span class=\"label\">Адрес:</span> ул. Горького / 1Зв</span>\r\n    </div>\r\n    ",
+          "_name": "contacts02",
+          "_sourceTheme": "startm5",
+          "_cid": "uKtQaucTNj",
+          "_anchor": "contacts-2-uKtQaucTNj",
+          "alias": false,
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    },
+    "page2.html": {
+      "settings": {
+        "title": "Page 2",
+        "order": "2"
+      },
+      "components": [
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            }
+          },
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section style=\"padding: 40px 20px; background: #0f1f28; font-family: sans-serif;\">\n  <div style=\"max-width: 600px; margin: auto; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; color: white;\">\n    <h2 style=\"text-align: center; font-size: 24px; margin-bottom: 20px;\">📝 Добавить новость</h2>\n    <form id=\"news-form\">\n      <input type=\"text\" name=\"title\" placeholder=\"Заголовок\" required\n        style=\"width: 100%; padding: 10px 15px; border-radius: 8px; border: none; margin-bottom: 15px;\">\n\n      <textarea name=\"body\" placeholder=\"Текст новости\" required rows=\"4\"\n        style=\"width: 100%; padding: 10px 15px; border-radius: 8px; border: none; resize: vertical; margin-bottom: 15px;\"></textarea>\n\n      <button type=\"submit\"\n        style=\"width: 100%; background-color: #22c55e; color: white; border: none; padding: 12px; border-radius: 8px; font-size: 16px; cursor: pointer;\">\n        🚀 Опубликовать\n      </button>\n    </form>\n  </div>\n</section>",
+          "_cid": "uM8F9MwLtF",
+          "_anchor": "custom-html-1f",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    },
+    "page3.html": {
+      "settings": {
+        "title": "pass",
+        "order": "1"
+      },
+      "components": [
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            }
+          },
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<!-- Фон -->\n<div style=\"min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #3a0ca3, #7209b7); font-family: 'Segoe UI', sans-serif;\">\n  <div style=\"width: 100%; max-width: 400px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 12px 25px rgba(0,0,0,0.3); animation: fadeIn 0.6s ease;\">\n    \n    <!-- Заголовок -->\n    <h2 style=\"text-align:center; color:#333; margin-bottom: 5px;\">OCL Link</h2>\n    <p style=\"text-align:center; margin-top: 0; color:#777; font-size: 15px;\">Вход в ресторан</p>\n    \n    <!-- Логин -->\n    <div style=\"position: relative;\">\n      <input type=\"text\" id=\"username\" placeholder=\"Логин\" style=\"width:100%; padding:12px 40px 12px 12px; margin:10px 0; border-radius:10px; border:1px solid #ccc;\">\n      <span style=\"position:absolute; right:12px; top:50%; transform:translateY(-50%); color:#888;\">👤</span>\n    </div>\n\n    <!-- Пароль -->\n    <div style=\"position: relative;\">\n      <input type=\"password\" id=\"password\" placeholder=\"Пароль\" style=\"width:100%; padding:12px 40px 12px 12px; margin:10px 0; border-radius:10px; border:1px solid #ccc;\">\n      <span style=\"position:absolute; right:12px; top:50%; transform:translateY(-50%); color:#888;\">🔒</span>\n    </div>\n\n    <!-- Кнопка -->\n    <button onclick=\"login()\" style=\"width:100%; padding:12px; background-color:#5a67d8; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer; transition: 0.3s;\">Войти</button>\n\n    <!-- Ошибка -->\n    <p id=\"error\" style=\"color:#d32f2f; margin-top:10px; text-align:center; font-size:14px;\"></p>\n  </div>\n</div>\n\n<!-- Анимация -->\n<style>\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\nbutton:hover {\n  background-color: #4c54d2;\n  transform: scale(1.02);\n}\n</style>\n\n<!-- Скрипт -->\n<script>\n  const users = {\n    \"tp\": { password: \"tp2025\", redirect: \"vhod.html\" },\n    \"okt\": { password: \"pass111\", redirect: \"restaurant2.html\" },\n    \"azm\": { password: \"pass222\", redirect: \"restaurant2.html\" },\n    \"gor\": { password: \"pass333\", redirect: \"restaurant2.html\" },\n    \"ges\": { password: \"pass444\", redirect: \"restaurant2.html\" },\n    \"don\": { password: \"pass555\", redirect: \"restaurant2.html\" },\n    \"admin\": { password: \"tp280822!\", redirect: \"page2.html\" }\n  };\n\n  function login() {\n    const username = document.getElementById(\"username\").value.trim();\n    const password = document.getElementById(\"password\").value.trim();\n    const errorElem = document.getElementById(\"error\");\n\n    if (users[username] && users[username].password === password) {\n      window.location.href = users[username].redirect;\n    } else {\n      errorElem.innerText = \"⛔ Неверный логин или пароль.\";\n    }\n  }\n</script>",
+          "_cid": "uMgb8T3JeW",
+          "_anchor": "custom-html-1m",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}

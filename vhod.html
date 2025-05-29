@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="Необходим веб-сайт для шести ресторанов. Пользователь выбирает ресторан, затем переходит на страницу со ссылками на опросы, чтобы оставить свой отзыв и предложения. Удобный интерфейс.">
+  
+  
+  <title>Выбор ресторана и переход к опросам: отзывы о ресторанах</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=D7ixCF"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=D7ixCF" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+
+<!-- Analytics -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cardGrid = document.getElementById("cardGrid");
+    const search = document.getElementById("search");
+
+    const total = 40;
+    const links = Array.from({ length: total }, (_, i) => ({
+      title: `Опрос ${i + 1}`,
+      url: "#"
+    }));
+
+    function renderCards(list) {
+      cardGrid.innerHTML = '';
+      list.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.dataset.title = item.title.toLowerCase();
+        div.innerHTML = `
+          <h3>${item.title}</h3>
+          <a href="${item.url}" target="_blank">Пройти опрос</a>
+        `;
+        cardGrid.appendChild(div);
+      });
+    }
+
+    search.addEventListener('input', () => {
+      const term = search.value.trim().toLowerCase();
+      const filtered = links.filter(item => item.title.toLowerCase().includes(term));
+      renderCards(filtered);
+    });
+
+    renderCards(links);
+  });
+</script>
+
+<!-- /Analytics -->
+
+
+  
+  <section data-bs-version="5.1" class="header16 cid-uKtQauaUOD mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=2Gg6Seob5Mg" id="hero-17-uKtQauaUOD">
+  
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-12">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1"><strong>Единая платформа&nbsp;&nbsp;</strong></h1>
+        <h2 class="mbr-section-subtitle mbr-fonts-style mbr-white mb-4 display-2"><strong>OCL</strong></h2>
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7"><em>Одна платформа 6 ресторанов</em></p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: linear-gradient(to right, #0f2027, #203a43, #2c5364); padding: 60px 20px;" class="cid-uLua5wZrJM" id="custom-html-1d">
+  <style>
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .restaurant-card {
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .restaurant-card:hover {
+      transform: scale(1.03);
+    }
+
+    .restaurant-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .caption {
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .caption h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .caption a {
+      background-color: transparent;
+      border: 2px solid #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .caption a:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  </style>
+
+  <h2 style="text-align: center; color: #fff; margin-bottom: 40px;">Выберите ресторан</h2>
+
+  <div class="restaurant-grid">
+    <div class="restaurant-card">
+      <img src="assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png" alt="Технопарк">
+      <div class="caption">
+        <h3>Технопарк</h3>
+        <a href="surveys/testt.html">Пройти опрос</a>
+      </div>
+    </div>
+
+    <div class="restaurant-card">
+      <img src="assets/images/abde105e-82d6-45a0-81c3-df00f9273ee1.png-634x951.png" alt="Донецкая">
+      <div class="caption">
+        <h3>Донецкая</h3>
+        <a href="form-donetskaya.html">Пройти опрос</a>
+      </div>
+    </div>
+
+    <div class="restaurant-card">
+      <img src="assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png" alt="Горький">
+      <div class="caption">
+        <h3>Горький</h3>
+        <a href="form-gorky.html">Пройти опрос</a>
+      </div>
+    </div>
+
+    <div class="restaurant-card">
+      <img src="assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png" alt="ГЭС 5">
+      <div class="caption">
+        <h3>ГЭС 5</h3>
+        <a href="form-ges5.html">Пройти опрос</a>
+      </div>
+    </div>
+
+    <div class="restaurant-card">
+      <img src="assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png" alt="Октябрь">
+      <div class="caption">
+        <h3>Октябрь</h3>
+        <a href="form-oktyabr.html">Пройти опрос</a>
+      </div>
+    </div>
+
+    <div class="restaurant-card">
+      <img src="assets/images/abde105e-82d6-45a0-81c3-df00f9273ee1.png-634x951.png" alt="Азия Молл">
+      <div class="caption">
+        <h3>Азия Молл</h3>
+        <a href="form-asia.html">Пройти опрос</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="custom-html-17" class="thanks-scroll cid-uLtIJebM6E" data-rv-view="194"></div><script type="module" class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="194">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+  const supabase = createClient(
+    'https://crlwzepfuszhouuackyc.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI'
+  );
+
+  const list = document.getElementById('thanksList');
+
+  async function loadMessages() {
+    const { data, error } = await supabase
+      .from('thanks')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Ошибка загрузки:', error);
+      return;
+    }
+
+    list.innerHTML = data.map(entry => `
+      <div class="thanks-card">
+        <h3>${entry.name}</h3>
+        <p>${entry.message}</p>
+        <button onclick="likeMessage(${entry.id}, ${entry.likes ?? 0})">
+          ❤️ ${entry.likes ?? 0}
+        </button>
+      </div>
+    `).join('');
+  }
+
+  window.likeMessage = async (id, currentLikes) => {
+    const { error } = await supabase
+      .from('thanks')
+      .update({ likes: currentLikes + 1 })
+      .eq('id', id);
+
+    if (!error) {
+      loadMessages();
+    } else {
+      console.error('Ошибка лайка:', error);
+    }
+  };
+
+  loadMessages();
+</script><style class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="194">
+  .thanks-scroll {
+    max-height: 880px; /* ~8 карточек */
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  .thanks-card {
+    background: #1e1e1e;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.6s ease;
+  }
+
+  .thanks-card h3 {
+    margin: 0 0 5px;
+    color: #FFA500;
+  }
+
+  .thanks-card p {
+    margin: 0;
+    color: #ccc;
+  }
+
+  .thanks-card button {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #FFA500;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .thanks-card button:hover {
+    color: #FF6347;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<section data-bs-version="5.1" style="background: linear-gradient(to right, #0f2027, #203a43, #2c5364); padding: 50px 20px;" class="cid-uKtQaubPYn" id="faq-1-uKtQaubPYn">
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: auto;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .faq-title {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    .faq-card {
+      background: #1f1f1f;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .faq-question:hover {
+      background-color: #2e2e2e;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      background: #2a2a2a;
+      padding: 0 20px;
+      color: #ccc;
+    }
+
+    .faq-answer.open {
+      padding: 16px 20px;
+      max-height: 500px;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+      color: #ccc;
+    }
+
+    .arrow.open {
+      transform: rotate(180deg);
+    }
+  </style>
+
+  <div class="faq-container">
+    <div class="faq-title">Часто задаваемые вопросы</div>
+
+    <div class="faq-card">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Где можно посмотреть отчеты?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">Отчеты можно посмотреть в конце опросов.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Как найти ваш web адрес?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">Сайт находится по адресу www.ocllink.online или можно отсканировать QR в ресторане.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Что делать если нету нужного OCL?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">Можно написать мне WhatsApp ссылка внизу страницы.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Как часто обновляется рейтинг?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">Рейтинг обновляется каждый день автоматически.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        Есть ли у сайта ограничения?
+        <span class="arrow">▼</span>
+      </div>
+      <div class="faq-answer">Да, у каждого опроса ежемесячный лимит на 200 ответов.</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const arrow = el.querySelector('.arrow');
+      answer.classList.toggle('open');
+      arrow.classList.toggle('open');
+    }
+  </script>
+</section>
+
+<section style="background-color: #121212; padding: 50px 20px;" class="cid-uLu6LYz98p" id="custom-html-1c">
+  <style>
+    .daily-tip-title {
+      text-align: center;
+      color: #FFD700;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .daily-tip {
+      max-width: 700px;
+      margin: auto;
+      font-size: 20px;
+      font-style: italic;
+      color: #ffd700;
+      background: #2c2c2c;
+      padding: 20px 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInTip 1s ease forwards;
+    }
+
+    @keyframes fadeInTip {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <div class="daily-tip-title">💬 Совет дня</div>
+  <div class="daily-tip" id="dailyTip">Загрузка совета...</div>
+
+  <script>
+    const tips = [
+      "Улыбка на кассе — половина отличного обслуживания 😊",
+      "Сначала срок годности — потом выкладка!",
+      "Чистый гриль = вкусный бургер 🍔",
+      "Помогай команде — даже если это не твоя зона 🙌",
+      "Салфетки и соусы — мелочь, но важны!",
+      "Проверь наличие подносов и перчаток перед час-пиком!",
+      "Если сомневаешься — уточни у менеджера 🧠",
+      "Поддерживай порядок не только за собой, но и рядом 🧼",
+      "Позитив передаётся клиенту быстрее, чем заказ 😉"
+    ];
+
+    const randomTip = tips[Math.floor(Math.random() * tips.length)];
+    document.getElementById("dailyTip").textContent = `💡 ${randomTip}`;
+  </script>
+</section>
+
+<section style="background: #0f0f0f; padding: 60px 20px;" class="cid-uMaIyydjUN" id="custom-html-1l">
+  <div style="max-width: 600px; margin: auto;">
+    <h2 style="text-align: center; color: #ffc107; font-weight: bold; font-size: 28px;">📬 Обратная связь</h2>
+
+    <form id="feedbackForm" style="background-color: #1a1a1a; padding: 30px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+
+      <label style="color: #ffc107;">Ресторан:</label>
+      <select name="restaurant" required="" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: none; background: #2a2a2a; color: white;">
+        <option value="Октябрь">Октябрь</option>
+        <option value="Горький">Горький</option>
+        <option value="Технопарк">Технопарк</option>
+        <option value="Азия Молл">Азия Молл</option>
+        <option value="Донецкая">Донецкая</option>
+        <option value="ГЭС5">ГЭС5</option>
+      </select>
+
+      <label style="color: #ffc107;">Ваше имя:</label>
+      <input type="text" name="sender" required="" style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: none; background: #2a2a2a; color: white;">
+
+      <label style="color: #ffc107;">Сообщение:</label>
+      <textarea name="message" required="" style="width: 100%; height: 120px; padding: 12px; margin-bottom: 20px; border-radius: 10px; border: none; background: #2a2a2a; color: white;"></textarea>
+
+      <button type="submit" style="background-color: #ffc107; color: black; padding: 12px 24px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%;">Отправить</button>
+    </form>
+
+    <div id="formStatus" style="margin-top: 20px; text-align: center; color: #ffc107;"></div>
+
+    <!-- ВСПЛЫВАЮЩАЯ ПАНЕЛЬ -->
+    <div id="toast" style="
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1000;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.5s, bottom 0.5s;
+    ">✅ Сообщение отправлено!</div>
+
+  </div>
+</section><script class="cid-uMaIyydjUN" id="custom-html-1l" data-rv-view="197">
+function showToast(text, color = "#28a745") {
+  const toast = document.getElementById("toast");
+  toast.innerText = text;
+  toast.style.backgroundColor = color;
+  toast.style.visibility = "visible";
+  toast.style.opacity = "1";
+  toast.style.bottom = "50px";
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.bottom = "30px";
+    setTimeout(() => {
+      toast.style.visibility = "hidden";
+    }, 500);
+  }, 3000);
+}
+
+document.getElementById("feedbackForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = {
+    restaurant: form.restaurant.value,
+    sender: form.sender.value,
+    message: form.message.value,
+    date: new Date().toISOString().split("T")[0]
+  };
+
+  const url = "https://sheetdb.io/api/v1/h29xk2y9u8i4g"; // ⬅️ ВСТАВЬ ТВОЙ ID SheetDB
+
+  try {
+    await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ data })
+    });
+
+    showToast("✅ Сообщение отправлено!");
+    form.reset();
+  } catch (err) {
+    showToast("❌ Ошибка отправки.", "#dc3545");
+  }
+});
+</script>
+
+<section style="background-color: #121212; padding: 40px 20px;" class="cid-uKueZvguUq" id="custom-html-2">
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f9f9f9;
+    }
+
+    .title-block {
+      background: #1d1d1d;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .title-block h1 {
+      font-size: 44px;
+      margin: 0;
+      color: #FFD700;
+    }
+
+    .block {
+      background: #1d1d1d;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .block:hover {
+      transform: translateY(-5px);
+    }
+
+    .block h2 {
+      color: #FFA500;
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .creator-block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .creator-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .creator-info h3 {
+      margin: 0;
+      color: #FFD700;
+    }
+
+    .creator-info p {
+      margin: 5px 0 0;
+      color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  <div class="container">
+    <div class="title-block">
+      <h1>О проекте</h1>
+    </div>
+
+    <div class="block">
+      <h2>Зачем мы это делаем?</h2>
+      <p>Этот сайт создан для мотивации, вдохновения и признания сотрудников. Он объединяет в себе всё важное: рейтинги, благодарности, новости и опросы. Всё это — красиво, понятно и доступно с любого устройства.</p>
+    </div>
+
+    <div class="block">
+      <h2>Наши преимущества</h2>
+      <ul>
+        <li><strong>Рейтинг ресторанов:</strong> прозрачный и обновляемый каждый день.</li>
+        <li><strong>Стена благодарности:</strong> яркие и живые сообщения от коллег с анимацией и аватарками.</li>
+        <li><strong>Новости:</strong> свежие события и объявления в красивом оформлении.</li>
+        <li><strong>Опросы:</strong> быстрые формы обратной связи через Google Таблицы.</li>
+        <li><strong>Автоматизация:</strong> всё обновляется без вмешательства человека.</li>
+        <li><strong>Удобство:</strong> сайт отлично выглядит на всех устройствах.</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>Что дальше?</h2>
+      <p>Мы продолжаем развивать проект — в будущем появятся достижения, индивидуальные рейтинги, новые инструменты взаимодействия и ещё больше поводов для гордости каждым рестораном и сотрудником.</p>
+    </div>
+
+    <div class="block creator-block">
+      <img src="assets/images/photo-5280595512736739927-y.jpg-240x160.jpg" alt="Создатель проекта" class="creator-img">
+      <div class="creator-info">
+        <h3>Создатель проекта</h3>
+        <p>Тот, кто вдохновляет, проектирует и реализует ❤️</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" style="background-color: #121212; padding: 60px 20px;" class="cid-uKtQaucTNj" id="contacts-2-uKtQaucTNj">
+  <style>
+    .contact-container {
+      max-width: 800px;
+      margin: auto;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .contact-container h2 {
+      font-size: 32px;
+      color: #FFD700;
+      margin-bottom: 30px;
+    }
+
+    .contact-info {
+      font-size: 16px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .contact-info span {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .contact-info .label {
+      font-weight: bold;
+      color: #FFA500;
+    }
+
+    .map-wrapper {
+      margin-top: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+  </style>
+
+  <div class="contact-container">
+    <h2>Наши контакты</h2>
+
+    <div class="contact-info">
+      <span><span class="label">Телефон:</span> +996 (550) 880-451</span>
+      <span><span class="label">WhatsApp:</span> +996 (550) 880-451</span>
+      <span><span class="label">Email:</span> kfc_tp@fooddream.kg</span>
+      <span><span class="label">Адрес:</span> ул. Горького / 1Зв</span>
+    </div></div></section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-builder.html">AI Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/vimeoplayer/player.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>

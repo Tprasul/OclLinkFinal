@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>HRtp</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=O84pkh"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=O84pkh" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <meta charset="UTF-8" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="158"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="158"><title class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="158">HR - Опрос</title><style class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="158">
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #FFE4E1;
+    }
+
+    .avatar-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .form-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .radio-option input[type="radio"] {
+      display: none;
+    }
+
+    .custom-radio {
+      width: 40px;
+      height: 40px;
+      background-color: #eee;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .radio-option input[type="radio"]:checked + .custom-radio {
+      border-color: #d32f2f;
+      background-color: #d32f2f;
+      color: white;
+    }
+
+    .submit-btn {
+      margin-top: 30px;
+      padding: 12px 20px;
+      background-color: #d32f2f;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="158"></script><div class="form-container cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="158">
+    <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
+
+    <div class="form-title">HR - Опрос</div>
+    <form id="customForm">
+      <label>Ваше имя:</label>
+      <input type="text" name="yourName" required="">
+
+      <label>Имя сотрудника:</label>
+      <input type="text" name="employeeName" required="">
+
+      <label>Цели на месяц, новости, коммуникация:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="goals" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="goals" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>Корпоративная культура:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="culture" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="culture" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>Мотивационные программы:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="mot" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="mot" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>CHAMPS:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="champs" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="champs" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>ROCC, L3:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="rocc" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="rocc" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>3-х мойка / Дайверси:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="мойка" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="мойка" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>CSL / Библиотека стандартов:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="CSL" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="CSL" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>ПВТР / Дисциплинарный бонус:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="pvtr" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="pvtr" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>ОРС / Тет-а-тет:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="opc" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="opc" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>Охрана труда / Пожарная безопасность:</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="OT" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="OT" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>Комментарий:</label>
+      <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+
+      <button type="submit" class="submit-btn">Закончить опрос</button>
+    </form>
+  </div><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="158">
+  document.getElementById("customForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    function convertAnswer(value) {
+      return value === "A" ? "Знает" : value === "B" ? "Не знает" : "";
+    }
+
+    const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
+    const comment = document.querySelector('textarea[name="comment"]').value.trim();
+
+    // Собираем ответы
+    const formData = {
+      "Имя HR": document.querySelector('input[name="yourName"]').value.trim(),
+      "Имя сотрудника": employeeName,
+      "Цели на месяц, новости, коммуникация": convertAnswer(document.querySelector('input[name="goals"]:checked')?.value),
+      "Корпоративная культура": convertAnswer(document.querySelector('input[name="culture"]:checked')?.value),
+      "Мотивационные программы": convertAnswer(document.querySelector('input[name="mot"]:checked')?.value),
+      "CHAMPS": convertAnswer(document.querySelector('input[name="champs"]:checked')?.value),
+      "ROCC, L3": convertAnswer(document.querySelector('input[name="rocc"]:checked')?.value),
+      "3-х мойка / Дайверси": convertAnswer(document.querySelector('input[name="мойка"]:checked')?.value),
+      "CSL / Библиотека стандартов": convertAnswer(document.querySelector('input[name="CSL"]:checked')?.value),
+      "ПВТР / Дисциплинарный бонус": convertAnswer(document.querySelector('input[name="pvtr"]:checked')?.value),
+      "ОРС / Тет-а-тет": convertAnswer(document.querySelector('input[name="opc"]:checked')?.value),
+      "Охрана труда / Пожарная безопасность": convertAnswer(document.querySelector('input[name="OT"]:checked')?.value),
+      "Комментарий": comment,
+      "Дата": new Date().toLocaleString('ru-RU') // Например: 06.05.2025, 15:42:10
+    };
+
+    // Считаем процент правильных ответов
+    const correctAnswers = {
+      "Цели на месяц, новости, коммуникация": "Знает",
+      "Корпоративная культура": "Знает",
+      "Мотивационные программы": "Знает",
+      "CHAMPS": "Знает",
+      "ROCC, L3": "Знает",
+      "3-х мойка / Дайверси": "Знает",
+      "CSL / Библиотека стандартов": "Знает",
+      "ПВТР / Дисциплинарный бонус": "Знает",
+      "ОРС / Тет-а-тет": "Знает",
+      "Охрана труда / Пожарная безопасность": "Знает"
+    };
+
+    let score = 0;
+    for (const question in correctAnswers) {
+      if (formData[question] === correctAnswers[question]) {
+        score++;
+      }
+    }
+
+    const percent = Math.round((score / Object.keys(correctAnswers).length) * 100);
+    formData["Процент знаний"] = percent + "%";
+
+    // Отправка в SheetDB
+    const sheetdbUrl = "https://sheetdb.io/api/v1/0vx6esao2wsi5"; // Замените на ваш ID
+
+    fetch(sheetdbUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ data: formData })
+    })
+    .then(response => response.json())
+    .then(() => {
+      Swal.fire({
+        title: "HR - Опрос",
+        html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
+        icon: 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#d32f2f'
+      });
+    })
+    .catch(error => {
+      Swal.fire({
+        title: "Ошибка",
+        text: "Не удалось отправить данные. Попробуйте позже.",
+        icon: 'error',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#d32f2f'
+      });
+      console.error("Ошибка отправки:", error);
+    });
+  });
+</script>
+
+<style class="cid-uMaoeoRr7J" id="custom-html-38" data-rv-view="159">
+  .report-button {
+    display: inline-block;
+    background-color: #f44336;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .report-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+  }
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uMaoeoRr7J" id="custom-html-38" data-rv-view="159">
+  <a href="https://docs.google.com/spreadsheets/d/1NM3bdB3q8_DbP5V002a43awbvmR30qzDdb3X0yiMuj8/edit?usp=sharing" target="_blank" class="report-button">
+    📊 Открыть отчёты
+  </a>
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>

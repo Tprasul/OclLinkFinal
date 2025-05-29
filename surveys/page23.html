@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>ckaytTP</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=zIUC1z"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=zIUC1z" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <meta charset="UTF-8" class="cid-uM2b0saoMp" id="custom-html-30" data-rv-view="156"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uM2b0saoMp" id="custom-html-30" data-rv-view="156"><title class="cid-uM2b0saoMp" id="custom-html-30" data-rv-view="156">Опрос - Скаут</title><style class="cid-uM2b0saoMp" id="custom-html-30" data-rv-view="156">
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #FFE4E1;
+    }
+    .avatar-img {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .form-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    input[type="text"], textarea {
+      width: 100%; padding: 10px;
+      border-radius: 6px; border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .radio-group {
+      display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;
+    }
+    .radio-option {
+      display: flex; align-items: center; gap: 10px; cursor: pointer;
+    }
+    .radio-option input { display: none; }
+    .custom-radio {
+      width: 40px; height: 40px; background-color: #eee;
+      border-radius: 50%; display: flex;
+      align-items: center; justify-content: center;
+      font-weight: bold; color: #333;
+      border: 2px solid transparent; transition: 0.2s;
+    }
+    .radio-option input:checked + .custom-radio {
+      border-color: #d32f2f; background-color: #d32f2f; color: white;
+    }
+    .submit-btn {
+      margin-top: 30px; padding: 12px 20px;
+      background-color: #d32f2f; color: white;
+      font-size: 16px; border: none; border-radius: 8px;
+      cursor: pointer; width: 100%;
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uM2b0saoMp" id="custom-html-30" data-rv-view="156"></script><div class="form-container cid-uM2b0saoMp" id="custom-html-30" data-rv-view="156">
+    <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
+    <div class="form-title">Опрос - Скаут</div>
+
+    <form id="customForm">
+      <label>Ваше имя:</label>
+      <input type="text" name="yourName" required="">
+
+      <label>Имя сотрудника:</label>
+      <input type="text" name="employeeName" required="">
+
+      <label>1. Униформа чистая, опрятная, в хорошем состоянии. Бейдж расположен на нужной стороне</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="1" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="1" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>2. Обувь закрытая, кожаная, темная, на нескользящей подошве. Носки только черного цвета</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="2" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="2" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>3. Ухоженность соответствует стандартам (лицо выбрито, ногти пострижены, лак на ногтях отсутствует, стрижка опрятная, макияж спокойный)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="3" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="3" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>4. Отсутствует пирсинг и любые ювелирные украшения</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="4" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="4" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>5. Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="5" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="5" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>6. Моет руки согласно правилам мытья рук, при необходимости использует перчатки при работе с продуктом</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="6" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="6" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>7. Обеспечивает отсутствие перекрестного загрязнения</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="7" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="7" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>8. Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя ротацию продуктов</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="8" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="8" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>9. Соблюдает технику безопасности при работе с оборудованием</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="9" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="9" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>10. Сообщает менеджеру о любых неисправностях оборудования</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="10" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="10" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>11. Знает свои цели и задачи на смену</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="11" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="11" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>12. Распределяет цели на смену между кассирами</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="12" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="12" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>13. Мотивирует сотрудников на достижение цели, проводит различные соревнования между кассирами</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="13" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="13" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>14. Ежечасно озвучивает кассирам рейтинги продаж конкретных блюд, в конце смены вносит рейтинги в паспорт Скаута</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="14" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="14" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>15. Проверяет наличие достаточного количества ингредиентов и упаковки на станции Касса</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="15" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="15" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>16. Контролирует поддержание чистоты на станции Касса в течение всей смены</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="16" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="16" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>17. Контролирует соблюдение стандартов обслуживания в течение всей смены</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="17" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="17" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>18. Является ролевой моделью в предоставлении Незабываемого сервиса каждому Гостю</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="18" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="18" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>19. Организовывает дезинфекцию инвентаря и рабочих поверхностей каждые четыре часа</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="19" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="19" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>20. Своевременно реагирует на потенциальные риски по списанию и применяет технику активных продаж. Минимизирует списание в течении всей смены</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="20" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="20" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>21. Контролирует соблюдение стандартов скорости обслуживания (прием, сбор и выдача заказа)</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="21" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="21" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>22. Проводит замеры скорости обслуживания и вносит результаты в паспорт Скаута</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="22" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="22" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>23. Эффективная коммуникация с сотрудниками Кассы и Менеджером</label>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="23" value="A" required=""><div class="custom-radio">A</div> Знает</label>
+        <label class="radio-option"><input type="radio" name="23" value="B"><div class="custom-radio">B</div> Не знает</label>
+      </div>
+
+      <label>Комментарий:</label>
+      <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+
+      <button type="submit" class="submit-btn">Закончить опрос</button>
+    </form>
+  </div><script class="cid-uM2b0saoMp" id="custom-html-30" data-rv-view="156">
+    document.getElementById("customForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      function convertAnswer(value) {
+        return value === "A" ? "Знает" : "Не знает";
+      }
+
+      const hrName       = document.querySelector('input[name="yourName"]').value.trim();
+      const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
+      const comment      = document.querySelector('textarea[name="comment"]').value.trim();
+
+      const formData = {
+        "Имя HR": hrName,
+        "Имя сотрудника": employeeName,
+        "Униформа чистая, опрятная, в хорошем состоянии. Бейдж расположен на нужной стороне": convertAnswer(document.querySelector('input[name="1"]:checked').value),
+        "Обувь закрытая, кожаная, темная, на нескользящей подошве. Носки только черного цвета": convertAnswer(document.querySelector('input[name="2"]:checked').value),
+        "Ухоженность соответствует стандартам (лицо выбрито, ногти пострижены, лак на ногтях отсутствует, стрижка опрятная, макияж спокойный)": convertAnswer(document.querySelector('input[name="3"]:checked').value),
+        "Отсутствует пирсинг и любые ювелирные украшения": convertAnswer(document.querySelector('input[name="4"]:checked').value),
+        "Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы": convertAnswer(document.querySelector('input[name="5"]:checked').value),
+        "Моет руки согласно правилам мытья рук, при необходимости использует перчатки при работе с продуктом": convertAnswer(document.querySelector('input[name="6"]:checked').value),
+        "Обеспечивает отсутствие перекрестного загрязнения": convertAnswer(document.querySelector('input[name="7"]:checked').value),
+        "Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя ротацию продуктов": convertAnswer(document.querySelector('input[name="8"]:checked').value),
+        "Соблюдает технику безопасности при работе с оборудованием": convertAnswer(document.querySelector('input[name="9"]:checked').value),
+        "Сообщает менеджеру о любых неисправностях оборудования": convertAnswer(document.querySelector('input[name="10"]:checked').value),
+        "Знает свои цели и задачи на смену": convertAnswer(document.querySelector('input[name="11"]:checked').value),
+        "Распределяет цели на смену между кассирами": convertAnswer(document.querySelector('input[name="12"]:checked').value),
+        "Мотивирует сотрудников на достижение цели, проводит различные соревнования между кассирами": convertAnswer(document.querySelector('input[name="13"]:checked').value),
+        "Ежечасно озвучивает кассирам рейтинги продаж конкретных блюд, в конце смены вносит рейтинги в паспорт Скаута": convertAnswer(document.querySelector('input[name="14"]:checked').value),
+        "Проверяет наличие достаточного количества ингредиентов и упаковки на станции Касса": convertAnswer(document.querySelector('input[name="15"]:checked').value),
+        "Контролирует поддержание чистоты на станции Касса в течение всей смены": convertAnswer(document.querySelector('input[name="16"]:checked').value),
+        "Контролирует соблюдение стандартов обслуживания в течение всей смены": convertAnswer(document.querySelector('input[name="17"]:checked').value),
+        "Является ролевой моделью в предоставлении Незабываемого сервиса каждому Гостю": convertAnswer(document.querySelector('input[name="18"]:checked').value),
+        "Организовывает дезинфекцию инвентаря и рабочих поверхностей каждые четыре часа": convertAnswer(document.querySelector('input[name="19"]:checked').value),
+        "Своевременно реагирует на потенциальные риски по списанию и применяет технику активных продаж. Минимизирует списание в течении всей смены": convertAnswer(document.querySelector('input[name="20"]:checked').value),
+        "Контролирует соблюдение стандартов скорости обслуживания (прием, сбор и выдача заказа)": convertAnswer(document.querySelector('input[name="21"]:checked').value),
+        "Проводит замеры скорости обслуживания и вносит результаты в паспорт Скаута": convertAnswer(document.querySelector('input[name="22"]:checked').value),
+        "Эффективная коммуникация с сотрудниками Кассы и Менеджером": convertAnswer(document.querySelector('input[name="23"]:checked').value),
+        "Комментарий": comment,
+        "Дата": new Date().toLocaleString('ru-RU')
+      };
+
+      let score = 0;
+      const total = 23;
+      for (let i = 1; i <= total; i++) {
+        if (document.querySelector(`input[name="${i}"]:checked`).value === "A") score++;
+      }
+      const percent = Math.round((score / total) * 100);
+      formData["Процент знаний"] = percent + "%";
+
+      fetch("https://sheetdb.io/api/v1/r57colbzujh0f", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: formData })
+      })
+      .then(() => {
+        Swal.fire({
+          title: "Опрос - Скаут",
+          html: `<b>Сотрудник:</b> ${employeeName}<br><b>Комментарий:</b> ${comment || "—"}<br><b>Процент знаний:</b> ${percent}%`,
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#d32f2f'
+        });
+        document.getElementById("customForm").reset();
+      })
+      .catch(() => {
+        Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
+      });
+    });
+  </script>
+
+<style class="cid-uM2b0B2gle" id="custom-html-31" data-rv-view="157">
+  .report-button {
+    display: inline-block;
+    background-color: #f44336;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .report-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+  }
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uM2b0B2gle" id="custom-html-31" data-rv-view="157">
+  <a href="https://docs.google.com/spreadsheets/d/1TBPJGgCCttppjr-jGw2Y-cKXsJFiGBvlf7o3_bbGRUk/edit?usp=sharing" target="_blank" class="report-button">
+    📊 Открыть отчёты
+  </a>
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>krstrTP</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=TiIVFt"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=TiIVFt" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <meta charset="UTF-8" class="cid-uLFox1vzhM" id="custom-html-2h" data-rv-view="144"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uLFox1vzhM" id="custom-html-2h" data-rv-view="144"><title class="cid-uLFox1vzhM" id="custom-html-2h" data-rv-view="144">Опрос – Крылья / Стрипсы HS</title><style class="cid-uLFox1vzhM" id="custom-html-2h" data-rv-view="144">
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      font-family: sans-serif;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #FFE4E1;
+    }
+    .avatar-img {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .form-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    input[type="text"], textarea {
+      width: 100%; padding: 10px;
+      border-radius: 6px; border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .radio-group {
+      display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;
+    }
+    .radio-option {
+      display: flex; align-items: center; gap: 10px; cursor: pointer;
+    }
+    .radio-option input[type="radio"] { display: none; }
+    .custom-radio {
+      width: 40px; height: 40px; background-color: #eee;
+      border-radius: 50%; display: flex;
+      align-items: center; justify-content: center;
+      font-weight: bold; color: #333;
+      border: 2px solid transparent; transition: 0.2s;
+    }
+    .radio-option input[type="radio"]:checked + .custom-radio {
+      border-color: #d32f2f; background-color: #d32f2f; color: white;
+    }
+    .submit-btn {
+      margin-top: 30px; padding: 12px 20px;
+      background-color: #d32f2f; color: white;
+      font-size: 16px; border: none; border-radius: 8px;
+      cursor: pointer; width: 100%;
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLFox1vzhM" id="custom-html-2h" data-rv-view="144"></script><div class="form-container cid-uLFox1vzhM" id="custom-html-2h" data-rv-view="144">
+    <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
+    <div class="form-title">Опрос – Крылья / Стрипсы HS</div>
+
+    <form id="customForm">
+      <label>Ваше имя:</label>
+      <input type="text" name="yourName" required="">
+
+      <label>Имя сотрудника:</label>
+      <input type="text" name="employeeName" required="">
+
+      <script>
+              const questions = [
+          "Обувь закрытая, кожаная, темная, на нескользящей подошве. Носки только черного цвета.",
+          "Ухоженность соответствует стандартам (лицо выбрито, ногти пострижены, лак на ногтях отсутствует, стрижка опрятная, макияж спокойный).",
+          "Отсутствует пирсинг и любые ювелирные украшения.",
+          "Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы",
+          "Моет руки согласно правилам мытья рук, при необходимости использует перчатки при работе с продуктом.",
+          "Обеспечивает отсутствие перекрестного загрязнения.",
+          "Проверяет сроки годности, просроченный продукт списывает.",
+          "Недостающие продукты пополняет, используя правило ротации продуктов и Часовик",
+          "Соблюдает технику безопасности при работе с оборудованием",
+          "Сообщает менеджеру о любых неисправностях оборудования",
+          "Берет синюю/черную гастроемкость для куриного полуфабриката",
+          "Достает из холодильника упаковку со стрипсами / крыльями, соблюдая правило ротации",
+          "Помещает упаковку в гастроемкость и отнесет ее к панировочному столу",
+          "Открывает упаковку ножницами для куриной продукции",
+          "Выкладывает необходимое количество стрипсов в погружную корзину над решеткой и поддоном (min 6 шт - max 36 шт) / крыльев (min 15 шт - max 60 шт)",
+          "Встряхивает погружную корзину от себя, вверх и на себя - 3 раза",
+          "Раскладывает продукт в панировочной ёмкости и покрывает его панировочной смесью",
+          "Собирает и поднимает стрипсы / крылья (от краёв к центру) - 7 раз",
+          "Собирает стрипсы / крылья качалочной корзиной",
+          "Покачивает корзину (одна рука выше, другая ниже)",
+          "Кладет стрипсы / крылья в погружную корзину",
+          "Окунает стрипсы / крылья в воду",
+          "Наклоняет корзину налево, а затем направо, держит корзину в воде до прекращения появления пузырьков",
+          "Извлекает корзину из бачка и дает воде стечь в бачок",
+          "Раскладывает продукт в панировочной ёмкости и покрывает его панировочной смесью",
+          "Встряхивает погружную корзину от себя, вверх и на себя - 10 раз",
+          "Собирает и поднимает стрипсы / крылья (от краёв к центру) - 7 раз",
+          "Собирает стрипсы / крылья качалочной корзиной",
+          "Покачивает корзину (одна рука выше, другая ниже)",
+          "Максимальное время панирования 6 шт стрипсов не должно превышать 1 мин 15 сек / 36 шт стрипсов - 2 мин, крыльев 15 шт - 1 мин 40 сек / 60 шт - 2 мин 30 сек",
+          "Выкладывает стрипсы на решетки открытого фритюра: min 6 шт - max 18 шт. Максимум 6 шт на одном уровне откидной корзины / Высыпает крылья в корзину: min 15 шт - max 30 шт (14\") / min 15 шт - max 45 шт (18\")",
+          "Выкладывает стрипсы на решетки 8HP/6HP: min 6 шт - max 18 шт на одной решетке / Высыпает крылья на решетку min 15 шт - max 30 шт, min 15 шт - max 120 шт в одной корзине",
+          "Проверяет уровень фритюрного масла при температуре «droP/Ready»",
+          "Вставляет решетки в кассету/корзину снизу вверх, опускает кассету/корзину во фритюрное масло и нажимает кнопку для запуска процесса обжаривания",
+          "Встряхивает крылья после предварительного сигнала (открытый фритюр)",
+          "Просеивает панировочную смесь и меняет воду после каждого цикла панирования. Если партии идут подряд и готовятся более чем на одном фритюре, просеивает смесь и меняет воду после каждых двух партий",
+          "Очищает и дезинфицирует ручки фритюра, ручки корзин, наружную панель компьютера и поверхность открытого фритюра",
+          "Останавливает таймер по окончании цикла (после звукового сигнала)",
+          "Открывает крышку, поднимает корзину и дает стечь маслу в течение 15 сек перед укладкой на решетку"
+        ];
+
+        const form = document.getElementById('customForm');
+        questions.forEach((q, i) => {
+          const num = i + 1;
+          const lbl = document.createElement('label');
+          lbl.textContent = `${num}. ${q}`;
+          form.appendChild(lbl);
+          const group = document.createElement('div');
+          group.className = 'radio-group';
+          ['A','B'].forEach(val => {
+            const opt = document.createElement('label');
+            opt.className = 'radio-option';
+            opt.innerHTML = `<input type="radio" name="${num}" value="${val}" ${val==='A'?'required':''}>
+                              <div class="custom-radio">${val}</div>${val==='A'?' Знает':' Не знает'}`;
+            group.appendChild(opt);
+          });
+          form.appendChild(group);
+        });
+      </script>
+
+      <label>Комментарий:</label>
+      <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+
+      <button type="submit" class="submit-btn">Закончить опрос</button>
+    </form>
+  </div><script class="cid-uLFox1vzhM" id="custom-html-2h" data-rv-view="144">
+    document.getElementById("customForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const convert = v => v === "A" ? "Знает" : "Не знает";
+      const hr      = document.querySelector('input[name="yourName"]').value.trim();
+      const emp     = document.querySelector('input[name="employeeName"]').value.trim();
+      const comment = document.querySelector('textarea[name="comment"]').value.trim();
+      let score = 0, total = questions.length;
+      questions.forEach((_, i) => {
+        const sel = document.querySelector(`input[name="${i+1}"]:checked`);
+        if (sel && sel.value === "A") score++;
+      });
+      const percent = Math.round(score/total*100) + "%";
+
+      const data = {
+        "Имя HR": hr,
+        "Имя сотрудника": emp
+      };
+      questions.forEach((q, i) => {
+        const val = document.querySelector(`input[name="${i+1}"]:checked`).value;
+        data[q] = convert(val);
+      });
+      data["Комментарий"] = comment;
+      data["Процент знаний"] = percent;
+      data["Дата"] = new Date().toLocaleString("ru-RU");
+
+      fetch("https://sheetdb.io/api/v1/6wypc9nh9qejc", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data })
+      })
+      .then(() => {
+        Swal.fire({
+          title: "Опрос – Крылья / Стрипсы HS",
+          html: `<b>Сотрудник:</b> ${emp}<br><b>Комментарий:</b> ${comment||"—"}<br><b>Процент знаний:</b> ${percent}`,
+          icon: "success",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#d32f2f"
+        });
+        document.getElementById("customForm").reset();
+      })
+      .catch(() => {
+        Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
+      });
+    });
+  </script>
+
+<style class="cid-uLFoxknwp2" id="custom-html-2i" data-rv-view="145">
+  .report-button {
+    display: inline-block;
+    background-color: #f44336;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .report-button:hover {
+    background-color: #d32f2f;
+    transform: translateY(-3px);
+  }
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uLFoxknwp2" id="custom-html-2i" data-rv-view="145">
+  <a href="https://docs.google.com/spreadsheets/d/1B8fO0nFWbIA4zfSWuzTiR8Yk15VXRl49WBWQvDT-QG8/edit?usp=sharing" target="_blank" class="report-button">
+    📊 Открыть отчёты
+  </a>
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/offline-website-builder.html">Offline Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>

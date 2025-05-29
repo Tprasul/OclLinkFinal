@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Page 2</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=ryEYf4"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=ryEYf4" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+
+<!-- Analytics -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cardGrid = document.getElementById("cardGrid");
+    const search = document.getElementById("search");
+
+    const total = 40;
+    const links = Array.from({ length: total }, (_, i) => ({
+      title: `Опрос ${i + 1}`,
+      url: "#"
+    }));
+
+    function renderCards(list) {
+      cardGrid.innerHTML = '';
+      list.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.dataset.title = item.title.toLowerCase();
+        div.innerHTML = `
+          <h3>${item.title}</h3>
+          <a href="${item.url}" target="_blank">Пройти опрос</a>
+        `;
+        cardGrid.appendChild(div);
+      });
+    }
+
+    search.addEventListener('input', () => {
+      const term = search.value.trim().toLowerCase();
+      const filtered = links.filter(item => item.title.toLowerCase().includes(term));
+      renderCards(filtered);
+    });
+
+    renderCards(links);
+  });
+</script>
+
+<!-- /Analytics -->
+
+
+  
+  <section style="padding: 40px 20px; background: #0f1f28; font-family: sans-serif;" class="cid-uM8F9MwLtF" id="custom-html-1f">
+  <div style="max-width: 600px; margin: auto; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; color: white;">
+    <h2 style="text-align: center; font-size: 24px; margin-bottom: 20px;">📝 Добавить новость</h2>
+    <form id="news-form">
+      <input type="text" name="title" placeholder="Заголовок" required="" style="width: 100%; padding: 10px 15px; border-radius: 8px; border: none; margin-bottom: 15px;">
+
+      <textarea name="body" placeholder="Текст новости" required="" rows="4" style="width: 100%; padding: 10px 15px; border-radius: 8px; border: none; resize: vertical; margin-bottom: 15px;"></textarea>
+
+      <button type="submit" style="width: 100%; background-color: #22c55e; color: white; border: none; padding: 12px; border-radius: 8px; font-size: 16px; cursor: pointer;">
+        🚀 Опубликовать
+      </button>
+    </form>
+  </div>
+</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/html-builder.html">HTML Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
