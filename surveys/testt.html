@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=1MQLdF"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=1MQLdF" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=JS9NyE"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=JS9NyE" type="text/css">
 
   
   
@@ -26,7 +26,95 @@
 </head>
 <body>
   
-  <section class="section-dark cid-uMaQkLeFz7" id="custom-html-3d">
+  <style class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="1219">
+  .section-dark {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 40px 20px;
+    color: white;
+  }
+
+  .hr-entry {
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .top-1 {
+    background: linear-gradient(90deg, #ffe600, #fff2b1);
+    border: 2px solid #ffd700;
+    color: #000;
+    animation: pulse 1.5s infinite;
+  }
+
+  .top-2 {
+    background: linear-gradient(90deg, #c0c0c0, #e0e0e0);
+    border: 2px solid #c0c0c0;
+    color: #000;
+    animation: pulse 1.5s infinite;
+  }
+
+  .top-3 {
+    background: linear-gradient(90deg, #cd7f32, #e5c1a1);
+    border: 2px solid #cd7f32;
+    color: #000;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+    50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,255,255,0.4); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style><section class="section-dark cid-uMWk17w9l3" id="custom-html-41">
+  <div style="max-width: 700px; margin: auto;">
+    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px;">
+      <h2 style="text-align: center; font-weight: bold; margin-bottom: 20px;">🏆 Рейтинг Тренеров</h2>
+      <div id="topList" style="font-size: 18px;"></div>
+    </div>
+  </div>
+</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="1219"></script><script class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="1219">
+fetch("https://script.google.com/macros/s/AKfycbwq7zjsO08iE8_jCIP-aZDytLj0J3cVQsrTeZIsDr2lMhAqksyX5i_tLnOICqru4qoS3w/exec")
+  .then(res => res.json())
+  .then(data => {
+    const medals = ['🥇', '🥈', '🥉'];
+    const container = document.getElementById("topList");
+    let html = "";
+
+    data.slice(0, 5).forEach((hr, index) => {
+      const place = index + 1;
+      const medal = medals[index] || `${place}-е место`;
+      const topClass = index < 3 ? `top-${place}` : "";
+      html += `
+        <div class="hr-entry ${topClass}">
+          <strong>${medal}</strong>: ${hr.name} — ${hr.count} опросов
+        </div>`;
+    });
+
+    container.innerHTML = html;
+
+    // 🎉 Конфетти для победителя
+    confetti({
+      particleCount: 200,
+      spread: 120,
+      origin: { y: 0.2 },
+      colors: ['#ffd700', '#ff5e57', '#4CAF50']
+    });
+  })
+  .catch(err => {
+    document.getElementById("topList").innerHTML = "Ошибка загрузки рейтинга.";
+    console.error("Ошибка загрузки данных:", err);
+  });
+</script>
+
+<section class="section-dark cid-uMaQkLeFz7" id="custom-html-3d">
   <div style="max-width: 700px; margin: auto;">
     <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px;">
       
@@ -47,7 +135,7 @@
       </div>
     </div>
   </div>
-</section><script class="cid-uMaQkLeFz7" id="custom-html-3d" data-rv-view="111">
+</section><script class="cid-uMaQkLeFz7" id="custom-html-3d" data-rv-view="1220">
 const motivationList = [
   "Ты не просто работаешь — ты двигаешь команду вперёд.",
   "Каждое действие приближает к большому результату.",
@@ -97,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<style class="cid-uLukoiF9Bq" id="custom-html-20" data-rv-view="112">
+<style class="cid-uLukoiF9Bq" id="custom-html-20" data-rv-view="1221">
   .section-dark {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     padding: 40px 20px;
@@ -214,7 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="card"><a href="page30.html"><img src="assets/images/5a7e6d64-df60-412a-a807-fa52428a89d9.png-160x160.png" alt=""></a><span>Красная зона</span></div>
         <div class="card"><a href="page31.html"><img src="assets/images/a2c97373-6ff1-4964-9b04-7be25ef3d89d.png-160x160.png" alt=""></a><span>Черная зона</span></div>
         <div class="card"><a href="page33.html"><img src="assets/images/photo-5282997078060037370-y.jpg-160x160.jpg" alt=""></a><span>Общий опрос</span></div>
-        <div class="card"><a href="page34.html"><img src="assets/images/3675f498-f8a8-4519-a30e-5149b8094c79.png-1-160x240.png" alt=""><span>Опрос по Тайгете</span></div>
+        <div class="card"><a href="page34.html"><img src="assets/images/3675f498-f8a8-4519-a30e-5149b8094c79.png-1-160x240.png" alt=""></a><span>Опрос по Тайгете</span></div>
         
       </div>
     </div>
@@ -232,7 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   </div>
-</section><script class="cid-uLukoiF9Bq" id="custom-html-20" data-rv-view="112">
+</section><script class="cid-uLukoiF9Bq" id="custom-html-20" data-rv-view="1221">
   function toggleAccordion(header) {
     const content = header.nextElementSibling;
     const isOpen = content.style.display === 'grid';
@@ -240,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.accordion-content').forEach(el => el.style.display = 'none');
     if (!isOpen) content.style.display = 'grid';
   }
-</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-builder.html">Free AI Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
