@@ -305,7 +305,7 @@ document.getElementById("customForm").addEventListener("submit", async function(
     payload.append("photo", base64Image);
     payload.append("type", file.type);
 
-    await fetch("https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID_HERE/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbx7QvdyCBpSuSj4q9ypocfyLkZ1DeUQg2kD284b-TnmYHeeQMvovj7ypIkggdKR-Q8CiQ/exec", {
       method: "POST",
       body: payload,
     })
