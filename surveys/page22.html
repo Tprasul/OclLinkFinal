@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=SrTAbO"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=SrTAbO" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=9qZsoi"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=9qZsoi" type="text/css">
 
   
   
@@ -26,7 +26,7 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="154"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="154"><title class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="154">Опрос - Кликун</title><style class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="154">
+  <meta charset="UTF-8" class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="589"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="589"><title class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="589">Опрос - Кликун</title><style class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="589">
     .form-container {
       max-width: 600px;
       margin: auto;
@@ -83,7 +83,7 @@
       font-size: 16px; border: none; border-radius: 8px;
       cursor: pointer; width: 100%;
     }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="154"></script><div class="form-container cid-uM27DPciXS" id="custom-html-2y" data-rv-view="154">
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="589"></script><div class="form-container cid-uM27DPciXS" id="custom-html-2y" data-rv-view="589">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
     <div class="form-title">Опрос - Кликун</div>
 
@@ -213,13 +213,15 @@
         <label class="radio-option"><input type="radio" name="20" value="A" required=""><div class="custom-radio">A</div> Знает</label>
         <label class="radio-option"><input type="radio" name="20" value="B"><div class="custom-radio">B</div> Не знает</label>
       </div>
+      <label>Сделать фото сотрудника:</label>
+<input type="file" id="cameraInput" accept="image/*" capture="environment" required="" class="form-control mb-3">
 
       <label>Комментарий:</label>
       <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
 
       <button type="submit" class="submit-btn">Закончить опрос</button>
     </form>
-  </div><script class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="154">
+  </div><script class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="589">
     document.getElementById("customForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
@@ -287,9 +289,38 @@
         Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
       });
     });
-  </script>
+  </script><script type="module" class="cid-uM27DPciXS" id="custom-html-2y" data-rv-view="589">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+  const supabase = createClient(
+    'https://crlwzepfuszhouuackyc.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI' // <-- ВСТАВЬ сюда свой anon key
+  );
+  document.getElementById("customForm").addEventListener("submit", async function (e) {
+    const file = document.getElementById("cameraInput").files[0];
+    const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
+    if (!file) {
+      alert("Пожалуйста, сделайте фото.");
+      e.preventDefault();
+      return;
+    }
+    const ext = file.name.split('.').pop();
+    const fileName = `${Date.now()}-${employeeName}.${ext}`;
+    const { error: photoError } = await supabase.storage
+      .from('photos')
+      .upload(fileName, file, { contentType: file.type });
+    if (photoError) {
+      Swal.fire("Ошибка", "Не удалось загрузить фото.", "error");
+      e.preventDefault();
+      return;
+    }
+    const photoUrl = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${fileName}`;
+    // 🔽 Хочешь — вставь ссылку в formData, если отправляешь ещё и в таблицу
+    // formData["Ссылка на фото"] = photoUrl;
+    console.log("Фото загружено:", photoUrl);
+  });
+</script>
 
-<style class="cid-uM27E5kdp3" id="custom-html-2z" data-rv-view="155">
+<style class="cid-uM27E5kdp3" id="custom-html-2z" data-rv-view="590">
   .report-button {
     display: inline-block;
     background-color: #f44336;
@@ -307,11 +338,11 @@
     background-color: #d32f2f;
     transform: translateY(-3px);
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uM27E5kdp3" id="custom-html-2z" data-rv-view="155">
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uM27E5kdp3" id="custom-html-2z" data-rv-view="590">
   <a href="https://docs.google.com/spreadsheets/d/1qpWYEkg8A2YDUKXLrXg5Xe9Ec9-dDMtPij_btV5hJdI/edit?usp=sharing" target="_blank" class="report-button">
     📊 Открыть отчёты
   </a>
-</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com">Mobirise.com </a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/html-builder.html">HTML Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
