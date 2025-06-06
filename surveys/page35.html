@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=2yBDY6"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=2yBDY6" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=Cp8iw8"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=Cp8iw8" type="text/css">
 
   
   
@@ -26,357 +26,189 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uNhpiud59Q" id="custom-html-46" data-rv-view="94"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uNhpiud59Q" id="custom-html-46" data-rv-view="94"><title class="cid-uNhpiud59Q" id="custom-html-46" data-rv-view="94">HR - Опрос</title><style class="cid-uNhpiud59Q" id="custom-html-46" data-rv-view="94">
-        .form-container {
-          max-width: 600px;
-          margin: auto;
-          font-family: sans-serif;
-          padding: 20px;
-          border: 1px solid #ddd;
-          border-radius: 12px;
-          background-color: #FFE4E1;
-        }
-    
-        .avatar-img {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-bottom: 20px;
-          display: block;
-        }
-    
-        .form-title {
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 20px;
-        }
-    
-        label {
-          font-weight: bold;
-          display: block;
-          margin-top: 20px;
-          margin-bottom: 10px;
-        }
-    
-        input[type="text"], textarea {
-          width: 100%;
-          padding: 10px;
-          border-radius: 6px;
-          border: 1px solid #ccc;
-          font-size: 14px;
-        }
-    
-        .radio-group {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          margin-bottom: 10px;
-        }
-    
-        .radio-option {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          cursor: pointer;
-        }
-    
-        .radio-option input[type="radio"] {
-          display: none;
-        }
-    
-        .custom-radio {
-          width: 40px;
-          height: 40px;
-          background-color: #eee;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: bold;
-          color: #333;
-          border: 2px solid transparent;
-          transition: 0.2s;
-        }
-    
-        .radio-option input[type="radio"]:checked + .custom-radio {
-          border-color: #d32f2f;
-          background-color: #d32f2f;
-          color: white;
-        }
-    
-        .submit-btn {
-          margin-top: 30px;
-          padding: 12px 20px;
-          background-color: #d32f2f;
-          color: white;
-          font-size: 16px;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-        }
-      </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uNhpiud59Q" id="custom-html-46" data-rv-view="94"></script><div class="form-container cid-uNhpiud59Q" id="custom-html-46" data-rv-view="94">
-        <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
-    
-        <div class="form-title">Опрос - КАССИР</div>
-        <form id="customForm">
-          <label>Ваше имя:</label>
-          <input type="text" name="yourName" required="">
-    
-          <label>Имя сотрудника:</label>
-          <input type="text" name="employeeName" required="">
-          <label>Сделать фото сотрудника:</label>
-    
-          <label>Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="1" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="1" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Соблюдает правила мытья рук /  правила использования перчаток при работе с продуктом:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="2" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="2" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Обеспечивает отсутствие перекрестного загрязнения:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="3" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="3" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Соблюдает прочие стандарты пищевой безопасности:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="4" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="4" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="5" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="5" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Соблюдает техники безопасности при работе с оборудованием:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="6" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="6" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Сообщает менеджеру о любых неисправностях оборудования:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="7" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="7" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Знает свои цели и задачи на смену:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="8" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="8" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Приветствует Гостей дружелюбными фразами и визуальным контактом:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="9" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="9" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-          <label>Рассказывает Гостям о новинках, промо-акциях или спецпредложениях, применяет навыки активных продаж:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="10" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="10" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-          
-          <label>Демонстрирует хорошее знание меню, может красочно описать любое блюдо, предлагает
-    эквивалентную замену при отсутствии какого-либо продукта:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="11" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="11" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-          
-          <label>Стандарты работы с кассой соблюдаются:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="12" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="12" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-          
-          <label>Контролирует точность сбора заказа:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="13" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="13" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-          
-          <label>При выдаче заказа, желает Гостю приятного аппетита (или произносит другую уместную фразу) и предлагает посетить ресторан снова.:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="14" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="14" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-          
-          <label>Соблюдает стандарты скорости обслуживания (прием, оплата, сбор и выдача заказа:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="15" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="15" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-    
-           <label>Поддерживает чистоту рабочей станций в течение всей смены:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="16" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="16" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-          
-           <label>Эффективная коммуникация со Скаутом и Менеджером:</label>
-          <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="17" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-            <label class="radio-option"><input type="radio" name="17" value="B"><div class="custom-radio">B</div> Не знает</label>
-          </div>
-          
-          <label>Комментарий:</label>
-          <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
-    
-    <label>Сделать фото сотрудника:</label>
-<input type="file" id="cameraInput" accept="image/*" capture="environment" required="" class="form-control mb-3">
-
-    
-          <button type="submit" class="submit-btn">Закончить опрос</button>
-        </form>
-      </div><script class="cid-uNhpiud59Q" id="custom-html-46" data-rv-view="94">
-      document.getElementById("customForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-    
-        function convertAnswer(value) {
-          return value === "A" ? "Знает" : value === "B" ? "Не знает" : "";
-        }
-    
-        const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
-        const comment = document.querySelector('textarea[name="comment"]').value.trim();
-    
-        // Собираем ответы
-        const formData = {
-          "Имя HR": document.querySelector('input[name="yourName"]').value.trim(),
-          "Имя сотрудника": employeeName,
-          "Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы.": convertAnswer(document.querySelector('input[name="1"]:checked')?.value),
-          "Соблюдает правила мытья рук /  правила использования перчаток при работе с продуктом": convertAnswer(document.querySelector('input[name="2"]:checked')?.value),
-          "Обеспечивает отсутствие перекрестного загрязнения": convertAnswer(document.querySelector('input[name="3"]:checked')?.value),
-          "Соблюдает прочие стандарты пищевой безопасности": convertAnswer(document.querySelector('input[name="4"]:checked')?.value),
-          "Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов.": convertAnswer(document.querySelector('input[name="5"]:checked')?.value),
-          "Соблюдает техники безопасности при работе с оборудованием": convertAnswer(document.querySelector('input[name="6"]:checked')?.value),
-          "Сообщает менеджеру о любых неисправностях оборудования": convertAnswer(document.querySelector('input[name="7"]:checked')?.value),
-          "Знает свои цели и задачи на смену": convertAnswer(document.querySelector('input[name="8"]:checked')?.value),
-          "Приветствует Гостей дружелюбными фразами и визуальным контактом": convertAnswer(document.querySelector('input[name="9"]:checked')?.value),
-          "Рассказывает Гостям о новинках, промо-акциях или спецпредложениях, применяет навыки активных продаж": convertAnswer(document.querySelector('input[name="10"]:checked')?.value),
-          "Демонстрирует хорошее знание меню, может красочно описать любое блюдо, предлагает": convertAnswer(document.querySelector('input[name="11"]:checked')?.value),
-          "Стандарты работы с кассой соблюдаются": convertAnswer(document.querySelector('input[name="12"]:checked')?.value),
-          "Контролирует точность сбора заказа": convertAnswer(document.querySelector('input[name="13"]:checked')?.value),
-          "При выдаче заказа, желает Гостю приятного аппетита (или произносит другую уместную фразу) и предлагает посетить ресторан снова.": convertAnswer(document.querySelector('input[name="14"]:checked')?.value),
-          "Соблюдает стандарты скорости обслуживания (прием, оплата, сбор и выдача заказа)": convertAnswer(document.querySelector('input[name="15"]:checked')?.value),
-          "Поддерживает чистоту рабочей станций в течение всей смены": convertAnswer(document.querySelector('input[name="16"]:checked')?.value),
-          "Эффективная коммуникация со Скаутом и Менеджером": convertAnswer(document.querySelector('input[name="17"]:checked')?.value),
-          "Комментарий": comment,
-          "Дата": new Date().toLocaleString('ru-RU') // Например: 06.05.2025, 15:42:10
-        };
-    
-        // Считаем процент правильных ответов
-        const correctAnswers = {
-          "Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы.": "Знает",
-          "Соблюдает правила мытья рук /  правила использования перчаток при работе с продуктом": "Знает",
-          "Обеспечивает отсутствие перекрестного загрязнения": "Знает",
-          "Соблюдает прочие стандарты пищевой безопасности": "Знает",
-          "Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов.": "Знает",
-          "Соблюдает техники безопасности при работе с оборудованием": "Знает",
-          "Сообщает менеджеру о любых неисправностях оборудования": "Знает",
-          "Знает свои цели и задачи на смену": "Знает",
-          "Приветствует Гостей дружелюбными фразами и визуальным контактом": "Знает",
-          "Рассказывает Гостям о новинках, промо-акциях или спецпредложениях, применяет навыки активных продаж": "Знает",
-          "Демонстрирует хорошее знание меню, может красочно описать любое блюдо, предлагает": "Знает",
-          "Стандарты работы с кассой соблюдаются": "Знает",
-          "Контролирует точность сбора заказа": "Знает",
-          "При выдаче заказа, желает Гостю приятного аппетита (или произносит другую уместную фразу) и предлагает посетить ресторан снова.": "Знает",
-          "Соблюдает стандарты скорости обслуживания (прием, оплата, сбор и выдача заказа)": "Знает",
-          "Поддерживает чистоту рабочей станций в течение всей смены": "Знает",
-          "Эффективная коммуникация со Скаутом и Менеджером": "Знает"
-        };
-    
-        let score = 0;
-        for (const question in correctAnswers) {
-          if (formData[question] === correctAnswers[question]) {
-            score++;
-          }
-        }
-    
-        const percent = Math.round((score / Object.keys(correctAnswers).length) * 100);
-        formData["Процент знаний"] = percent + "%";
-    
-        // Отправка в SheetDB
-        const sheetdbUrl = "https://sheetdb.io/api/v1/ejlkzuj6pexgm"; // Замените на ваш ID
-    
-        fetch(sheetdbUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ data: formData })
-        })
-        .then(response => response.json())
-        .then(() => {
-          Swal.fire({
-            title: "HR - Опрос",
-            html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
-            icon: 'success',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#d32f2f'
-          });
-        })
-        .catch(error => {
-          Swal.fire({
-            title: "Ошибка",
-            text: "Не удалось отправить данные. Попробуйте позже.",
-            icon: 'error',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#d32f2f'
-          });
-          console.error("Ошибка отправки:", error);
-        });
-      });
-    </script><script type="module" class="cid-uNhpiud59Q" id="custom-html-46" data-rv-view="94">
-  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-
-  const supabase = createClient(
-    'https://crlwzepfuszhouuackyc.supabase.co',
+  <div id="custom-html-4l" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;" class="cid-uNkqg0pqM6" data-rv-view="511"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" class="cid-uNkqg0pqM6" id="custom-html-4l" data-rv-view="511"></script><script class="cid-uNkqg0pqM6" id="custom-html-4l" data-rv-view="511">
+  const supabase = window.supabase.createClient(
+    'https://crlwzepfuszhouakcyc.supabase.co',
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI'
   );
 
-  const form = document.getElementById("customForm");
-
-  form.addEventListener("submit", async function (e) {
-    const file = document.getElementById("cameraInput").files[0];
-    const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
-
-    if (!file) {
-      alert("Пожалуйста, сделайте фото.");
-      e.preventDefault();
-      return;
-    }
-
-    const ext = file.name.split('.').pop();
-    const fileName = `${Date.now()}-${employeeName}.${ext}`;
-
-    const { error: photoError } = await supabase.storage
+  async function loadPhotos() {
+    const { data, error } = await supabase
+      .storage
       .from('photos')
-      .upload(fileName, file, { contentType: file.type });
+      .list('', { limit: 100, offset: 0 });
 
-    if (photoError) {
-      Swal.fire("Ошибка", "Не удалось загрузить фото.", "error");
-      e.preventDefault();
+    if (error) {
+      console.error("Ошибка при получении списка фото:", error);
       return;
     }
 
-    const photoUrl = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${fileName}`;
+    const gallery = document.getElementById("photoGallery");
+    gallery.innerHTML = "";
 
-    // вставь photoUrl в нужное место в formData, если хочешь его сохранить в Google Sheets
-    // например:
-    // formData["Ссылка на фото"] = photoUrl;
+    data.forEach(file => {
+      const url = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${file.name}`;
+      const card = document.createElement("div");
+      card.style = "border: 1px solid #ddd; border-radius: 12px; padding: 10px; width: 180px; background: #fff;";
+      card.innerHTML = `
+        <img src="${url}" style="width: 100%; border-radius: 8px; margin-bottom: 8px;">
+        <div style="font-size: 14px; word-break: break-word;">${file.name}</div>
+      `;
+      gallery.appendChild(card);
+    });
+  }
+
+  loadPhotos();
+</script>
+
+<div id="custom-html-4m" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;" class="cid-uNktkKgABb" data-rv-view="512"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" class="cid-uNktkKgABb" id="custom-html-4m" data-rv-view="512"></script><script class="cid-uNktkKgABb" id="custom-html-4m" data-rv-view="512">
+  document.addEventListener("DOMContentLoaded", async () => {
+    const supabase = window.supabase.createClient(
+      'https://crlwzepfuszhouakcyc.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI'
+    );
+
+    const { data, error } = await supabase
+      .storage
+      .from('photos')
+      .list('', { limit: 100 });
+
+    if (error) {
+      console.error("Ошибка при получении фото:", error);
+      return;
+    }
+
+    const gallery = document.getElementById("photoGallery");
+    data.forEach(file => {
+      const url = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${file.name}`;
+      const block = document.createElement("div");
+      block.style = "border:1px solid #ccc; border-radius:10px; padding:10px; background:#fff; width:160px; text-align:center;";
+      block.innerHTML = `
+        <img src="${url}" style="width:100%; border-radius:8px; margin-bottom:8px;">
+        <div style="font-size:14px;">${file.name}</div>
+      `;
+      gallery.appendChild(block);
+    });
   });
-</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/html-builder.html">HTML Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</script>
+
+<div id="custom-html-4n" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;" class="cid-uNktJiNiSh" data-rv-view="513"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" class="cid-uNktJiNiSh" id="custom-html-4n" data-rv-view="513"></script><script class="cid-uNktJiNiSh" id="custom-html-4n" data-rv-view="513">
+  setTimeout(function() {
+    const supabase = window.supabase.createClient(
+      'https://crlwzepfuszhouakcyc.supabase.co',
+      'YOUR_PUBLIC_ANON_KEY_HERE'
+    );
+
+    supabase.storage.from('photos').list('', { limit: 100 }).then(({ data, error }) => {
+      if (error) {
+        console.error("Ошибка при загрузке:", error);
+        return;
+      }
+
+      const gallery = document.getElementById("photoGallery");
+      gallery.innerHTML = "";
+
+      data.forEach(file => {
+        const url = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${file.name}`;
+        const block = document.createElement("div");
+        block.style = "border:1px solid #ccc; border-radius:10px; padding:10px; background:#fff; width:160px; text-align:center;";
+        block.innerHTML = `
+          <img src="${url}" style="width:100%; border-radius:8px; margin-bottom:8px;">
+          <div style="font-size:14px;">${file.name}</div>
+        `;
+        gallery.appendChild(block);
+      });
+    });
+  }, 500); // Даем Mobirise прогрузиться
+</script>
+
+<div id="custom-html-4o" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;" class="cid-uNlebrxhYn" data-rv-view="514"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" class="cid-uNlebrxhYn" id="custom-html-4o" data-rv-view="514"></script><script class="cid-uNlebrxhYn" id="custom-html-4o" data-rv-view="514">
+  setTimeout(function() {
+    const supabase = window.supabase.createClient(
+      'https://crlwzepfuszhouakcyc.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI' // <-- ЗАМЕНИ на свой реальный anon ключ
+    );
+
+    supabase
+      .storage
+      .from('photos')
+      .list('', { limit: 100 })
+      .then(({ data, error }) => {
+        if (error) {
+          console.error("Ошибка при получении фото:", error);
+          return;
+        }
+
+        const gallery = document.getElementById("photoGallery");
+
+        data.forEach(file => {
+          const url = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${file.name}`;
+          const card = document.createElement("div");
+          card.style = "border:1px solid #ccc; border-radius:12px; padding:10px; width:160px; background:#fff; text-align:center";
+          card.innerHTML = `
+            <img src="${url}" style="width:100%; border-radius:8px; margin-bottom:8px;">
+            <div style="font-size:14px; word-wrap:break-word">${file.name}</div>
+          `;
+          gallery.appendChild(card);
+        });
+      });
+  }, 500);
+</script>
+
+<meta charset="UTF-8" class="cid-uNnlEQ7KR4" id="custom-html-4u" data-rv-view="515"><title class="cid-uNnlEQ7KR4" id="custom-html-4u" data-rv-view="515">Галерея сотрудников</title><style class="cid-uNnlEQ7KR4" id="custom-html-4u" data-rv-view="515">
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffe4e1; /* ✅ Бледно-розовый фон */
+    }
+    section {
+      padding: 40px 0;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .photo-card {
+      width: 180px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+  </style><section class="cid-uNnlEQ7KR4" id="custom-html-4u">
+  <h2>📸 Галерея сотрудников</h2>
+  <div id="gallery"></div>
+</section><script class="cid-uNnlEQ7KR4" id="custom-html-4u" data-rv-view="515">
+  fetch("https://script.google.com/macros/s/AKfycbyG1R0c2PRW4oAXWkO6huo1ICHCxHL0OYyKvsDP5s-7dxwRSPmaegfbTVDrxjSxqQaR/exec")
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("gallery");
+      data.forEach(img => {
+        const card = document.createElement("div");
+        card.className = "photo-card";
+        card.innerHTML = `<img src="${img.url}" alt="Фото">`;
+        container.appendChild(card);
+      });
+    })
+    .catch(error => {
+      console.error("Ошибка загрузки галереи:", error);
+    });
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-builder.html">AI Website Software</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
