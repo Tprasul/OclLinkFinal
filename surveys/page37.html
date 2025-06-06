@@ -286,7 +286,7 @@
         Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
       });
     });
-  </script><script class="cid-uNhCUELTJ8" id="custom-html-4i" data-rv-view="311">
+  </script><script>
 document.getElementById("customForm").addEventListener("submit", async function(event) {
   event.preventDefault();
 
@@ -301,13 +301,13 @@ document.getElementById("customForm").addEventListener("submit", async function(
   reader.onload = async function () {
     const base64Image = reader.result;
 
-    const form = new FormData();
-    form.append("photo", base64Image);
-    form.append("type", file.type);
+    const payload = new URLSearchParams();
+    payload.append("photo", base64Image);
+    payload.append("type", file.type);
 
-    await fetch("https://script.google.com/macros/s/AKfycbwktWwe2UGr_BBK4dMVQwyarg9oYbCS4Ik6Hh0WcLGTFMsmZ9dJkz5ZcWm9xtT0aOb_pg/exec", {
+    await fetch("https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID_HERE/exec", {
       method: "POST",
-      body: form
+      body: payload,
     })
     .then(() => {
       Swal.fire("Готово", "Фото успешно загружено", "success");
@@ -320,6 +320,7 @@ document.getElementById("customForm").addEventListener("submit", async function(
   reader.readAsDataURL(file);
 });
 </script>
+
 
 <style class="cid-uNklwd1Wyj" id="custom-html-4j" data-rv-view="312">
   .report-button {
