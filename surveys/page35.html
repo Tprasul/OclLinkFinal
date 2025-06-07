@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=LvFg8j"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=LvFg8j" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=i12hTM"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=i12hTM" type="text/css">
 
   
   
@@ -26,14 +26,14 @@
 </head>
 <body>
   
-  <section class="section-dark cid-uNrdEEY1u1" style="padding: 60px 20px;" id="custom-html-4z">
+  <section class="section-dark cid-uNrg31yXAF" style="padding: 60px 20px;" id="custom-html-50">
   <h2 style="text-align: center; font-size: 32px; font-weight: bold; color: white; margin-bottom: 40px;">
     📸 Галерея сотрудников
   </h2>
   <div id="slider" style="display: flex; overflow-x: auto; gap: 20px; scroll-behavior: smooth; padding-bottom: 20px;">
     <!-- Фото будут подставляться сюда -->
   </div>
-</section><style class="cid-uNrdEEY1u1" id="custom-html-4z" data-rv-view="439">
+</section><style class="cid-uNrg31yXAF" id="custom-html-50" data-rv-view="828">
   .section-dark {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   }
@@ -67,17 +67,17 @@
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-</style><script class="cid-uNrdEEY1u1" id="custom-html-4z" data-rv-view="439">
+</style><script class="cid-uNrg31yXAF" id="custom-html-50" data-rv-view="828">
   const slider = document.getElementById("slider");
 
-  fetch("https://script.google.com/macros/s/AKfycbyhrnsX-to4KnDwwycz2esPyWkPDa7ZowljJVi_lD9w_TRlUTuM94T1iw0vuaDKhPJp/exec") // <--- ВСТАВЬ СВОЮ ССЫЛКУ
+  fetch("https://script.google.com/macros/s/AKfycbyU78wLNTPewsvxAT77E6Xtp80b6DsSkmE0w1nG8UwaPDQUDkh18lqhHq6HU7yKvp7Z/exec")
     .then(res => res.json())
     .then(data => {
       const last15 = data.slice(-15);
       last15.forEach(entry => {
         const div = document.createElement("div");
         div.className = "slider-item";
-        div.innerHTML = `<img src="${entry.url}" alt="Фото">`;
+        div.innerHTML = `<img src="${entry.url}" alt="Фото" referrerpolicy="no-referrer">`;
         slider.appendChild(div);
       });
 
@@ -89,7 +89,7 @@
         slider.scrollTo({ left: scrollPos, behavior: 'smooth' });
       }, 3000);
     });
-</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/html-builder.html">HTML Website Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
