@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=0oHjtk"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=0oHjtk" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=udeBsk"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=udeBsk" type="text/css">
 
   
   
@@ -26,7 +26,7 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="581"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="581"><title class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="581">Опрос - Филе OR/HS</title><style class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="581">
+  <meta charset="UTF-8" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627"><title class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">Опрос - Филе OR/HS</title><style class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">
     .form-container { max-width:600px; margin:auto; font-family:sans-serif; padding:20px; border:1px solid #ddd; border-radius:12px; background-color:#FFE4E1; }
     .avatar-img { width:150px; height:150px; border-radius:50%; object-fit:cover; margin:0 auto 20px; display:block; }
     .form-title { text-align:center; font-size:24px; font-weight:bold; margin-bottom:20px; }
@@ -38,7 +38,7 @@
     .custom-radio { width:40px; height:40px; background-color:#eee; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#333; border:2px solid transparent; transition:0.2s; }
     .radio-option input[type="radio"]:checked + .custom-radio { border-color:#d32f2f; background-color:#d32f2f; color:white; }
     .submit-btn { width:100%; margin-top:30px; padding:12px 20px; background-color:#d32f2f; color:white; font-size:16px; border:none; border-radius:8px; cursor:pointer; }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="581"></script><div class="form-container cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="581">
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627"></script><div class="form-container cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
     <div class="form-title">Опрос - Филе OR/HS</div>
     <form id="customForm">
@@ -294,7 +294,7 @@
       <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
       <button type="submit" class="submit-btn">Закончить опрос</button>
     </form>
-  </div><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="581">
+  </div><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">
     document.getElementById("customForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
@@ -384,38 +384,38 @@
         Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
       });
     });
-  </script><script type="module" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="581">
-  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-  const supabase = createClient(
-    'https://crlwzepfuszhouuackyc.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI' // <-- ВСТАВЬ сюда свой anon key
-  );
-  document.getElementById("customForm").addEventListener("submit", async function (e) {
-    const file = document.getElementById("cameraInput").files[0];
-    const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
-    if (!file) {
-      alert("Пожалуйста, сделайте фото.");
-      e.preventDefault();
-      return;
-    }
-    const ext = file.name.split('.').pop();
-    const fileName = `${Date.now()}-${employeeName}.${ext}`;
-    const { error: photoError } = await supabase.storage
-      .from('photos')
-      .upload(fileName, file, { contentType: file.type });
-    if (photoError) {
-      Swal.fire("Ошибка", "Не удалось загрузить фото.", "error");
-      e.preventDefault();
-      return;
-    }
-    const photoUrl = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${fileName}`;
-    // 🔽 Хочешь — вставь ссылку в formData, если отправляешь ещё и в таблицу
-    // formData["Ссылка на фото"] = photoUrl;
-    console.log("Фото загружено:", photoUrl);
-  });
+  </script><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">
+document.getElementById("customForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+  const fileInput = document.getElementById("cameraInput");
+  const file = fileInput.files[0];
+  if (!file) {
+    alert("Пожалуйста, сделайте фото.");
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = async function () {
+    const base64Image = reader.result;
+    const payload = new URLSearchParams();
+    payload.append("photo", base64Image);
+    payload.append("type", file.type);
+    await fetch("https://script.google.com/macros/s/AKfycbx7QvdyCBpSuSj4q9ypocfyLkZ1DeUQg2kD284b-TnmYHeeQMvovj7ypIkggdKR-Q8CiQ/exec", {
+      method: "POST",
+      body: payload,
+    })
+    .then(() => {
+      Swal.fire("Готово", "Фото успешно загружено", "success");
+      document.getElementById("customForm").reset();
+    })
+    .catch(() => {
+      Swal.fire("Ошибка", "Не удалось загрузить фото", "error");
+    });
+  };
+  reader.readAsDataURL(file);
+});
 </script>
 
-<style class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="582">
+<style class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="1628">
   .report-button {
     display: inline-block;
     background-color: #f44336;
@@ -433,7 +433,7 @@
     background-color: #d32f2f;
     transform: translateY(-3px);
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="582">
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="1628">
   <a href="https://docs.google.com/spreadsheets/d/1IkNcTfd0SnO29dzDXblnPg8B_YVUW6ZBorLqFOxfT-Q/edit?usp=sharing" target="_blank" class="report-button">
     📊 Открыть отчёты
   </a>
