@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=udeBsk"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=udeBsk" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=b56DN7"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=b56DN7" type="text/css">
 
   
   
@@ -26,7 +26,7 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627"><title class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">Опрос - Филе OR/HS</title><style class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">
+  <meta charset="UTF-8" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941"><title class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">Опрос - Филе OR/HS</title><style class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
     .form-container { max-width:600px; margin:auto; font-family:sans-serif; padding:20px; border:1px solid #ddd; border-radius:12px; background-color:#FFE4E1; }
     .avatar-img { width:150px; height:150px; border-radius:50%; object-fit:cover; margin:0 auto 20px; display:block; }
     .form-title { text-align:center; font-size:24px; font-weight:bold; margin-bottom:20px; }
@@ -38,7 +38,7 @@
     .custom-radio { width:40px; height:40px; background-color:#eee; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#333; border:2px solid transparent; transition:0.2s; }
     .radio-option input[type="radio"]:checked + .custom-radio { border-color:#d32f2f; background-color:#d32f2f; color:white; }
     .submit-btn { width:100%; margin-top:30px; padding:12px 20px; background-color:#d32f2f; color:white; font-size:16px; border:none; border-radius:8px; cursor:pointer; }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627"></script><div class="form-container cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941"></script><div class="form-container cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
     <div class="form-title">Опрос - Филе OR/HS</div>
     <form id="customForm">
@@ -294,7 +294,7 @@
       <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
       <button type="submit" class="submit-btn">Закончить опрос</button>
     </form>
-  </div><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">
+  </div><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
     document.getElementById("customForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
@@ -384,7 +384,7 @@
         Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
       });
     });
-  </script><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1627">
+  </script><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
 document.getElementById("customForm").addEventListener("submit", async function(event) {
   event.preventDefault();
   const fileInput = document.getElementById("cameraInput");
@@ -413,9 +413,23 @@ document.getElementById("customForm").addEventListener("submit", async function(
   };
   reader.readAsDataURL(file);
 });
+</script><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
+let isSubmitting = false;
+
+document.getElementById("customForm").addEventListener("submit", function(event) {
+  if (isSubmitting) {
+    event.preventDefault();
+    return;
+  }
+
+  isSubmitting = true;
+  const btn = document.querySelector(".submit-btn");
+  btn.disabled = true;
+  btn.textContent = "Подводим итоги...";
+});
 </script>
 
-<style class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="1628">
+<style class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="1942">
   .report-button {
     display: inline-block;
     background-color: #f44336;
@@ -433,11 +447,11 @@ document.getElementById("customForm").addEventListener("submit", async function(
     background-color: #d32f2f;
     transform: translateY(-3px);
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="1628">
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="1942">
   <a href="https://docs.google.com/spreadsheets/d/1IkNcTfd0SnO29dzDXblnPg8B_YVUW6ZBorLqFOxfT-Q/edit?usp=sharing" target="_blank" class="report-button">
     📊 Открыть отчёты
   </a>
-</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">

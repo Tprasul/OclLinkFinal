@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=0v7dt6"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=0v7dt6" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=MmijgP"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=MmijgP" type="text/css">
 
   
   
@@ -26,7 +26,7 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1621"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1621"><title class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1621">Опрос - Шефбургер OR</title><style class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1621">
+  <meta charset="UTF-8" class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935"><title class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935">Опрос - Шефбургер OR</title><style class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935">
     .form-container {
       max-width: 600px;
       margin: auto;
@@ -83,7 +83,7 @@
       font-size: 16px; border: none; border-radius: 8px;
       cursor: pointer; width: 100%;
     }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1621"></script><div class="form-container cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1621">
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935"></script><div class="form-container cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
     <div class="form-title">Опрос - Шефбургер OR</div>
 
@@ -209,7 +209,7 @@
 
       <button type="submit" class="submit-btn">Закончить опрос</button>
     </form>
-  </div><script class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1621">
+  </div><script class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935">
     document.getElementById("customForm").addEventListener("submit", function(e) {
       e.preventDefault();
       const convert = v => v === "A" ? "Знает" : "Не знает";
@@ -265,7 +265,7 @@
         Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
       });
     });
-  </script><script class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1621">
+  </script><script class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935">
 document.getElementById("customForm").addEventListener("submit", async function(event) {
   event.preventDefault();
   const fileInput = document.getElementById("cameraInput");
@@ -294,9 +294,23 @@ document.getElementById("customForm").addEventListener("submit", async function(
   };
   reader.readAsDataURL(file);
 });
+</script><script class="cid-uLySgIl6Ib" id="custom-html-2d" data-rv-view="1935">
+let isSubmitting = false;
+
+document.getElementById("customForm").addEventListener("submit", function(event) {
+  if (isSubmitting) {
+    event.preventDefault();
+    return;
+  }
+
+  isSubmitting = true;
+  const btn = document.querySelector(".submit-btn");
+  btn.disabled = true;
+  btn.textContent = "Подводим итоги...";
+});
 </script>
 
-<style class="cid-uLySgXVX4K" id="custom-html-2e" data-rv-view="1622">
+<style class="cid-uLySgXVX4K" id="custom-html-2e" data-rv-view="1936">
   .report-button {
     display: inline-block;
     background-color: #f44336;
@@ -314,11 +328,11 @@ document.getElementById("customForm").addEventListener("submit", async function(
     background-color: #d32f2f;
     transform: translateY(-3px);
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uLySgXVX4K" id="custom-html-2e" data-rv-view="1622">
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uLySgXVX4K" id="custom-html-2e" data-rv-view="1936">
   <a href="https://docs.google.com/spreadsheets/d/1FNysTKGwp4WymKOsj7L4hHvu8Lxvd7XSOuwubydQJhI/edit?usp=sharing" target="_blank" class="report-button">
     📊 Открыть отчёты
   </a>
-</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-builder.html">Free AI Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">

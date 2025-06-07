@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=ssunrg"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=ssunrg" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=rx21n4"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=rx21n4" type="text/css">
 
   
   
@@ -26,7 +26,7 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1645"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1645"><title class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1645">Обратная связь</title><style class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1645">
+  <meta charset="UTF-8" class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1959"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1959"><title class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1959">Обратная связь</title><style class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1959">
     .form-container {
       max-width: 600px;
       margin: 40px auto;
@@ -113,7 +113,7 @@
       cursor: pointer;
       width: 100%;
     }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1645"></script><div class="form-container cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1645">
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1959"></script><div class="form-container cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1959">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Логотип" class="avatar-img" media-simple="true">
     <div class="form-title">Обратная связь</div>
     <form id="feedbackForm">
@@ -161,7 +161,7 @@
       
       <button type="submit" class="submit-btn">Отправить отзыв</button>
     </form>
-  </div><script class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1645">
+  </div><script class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1959">
     document.getElementById('feedbackForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const data = {
@@ -196,9 +196,23 @@
         });
       });
     });
-  </script>
+  </script><script class="cid-uMkZg9xFqR" id="custom-html-3i" data-rv-view="1959">
+let isSubmitting = false;
 
-<style class="cid-uMkZgqHW6i" id="custom-html-3j" data-rv-view="1646">
+document.getElementById("customForm").addEventListener("submit", function(event) {
+  if (isSubmitting) {
+    event.preventDefault();
+    return;
+  }
+
+  isSubmitting = true;
+  const btn = document.querySelector(".submit-btn");
+  btn.disabled = true;
+  btn.textContent = "Подводим итоги...";
+});
+</script>
+
+<style class="cid-uMkZgqHW6i" id="custom-html-3j" data-rv-view="1960">
   .report-button {
     display: inline-block;
     background-color: #f44336;
@@ -216,7 +230,7 @@
     background-color: #d32f2f;
     transform: translateY(-3px);
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uMkZgqHW6i" id="custom-html-3j" data-rv-view="1646">
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uMkZgqHW6i" id="custom-html-3j" data-rv-view="1960">
   <a href="https://docs.google.com/spreadsheets/d/1Biymnelrf4JSc1qv-IkmEDP3RFIDEhZpyi7gRdJLV1s/edit?usp=sharing" target="_blank" class="report-button">
     📊 Открыть отчёты
   </a>

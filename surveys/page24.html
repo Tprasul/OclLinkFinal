@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=sj7Z2w"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=sj7Z2w" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=SIjmCu"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=SIjmCu" type="text/css">
 
   
   
@@ -26,7 +26,7 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1639"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1639"><title class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1639">HR - Опрос</title><style class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1639">
+  <meta charset="UTF-8" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953"><title class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">HR - Опрос</title><style class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
     .form-container {
       max-width: 600px;
       margin: auto;
@@ -115,7 +115,7 @@
       border-radius: 8px;
       cursor: pointer;
     }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1639"></script><div class="form-container cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1639">
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953"></script><div class="form-container cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
 
     <div class="form-title">HR - Опрос</div>
@@ -193,7 +193,7 @@
 
       <button type="submit" class="submit-btn">Закончить опрос</button>
     </form>
-  </div><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1639">
+  </div><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
   document.getElementById("customForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -277,7 +277,7 @@
       console.error("Ошибка отправки:", error);
     });
   });
-</script><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1639">
+</script><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
 document.getElementById("customForm").addEventListener("submit", async function(event) {
   event.preventDefault();
   const fileInput = document.getElementById("cameraInput");
@@ -306,9 +306,23 @@ document.getElementById("customForm").addEventListener("submit", async function(
   };
   reader.readAsDataURL(file);
 });
+</script><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
+let isSubmitting = false;
+
+document.getElementById("customForm").addEventListener("submit", function(event) {
+  if (isSubmitting) {
+    event.preventDefault();
+    return;
+  }
+
+  isSubmitting = true;
+  const btn = document.querySelector(".submit-btn");
+  btn.disabled = true;
+  btn.textContent = "Подводим итоги...";
+});
 </script>
 
-<style class="cid-uMaoeoRr7J" id="custom-html-38" data-rv-view="1640">
+<style class="cid-uMaoeoRr7J" id="custom-html-38" data-rv-view="1954">
   .report-button {
     display: inline-block;
     background-color: #f44336;
@@ -326,11 +340,11 @@ document.getElementById("customForm").addEventListener("submit", async function(
     background-color: #d32f2f;
     transform: translateY(-3px);
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uMaoeoRr7J" id="custom-html-38" data-rv-view="1640">
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uMaoeoRr7J" id="custom-html-38" data-rv-view="1954">
   <a href="https://docs.google.com/spreadsheets/d/1NM3bdB3q8_DbP5V002a43awbvmR30qzDdb3X0yiMuj8/edit?usp=sharing" target="_blank" class="report-button">
     📊 Открыть отчёты
   </a>
-</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/html-builder.html">HTML Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">

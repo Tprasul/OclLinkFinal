@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=gr14QJ"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=gr14QJ" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=wnemLo"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=wnemLo" type="text/css">
 
   
   
@@ -26,7 +26,7 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1659"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1659"><title class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1659">Опрос - Химия</title><style class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1659">
+  <meta charset="UTF-8" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973"><title class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">Опрос - Химия</title><style class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
     .form-container {
       max-width: 600px;
       margin: auto;
@@ -83,7 +83,7 @@
       font-size: 16px; border: none; border-radius: 8px;
       cursor: pointer; width: 100%;
     }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1659"></script><div class="form-container cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1659">
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973"></script><div class="form-container cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
     <div class="form-title">Опрос - Химия</div>
 
@@ -209,7 +209,7 @@
 
       <button type="submit" class="submit-btn">Закончить опрос</button>
     </form>
-  </div><script class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1659">
+  </div><script class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
     document.getElementById("customForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
@@ -286,7 +286,7 @@
         Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
       });
     });
-  </script><script class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1659">
+  </script><script class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
 document.getElementById("customForm").addEventListener("submit", async function(event) {
   event.preventDefault();
   const fileInput = document.getElementById("cameraInput");
@@ -315,9 +315,23 @@ document.getElementById("customForm").addEventListener("submit", async function(
   };
   reader.readAsDataURL(file);
 });
+</script><script class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
+let isSubmitting = false;
+
+document.getElementById("customForm").addEventListener("submit", function(event) {
+  if (isSubmitting) {
+    event.preventDefault();
+    return;
+  }
+
+  isSubmitting = true;
+  const btn = document.querySelector(".submit-btn");
+  btn.disabled = true;
+  btn.textContent = "Подводим итоги...";
+});
 </script>
 
-<style class="cid-uNnf00eLLo" id="custom-html-4t" data-rv-view="1660">
+<style class="cid-uNnf00eLLo" id="custom-html-4t" data-rv-view="1974">
   .report-button {
     display: inline-block;
     background-color: #f44336;
@@ -335,7 +349,7 @@ document.getElementById("customForm").addEventListener("submit", async function(
     background-color: #d32f2f;
     transform: translateY(-3px);
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uNnf00eLLo" id="custom-html-4t" data-rv-view="1660">
+</style><div style="text-align:center; margin: 40px 0;" class="cid-uNnf00eLLo" id="custom-html-4t" data-rv-view="1974">
   <a href="https://docs.google.com/spreadsheets/d/1tQwzeuNDgJG3fxssknz1rigE2BOez-n_DzFthO8ogq0/edit?usp=sharing" target="_blank" class="report-button">
     📊 Открыть отчёты
   </a>
