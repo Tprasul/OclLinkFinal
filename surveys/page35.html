@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=qUs0KF"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=qUs0KF" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=LvFg8j"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=LvFg8j" type="text/css">
 
   
   
@@ -26,43 +26,70 @@
 </head>
 <body>
   
-  <section class="section-dark cid-uNr2Q1WJ41" id="custom-html-4v">
-<h2 style="text-align: center; font-size: 28px; margin-bottom: 30px; font-weight: 900; color: white;">📸 Галерея сотрудников</h2>
-  <div id="gallery" style="display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth;"></div>
-</section><script class="cid-uNr2Q1WJ41" id="custom-html-4v" data-rv-view="93">
-  fetch('https://script.google.com/macros/s/AKfycbyG1R0c2PRW4oAXWkO6huo1ICHCxHL0OYyKvsDP5s-7dxwRSPmaegfbTVDrxjSxqQaR/exec')
+  <section class="section-dark cid-uNrdEEY1u1" style="padding: 60px 20px;" id="custom-html-4z">
+  <h2 style="text-align: center; font-size: 32px; font-weight: bold; color: white; margin-bottom: 40px;">
+    📸 Галерея сотрудников
+  </h2>
+  <div id="slider" style="display: flex; overflow-x: auto; gap: 20px; scroll-behavior: smooth; padding-bottom: 20px;">
+    <!-- Фото будут подставляться сюда -->
+  </div>
+</section><style class="cid-uNrdEEY1u1" id="custom-html-4z" data-rv-view="439">
+  .section-dark {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  }
+
+  #slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slider-item {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 240px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .slider-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style><script class="cid-uNrdEEY1u1" id="custom-html-4z" data-rv-view="439">
+  const slider = document.getElementById("slider");
+
+  fetch("https://script.google.com/macros/s/AKfycbyhrnsX-to4KnDwwycz2esPyWkPDa7ZowljJVi_lD9w_TRlUTuM94T1iw0vuaDKhPJp/exec") // <--- ВСТАВЬ СВОЮ ССЫЛКУ
     .then(res => res.json())
     .then(data => {
-      const gallery = document.getElementById("gallery");
-      const latestPhotos = data.slice(-15); // последние 15
-
-      latestPhotos.forEach(item => {
-        const img = document.createElement("img");
-        img.src = item.url;
-        img.alt = "Фото";
-        img.style.width = "200px";
-        img.style.height = "200px";
-        img.style.objectFit = "cover";
-        img.style.borderRadius = "16px";
-        img.style.boxShadow = "0 4px 10px rgba(0,0,0,0.4)";
-        img.style.flex = "0 0 auto";
-        gallery.appendChild(img);
+      const last15 = data.slice(-15);
+      last15.forEach(entry => {
+        const div = document.createElement("div");
+        div.className = "slider-item";
+        div.innerHTML = `<img src="${entry.url}" alt="Фото">`;
+        slider.appendChild(div);
       });
 
       // автопрокрутка
-      let scrollAmount = 0;
+      let scrollPos = 0;
       setInterval(() => {
-        gallery.scrollTo({
-          left: scrollAmount,
-          behavior: 'smooth'
-        });
-        scrollAmount += 220;
-        if (scrollAmount > gallery.scrollWidth - gallery.clientWidth) {
-          scrollAmount = 0;
-        }
+        scrollPos += 260;
+        if (scrollPos >= slider.scrollWidth - slider.clientWidth) scrollPos = 0;
+        slider.scrollTo({ left: scrollPos, behavior: 'smooth' });
       }, 3000);
     });
-</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
