@@ -10,7 +10,7 @@
   <meta name="description" content="">
   
   
-  <title>Page 35</title>
+  <title>Page 38</title>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=PL3bRL"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=PL3bRL" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=qUs0KF"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=qUs0KF" type="text/css">
 
   
   
@@ -26,208 +26,41 @@
 </head>
 <body>
   
-  <div id="custom-html-4l" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;" class="cid-uNkqg0pqM6" data-rv-view="599"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" class="cid-uNkqg0pqM6" id="custom-html-4l" data-rv-view="599"></script><script class="cid-uNkqg0pqM6" id="custom-html-4l" data-rv-view="599">
-  const supabase = window.supabase.createClient(
-    'https://crlwzepfuszhouakcyc.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI'
-  );
+  <section class="section-dark cid-uNr2Q1WJ41" id="custom-html-4v">
+<h2 style="text-align: center; font-size: 28px; margin-bottom: 30px; font-weight: 900; color: white;">📸 Галерея сотрудников</h2>
+  <div id="gallery" style="display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth;"></div>
+</section><script class="cid-uNr2Q1WJ41" id="custom-html-4v" data-rv-view="93">
+  fetch('https://script.google.com/macros/s/AKfycbyG1R0c2PRW4oAXWkO6huo1ICHCxHL0OYyKvsDP5s-7dxwRSPmaegfbTVDrxjSxqQaR/exec')
+    .then(res => res.json())
+    .then(data => {
+      const gallery = document.getElementById("gallery");
+      const latestPhotos = data.slice(-15); // последние 15
 
-  async function loadPhotos() {
-    const { data, error } = await supabase
-      .storage
-      .from('photos')
-      .list('', { limit: 100, offset: 0 });
-
-    if (error) {
-      console.error("Ошибка при получении списка фото:", error);
-      return;
-    }
-
-    const gallery = document.getElementById("photoGallery");
-    gallery.innerHTML = "";
-
-    data.forEach(file => {
-      const url = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${file.name}`;
-      const card = document.createElement("div");
-      card.style = "border: 1px solid #ddd; border-radius: 12px; padding: 10px; width: 180px; background: #fff;";
-      card.innerHTML = `
-        <img src="${url}" style="width: 100%; border-radius: 8px; margin-bottom: 8px;">
-        <div style="font-size: 14px; word-break: break-word;">${file.name}</div>
-      `;
-      gallery.appendChild(card);
-    });
-  }
-
-  loadPhotos();
-</script>
-
-<div id="custom-html-4m" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;" class="cid-uNktkKgABb" data-rv-view="600"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" class="cid-uNktkKgABb" id="custom-html-4m" data-rv-view="600"></script><script class="cid-uNktkKgABb" id="custom-html-4m" data-rv-view="600">
-  document.addEventListener("DOMContentLoaded", async () => {
-    const supabase = window.supabase.createClient(
-      'https://crlwzepfuszhouakcyc.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI'
-    );
-
-    const { data, error } = await supabase
-      .storage
-      .from('photos')
-      .list('', { limit: 100 });
-
-    if (error) {
-      console.error("Ошибка при получении фото:", error);
-      return;
-    }
-
-    const gallery = document.getElementById("photoGallery");
-    data.forEach(file => {
-      const url = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${file.name}`;
-      const block = document.createElement("div");
-      block.style = "border:1px solid #ccc; border-radius:10px; padding:10px; background:#fff; width:160px; text-align:center;";
-      block.innerHTML = `
-        <img src="${url}" style="width:100%; border-radius:8px; margin-bottom:8px;">
-        <div style="font-size:14px;">${file.name}</div>
-      `;
-      gallery.appendChild(block);
-    });
-  });
-</script>
-
-<div id="custom-html-4n" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;" class="cid-uNktJiNiSh" data-rv-view="601"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" class="cid-uNktJiNiSh" id="custom-html-4n" data-rv-view="601"></script><script class="cid-uNktJiNiSh" id="custom-html-4n" data-rv-view="601">
-  setTimeout(function() {
-    const supabase = window.supabase.createClient(
-      'https://crlwzepfuszhouakcyc.supabase.co',
-      'YOUR_PUBLIC_ANON_KEY_HERE'
-    );
-
-    supabase.storage.from('photos').list('', { limit: 100 }).then(({ data, error }) => {
-      if (error) {
-        console.error("Ошибка при загрузке:", error);
-        return;
-      }
-
-      const gallery = document.getElementById("photoGallery");
-      gallery.innerHTML = "";
-
-      data.forEach(file => {
-        const url = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${file.name}`;
-        const block = document.createElement("div");
-        block.style = "border:1px solid #ccc; border-radius:10px; padding:10px; background:#fff; width:160px; text-align:center;";
-        block.innerHTML = `
-          <img src="${url}" style="width:100%; border-radius:8px; margin-bottom:8px;">
-          <div style="font-size:14px;">${file.name}</div>
-        `;
-        gallery.appendChild(block);
+      latestPhotos.forEach(item => {
+        const img = document.createElement("img");
+        img.src = item.url;
+        img.alt = "Фото";
+        img.style.width = "200px";
+        img.style.height = "200px";
+        img.style.objectFit = "cover";
+        img.style.borderRadius = "16px";
+        img.style.boxShadow = "0 4px 10px rgba(0,0,0,0.4)";
+        img.style.flex = "0 0 auto";
+        gallery.appendChild(img);
       });
-    });
-  }, 500); // Даем Mobirise прогрузиться
-</script>
 
-<div id="custom-html-4o" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;" class="cid-uNlebrxhYn" data-rv-view="602"></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" class="cid-uNlebrxhYn" id="custom-html-4o" data-rv-view="602"></script><script class="cid-uNlebrxhYn" id="custom-html-4o" data-rv-view="602">
-  setTimeout(function() {
-    const supabase = window.supabase.createClient(
-      'https://crlwzepfuszhouakcyc.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNybHd6ZXBmdXN6aG91dWFja3ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcyMzYxOTIsImV4cCI6MjA2MjgxMjE5Mn0.rs4u66hTMgT_1qbwqf1NIVJIMZiQm-s2IDZVXe6CJHI' // <-- ЗАМЕНИ на свой реальный anon ключ
-    );
-
-    supabase
-      .storage
-      .from('photos')
-      .list('', { limit: 100 })
-      .then(({ data, error }) => {
-        if (error) {
-          console.error("Ошибка при получении фото:", error);
-          return;
-        }
-
-        const gallery = document.getElementById("photoGallery");
-
-        data.forEach(file => {
-          const url = `https://crlwzepfuszhouakcyc.supabase.co/storage/v1/object/public/photos/${file.name}`;
-          const card = document.createElement("div");
-          card.style = "border:1px solid #ccc; border-radius:12px; padding:10px; width:160px; background:#fff; text-align:center";
-          card.innerHTML = `
-            <img src="${url}" style="width:100%; border-radius:8px; margin-bottom:8px;">
-            <div style="font-size:14px; word-wrap:break-word">${file.name}</div>
-          `;
-          gallery.appendChild(card);
+      // автопрокрутка
+      let scrollAmount = 0;
+      setInterval(() => {
+        gallery.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'
         });
-      });
-  }, 500);
-</script>
-
-<meta charset="UTF-8" class="cid-uNnlEQ7KR4" id="custom-html-4u" data-rv-view="603"><title class="cid-uNnlEQ7KR4" id="custom-html-4u" data-rv-view="603">Галерея сотрудников</title><style class="cid-uNnlEQ7KR4" id="custom-html-4u" data-rv-view="603">
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #ffe4e1; /* ✅ Бледно-розовый фон */
-    }
-    section {
-      padding: 40px 0;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #333;
-    }
-    #gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .photo-card {
-      width: 180px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    .photo-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-  </style><section class="cid-uNnlEQ7KR4" id="custom-html-4u">
-  <h2>📸 Галерея сотрудников</h2>
-  <div id="gallery"></div>
-</section><script class="cid-uNnlEQ7KR4" id="custom-html-4u" data-rv-view="603">
-  fetch("https://script.google.com/macros/s/AKfycbwHRLlCYnc3t67mD9PhyzLRh2N29Rxsdf4C06r-0e_Q85P1YT1AVDr9NMwrqUf_N_YK/exec")
-    .then((res) => res.json())
-    .then((data) => {
-      const container = document.createElement("div");
-      container.style.display = "grid";
-      container.style.gridTemplateColumns = "repeat(auto-fit, minmax(160px, 1fr))";
-      container.style.gap = "20px";
-      container.style.maxWidth = "1200px";
-      container.style.margin = "40px auto";
-
-      data.forEach(photo => {
-        const card = document.createElement("div");
-        card.style.background = "white";
-        card.style.borderRadius = "16px";
-        card.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1)";
-        card.style.overflow = "hidden";
-        card.style.textAlign = "center";
-
-        card.innerHTML = `
-          <img src="${photo.url}" alt="Фото" style="width: 100%; height: 160px; object-fit: cover;">
-          <div style="padding: 10px; font-size: 14px;">${photo.name}</div>
-        `;
-
-        container.appendChild(card);
-      });
-
-      document.body.appendChild(container);
-    })
-    .catch(() => {
-      const error = document.createElement("p");
-      error.textContent = "Не удалось загрузить галерею.";
-      error.style.textAlign = "center";
-      error.style.marginTop = "40px";
-      document.body.appendChild(error);
+        scrollAmount += 220;
+        if (scrollAmount > gallery.scrollWidth - gallery.clientWidth) {
+          scrollAmount = 0;
+        }
+      }, 3000);
     });
 </script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
