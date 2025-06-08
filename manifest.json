@@ -1,10 +1,16 @@
 {
   "name": "OCL Link",
   "short_name": "OCL",
+  "id": "/",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#c62828",
+  "description": "OCL Link – внутренняя HR-платформа для сотрудников",
+  "orientation": "portrait",
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
   "icons": [
     {
       "src": "icon-192.png",
