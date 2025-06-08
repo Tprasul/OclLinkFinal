@@ -22,7 +22,14 @@
 
   
   
-  
+ <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#c62828">
+<link rel="icon" href="icon-192.png">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+</script> 
 </head>
 <body>
 
