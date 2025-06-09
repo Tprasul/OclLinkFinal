@@ -52,6 +52,7 @@
     }));
 
     function renderCards(list) {
+      if (!cardGrid) return;
       cardGrid.innerHTML = '';
       list.forEach(item => {
         const div = document.createElement('div');
@@ -65,11 +66,13 @@
       });
     }
 
-    search.addEventListener('input', () => {
-      const term = search.value.trim().toLowerCase();
-      const filtered = links.filter(item => item.title.toLowerCase().includes(term));
-      renderCards(filtered);
-    });
+    if (search) {
+      search.addEventListener('input', () => {
+        const term = search.value.trim().toLowerCase();
+        const filtered = links.filter(item => item.title.toLowerCase().includes(term));
+        renderCards(filtered);
+      });
+    }
 
     renderCards(links);
   });
