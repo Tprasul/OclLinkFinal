@@ -275,9 +275,14 @@
         "url": "https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap",
         "name": "Golos Text",
         "css": "'Golos Text', sans-serif"
+      },
+      {
+        "css": "'Inter Tight', sans-serif",
+        "name": "Inter Tight",
+        "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
       }
     ],
-    "uniqCompNum": 59,
+    "uniqCompNum": 65,
     "imageResize": true,
     "imageSearchQuery": "food",
     "favicon": false,
@@ -356,7 +361,7 @@
               "text-align": "center"
             }
           },
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header16\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"24\" step=\"1\" value=\"20\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"3\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show / Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <select title=\"Vertical Align\" name=\"verticalAlign\" condition=\"fullScreen\">\n      <option value=\"flex-start\">Top</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Bottom</option>\n    </select>\n    <select title=\"Horizontal Align\" name=\"horizontalAlign\">\n      <option value=\"flex-start\">Left</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Right</option>\n    </select>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"https://r.mobirisesite.com/1486682/assets/images/photo-1515003197210-e0cd71810b5f.jpeg\" parallax>\n      <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=2Gg6Seob5Mg\" selected>\n      <input type=\"color\" title=\"Color\" value=\"#260a30\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' && overlay\">\n    <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"bg.type!='color' && overlay\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row\">\n      <div class=\"content-wrap col-12 col-md-{{contentWidth}}\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mbr-white mb-4\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\"><b>Единая платформа&nbsp;&nbsp;</b></h1>\n        <h2 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mb-4\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubtitle\"><b>OCL</b></h2>\n        <p class=\"mbr-fonts-style mbr-text mbr-white mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><i>Одна платформа 6 ресторанов</i></p>\n        <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-white-outline\" href=\"index.html#hero-17-uKtQauaUOD\" data-app-placeholder=\"Введите Текст\"></a></div>\n      </div>\n    </div>\n  </div>\n</section>ё",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header16\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"24\" step=\"1\" value=\"20\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"3\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show / Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <select title=\"Vertical Align\" name=\"verticalAlign\" condition=\"fullScreen\">\n      <option value=\"flex-start\">Top</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Bottom</option>\n    </select>\n    <select title=\"Horizontal Align\" name=\"horizontalAlign\">\n      <option value=\"flex-start\">Left</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Right</option>\n    </select>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"@PROJECT_PATH@/assets/images/chatgpt-image-31-2025-.-18-27-19.png-1536x1024.png\" parallax selected>\n      <input type=\"video\" title=\"Video\" value=\"https://www.youtube.com/watch?v=2Gg6Seob5Mg\">\n      <input type=\"color\" title=\"Color\" value=\"#260a30\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' && overlay\">\n    <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"bg.type!='color' && overlay\">\n  </mbr-parameters>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row\">\n      <div class=\"content-wrap col-12 col-md-{{contentWidth}}\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mbr-white mb-4\" mbr-theme-style=\"display-1\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\"><b>Единая платформа&nbsp;&nbsp;</b></h1>\n        <h2 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mb-4\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubtitle\"><b>OCL</b></h2>\n        <p class=\"mbr-fonts-style mbr-text mbr-white mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><i>Одна платформа 6 ресторанов</i></p>\n        <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-white-outline\" href=\"index.html#hero-17-uKtQauaUOD\" data-app-placeholder=\"Введите Текст\"></a></div>\n      </div>\n    </div>\n  </div>\n</section>ё",
           "_name": "header17",
           "_sourceTheme": "startm5",
           "_cid": "uKtQauaUOD",
@@ -370,15 +375,7 @@
         {
           "alias": "deltapi-code-editor",
           "_isSecondary": true,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-section": {
-              "text-align": "center",
-              "color": "#fff"
-            }
-          },
+          "_styles": {},
           "_name": "custom-html",
           "_sourceTheme": "startm5",
           "_customHTML": "<section style=\"background: linear-gradient(to right, #0f2027, #203a43, #2c5364); padding: 60px 20px;\">\n  <style>\n    .restaurant-grid {\n      display: grid;\n      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n      gap: 24px;\n      max-width: 1000px;\n      margin: auto;\n    }\n\n    .restaurant-card {\n      background-color: rgba(0,0,0,0.4);\n      border-radius: 16px;\n      overflow: hidden;\n      box-shadow: 0 8px 20px rgba(0,0,0,0.3);\n      transition: transform 0.3s ease;\n      display: flex;\n      flex-direction: column;\n    }\n\n    .restaurant-card:hover {\n      transform: scale(1.03);\n    }\n\n    .restaurant-card img {\n      width: 100%;\n      height: 180px;\n      object-fit: cover;\n    }\n\n    .caption {\n      padding: 20px;\n      text-align: center;\n      color: #fff;\n    }\n\n    .caption h3 {\n      font-size: 20px;\n      margin-bottom: 12px;\n      color: #fff;\n    }\n\n    .caption a {\n      background-color: transparent;\n      border: 2px solid #fff;\n      padding: 10px 20px;\n      border-radius: 8px;\n      color: #fff;\n      text-decoration: none;\n      font-weight: bold;\n      transition: all 0.3s;\n      display: inline-block;\n    }\n\n    .caption a:hover {\n      background-color: #fff;\n      color: #000;\n    }\n  </style>\n\n  <h2 style=\"text-align: center; color: #fff; margin-bottom: 40px;\">Выберите ресторан</h2>\n\n  <div class=\"restaurant-grid\">\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png\" alt=\"Технопарк\">\n      <div class=\"caption\">\n        <h3>Технопарк</h3>\n        <a href=\"surveys/testt.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/abde105e-82d6-45a0-81c3-df00f9273ee1.png-634x951.png\" alt=\"Донецкая\">\n      <div class=\"caption\">\n        <h3>Донецкая</h3>\n        <a href=\"form-donetskaya.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png\" alt=\"Горький\">\n      <div class=\"caption\">\n        <h3>Горький</h3>\n        <a href=\"form-gorky.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png\" alt=\"ГЭС 5\">\n      <div class=\"caption\">\n        <h3>ГЭС 5</h3>\n        <a href=\"form-ges5.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png\" alt=\"Октябрь\">\n      <div class=\"caption\">\n        <h3>Октябрь</h3>\n        <a href=\"form-oktyabr.html\">Пройти опрос</a>\n      </div>\n    </div>\n\n    <div class=\"restaurant-card\">\n      <img src=\"@PROJECT_PATH@/assets/images/abde105e-82d6-45a0-81c3-df00f9273ee1.png-634x951.png\" alt=\"Азия Молл\">\n      <div class=\"caption\">\n        <h3>Азия Молл</h3>\n        <a href=\"form-asia.html\">Пройти опрос</a>\n      </div>\n    </div>\n  </div>\n</section>",
@@ -518,18 +515,10 @@
         {
           "alias": "deltapi-code-editor",
           "_isSecondary": true,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-section": {
-              "text-align": "center",
-              "color": "#fff"
-            }
-          },
+          "_styles": {},
           "_name": "custom-html",
           "_sourceTheme": "startm5",
-          "_customHTML": "<section style=\"background-color: #121212; padding: 50px 20px;\">\r\n  <style>\r\n    .daily-tip-title {\r\n      text-align: center;\r\n      color: #FFD700;\r\n      font-size: 28px;\r\n      font-weight: bold;\r\n      margin-bottom: 30px;\r\n    }\r\n\r\n    .daily-tip {\r\n      max-width: 700px;\r\n      margin: auto;\r\n      font-size: 20px;\r\n      font-style: italic;\r\n      color: #ffd700;\r\n      background: #2c2c2c;\r\n      padding: 20px 30px;\r\n      border-radius: 16px;\r\n      box-shadow: 0 4px 12px rgba(0,0,0,0.4);\r\n      text-align: center;\r\n      opacity: 0;\r\n      transform: translateY(20px);\r\n      animation: fadeInTip 1s ease forwards;\r\n    }\r\n\r\n    @keyframes fadeInTip {\r\n      to {\r\n        opacity: 1;\r\n        transform: translateY(0);\r\n      }\r\n    }\r\n  </style>\r\n\r\n  <div class=\"daily-tip-title\">💬 Совет дня</div>\r\n  <div class=\"daily-tip\" id=\"dailyTip\">Загрузка совета...</div>\r\n\r\n  <script>\r\n    const tips = [\r\n      \"Улыбка на кассе — половина отличного обслуживания 😊\",\r\n      \"Сначала срок годности — потом выкладка!\",\r\n      \"Чистый гриль = вкусный бургер 🍔\",\r\n      \"Помогай команде — даже если это не твоя зона 🙌\",\r\n      \"Салфетки и соусы — мелочь, но важны!\",\r\n      \"Проверь наличие подносов и перчаток перед час-пиком!\",\r\n      \"Если сомневаешься — уточни у менеджера 🧠\",\r\n      \"Поддерживай порядок не только за собой, но и рядом 🧼\",\r\n      \"Позитив передаётся клиенту быстрее, чем заказ 😉\"\r\n    ];\r\n\r\n    const randomTip = tips[Math.floor(Math.random() * tips.length)];\r\n    document.getElementById(\"dailyTip\").textContent = `💡 ${randomTip}`;\r\n  </script>\r\n</section>\r\n",
+          "_customHTML": "<section style=\"background-color: #121212; padding: 50px 20px;\">\r\n  <style>\r\n    .daily-tip-title {\r\n      text-align: center;\r\n      color: #FFD700;\r\n      font-size: 28px;\r\n      font-weight: bold;\r\n      margin-bottom: 30px;\r\n    }\r\n\r\n    .daily-tip {\r\n      max-width: 700px;\r\n      margin: auto;\r\n      font-size: 20px;\r\n      font-style: italic;\r\n      color: #ffd700;\r\n      background: #2c2c2c;\r\n      padding: 20px 30px;\r\n      border-radius: 16px;\r\n      box-shadow: 0 4px 12px rgba(0,0,0,0.4);\r\n      text-align: center;\r\n      opacity: 0;\r\n      transform: translateY(20px);\r\n      animation: fadeInTip 1s ease forwards;\r\n    }\r\n\r\n    @keyframes fadeInTip {\r\n      to {\r\n        opacity: 1;\r\n        transform: translateY(0);\r\n      }\r\n    }\r\n  </style>\r\n\r\n  <div class=\"daily-tip-title\">💬 Совет дня</div>\r\n  <div class=\"daily-tip\" id=\"dailyTip\">Загрузка совета...</div>\r\n\r\n  <script>\r\n    const tips = [\r\n      \"Улыбка на кассе — половина отличного обслуживания 😊\",\r\n      \"Сначала срок годности — потом выкладка!\",\r\n      \"Чистый гриль = вкусный бургер 🍔\",\r\n      \"Помогай команде — даже если это не твоя зона 🙌\",\r\n      \"Салфетки и соусы — мелочь, но важны!\",\r\n      \"Проверь наличие подносов и перчаток перед час-пиком!\",\r\n      \"Если сомневаешься — уточни у менеджера 🧠\",\r\n      \"Поддерживай порядок не только за собой, но и рядом 🧼\",\r\n      \"Позитив передаётся клиенту быстрее, чем заказ 😉\",\r\n          \"😊 Улыбка — лучший инструмент в общении с гостями.\",\r\n    \"🧼 Всегда мой руки перед началом смены.\",\r\n    \"📅 Проверяй срок годности продуктов каждый день.\",\r\n    \"👥 Один довольный гость приводит троих новых.\",\r\n    \"🚫 Соблюдай санитарные зоны — это важно для безопасности.\",\r\n    \"❓ Если не знаешь — спроси, а не гадай.\",\r\n    \"🧽 Чистое рабочее место — залог хорошего начала дня.\",\r\n    \"👋 Здоровайся первым — это задаёт тон общению.\",\r\n    \"🔍 Будь внимателен к деталям — гость замечает всё.\",\r\n    \"📏 Соблюдай рецептуру — стабильность важна.\",\r\n    \"🤝 Не забывай благодарить коллег.\",\r\n    \"👕 Чистая форма — твоя визитная карточка.\",\r\n    \"🌡️ Следи за температурой хранения продуктов.\",\r\n    \"🎯 Запас хорошего настроения на день — от тебя.\",\r\n    \"😄 Не экономь на улыбке — она ничего не стоит.\",\r\n    \"🌟 Напоминай себе: я создаю опыт для гостей.\",\r\n    \"🆕 Помоги новому сотруднику — ты тоже когда-то начинал.\",\r\n    \"👀 Смотри в глаза при разговоре.\",\r\n    \"🔥 Всегда проверяй, выключены ли плиты после смены.\",\r\n    \"🚻 Внимание к чистоте туалетов — признак культуры.\",\r\n    \"❤️ Работай с душой — это видно.\",\r\n    \"🐢 Лучше сделать медленно и правильно, чем быстро и плохо.\",\r\n    \"🛡️ Задача №1 — безопасность гостей.\",\r\n    \"🧹 Убирай за собой, даже если не ты это сделал.\",\r\n    \"💍 Не носи украшения на кухне — это опасно.\",\r\n    \"📦 Следи за сроками маркировки.\",\r\n    \"📋 Хорошее начало смены — с краткого брифинга.\",\r\n    \"🧘 Принимай критику спокойно — она помогает расти.\",\r\n    \"🎥 Работай так, как будто за тобой наблюдает гость.\",\r\n    \"🖥️ Протирай экран кассы — он тоже лицо ресторана.\",\r\n    \"🤝 Разделяй задачи с коллегами — командная работа эффективнее.\",\r\n    \"🙏 Говори «пожалуйста» и «спасибо» чаще.\",\r\n    \"👂 Научись слушать — это важнее, чем говорить.\",\r\n    \"📍 Проверь зону обслуживания — всё ли готово.\",\r\n    \"⏳ Гость не должен ждать — предугадывай.\",\r\n    \"🚫 Не ешь в зоне приготовления.\",\r\n    \"🧍 Следи за осанкой — она влияет на настроение.\",\r\n    \"🧤 Меняй перчатки при переходе между зонами.\",\r\n    \"🔁 Повторяй заказ гостя — это уменьшает ошибки.\",\r\n    \"🧂 Напоминай гостю про соусы и салфетки.\",\r\n    \"🗓️ Начинай день с плана задач.\",\r\n    \"💧 Пей воду — это влияет на продуктивность.\",\r\n    \"🗣️ Никогда не спорь с гостем — ищи решение.\",\r\n    \"🎁 Дари больше, чем от тебя ждут.\",\r\n    \"🧱 Будь опорой, а не обузой для команды.\",\r\n    \"🔎 Успех — в ежедневных мелочах.\",\r\n    \"📈 Работай сегодня чуть лучше, чем вчера.\",\r\n    \"🏅 Гордиcь своей работой — ты часть команды.\"\r\n  ];\r\n\r\n    const randomTip = tips[Math.floor(Math.random() * tips.length)];\r\n    document.getElementById(\"dailyTip\").textContent = `💡 ${randomTip}`;\r\n  </script>\r\n</section>\r\n",
           "_cid": "uLu6LYz98p",
           "_anchor": "custom-html-1c",
           "_protectedParams": [],
@@ -540,15 +529,35 @@
         {
           "alias": "deltapi-code-editor",
           "_isSecondary": true,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-section": {
-              "text-align": "center",
-              "color": "#fff"
-            }
-          },
+          "_styles": {},
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section style=\"padding: 50px 0; background: #0f0f0f;\">\r\n  <div style=\"max-width: 800px; margin: auto; background: #1a1a1a; border-radius: 16px; padding: 30px; box-shadow: 0 0 20px rgba(0,0,0,0.3);\">\r\n    <h2 style=\"color: #FFD700; font-size: 28px; text-align: center; margin-bottom: 25px;\">\r\n      📰 Обновления сайта\r\n    </h2>\r\n\r\n    <div style=\"background: #262626; padding: 20px 25px; border-radius: 12px; color: white;\">\r\n      <!-- Здесь вставляй свою новость -->\r\n      <h3 style=\"color: #FFD700; margin-top: 0;\">🚀 Обновление</h3>\r\n      <p style=\"margin: 10px 0 0; font-size: 16px;\">\r\n        Было добавлено:\r\n        Возможность добавить фото сотрудника в опросах.\r\n        \r\n        Галерея фотографий.\r\n        \r\n        Защиту от повторных отправок опросов.\r\n        \r\n        Таймер с секретным призом для лидера опросов, приз автоматически откроется 31 числа в 12:00.\r\n      </p>\r\n      <p style=\"color: gray; font-size: 14px; margin-top: 15px;\">🗓️ Опубликовано: 29 мая 2025</p>\r\n    </div>\r\n\r\n    <!-- Кнопка (если нужна) -->\r\n    <!--\r\n    <div style=\"text-align: center; margin-top: 30px;\">\r\n      <button style=\"background: #FFD700; border: none; padding: 12px 24px; font-size: 16px; border-radius: 8px; color: black; font-weight: bold; cursor: pointer;\">\r\n        Смотреть все обновления\r\n      </button>\r\n    </div>\r\n    -->\r\n  </div>\r\n</section>\r\n",
+          "_cid": "uMBvz30DSQ",
+          "_anchor": "custom-html-1n",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {},
+          "_name": "custom-html",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<!DOCTYPE html>\r\n<html lang=\"ru\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <title>Калькулятор зарплаты</title>\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <style>\r\n    body {\r\n      background-color: #0f0f0f !important;\r\n      margin: 0;\r\n      padding: 20px;\r\n      font-family: 'Arial', sans-serif;\r\n      color: #fff;\r\n    }\r\n\r\n    .salary-form {\r\n      max-width: 500px;\r\n      margin: auto;\r\n      background: #1e1e1e;\r\n      padding: 30px;\r\n      border-radius: 16px;\r\n      color: #fff;\r\n      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);\r\n    }\r\n\r\n    .salary-form h2 {\r\n      text-align: center;\r\n      margin-bottom: 20px;\r\n      color: #ff9800;\r\n    }\r\n\r\n    .salary-form label {\r\n      display: block;\r\n      margin-top: 15px;\r\n      font-weight: bold;\r\n      color: #ddd;\r\n    }\r\n\r\n    .salary-form select,\r\n    .salary-form input {\r\n      width: 100%;\r\n      padding: 10px;\r\n      margin-top: 5px;\r\n      border-radius: 8px;\r\n      border: 1px solid #444;\r\n      background-color: #2b2b2b;\r\n      color: #fff;\r\n      box-sizing: border-box;\r\n    }\r\n\r\n    .salary-form input::placeholder {\r\n      color: #aaa;\r\n    }\r\n\r\n    .bonus-toggle {\r\n      margin-top: 20px;\r\n    }\r\n\r\n    .bonus-toggle input[type=\"checkbox\"] {\r\n      display: none;\r\n    }\r\n\r\n    .bonus-toggle label {\r\n      display: block;\r\n      width: 100%;\r\n      padding: 10px;\r\n      border-radius: 8px;\r\n      background-color: #2b2b2b;\r\n      text-align: center;\r\n      font-weight: bold;\r\n      cursor: pointer;\r\n      border: 1px solid #555;\r\n      color: #fff;\r\n      transition: 0.3s ease;\r\n    }\r\n\r\n    .bonus-toggle input[type=\"checkbox\"]:checked + label {\r\n      background-color: #ff9800;\r\n      color: #000;\r\n      border-color: #ff9800;\r\n    }\r\n\r\n    .salary-form button {\r\n      margin-top: 20px;\r\n      width: 100%;\r\n      padding: 12px;\r\n      background-color: #ff9800;\r\n      color: black;\r\n      border: none;\r\n      border-radius: 8px;\r\n      font-size: 16px;\r\n      font-weight: bold;\r\n      cursor: pointer;\r\n      transition: 0.2s ease-in-out;\r\n    }\r\n\r\n    .salary-form button:hover {\r\n      background-color: #e68900;\r\n    }\r\n\r\n    .result {\r\n      margin-top: 20px;\r\n      font-size: 16px;\r\n      text-align: left;\r\n      background: #2a2a2a;\r\n      padding: 15px;\r\n      border-radius: 10px;\r\n      border: 1px solid #444;\r\n      color: #fff;\r\n    }\r\n\r\n    .result b {\r\n      color: #ff9800;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <div class=\"salary-form\">\r\n    <h2>Калькулятор зарплаты</h2>\r\n\r\n    <label for=\"position\">Выберите должность:</label>\r\n    <select id=\"position\">\r\n      <option value=\"\">-- Выбрать --</option>\r\n      <option value=\"trainer\">Тренер</option>\r\n      <option value=\"trainer2\">Тренер 2</option>\r\n      <option value=\"chk1\">ЧК1</option>\r\n      <option value=\"chk2\">ЧК2</option>\r\n      <option value=\"chk3\">ЧК3</option>\r\n      <option value=\"tehn\">Тех ночь</option>\r\n      <option value=\"tehz\">Тех зал</option>\r\n    </select>\r\n\r\n    <label for=\"dayHours\">Количество дневных часов:</label>\r\n    <input type=\"number\" id=\"dayHours\" placeholder=\"Например: 120\">\r\n\r\n    <label for=\"nightHours\">Количество ночных часов:</label>\r\n    <input type=\"number\" id=\"nightHours\" placeholder=\"Например: 40\">\r\n\r\n    <div class=\"bonus-toggle\">\r\n      <input type=\"checkbox\" id=\"bonus\">\r\n      <label for=\"bonus\">Перфоманс бонус (+3000 сом)</label>\r\n    </div>\r\n\r\n    <button onclick=\"calculate()\">Посчитать зарплату</button>\r\n\r\n    <div class=\"result\" id=\"result\"></div>\r\n  </div>\r\n\r\n  <script>\r\n    const rates = {\r\n      trainer:  { day: 186, night: 246, advance: 8000 },\r\n      trainer2: { day: 191, night: 253, advance: 8000 },\r\n      chk1:     { day: 151, night: 198, advance: 7000 },\r\n      chk2:     { day: 166, night: 218, advance: 7000 },\r\n      chk3:     { day: 171, night: 226, advance: 7000 },\r\n      tehn:     { day: 220, night: 220, advance: 7000 },\r\n      tehz:     { day: 156, night: 203, advance: 7000 }\r\n    };\r\n\r\n    function calculate() {\r\n      const position = document.getElementById('position').value;\r\n      const dayHours = +document.getElementById('dayHours').value || 0;\r\n      const nightHours = +document.getElementById('nightHours').value || 0;\r\n      const hasBonus = document.getElementById('bonus').checked;\r\n\r\n      if (!position || !rates[position]) {\r\n        document.getElementById('result').innerText = 'Пожалуйста, выберите должность.';\r\n        return;\r\n      }\r\n\r\n      const rate = rates[position];\r\n      const dayPay = rate.day * dayHours;\r\n      const nightPay = rate.night * nightHours;\r\n      const bonus = hasBonus ? 3000 : 0;\r\n      const advance = rate.advance || 0;\r\n      const gross = dayPay + nightPay + bonus;\r\n      const net = gross - advance;\r\n\r\n      document.getElementById('result').innerHTML = `\r\n        Дневные часы: ${dayHours} ч × ${rate.day} сом = <b>${dayPay.toLocaleString()} сом</b><br>\r\n        Ночные часы: ${nightHours} ч × ${rate.night} сом = <b>${nightPay.toLocaleString()} сом</b><br>\r\n        Бонус: <b>${bonus.toLocaleString()} сом</b><br>\r\n        Аванс: -<b>${advance.toLocaleString()} сом</b><br><br>\r\n        <span style=\"font-size: 20px;\">💰 <b>Итого к выплате: ${Math.max(0, Math.round(net)).toLocaleString()} сом</b></span>\r\n      `;\r\n    }\r\n  </script>\r\n</body>\r\n</html>\r\n",
+          "_cid": "uOiskEC8lZ",
+          "_anchor": "custom-html-1s",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {},
           "_name": "custom-html",
           "_sourceTheme": "startm5",
           "_customHTML": "<section style=\"background: #0f0f0f; padding: 60px 20px;\">\r\n  <div style=\"max-width: 600px; margin: auto;\">\r\n    <h2 style=\"text-align: center; color: #ffc107; font-weight: bold; font-size: 28px;\">📬 Обратная связь</h2>\r\n\r\n    <form id=\"feedbackForm\" style=\"background-color: #1a1a1a; padding: 30px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.4);\">\r\n\r\n      <label style=\"color: #ffc107;\">Ресторан:</label>\r\n      <select name=\"restaurant\" required style=\"width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: none; background: #2a2a2a; color: white;\">\r\n        <option value=\"Октябрь\">Октябрь</option>\r\n        <option value=\"Горький\">Горький</option>\r\n        <option value=\"Технопарк\">Технопарк</option>\r\n        <option value=\"Азия Молл\">Азия Молл</option>\r\n        <option value=\"Донецкая\">Донецкая</option>\r\n        <option value=\"ГЭС5\">ГЭС5</option>\r\n      </select>\r\n\r\n      <label style=\"color: #ffc107;\">Ваше имя:</label>\r\n      <input type=\"text\" name=\"sender\" required style=\"width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 10px; border: none; background: #2a2a2a; color: white;\">\r\n\r\n      <label style=\"color: #ffc107;\">Сообщение:</label>\r\n      <textarea name=\"message\" required style=\"width: 100%; height: 120px; padding: 12px; margin-bottom: 20px; border-radius: 10px; border: none; background: #2a2a2a; color: white;\"></textarea>\r\n\r\n      <button type=\"submit\" style=\"background-color: #ffc107; color: black; padding: 12px 24px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; width: 100%;\">Отправить</button>\r\n    </form>\r\n\r\n    <div id=\"formStatus\" style=\"margin-top: 20px; text-align: center; color: #ffc107;\"></div>\r\n\r\n    <!-- ВСПЛЫВАЮЩАЯ ПАНЕЛЬ -->\r\n    <div id=\"toast\" style=\"\r\n      visibility: hidden;\r\n      min-width: 250px;\r\n      background-color: #28a745;\r\n      color: white;\r\n      text-align: center;\r\n      border-radius: 8px;\r\n      padding: 16px;\r\n      position: fixed;\r\n      z-index: 1000;\r\n      left: 50%;\r\n      bottom: 30px;\r\n      transform: translateX(-50%);\r\n      font-weight: bold;\r\n      opacity: 0;\r\n      transition: opacity 0.5s, bottom 0.5s;\r\n    \">✅ Сообщение отправлено!</div>\r\n\r\n  </div>\r\n</section>\r\n\r\n<script>\r\nfunction showToast(text, color = \"#28a745\") {\r\n  const toast = document.getElementById(\"toast\");\r\n  toast.innerText = text;\r\n  toast.style.backgroundColor = color;\r\n  toast.style.visibility = \"visible\";\r\n  toast.style.opacity = \"1\";\r\n  toast.style.bottom = \"50px\";\r\n\r\n  setTimeout(() => {\r\n    toast.style.opacity = \"0\";\r\n    toast.style.bottom = \"30px\";\r\n    setTimeout(() => {\r\n      toast.style.visibility = \"hidden\";\r\n    }, 500);\r\n  }, 3000);\r\n}\r\n\r\ndocument.getElementById(\"feedbackForm\").addEventListener(\"submit\", async function(e) {\r\n  e.preventDefault();\r\n\r\n  const form = e.target;\r\n  const data = {\r\n    restaurant: form.restaurant.value,\r\n    sender: form.sender.value,\r\n    message: form.message.value,\r\n    date: new Date().toISOString().split(\"T\")[0]\r\n  };\r\n\r\n  const url = \"https://sheetdb.io/api/v1/h29xk2y9u8i4g\"; // ⬅️ ВСТАВЬ ТВОЙ ID SheetDB\r\n\r\n  try {\r\n    await fetch(url, {\r\n      method: \"POST\",\r\n      headers: { \"Content-Type\": \"application/json\" },\r\n      body: JSON.stringify({ data })\r\n    });\r\n\r\n    showToast(\"✅ Сообщение отправлено!\");\r\n    form.reset();\r\n  } catch (err) {\r\n    showToast(\"❌ Ошибка отправки.\", \"#dc3545\");\r\n  }\r\n});\r\n</script>\r\n",
@@ -562,15 +571,7 @@
         {
           "alias": "deltapi-code-editor",
           "_isSecondary": true,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-section": {
-              "text-align": "center",
-              "color": "#fff"
-            }
-          },
+          "_styles": {},
           "_name": "custom-html",
           "_sourceTheme": "startm5",
           "_customHTML": "<section style=\"background-color: #121212; padding: 40px 20px;\">\n  <style>\n    .container {\n      max-width: 800px;\n      margin: 0 auto;\n      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n      color: #f9f9f9;\n    }\n\n    .title-block {\n      background: #1d1d1d;\n      border: 1px solid rgba(255, 255, 255, 0.08);\n      border-radius: 15px;\n      padding: 30px;\n      margin-bottom: 30px;\n      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);\n      text-align: center;\n      animation: fadeIn 0.8s ease;\n    }\n\n    .title-block h1 {\n      font-size: 44px;\n      margin: 0;\n      color: #FFD700;\n    }\n\n    .block {\n      background: #1d1d1d;\n      border: 1px solid rgba(255, 255, 255, 0.08);\n      border-radius: 15px;\n      padding: 25px;\n      margin-bottom: 25px;\n      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);\n      transition: transform 0.3s ease;\n      animation: fadeIn 0.8s ease;\n    }\n\n    .block:hover {\n      transform: translateY(-5px);\n    }\n\n    .block h2 {\n      color: #FFA500;\n      margin-top: 0;\n    }\n\n    ul {\n      padding-left: 20px;\n    }\n\n    ul li {\n      margin-bottom: 10px;\n    }\n\n    .creator-block {\n      display: flex;\n      align-items: center;\n      gap: 20px;\n      flex-wrap: wrap;\n    }\n\n    .creator-img {\n      width: 120px;\n      height: 120px;\n      border-radius: 15px;\n      object-fit: cover;\n      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);\n    }\n\n    .creator-info h3 {\n      margin: 0;\n      color: #FFD700;\n    }\n\n    .creator-info p {\n      margin: 5px 0 0;\n      color: #ccc;\n    }\n\n    @keyframes fadeIn {\n      from { opacity: 0; transform: translateY(20px); }\n      to { opacity: 1; transform: translateY(0); }\n    }\n  </style>\n\n  <div class=\"container\">\n    <div class=\"title-block\">\n      <h1>О проекте</h1>\n    </div>\n\n    <div class=\"block\">\n      <h2>Зачем мы это делаем?</h2>\n      <p>Этот сайт создан для мотивации, вдохновения и признания сотрудников. Он объединяет в себе всё важное: рейтинги, благодарности, новости и опросы. Всё это — красиво, понятно и доступно с любого устройства.</p>\n    </div>\n\n    <div class=\"block\">\n      <h2>Наши преимущества</h2>\n      <ul>\n        <li><strong>Рейтинг ресторанов:</strong> прозрачный и обновляемый каждый день.</li>\n        <li><strong>Стена благодарности:</strong> яркие и живые сообщения от коллег с анимацией и аватарками.</li>\n        <li><strong>Новости:</strong> свежие события и объявления в красивом оформлении.</li>\n        <li><strong>Опросы:</strong> быстрые формы обратной связи через Google Таблицы.</li>\n        <li><strong>Автоматизация:</strong> всё обновляется без вмешательства человека.</li>\n        <li><strong>Удобство:</strong> сайт отлично выглядит на всех устройствах.</li>\n      </ul>\n    </div>\n\n    <div class=\"block\">\n      <h2>Что дальше?</h2>\n      <p>Мы продолжаем развивать проект — в будущем появятся достижения, индивидуальные рейтинги, новые инструменты взаимодействия и ещё больше поводов для гордости каждым рестораном и сотрудником.</p>\n    </div>\n\n    <div class=\"block creator-block\">\n      <img src=\"@PROJECT_PATH@/assets/images/photo-5280595512736739927-y.jpg-240x160.jpg\" alt=\"Создатель проекта\" class=\"creator-img\">\n      <div class=\"creator-info\">\n        <h3>Создатель проекта</h3>\n        <p>Тот, кто вдохновляет, проектирует и реализует ❤️</p>\n      </div>\n    </div>\n  </div>\n</section>",
@@ -583,13 +584,10 @@
         },
         {
           "_styles": {
-            "padding-top": "(@paddingTop * 1rem)",
-            "padding-bottom": "(@paddingBottom * 1rem)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "if(@transparentBg, transparent, @bg-value)"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
+            ".section-dark": {
+              "padding-top": "2rem",
+              "padding-bottom": "2rem",
+              "background-color": "#f0f0f0"
             },
             ".mbr-fallback-image.disabled": {
               "display": "none"
@@ -602,60 +600,56 @@
               "height": "100%",
               "position": "absolute",
               "top": "0",
-              "& when (@bg-type = 'video')": {
-                "background-image": "url(@fallBackImage)"
+              "background-image": "url('fallback.jpg')"
+            },
+            "@media (max-width: 992px)": {
+              ".row .map-wrapper": {
+                "margin-top": "2rem"
+              },
+              ".google-map iframe": {
+                "min-height": "350px"
               }
             },
-            ".row": {
-              "@media (max-width: 992px)": {
-                ".map-wrapper": {
-                  "margin-top": "2rem"
-                }
+            "@media (max-width: 767px)": {
+              ".row .map-wrapper": {
+                "margin-top": "1rem"
               },
-              "@media (max-width: 767px)": {
-                ".map-wrapper": {
-                  "margin-top": "1rem"
-                }
+              ".card-wrapper": {
+                "padding": "2rem 1.5rem"
               }
             },
             ".google-map": {
               "height": "100%",
-              "position": "relative",
-              "iframe": {
-                "height": "100%",
-                "width": "100%",
-                "@media (max-width: 992px)": {
-                  "min-height": "350px"
-                }
-              },
-              "[data-state-details]": {
-                "color": "#6b6763",
-                "height": "1.5em",
-                "margin-top": "-0.75em",
-                "padding-left": "1.25rem",
-                "padding-right": "1.25rem",
-                "position": "absolute",
-                "text-align": "center",
-                "top": "50%",
-                "width": "100%"
-              },
-              "&[data-state]": {
-                "background": "#e9e5dc"
-              },
-              "&[data-state=\"loading\"]": {
-                "[data-state-details]": {
-                  "display": "none"
-                }
-              }
+              "position": "relative"
+            },
+            ".google-map iframe": {
+              "height": "100%",
+              "width": "100%"
+            },
+            ".google-map[data-state]": {
+              "background": "#e9e5dc"
+            },
+            ".google-map [data-state-details]": {
+              "color": "#6b6763",
+              "height": "1.5em",
+              "margin-top": "-0.75em",
+              "padding-left": "1.25rem",
+              "padding-right": "1.25rem",
+              "position": "absolute",
+              "text-align": "center",
+              "top": "50%",
+              "width": "100%"
+            },
+            ".google-map[data-state=\"loading\"] [data-state-details]": {
+              "display": "none"
             },
             ".card-wrapper": {
               "padding": "2.25rem",
-              "background": "@cardsBg",
-              "@media (min-width: 992px) and (max-width: 1200px)": {
+              "background": "#ffffff"
+            },
+            "@media (min-width: 992px) and (max-width: 1200px)": {
+              ".card-wrapper": {
                 "padding": "1.5rem"
-              },
-              "@media (max-width: 767px)": {
-                "padding": "2rem 1.5rem"
               }
             },
             "ul": {
@@ -687,57 +681,19 @@
         }
       ]
     },
-    "page2.html": {
-      "settings": {
-        "title": "Page 2",
-        "order": "2"
-      },
-      "components": [
-        {
-          "alias": "deltapi-code-editor",
-          "_isSecondary": true,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-section": {
-              "text-align": "center",
-              "color": "#fff"
-            }
-          },
-          "_name": "custom-html",
-          "_sourceTheme": "startm5",
-          "_customHTML": "<section style=\"padding: 40px 20px; background: #0f1f28; font-family: sans-serif;\">\n  <div style=\"max-width: 600px; margin: auto; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 24px; color: white;\">\n    <h2 style=\"text-align: center; font-size: 24px; margin-bottom: 20px;\">📝 Добавить новость</h2>\n    <form id=\"news-form\">\n      <input type=\"text\" name=\"title\" placeholder=\"Заголовок\" required\n        style=\"width: 100%; padding: 10px 15px; border-radius: 8px; border: none; margin-bottom: 15px;\">\n\n      <textarea name=\"body\" placeholder=\"Текст новости\" required rows=\"4\"\n        style=\"width: 100%; padding: 10px 15px; border-radius: 8px; border: none; resize: vertical; margin-bottom: 15px;\"></textarea>\n\n      <button type=\"submit\"\n        style=\"width: 100%; background-color: #22c55e; color: white; border: none; padding: 12px; border-radius: 8px; font-size: 16px; cursor: pointer;\">\n        🚀 Опубликовать\n      </button>\n    </form>\n  </div>\n</section>",
-          "_cid": "uM8F9MwLtF",
-          "_anchor": "custom-html-1f",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        }
-      ]
-    },
-    "page3.html": {
+    "index.html": {
       "settings": {
         "title": "pass",
-        "order": "1"
+        "order": "3"
       },
       "components": [
         {
           "alias": "deltapi-code-editor",
           "_isSecondary": true,
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "background-color": "@bgColor",
-            ".mbr-section": {
-              "text-align": "center",
-              "color": "#fff"
-            }
-          },
+          "_styles": {},
           "_name": "custom-html",
           "_sourceTheme": "startm5",
-          "_customHTML": "<!-- Фон -->\n<div style=\"min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #3a0ca3, #7209b7); font-family: 'Segoe UI', sans-serif;\">\n  <div style=\"width: 100%; max-width: 400px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 12px 25px rgba(0,0,0,0.3); animation: fadeIn 0.6s ease;\">\n    \n    <!-- Заголовок -->\n    <h2 style=\"text-align:center; color:#333; margin-bottom: 5px;\">OCL Link</h2>\n    <p style=\"text-align:center; margin-top: 0; color:#777; font-size: 15px;\">Вход в ресторан</p>\n    \n    <!-- Логин -->\n    <div style=\"position: relative;\">\n      <input type=\"text\" id=\"username\" placeholder=\"Логин\" style=\"width:100%; padding:12px 40px 12px 12px; margin:10px 0; border-radius:10px; border:1px solid #ccc;\">\n      <span style=\"position:absolute; right:12px; top:50%; transform:translateY(-50%); color:#888;\">👤</span>\n    </div>\n\n    <!-- Пароль -->\n    <div style=\"position: relative;\">\n      <input type=\"password\" id=\"password\" placeholder=\"Пароль\" style=\"width:100%; padding:12px 40px 12px 12px; margin:10px 0; border-radius:10px; border:1px solid #ccc;\">\n      <span style=\"position:absolute; right:12px; top:50%; transform:translateY(-50%); color:#888;\">🔒</span>\n    </div>\n\n    <!-- Кнопка -->\n    <button onclick=\"login()\" style=\"width:100%; padding:12px; background-color:#5a67d8; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer; transition: 0.3s;\">Войти</button>\n\n    <!-- Ошибка -->\n    <p id=\"error\" style=\"color:#d32f2f; margin-top:10px; text-align:center; font-size:14px;\"></p>\n  </div>\n</div>\n\n<!-- Анимация -->\n<style>\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\nbutton:hover {\n  background-color: #4c54d2;\n  transform: scale(1.02);\n}\n</style>\n\n<!-- Скрипт -->\n<script>\n  const users = {\n    \"tp\": { password: \"tp2025\", redirect: \"vhod.html\" },\n    \"okt\": { password: \"pass111\", redirect: \"restaurant2.html\" },\n    \"azm\": { password: \"pass222\", redirect: \"restaurant2.html\" },\n    \"gor\": { password: \"pass333\", redirect: \"restaurant2.html\" },\n    \"ges\": { password: \"pass444\", redirect: \"restaurant2.html\" },\n    \"don\": { password: \"pass555\", redirect: \"restaurant2.html\" },\n    \"admin\": { password: \"tp280822!\", redirect: \"page2.html\" }\n  };\n\n  function login() {\n    const username = document.getElementById(\"username\").value.trim();\n    const password = document.getElementById(\"password\").value.trim();\n    const errorElem = document.getElementById(\"error\");\n\n    if (users[username] && users[username].password === password) {\n      window.location.href = users[username].redirect;\n    } else {\n      errorElem.innerText = \"⛔ Неверный логин или пароль.\";\n    }\n  }\n</script>",
+          "_customHTML": "<!-- Фон -->\n<div style=\"min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #3a0ca3, #7209b7); font-family: 'Segoe UI', sans-serif;\">\n  <div style=\"width: 100%; max-width: 400px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 12px 25px rgba(0,0,0,0.3); animation: fadeIn 0.6s ease;\">\n    \n    <!-- Заголовок -->\n    <h2 style=\"text-align:center; color:#333; margin-bottom: 5px;\"><b>OCL Link</b></h2>\n    <p style=\"text-align:center; margin-top: 0; color:#777; font-size: 15px;\">Вход в ресторан</p>\n    \n    <!-- Логин -->\n    <div style=\"position: relative;\">\n      <input type=\"text\" id=\"username\" placeholder=\"Логин\" style=\"width:100%; padding:12px 40px 12px 12px; margin:10px 0; border-radius:10px; border:1px solid #ccc;\">\n      <span style=\"position:absolute; right:12px; top:50%; transform:translateY(-50%); color:#888;\">👤</span>\n    </div>\n\n    <!-- Пароль -->\n    <div style=\"position: relative;\">\n      <input type=\"password\" id=\"password\" placeholder=\"Пароль\" style=\"width:100%; padding:12px 40px 12px 12px; margin:10px 0; border-radius:10px; border:1px solid #ccc;\">\n      <span style=\"position:absolute; right:12px; top:50%; transform:translateY(-50%); color:#888;\">🔒</span>\n    </div>\n\n    <!-- Кнопка -->\n    <button onclick=\"login()\" style=\"width:100%; padding:12px; background-color:#5a67d8; color:white; border:none; border-radius:10px; font-size:16px; cursor:pointer; transition: 0.3s;\">Войти</button>\n\n    <!-- Ошибка -->\n    <p id=\"error\" style=\"color:#d32f2f; margin-top:10px; text-align:center; font-size:14px;\"></p>\n  </div>\n</div>\n\n<!-- Анимация -->\n<style>\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\nbutton:hover {\n  background-color: #4c54d2;\n  transform: scale(1.02);\n}\n</style>\n\n<!-- Скрипт -->\n<script>\n  const users = {\n    \"tp\": { password: \"tp2025\", redirect: \"vhod.html\" },\n    \"okt\": { password: \"pass111\", redirect: \"restaurant2.html\" },\n    \"azm\": { password: \"pass222\", redirect: \"restaurant2.html\" },\n    \"gor\": { password: \"pass333\", redirect: \"restaurant2.html\" },\n    \"ges\": { password: \"pass444\", redirect: \"restaurant2.html\" },\n    \"don\": { password: \"pass555\", redirect: \"restaurant2.html\" },\n    \"admin\": { password: \"tp280822!\", redirect: \"page2.html\" }\n  };\n\n  function login() {\n    const username = document.getElementById(\"username\").value.trim();\n    const password = document.getElementById(\"password\").value.trim();\n    const errorElem = document.getElementById(\"error\");\n\n    if (users[username] && users[username].password === password) {\n      window.location.href = users[username].redirect;\n    } else {\n      errorElem.innerText = \"⛔ Неверный логин или пароль.\";\n    }\n  }\n</script>",
           "_cid": "uMgb8T3JeW",
           "_anchor": "custom-html-1m",
           "_protectedParams": [],

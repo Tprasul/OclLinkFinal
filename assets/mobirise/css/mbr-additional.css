@@ -783,6 +783,11 @@ a {
 }
 .cid-uKtQauaUOD {
   display: flex;
+  background-image: url("../../../assets/images/chatgpt-image-31-2025-.-18-27-19.png-1536x1024.png");
+}
+.cid-uKtQauaUOD .mbr-overlay {
+  background-color: #000000;
+  opacity: 0.5;
 }
 @media (min-width: 768px) {
   .cid-uKtQauaUOD {
@@ -823,4 +828,88 @@ a {
 }
 .cid-uKtQauaUOD .mbr-section-title {
   text-align: center;
+}
+.cid-uKtQaucTNj .section-dark {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #f0f0f0;
+}
+.cid-uKtQaucTNj .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-uKtQaucTNj .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-image: url('../../../assets/images/fallback.jpg');
+}
+@media (max-width: 992px) {
+  .cid-uKtQaucTNj .row .map-wrapper {
+    margin-top: 2rem;
+  }
+  .cid-uKtQaucTNj .google-map iframe {
+    min-height: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .cid-uKtQaucTNj .row .map-wrapper {
+    margin-top: 1rem;
+  }
+  .cid-uKtQaucTNj .card-wrapper {
+    padding: 2rem 1.5rem;
+  }
+}
+.cid-uKtQaucTNj .google-map {
+  height: 100%;
+  position: relative;
+}
+.cid-uKtQaucTNj .google-map iframe {
+  height: 100%;
+  width: 100%;
+}
+.cid-uKtQaucTNj .google-map[data-state] {
+  background: #e9e5dc;
+}
+.cid-uKtQaucTNj .google-map [data-state-details] {
+  color: #6b6763;
+  height: 1.5em;
+  margin-top: -0.75em;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+.cid-uKtQaucTNj .google-map[data-state="loading"] [data-state-details] {
+  display: none;
+}
+.cid-uKtQaucTNj .card-wrapper {
+  padding: 2.25rem;
+  background: #ffffff;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cid-uKtQaucTNj .card-wrapper {
+    padding: 1.5rem;
+  }
+}
+.cid-uKtQaucTNj ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.cid-uKtQaucTNj .content-head {
+  max-width: 800px;
+}
+.cid-uKtQaucTNj .list,
+.cid-uKtQaucTNj .item-wrap {
+  color: #000000;
+  text-align: center;
+}
+.cid-uKtQaucTNj .mbr-section-title {
+  color: #232323;
 }

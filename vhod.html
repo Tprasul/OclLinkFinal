@@ -14,11 +14,12 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/parallax/jarallax.css">
   <link rel="stylesheet" href="assets/animatecss/animate.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=D7ixCF"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=D7ixCF" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=TrKGZY"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=TrKGZY" type="text/css">
 
   
   
@@ -66,9 +67,9 @@
 
 
   
-  <section data-bs-version="5.1" class="header16 cid-uKtQauaUOD mbr-fullscreen" data-bg-video="https://www.youtube.com/watch?v=2Gg6Seob5Mg" id="hero-17-uKtQauaUOD">
+  <section data-bs-version="5.1" class="header16 cid-uKtQauaUOD mbr-fullscreen mbr-parallax-background" id="hero-17-uKtQauaUOD">
   
-  
+  <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
   <div class="container-fluid">
     <div class="row">
       <div class="content-wrap col-12 col-md-12">
@@ -194,7 +195,7 @@
   </div>
 </section>
 
-<div id="custom-html-17" class="thanks-scroll cid-uLtIJebM6E" data-rv-view="194"></div><script type="module" class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="194">
+<div id="custom-html-17" class="thanks-scroll cid-uLtIJebM6E" data-rv-view="19"></div><script type="module" class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="19">
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
   const supabase = createClient(
@@ -240,7 +241,7 @@
   };
 
   loadMessages();
-</script><style class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="194">
+</script><style class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="19">
   .thanks-scroll {
     max-height: 880px; /* ~8 карточек */
     overflow-y: auto;
@@ -450,13 +451,271 @@
       "Проверь наличие подносов и перчаток перед час-пиком!",
       "Если сомневаешься — уточни у менеджера 🧠",
       "Поддерживай порядок не только за собой, но и рядом 🧼",
-      "Позитив передаётся клиенту быстрее, чем заказ 😉"
-    ];
+      "Позитив передаётся клиенту быстрее, чем заказ 😉",
+          "😊 Улыбка — лучший инструмент в общении с гостями.",
+    "🧼 Всегда мой руки перед началом смены.",
+    "📅 Проверяй срок годности продуктов каждый день.",
+    "👥 Один довольный гость приводит троих новых.",
+    "🚫 Соблюдай санитарные зоны — это важно для безопасности.",
+    "❓ Если не знаешь — спроси, а не гадай.",
+    "🧽 Чистое рабочее место — залог хорошего начала дня.",
+    "👋 Здоровайся первым — это задаёт тон общению.",
+    "🔍 Будь внимателен к деталям — гость замечает всё.",
+    "📏 Соблюдай рецептуру — стабильность важна.",
+    "🤝 Не забывай благодарить коллег.",
+    "👕 Чистая форма — твоя визитная карточка.",
+    "🌡️ Следи за температурой хранения продуктов.",
+    "🎯 Запас хорошего настроения на день — от тебя.",
+    "😄 Не экономь на улыбке — она ничего не стоит.",
+    "🌟 Напоминай себе: я создаю опыт для гостей.",
+    "🆕 Помоги новому сотруднику — ты тоже когда-то начинал.",
+    "👀 Смотри в глаза при разговоре.",
+    "🔥 Всегда проверяй, выключены ли плиты после смены.",
+    "🚻 Внимание к чистоте туалетов — признак культуры.",
+    "❤️ Работай с душой — это видно.",
+    "🐢 Лучше сделать медленно и правильно, чем быстро и плохо.",
+    "🛡️ Задача №1 — безопасность гостей.",
+    "🧹 Убирай за собой, даже если не ты это сделал.",
+    "💍 Не носи украшения на кухне — это опасно.",
+    "📦 Следи за сроками маркировки.",
+    "📋 Хорошее начало смены — с краткого брифинга.",
+    "🧘 Принимай критику спокойно — она помогает расти.",
+    "🎥 Работай так, как будто за тобой наблюдает гость.",
+    "🖥️ Протирай экран кассы — он тоже лицо ресторана.",
+    "🤝 Разделяй задачи с коллегами — командная работа эффективнее.",
+    "🙏 Говори «пожалуйста» и «спасибо» чаще.",
+    "👂 Научись слушать — это важнее, чем говорить.",
+    "📍 Проверь зону обслуживания — всё ли готово.",
+    "⏳ Гость не должен ждать — предугадывай.",
+    "🚫 Не ешь в зоне приготовления.",
+    "🧍 Следи за осанкой — она влияет на настроение.",
+    "🧤 Меняй перчатки при переходе между зонами.",
+    "🔁 Повторяй заказ гостя — это уменьшает ошибки.",
+    "🧂 Напоминай гостю про соусы и салфетки.",
+    "🗓️ Начинай день с плана задач.",
+    "💧 Пей воду — это влияет на продуктивность.",
+    "🗣️ Никогда не спорь с гостем — ищи решение.",
+    "🎁 Дари больше, чем от тебя ждут.",
+    "🧱 Будь опорой, а не обузой для команды.",
+    "🔎 Успех — в ежедневных мелочах.",
+    "📈 Работай сегодня чуть лучше, чем вчера.",
+    "🏅 Гордиcь своей работой — ты часть команды."
+  ];
 
     const randomTip = tips[Math.floor(Math.random() * tips.length)];
     document.getElementById("dailyTip").textContent = `💡 ${randomTip}`;
   </script>
 </section>
+
+<section style="padding: 50px 0; background: #0f0f0f;" class="cid-uMBvz30DSQ" id="custom-html-1n">
+  <div style="max-width: 800px; margin: auto; background: #1a1a1a; border-radius: 16px; padding: 30px; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+    <h2 style="color: #FFD700; font-size: 28px; text-align: center; margin-bottom: 25px;">
+      📰 Обновления сайта
+    </h2>
+
+    <div style="background: #262626; padding: 20px 25px; border-radius: 12px; color: white;">
+      <!-- Здесь вставляй свою новость -->
+      <h3 style="color: #FFD700; margin-top: 0;">🚀 Обновление</h3>
+      <p style="margin: 10px 0 0; font-size: 16px;">
+        Было добавлено:
+        Возможность добавить фото сотрудника в опросах.
+        
+        Галерея фотографий.
+        
+        Защиту от повторных отправок опросов.
+        
+        Таймер с секретным призом для лидера опросов, приз автоматически откроется 31 числа в 12:00.
+      </p>
+      <p style="color: gray; font-size: 14px; margin-top: 15px;">🗓️ Опубликовано: 29 мая 2025</p>
+    </div>
+
+    <!-- Кнопка (если нужна) -->
+    <!--
+    <div style="text-align: center; margin-top: 30px;">
+      <button style="background: #FFD700; border: none; padding: 12px 24px; font-size: 16px; border-radius: 8px; color: black; font-weight: bold; cursor: pointer;">
+        Смотреть все обновления
+      </button>
+    </div>
+    -->
+  </div>
+</section>
+
+<meta charset="UTF-8" class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="23"><title class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="23">Калькулятор зарплаты</title><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="23"><style class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="23">
+    body {
+      background-color: #0f0f0f !important;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+
+    .salary-form {
+      max-width: 500px;
+      margin: auto;
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 16px;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .salary-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff9800;
+    }
+
+    .salary-form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ddd;
+    }
+
+    .salary-form select,
+    .salary-form input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: #2b2b2b;
+      color: #fff;
+      box-sizing: border-box;
+    }
+
+    .salary-form input::placeholder {
+      color: #aaa;
+    }
+
+    .bonus-toggle {
+      margin-top: 20px;
+    }
+
+    .bonus-toggle input[type="checkbox"] {
+      display: none;
+    }
+
+    .bonus-toggle label {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #2b2b2b;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      border: 1px solid #555;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+    .bonus-toggle input[type="checkbox"]:checked + label {
+      background-color: #ff9800;
+      color: #000;
+      border-color: #ff9800;
+    }
+
+    .salary-form button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #ff9800;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    .salary-form button:hover {
+      background-color: #e68900;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+      text-align: left;
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      color: #fff;
+    }
+
+    .result b {
+      color: #ff9800;
+    }
+  </style><div class="salary-form cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="23">
+    <h2>Калькулятор зарплаты</h2>
+
+    <label for="position">Выберите должность:</label>
+    <select id="position">
+      <option value="">-- Выбрать --</option>
+      <option value="trainer">Тренер</option>
+      <option value="trainer2">Тренер 2</option>
+      <option value="chk1">ЧК1</option>
+      <option value="chk2">ЧК2</option>
+      <option value="chk3">ЧК3</option>
+      <option value="tehn">Тех ночь</option>
+      <option value="tehz">Тех зал</option>
+    </select>
+
+    <label for="dayHours">Количество дневных часов:</label>
+    <input type="number" id="dayHours" placeholder="Например: 120">
+
+    <label for="nightHours">Количество ночных часов:</label>
+    <input type="number" id="nightHours" placeholder="Например: 40">
+
+    <div class="bonus-toggle">
+      <input type="checkbox" id="bonus">
+      <label for="bonus">Перфоманс бонус (+3000 сом)</label>
+    </div>
+
+    <button onclick="calculate()">Посчитать зарплату</button>
+
+    <div class="result" id="result"></div>
+  </div><script class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="23">
+    const rates = {
+      trainer:  { day: 186, night: 246, advance: 8000 },
+      trainer2: { day: 191, night: 253, advance: 8000 },
+      chk1:     { day: 151, night: 198, advance: 7000 },
+      chk2:     { day: 166, night: 218, advance: 7000 },
+      chk3:     { day: 171, night: 226, advance: 7000 },
+      tehn:     { day: 220, night: 220, advance: 7000 },
+      tehz:     { day: 156, night: 203, advance: 7000 }
+    };
+
+    function calculate() {
+      const position = document.getElementById('position').value;
+      const dayHours = +document.getElementById('dayHours').value || 0;
+      const nightHours = +document.getElementById('nightHours').value || 0;
+      const hasBonus = document.getElementById('bonus').checked;
+
+      if (!position || !rates[position]) {
+        document.getElementById('result').innerText = 'Пожалуйста, выберите должность.';
+        return;
+      }
+
+      const rate = rates[position];
+      const dayPay = rate.day * dayHours;
+      const nightPay = rate.night * nightHours;
+      const bonus = hasBonus ? 3000 : 0;
+      const advance = rate.advance || 0;
+      const gross = dayPay + nightPay + bonus;
+      const net = gross - advance;
+
+      document.getElementById('result').innerHTML = `
+        Дневные часы: ${dayHours} ч × ${rate.day} сом = <b>${dayPay.toLocaleString()} сом</b><br>
+        Ночные часы: ${nightHours} ч × ${rate.night} сом = <b>${nightPay.toLocaleString()} сом</b><br>
+        Бонус: <b>${bonus.toLocaleString()} сом</b><br>
+        Аванс: -<b>${advance.toLocaleString()} сом</b><br><br>
+        <span style="font-size: 20px;">💰 <b>Итого к выплате: ${Math.max(0, Math.round(net)).toLocaleString()} сом</b></span>
+      `;
+    }
+  </script>
 
 <section style="background: #0f0f0f; padding: 60px 20px;" class="cid-uMaIyydjUN" id="custom-html-1l">
   <div style="max-width: 600px; margin: auto;">
@@ -505,7 +764,7 @@
     ">✅ Сообщение отправлено!</div>
 
   </div>
-</section><script class="cid-uMaIyydjUN" id="custom-html-1l" data-rv-view="197">
+</section><script class="cid-uMaIyydjUN" id="custom-html-1l" data-rv-view="24">
 function showToast(text, color = "#28a745") {
   const toast = document.getElementById("toast");
   toast.innerText = text;
@@ -727,7 +986,7 @@ document.getElementById("feedbackForm").addEventListener("submit", async functio
       <span><span class="label">WhatsApp:</span> +996 (550) 880-451</span>
       <span><span class="label">Email:</span> kfc_tp@fooddream.kg</span>
       <span><span class="label">Адрес:</span> ул. Горького / 1Зв</span>
-    </div></div></section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-builder.html">AI Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/vimeoplayer/player.js"></script>  <script src="assets/theme/js/script.js"></script>  
+    </div></div></section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
