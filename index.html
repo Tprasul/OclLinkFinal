@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Проверка доступа...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #0f2027;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 100px 20px;
+    }
+  </style>
+  <script>
+    fetch("https://api.ipify.org?format=json")
+      .then(response => response.json())
+      .then(data => {
+        const userIP = data.ip;
+        return fetch(`https://script.google.com/macros/s/AKfycby9QkTVdY1aEiVhP38nclk66VmlR-Oo4tvSOvYhZlIqpqgejgHKJ9ikUeq_nPS9QEVP/exec?ip=${userIP}`);
+      })
+      .then(response => response.text())
+      .then(result => {
+        if (result === "ALLOW") {
+          window.location.href = "home.html";
+        } else {
+          window.location.href = "no-access.html";
+        }
+      })
+      .catch(() => {
+        window.location.href = "no-access.html";
+      });
+  </script>
+</head>
+<body>
+  <h1>⏳ Проверка доступа...</h1>
+  <p>Пожалуйста, подождите несколько секунд...</p>
+</body>
+</html>
