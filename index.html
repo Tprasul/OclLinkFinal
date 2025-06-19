@@ -36,5 +36,20 @@
 <body>
   <h1>⏳ Проверка доступа...</h1>
   <p>Пожалуйста, подождите несколько секунд...</p>
+  <script>
+fetch("version.txt", { cache: "no-store" })
+  .then(response => response.text())
+  .then(version => {
+    const currentVersion = version.trim();
+    const savedVersion = localStorage.getItem("site_version");
+    if (savedVersion && savedVersion !== currentVersion) {
+      localStorage.setItem("site_version", currentVersion);
+      location.reload(true); // Обновить страницу с очисткой кэша
+    } else {
+      localStorage.setItem("site_version", currentVersion);
+    }
+  })
+  .catch(err => console.error("Не удалось проверить версию сайта:", err));
+</script>
 </body>
 </html>
