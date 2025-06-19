@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=1L2M4x"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=1L2M4x" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=NyaXWL"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=NyaXWL" type="text/css">
 
   
   
@@ -26,7 +26,70 @@
 </head>
 <body>
   
-  <style class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="200">
+  <section class="section cid-uNszmOpXnh" style="padding: 40px 20px; text-align: center; background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: white;" id="custom-html-52">
+  <!-- Приз -->
+  <div id="leader-prize-block" style="display: none; max-width: 700px; margin: 30px auto 0; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+    <h3 style="color: gold; font-size: 24px;">🎁 Приз для лидера опросов</h3>
+    <p style="font-size: 18px;">Ты лучший! Получи 1000 Дрим Коинов 👑
+    <img src="https://i.postimg.cc/t4PxHs1f/7743-D19-C-D232-4204-A3-BB-29-C4-A24-DCCB4.jpg" alt="Приз" style="max-width: 100%; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4); margin-top: 20px;">
+  </p></div>
+
+  <!-- Таймер -->
+  <div id="leader-timer-block">
+    <h3>⏳ Лидер опросов будет выбран через:</h3>
+    <div id="leader-countdown" style="font-size: 24px; font-weight: bold; margin-top: 10px;">Загрузка...</div>
+  </div>
+
+  <!-- Звук -->
+  <audio id="winner-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_a9fa45e9ab.mp3"></audio>
+</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="451"></script><script class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="451">
+  const prizeBlock = document.getElementById("leader-prize-block");
+  const timerBlock = document.getElementById("leader-timer-block");
+  const countdown = document.getElementById("leader-countdown");
+  const sound = document.getElementById("winner-sound");
+
+  const testMode = false; // Включи true для проверки
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const target = testMode 
+    ? new Date(now.getTime() + 10000)
+    : new Date(year, month, 31, 12, 0, 0);
+
+  function launchConfetti() {
+    confetti({
+      particleCount: 200,
+      spread: 120,
+      origin: { y: 0.2 },
+      colors: ['#ffd700', '#ff5e57', '#4CAF50']
+    });
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      prizeBlock.style.display = "block";
+      timerBlock.style.display = "none";
+      sound.play();
+      launchConfetti();
+      clearInterval(timer);
+    } else {
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+      countdown.textContent = `${d}д ${h}ч ${m}м ${s}с`;
+    }
+  }
+
+  updateCountdown();
+  const timer = setInterval(updateCountdown, 1000);
+</script>
+
+<style class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="452">
   .section-dark {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     padding: 40px 20px;
@@ -80,7 +143,7 @@
       <div id="topList" style="font-size: 18px;"></div>
     </div>
   </div>
-</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="200"></script><script class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="200">
+</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="452"></script><script class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="452">
 fetch("https://script.google.com/macros/s/AKfycbwseNAEsCZkyvq19fvRGP2h_8BRXIT0VzifohyE3fmXGUajdwf_t_4i8hF_4WPdiXrJwg/exec")
   .then(res => res.json())
   .then(data => {
@@ -114,69 +177,6 @@ fetch("https://script.google.com/macros/s/AKfycbwseNAEsCZkyvq19fvRGP2h_8BRXIT0Vz
   });
 </script>
 
-<section class="section cid-uNszmOpXnh" style="padding: 40px 20px; text-align: center; background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: white;" id="custom-html-52">
-  <!-- Приз -->
-  <div id="leader-prize-block" style="display: none; max-width: 700px; margin: 30px auto 0; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-    <h3 style="color: gold; font-size: 24px;">🎁 Приз для лидера опросов</h3>
-    <p style="font-size: 18px;">Ты лучший! Получи 1000 Дрим Коинов 👑
-    <img src="https://i.postimg.cc/t4PxHs1f/7743-D19-C-D232-4204-A3-BB-29-C4-A24-DCCB4.jpg" alt="Приз" style="max-width: 100%; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4); margin-top: 20px;">
-  </p></div>
-
-  <!-- Таймер -->
-  <div id="leader-timer-block">
-    <h3>⏳ Лидер опросов будет выбран через:</h3>
-    <div id="leader-countdown" style="font-size: 24px; font-weight: bold; margin-top: 10px;">Загрузка...</div>
-  </div>
-
-  <!-- Звук -->
-  <audio id="winner-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_a9fa45e9ab.mp3"></audio>
-</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="201"></script><script class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="201">
-  const prizeBlock = document.getElementById("leader-prize-block");
-  const timerBlock = document.getElementById("leader-timer-block");
-  const countdown = document.getElementById("leader-countdown");
-  const sound = document.getElementById("winner-sound");
-
-  const testMode = false; // Включи true для проверки
-
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth();
-  const target = testMode 
-    ? new Date(now.getTime() + 10000)
-    : new Date(year, month, 31, 12, 0, 0);
-
-  function launchConfetti() {
-    confetti({
-      particleCount: 200,
-      spread: 120,
-      origin: { y: 0.2 },
-      colors: ['#ffd700', '#ff5e57', '#4CAF50']
-    });
-  }
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = target - now;
-
-    if (diff <= 0) {
-      prizeBlock.style.display = "block";
-      timerBlock.style.display = "none";
-      sound.play();
-      launchConfetti();
-      clearInterval(timer);
-    } else {
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const m = Math.floor((diff / (1000 * 60)) % 60);
-      const s = Math.floor((diff / 1000) % 60);
-      countdown.textContent = `${d}д ${h}ч ${m}м ${s}с`;
-    }
-  }
-
-  updateCountdown();
-  const timer = setInterval(updateCountdown, 1000);
-</script>
-
 <section class="section-dark cid-uMaQkLeFz7" id="custom-html-3d">
   <div style="max-width: 700px; margin: auto;">
     <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px;">
@@ -198,7 +198,7 @@ fetch("https://script.google.com/macros/s/AKfycbwseNAEsCZkyvq19fvRGP2h_8BRXIT0Vz
       </div>
     </div>
   </div>
-</section><script class="cid-uMaQkLeFz7" id="custom-html-3d" data-rv-view="202">
+</section><script class="cid-uMaQkLeFz7" id="custom-html-3d" data-rv-view="453">
 const motivationList = [
   "Ты не просто работаешь — ты двигаешь команду вперёд.",
   "Каждое действие приближает к большому результату.",
@@ -248,7 +248,66 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<style class="cid-uLukoiF9Bq" id="custom-html-20" data-rv-view="203">
+<section style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; max-width: 700px; margin: 20px auto;" class="cid-uOwsvVyP6K" id="custom-html-59">
+  <h2 style="color: #ffc107; font-weight: bold; font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+    <span style="font-size: 22px;">🎯</span> Челлендж дня
+  </h2>
+
+  <div id="challenge-text" style="background: rgba(255,255,255,0.07); border-radius: 16px; padding: 20px; color: white; font-size: 16px; text-align: center; margin-bottom: 20px;">
+    Скажи доброе утро 5 коллегам
+  </div>
+
+  <button id="challenge-btn" style="background: #ffffff; color: #0072ff; font-weight: bold; padding: 10px 20px; border: none; border-radius: 12px; font-size: 16px; cursor: pointer; display: block; margin: 0 auto;">
+    Я выполнил!
+  </button>
+
+  <p style="margin-top: 20px; color: #00e676; font-size: 18px; text-align: center; display: none;">
+    ✅ Отлично! Ты молодец 🔥
+  </p>
+</section><script class="cid-uOwsvVyP6K" id="custom-html-59" data-rv-view="454">
+  const challenges = [
+    "Скажи доброе утро 5 коллегам",
+    "Пожелай удачи соседу по смене",
+    "Улыбнись каждому гостю, даже уставшему",
+    "Похвали коллегу за его работу",
+    "Спроси у кого-то, как у него дела — по-настоящему",
+    "Сделай кому-то день легче — без лишних слов",
+    "Поделись позитивом в общем чате",
+    "Замени критику на поддержку сегодня",
+    "Сделай маленькое добро без ожидания ответа",
+    "Скажи: «Ты классно справляешься» — тому, кто это заслужил",
+    "Напомни коллеге, что он молодец",
+    "Пожелай хорошего дня кассиру/повару/уборщику",
+    "Помоги новенькому почувствовать себя частью команды",
+    "Попроси и скажи «Спасибо» — искренне",
+    "Поддержи того, кто в стрессе",
+    "Сделай комплимент по внешности или стилю",
+    "Найди 1 повод сказать: «Я горжусь, что мы работаем вместе»",
+    "Заметил хорошее — озвучь это",
+    "Позволь кому-то пройти первым",
+    "Обними друга по команде (если уместно 😄)",
+    "Поздоровайся с каждым, даже если не хочется",
+    "Признай ошибку без оправданий — это тоже сила",
+    "Напиши короткое доброе сообщение в общий чат",
+    "Скажи «Ты был(а) крут(а) сегодня!» кому-то до конца смены",
+    "Пожелай удачи следующей смене перед уходом"
+  ];
+
+  try {
+    const today = new Date().toDateString();
+    const index = today.split('').reduce((sum, ch) => sum + ch.charCodeAt(0), 0) % challenges.length;
+    document.getElementById('challenge-text').textContent = challenges[index];
+  } catch (e) {
+    // fallback silent
+  }
+
+  document.getElementById('challenge-btn').addEventListener('click', () => {
+    document.getElementById('challenge-btn').disabled = true;
+    document.getElementById('challenge-result').style.display = 'block';
+  });
+</script>
+
+<style class="cid-uLukoiF9Bq" id="custom-html-20" data-rv-view="455">
   .section-dark {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     padding: 40px 20px;
@@ -383,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   </div>
-</section><script class="cid-uLukoiF9Bq" id="custom-html-20" data-rv-view="203">
+</section><script class="cid-uLukoiF9Bq" id="custom-html-20" data-rv-view="455">
   function toggleAccordion(header) {
     const content = header.nextElementSibling;
     const isOpen = content.style.display === 'grid';
@@ -408,7 +467,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ">
     <!-- Фото будут подставляться сюда -->
   </div>
-</section><style class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="204">
+</section><style class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="456">
   .section-dark {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   }
@@ -444,7 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-</style><script class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="204">
+</style><script class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="456">
   const slider = document.getElementById("slider");
 
   function shuffle(array) {
@@ -467,7 +526,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slider.appendChild(div);
       });
     });
-</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-creator.html">AI Website Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
