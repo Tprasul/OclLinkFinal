@@ -1,56 +1,64 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Проверка доступа...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Доступ к сайту</title>
   <style>
     body {
-      background-color: #0f2027;
+      background: #0f2027;
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
       text-align: center;
-      padding: 100px 20px;
+      padding: 60px 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
   </style>
-  <script>
-    fetch("https://api.ipify.org?format=json")
-      .then(response => response.json())
-      .then(data => {
-        const userIP = data.ip;
-        return fetch(`https://script.google.com/macros/s/AKfycby9QkTVdY1aEiVhP38nclk66VmlR-Oo4tvSOvYhZlIqpqgejgHKJ9ikUeq_nPS9QEVP/exec?ip=${userIP}`);
-      })
-      .then(response => response.text())
-      .then(result => {
-        if (result === "ALLOW") {
-          window.location.href = "home.html";
-        } else {
-          window.location.href = "no-access.html";
-        }
-      })
-      .catch(() => {
-        window.location.href = "no-access.html";
-      });
-  </script>
 </head>
 <body>
-  <h1>⏳ Проверка доступа...</h1>
-  <p>Пожалуйста, подождите несколько секунд...</p>
- <script>
-fetch("version.txt?v=" + new Date().getTime(), { cache: "no-store" })
-  .then(response => response.text())
-  .then(version => {
-    const currentVersion = version.trim();
-    const savedVersion = localStorage.getItem("site_version");
+  <div class="card">
+    <h1>🔐 Проверка доступа...</h1>
+    <p>Пожалуйста, подождите. Проверяем подключение.</p>
+  </div>
 
-    if (savedVersion && savedVersion !== currentVersion) {
-      localStorage.setItem("site_version", currentVersion);
-      location.reload(true);
-    } else {
-      localStorage.setItem("site_version", currentVersion);
-    }
-  })
-  .catch(err => console.error("Не удалось проверить версию сайта:", err));
-</script>
+  <script>
+    const allowedIps = [
+      "77.235.29.106", // ресторан 1
+      "77.235.29.107", // ресторан 2
+      "77.235.29.108", // ресторан 3
+      "77.235.29.109", // ресторан 4
+      "77.235.29.110", // ресторан 5
+      "77.235.29.111"  // ресторан 6
+    ];
+
+    fetch("https://api.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => {
+        if (allowedIps.includes(data.ip)) {
+          window.location.href = "home.html";
+        } else {
+          document.querySelector(".card").innerHTML = `
+            <h1>🚫 Доступ запрещён</h1>
+            <p>Вы должны быть подключены к Wi-Fi ресторана для доступа к сайту.</p>
+            <p>Ваш IP: <b>${data.ip}</b></p>
+          `;
+        }
+      })
+      .catch(err => {
+        document.querySelector(".card").innerHTML = `
+          <h1>⚠️ Ошибка</h1>
+          <p>Не удалось определить ваш IP-адрес. Проверьте подключение.</p>
+        `;
+        console.error("Ошибка получения IP:", err);
+      });
+  </script>
 </body>
 </html>
