@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=b56DN7"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=b56DN7" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=HIfx0Y"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=HIfx0Y" type="text/css">
 
   
   
@@ -26,432 +26,831 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941"><title class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">Опрос - Филе OR/HS</title><style class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
-    .form-container { max-width:600px; margin:auto; font-family:sans-serif; padding:20px; border:1px solid #ddd; border-radius:12px; background-color:#FFE4E1; }
-    .avatar-img { width:150px; height:150px; border-radius:50%; object-fit:cover; margin:0 auto 20px; display:block; }
-    .form-title { text-align:center; font-size:24px; font-weight:bold; margin-bottom:20px; }
-    label { font-weight:bold; display:block; margin-top:20px; margin-bottom:10px; }
-    input[type="text"], textarea { width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; font-size:14px; box-sizing:border-box; }
-    .radio-group { display:flex; flex-direction:column; gap:10px; margin-bottom:10px; }
-    .radio-option { display:flex; align-items:center; gap:10px; cursor:pointer; }
-    .radio-option input[type="radio"] { display:none; }
-    .custom-radio { width:40px; height:40px; background-color:#eee; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#333; border:2px solid transparent; transition:0.2s; }
-    .radio-option input[type="radio"]:checked + .custom-radio { border-color:#d32f2f; background-color:#d32f2f; color:white; }
-    .submit-btn { width:100%; margin-top:30px; padding:12px 20px; background-color:#d32f2f; color:white; font-size:16px; border:none; border-radius:8px; cursor:pointer; }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941"></script><div class="form-container cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
+  <meta charset="UTF-8" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="635"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="635"><title class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="635">Опрос - Филе OR/HS</title><style class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="635">
+    /* Глобальные настройки для отзывчивого дизайна */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      display: flex;
+      flex-direction: column; /* Элементы в столбик, для центрирования */
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px; /* Отступ по краям для адаптивности */
+      font-family: sans-serif;
+    }
+    .form-container {
+      max-width: 600px;
+      width: 100%; /* Занимает всю доступную ширину до max-width */
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #FFE4E1; /* Светло-розовый */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .avatar-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px auto; /* Центрирование */
+      display: block;
+      border: 3px solid #d32f2f; /* Цвет как у кнопки */
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+    .form-title {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .question-frame { /* Рамка для вопросов и полей ввода */
+      border: 1px solid #ffcccb; 
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 25px; 
+      background-color: #fffafa; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .question-frame label { /* Стиль для текста вопроса/поля внутри рамки */
+        margin-top: 0 !important; 
+        margin-bottom: 12px !important; 
+        display: block !important; 
+        font-weight: bold !important; 
+        color: #555 !important; 
+        line-height: 1.4 !important; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word; 
+    }
+    label { /* Сброс общих стилей label, чтобы они не влияли на элементы внутри рамок */
+        font-weight: normal; 
+        display: inline; 
+        margin: 0; 
+        padding: 0; 
+        color: inherit;
+        line-height: normal;
+    }
+
+    input[type="text"], textarea {
+      width: 100%; 
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 0; 
+    }
+    textarea {
+      resize: vertical; 
+      min-height: 80px;
+    }
+    .radio-group {
+      display: flex; 
+      flex-direction: row; /* Варианты в ряд */
+      gap: 20px; 
+      margin-bottom: 0; 
+      flex-wrap: wrap; 
+      justify-content: flex-start; 
+    }
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: transparent; 
+      transition: background-color 0.2s ease;
+      flex-shrink: 0; 
+    }
+    .radio-option:hover {
+      background-color: #f0f0f0; 
+    }
+    .radio-option input[type="radio"] {
+      display: none; 
+    }
+    .custom-radio {
+      flex-shrink: 0; 
+      width: 35px; 
+      height: 35px;
+      background-color: #eee;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+      border: 2px solid transparent;
+      transition: 0.2s;
+      font-size: 18px;
+    }
+    .radio-option input[type="radio"]:checked + .custom-radio {
+      border-color: #d32f2f;
+      background-color: #d32f2f;
+      color: white;
+      box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+    }
+    .submit-btn {
+      margin-top: 40px;
+      padding: 15px 25px;
+      background-color: #d32f2f;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .submit-btn:hover:not(:disabled) {
+      background-color: #b71c1c;
+      transform: translateY(-2px);
+    }
+    .submit-btn:disabled {
+      background-color: #ff7f7f; 
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Медиа-запросы для адаптации под мобильные */
+    @media (max-width: 768px) {
+        body { padding: 15px; }
+        .form-container { padding: 20px; }
+        .form-title { font-size: 24px; margin-bottom: 20px; }
+        .question-frame { padding: 10px; margin-bottom: 20px; }
+        .question-frame label { font-size: 15px; }
+        input[type="text"], textarea { 
+            font-size: 15px;
+            padding: 10px;
+        }
+        .radio-group {
+            flex-direction: column; /* Варианты в столбик на мобильных */
+            gap: 8px; 
+        }
+        .radio-option {
+            padding: 8px;
+        }
+        .custom-radio {
+            width: 30px; 
+            height: 30px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            font-size: 16px;
+            padding: 12px 20px;
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: 480px) { /* Дополнительная адаптация для очень маленьких экранов */
+        body { padding: 10px; }
+        .form-container { padding: 15px; }
+        .form-title { font-size: 22px; margin-bottom: 15px; }
+        .avatar-img { width: 120px; height: 120px; }
+        .question-frame { margin-bottom: 15px; }
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="635"></script><div class="form-container cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="635">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
     <div class="form-title">Опрос - Филе OR/HS</div>
     <form id="customForm">
-      <label>Ваше имя:</label>
-      <input type="text" name="yourName" required="">
-      <label>Имя сотрудника:</label>
-      <input type="text" name="employeeName" required="">
+      <!-- Скрытое поле для идентификации опроса -->
+      <input type="hidden" name="surveyId" value="file_or_hs_survey"> 
+
+      <!-- Имя HR -->
+      <div class="question-frame">
+        <label for="yourName">Ваше имя:</label>
+        <input type="text" id="yourName" name="yourName" required="">
+      </div>
+      
+      <!-- Имя сотрудника -->
+      <div class="question-frame">
+        <label for="employeeName">Имя сотрудника:</label>
+        <input type="text" id="employeeName" name="employeeName" required="">
+      </div>
 
       <!-- 1 -->
-      <label>1. Обувь закрытая, кожаная, темная, на нескользящей подошве. Носки только черного цвета.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="1" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="1" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>1. Обувь закрытая, кожаная, темная, на нескользящей подошве. Носки только черного цвета:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q1_shoes_socks" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q1_shoes_socks" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 2 -->
-      <label>2. Ухоженность соответствует стандартам (лицо выбрито, ногти пострижены, лак на ногтях отсутствует, стрижка опрятная, макияж спокойный).</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="2" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="2" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>2. Ухоженность соответствует стандартам (лицо выбрито, ногти пострижены, лак на ногтях отсутствует, стрижка опрятная, макияж спокойный):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q2_grooming" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q2_grooming" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 3 -->
-      <label>3. Отсутствует пирсинг и любые ювелирные украшения.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="3" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="3" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>3. Отсутствует пирсинг и любые ювелирные украшения:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q3_no_piercing_jewelry" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q3_no_piercing_jewelry" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 4 -->
-      <label>4. Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="4" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="4" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>4. Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q4_no_visible_illness" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q4_no_visible_illness" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 5 -->
-      <label>5. Моет руки согласно правилам мытья рук, при необходимости использует перчатки при работе с продуктом.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="5" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="5" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>5. Моет руки согласно правилам мытья рук, при необходимости использует перчатки при работе с продуктом:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q5_hand_washing_gloves" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q5_hand_washing_gloves" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 6 -->
-      <label>6. Обеспечивает отсутствие перекрестного загрязнения.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="6" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="6" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>6. Обеспечивает отсутствие перекрестного загрязнения:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q6_no_cross_contamination" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q6_no_cross_contamination" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 7 -->
-      <label>7. Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="7" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="7" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>7. Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q7_shelf_life_rotation" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q7_shelf_life_rotation" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 8 -->
-      <label>8. Соблюдает технику безопасности при работе с оборудованием.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="8" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="8" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>8. Соблюдает технику безопасности при работе с оборудованием:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q8_equipment_safety" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q8_equipment_safety" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 9 -->
-      <label>9. Сообщает менеджеру о любых неисправностях оборудования.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="9" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="9" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>9. Сообщает менеджеру о любых неисправностях оборудования:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q9_report_malfunctions" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q9_report_malfunctions" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 10 -->
-      <label>10. Берет синюю/черную гастроемкость для куриного полуфабриката.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="10" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="10" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>10. Берет синюю/черную гастроемкость для куриного полуфабриката:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q10_blue_black_gastro" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q10_blue_black_gastro" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 11 -->
-      <label>11. Достает из холодильника упаковку с филе, соблюдая правило ротации.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="11" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="11" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>11. Достает из холодильника упаковку с филе, соблюдая правило ротации:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q11_fridge_filet" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q11_fridge_filet" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 12 -->
-      <label>12. Помещает упаковку в гастроемкость и отнесет ее к панировочному столу.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="12" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="12" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>12. Помещает упаковку в гастроемкость и отнесет ее к панировочному столу:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q12_gastro_to_breading_table" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q12_gastro_to_breading_table" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 13 -->
-      <label>13. Открывает упаковку ножницами для куриной продукции.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="13" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="13" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>13. Открывает упаковку ножницами для куриной продукции:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q13_open_packaging_scissors" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q13_open_packaging_scissors" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 14 -->
-      <label>14. Выкладывает филе в погружную корзину над решеткой и поддоном: Классик min 6 - max 12 шт (8HP), min 4 - max 12 шт (4HPэл, Winston), min 5 - max 12 (4 HP газ) / Зингер min 3 шт - max 18 шт.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="14" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="14" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>14. Выкладывает филе в погружную корзину над решеткой и поддоном: Классик min 6 - max 12 шт (8HP), min 4 - max 12 шт (4HPэл, Winston), min 5 - max 12 (4 HP газ) / Зингер min 3 шт - max 18 шт:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q14_filet_basket_qty" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q14_filet_basket_qty" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 15 -->
-      <label>15. Встряхивает погружную корзину от себя, вверх и на себя - 3 раза.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="15" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="15" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>15. Встряхивает погружную корзину от себя, вверх и на себя - 3 раза:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q15_basket_shake_3times" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q15_basket_shake_3times" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 16 -->
-      <label>16. Раскладывает продукт в панировочной ёмкости и покрывает его панировочной смесью.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="16" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="16" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>16. Раскладывает продукт в панировочной ёмкости и покрывает его панировочной смесью:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q16_breading_spread" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q16_breading_spread" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 17 -->
-      <label>17. Собирает-накрывает, собирает-поднимает филе - 7 раз.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="17" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="17" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>17. Собирает-накрывает, собирает-поднимает филе - 7 раз:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q17_filet_lift_7times" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q17_filet_lift_7times" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 18 -->
-      <label>18. Собирает филе качалочной корзиной.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="18" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="18" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>18. Собирает филе качалочной корзиной:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q18_rocking_basket_collect" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q18_rocking_basket_collect" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 19 -->
-      <label>19. Покачивает корзину (одна рука выше, другая ниже).</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="19" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="19" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>19. Покачивает корзину (одна рука выше, другая ниже):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q19_rocking_basket_swing" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q19_rocking_basket_swing" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 20 -->
-      <label>20. Кладет филе в погружную корзину.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="20" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="20" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>20. Кладет филе в погружную корзину:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q20_filet_to_fryer_basket" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q20_filet_to_fryer_basket" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 21 -->
-      <label>21. Окунает филе в воду, наклоняет корзину налево, затем направо.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="21" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="21" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>21. Окунает филе в воду, наклоняет корзину налево, затем направо:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q21_filet_water_dip" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q21_filet_water_dip" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 22 -->
-      <label>22. Держит корзину в воде до прекращения появления пузырьков, извлекает корзину из бачка и даёт воде стечь.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="22" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="22" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>22. Держит корзину в воде до прекращения появления пузырьков, извлекает корзину из бачка и даёт воде стечь:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q22_no_bubbles_drain" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q22_no_bubbles_drain" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 23 -->
-      <label>23. Встряхивает погружную корзину от себя, вверх и на себя - 10 раз.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="23" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="23" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>23. Встряхивает погружную корзину от себя, вверх и на себя - 10 раз:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q23_basket_shake_10times" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q23_basket_shake_10times" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 24 -->
-      <label>24. Раскладывает продукт в панировочной ёмкости и покрывает его панировочной смесью.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="24" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="24" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>24. Раскладывает продукт в панировочной ёмкости и покрывает его панировочной смесью:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q24_breading_spread_second" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q24_breading_spread_second" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 25 -->
-      <label>25. Собирает-накрывает, собирает-поднимает филе - 7 раз.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="25" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="25" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>25. Собирает-накрывает, собирает-поднимает филе - 7 раз:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q25_filet_lift_7times_second" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q25_filet_lift_7times_second" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 26 -->
-      <label>26. Ладонями вдавливает панировку на кусочки продукта 7 раз, продвигаясь вокруг ящика и заканчивая в центре.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="26" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="26" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>26. Ладонями вдавливает панировку на кусочки продукта 7 раз, продвигаясь вокруг ящика и заканчивая в центре:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q26_breading_press" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q26_breading_press" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 27 -->
-      <label>27. Вынимает по два куска филе, встряхивает его.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="27" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="27" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>27. Вынимает по два куска филе, встряхивает его:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q27_two_pieces_shake" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q27_two_pieces_shake" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 28 -->
-      <label>28. "Максимальное время панирования филе Классик 6 шт 1 мин 30 сек, 12 шт 2 мин 30 сек / Зингер 3 шт 1 мин 20 сек, 18 шт 2 мин 30 сек"</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="28" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="28" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>28. Максимальное время панирования филе Классик 6 шт 1 мин 30 сек, 12 шт 2 мин 30 сек / Зингер 3 шт 1 мин 20 сек, 18 шт 2 мин 30 сек:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q28_breading_time_limit" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q28_breading_time_limit" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 29 -->
-      <label>29. "Выкладывает филе Классик на решетки max 4 шт на ярус (4HP эл., Winston), max 5 шт на ярус (4HP газ.), max 6 шт на ярус (8 HP)"</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="29" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="29" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>29. Выкладывает филе Классик на решетки max 4 шт на ярус (4HP эл., Winston), max 5 шт на ярус (4HP газ.), max 6 шт на ярус (8 HP):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q29_classic_filet_placement" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q29_classic_filet_placement" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 30 -->
-      <label>30. "Выкладывает филе Зингер min 1 шт - max 3 шт на одном уровне откидной корзины, min 3 - max 9 в корзине (открытый фритюр), min 1 шт - max 4 шт на решетке, min 3 шт - max 18 шт в корзине (Winston), min 9 - max 36 (6HP)"</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="30" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="30" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>30. Выкладывает филе Зингер min 1 шт - max 3 шт на одном уровне откидной корзины, min 3 - max 9 в корзине (открытый фритюр), min 1 шт - max 4 шт на решетке, min 3 шт - max 18 шт в корзине (Winston), min 9 - max 36 (6HP):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q30_zinger_filet_placement" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q30_zinger_filet_placement" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 31 -->
-      <label>31. Проверяет уровень фритюрного масла при температуре «droP/Ready «</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="31" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="31" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>31. Проверяет уровень фритюрного масла при температуре «droP/Ready»:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q31_oil_level_check" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q31_oil_level_check" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 32 -->
-      <label>32. Вставляет решетки в кассету/корзину снизу вверх, опускает кассету/корзину во фритюрное масло и нажимает на соответствующую кнопку для запуска процесса обжаривания</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="32" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="32" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>32. Вставляет решетки в кассету/корзину снизу вверх, опускает кассету/корзину во фритюрное масло и нажимает на соответствующую кнопку для запуска процесса обжаривания:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q32_fryer_start_process" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q32_fryer_start_process" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 33 -->
-      <label>33. Просеивает панировочную смесь и меняет воду после каждого цикла панирования. Если партии идут подряд и готовятся более чем на одном фритюре, просеивает панировочную смесь и меняет воду после каждых четырех партий.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="33" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="33" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>33. Просеивает панировочную смесь и меняет воду после каждого цикла панирования. Если партии идут подряд и готовятся более чем на одном фритюре, просеивает панировочную смесь и меняет воду после каждых четырех партий:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q33_breading_sift_water_change" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q33_breading_sift_water_change" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 34 -->
-      <label>34. Очищает и дезинфицирует ручки фритюра, ручки корзин, наружную панель компьютера и поверхность открытого фритюра</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="34" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="34" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>34. Очищает и дезинфицирует ручки фритюра, ручки корзин, наружную панель компьютера и поверхность открытого фритюра:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q34_fryer_cleaning_disinfection" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q34_fryer_cleaning_disinfection" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 35 -->
-      <label>35. Останавливает таймер по окончании цикла (после звукового сигнала)</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="35" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="35" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>35. Останавливает таймер по окончании цикла (после звукового сигнала):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q35_timer_stop_signal" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q35_timer_stop_signal" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 36 -->
-      <label>36. Открывает крышку, поднимает корзину и дает стечь маслу в течение 15 сек перед укладкой на решетку</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="36" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="36" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>36. Открывает крышку, поднимает корзину и дает стечь маслу в течение 15 сек перед укладкой на решетку:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q36_lid_lift_oil_drain" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q36_lid_lift_oil_drain" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 37 -->
-      <label>37. Температура готового филе - не менее +85 С</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="37" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="37" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>37. Температура готового филе - не менее +85 С:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q37_filet_temperature" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q37_filet_temperature" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 38 -->
-      <label>38. Перекладывает продукт на решетки/в лотки с дренажем и убирает их в тепловой шкаф/тепловую витрину/ тепловую витрину Prince Castle, отмечая срок хранения</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="38" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="38" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>38. Перекладывает продукт на решетки/в лотки с дренажем и убирает их в тепловой шкаф/тепловую витрину/ тепловую витрину Prince Castle, отмечая срок хранения:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q38_transfer_to_hot_holding" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q38_transfer_to_hot_holding" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 39 -->
-      <label>39. Готовое филе хранится: в тепловом шкафу (+82 С) - 45 мин / в тепловой витрине/тепловой витрине Prince Castle (+65 С) - 30 мин</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="39" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="39" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>39. Готовое филе хранится: в тепловом шкафу (+82 С) - 45 мин / в тепловой витрине/тепловой витрине Prince Castle (+65 С) - 30 мин:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q39_filet_storage_time" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q39_filet_storage_time" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
       <!-- 40 -->
-      <label>40. Соблюдает технику безопасности при любом дополнительном действии.</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="40" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="40" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <div class="question-frame">
+        <label>40. Соблюдает технику безопасности при любом дополнительном действии:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q40_safety_any_action" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q40_safety_any_action" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
-      <label>Сделать фото сотрудника:</label>
-<input type="file" id="cameraInput" accept="image/*" capture="environment" required="" class="form-control mb-3">
+      
+      <style>
+.custom-file-upload {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-      <label>Комментарий:</label>
-      <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
-      <button type="submit" class="submit-btn">Закончить опрос</button>
-    </form>
-  </div><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
-    document.getElementById("customForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+.custom-file-upload:hover {
+  background-color: #e03e3e;
+}
 
-      function convertAnswer(value) {
-        return value === "A" ? "Знает" : "Не знает";
-      }
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+</style>
+<div style="margin-bottom: 20px;">
+  <label style="font-weight: bold; display:block; margin-bottom: 5px;"></label>
 
-      const hrName       = document.querySelector('input[name="yourName"]').value.trim();
-      const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
-      const comment      = document.querySelector('textarea[name="comment"]').value.trim();
-
-      const formData = {
-        "Имя HR": hrName,
-        "Имя сотрудника": employeeName,
-        "Обувь закрытая, кожаная, темная, на нескользящей подошве. Носки только черного цвета.": convertAnswer(document.querySelector('input[name="1"]:checked').value),
-        "Ухоженность соответствует стандартам (лицо выбрито, ногти пострижены, лак на ногтях отсутствует, стрижка опрятная, макияж спокойный).": convertAnswer(document.querySelector('input[name="2"]:checked').value),
-        "Отсутствует пирсинг и любые ювелирные украшения.": convertAnswer(document.querySelector('input[name="3"]:checked').value),
-        "Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы.": convertAnswer(document.querySelector('input[name="4"]:checked').value),
-        "Моет руки согласно правилам мытья рук, при необходимости использует перчатки при работе с продуктом.": convertAnswer(document.querySelector('input[name="5"]:checked').value),
-        "Обеспечивает отсутствие перекрестного загрязнения.": convertAnswer(document.querySelector('input[name="6"]:checked').value),
-        "Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов.": convertAnswer(document.querySelector('input[name="7"]:checked').value),
-        "Соблюдает технику безопасности при работе с оборудованием.": convertAnswer(document.querySelector('input[name="8"]:checked').value),
-        "Сообщает менеджеру о любых неисправностях оборудования.": convertAnswer(document.querySelector('input[name="9"]:checked').value),
-        "Берет синюю/черную гастроемкость для куриного полуфабриката.": convertAnswer(document.querySelector('input[name="10"]:checked').value),
-        "Достает из холодильника упаковку с филе, соблюдая правило ротации.": convertAnswer(document.querySelector('input[name="11"]:checked').value),
-        "Помещает упаковку в гастроемкость и отнесет ее к панировочному столу.": convertAnswer(document.querySelector('input[name="12"]:checked').value),
-        "Открывает упаковку ножницами для куриной продукции.": convertAnswer(document.querySelector('input[name="13"]:checked').value),
-        "Выкладывает филе в погружную корзину над решеткой и поддоном: Классик min 6 - max 12 шт (8HP), min 4 - max 12 шт (4HPэл, Winston), min 5 - max 12 (4 HP газ) / Зингер min 3 шт - max 18 шт.": convertAnswer(document.querySelector('input[name="14"]:checked').value),
-        "Встряхивает погружную корзину от себя, вверх и на себя - 3 раза.": convertAnswer(document.querySelector('input[name="15"]:checked').value),
-        "Раскладывает продукт в панировочной ёмкости и покрывает его панировочной смесью.": convertAnswer(document.querySelector('input[name="16"]:checked').value),
-        "Собирает-накрывает, собирает-поднимает филе - 7 раз.": convertAnswer(document.querySelector('input[name="17"]:checked').value),
-        "Собирает филе качалочной корзиной.": convertAnswer(document.querySelector('input[name="18"]:checked').value),
-        "Покачивает корзину (одна рука выше, другая ниже).": convertAnswer(document.querySelector('input[name="19"]:checked').value),
-        "Кладет филе в погружную корзину.": convertAnswer(document.querySelector('input[name="20"]:checked').value),
-        "Окунает филе в воду, наклоняет корзину налево, затем направо.": convertAnswer(document.querySelector('input[name="21"]:checked').value),
-        "Держит корзину в воде до прекращения появления пузырьков, извлекает корзину из бачка и даёт воде стечь.": convertAnswer(document.querySelector('input[name="22"]:checked').value),
-        "Встряхивает погружную корзину от себя, вверх и на себя - 10 раз.": convertAnswer(document.querySelector('input[name="23"]:checked').value),
-        "Раскладывает продукт в панировочной ёмкости и покрывает его панировочной смесью.": convertAnswer(document.querySelector('input[name="24"]:checked').value),
-        "Собирает-накрывает, собирает-поднимает филе - 7 раз.": convertAnswer(document.querySelector('input[name="25"]:checked').value),
-        "Ладонями вдавливает панировку на кусочки продукта 7 раз, продвигаясь вокруг ящика и заканчивая в центре.": convertAnswer(document.querySelector('input[name="26"]:checked').value),
-        "Вынимает по два куска филе, встряхивает его.": convertAnswer(document.querySelector('input[name="27"]:checked').value),
-        "\"Максимальное время панирования филе Классик 6 шт 1 мин 30 сек, 12 шт 2 мин 30 сек / Зингер 3 шт 1 мин 20 сек, 18 шт 2 мин 30 сек\"": convertAnswer(document.querySelector('input[name="28"]:checked').value),
-        "\"Выкладывает филе Классик на решетки max 4 шт на ярус (4HP эл., Winston), max 5 шт на ярус (4HP газ.), max 6 шт на ярус (8 HP)\"": convertAnswer(document.querySelector('input[name="29"]:checked').value),
-        "\"Выкладывает филе Зингер min 1 шт - max 3 шт на одном уровне откидной корзины, min 3 - max 9 в корзине (открытый фритюр), min 1 шт - max 4 шт на решетке, min 3 шт - max 18 шт в корзине (Winston), min 9 - max 36 (6HP)\"": convertAnswer(document.querySelector('input[name="30"]:checked').value),
-        "Проверяет уровень фритюрного масла при температуре «droP/Ready «": convertAnswer(document.querySelector('input[name="31"]:checked').value),
-        "Вставляет решетки в кассету/корзину снизу вверх, опускает кассету/корзину во фритюрное масло и нажимает на соответствующую кнопку для запуска процесса обжаривания": convertAnswer(document.querySelector('input[name="32"]:checked').value),
-        "Просеивает панировочную смесь и меняет воду после каждого цикла панирования. Если партии идут подряд и готовятся более чем на одном фритюре, просеивает панировочную смесь и меняет воду после каждых четырех партий.": convertAnswer(document.querySelector('input[name="33"]:checked').value),
-        "Очищает и дезинфицирует ручки фритюра, ручки корзин, наружную панель компьютера и поверхность открытого фритюра": convertAnswer(document.querySelector('input[name="34"]:checked').value),
-        "Останавливает таймер по окончании цикла (после звукового сигнала)": convertAnswer(document.querySelector('input[name="35"]:checked').value),
-        "Открывает крышку, поднимает корзину и даёт стечь маслу в течение 15 сек перед укладкой на решетку": convertAnswer(document.querySelector('input[name="36"]:checked').value),
-        "Температура готового филе - не менее +85 С": convertAnswer(document.querySelector('input[name="37"]:checked').value),
-        "Перекладывает продукт на решетки/в лотки с дренажем и убирает их в тепловой шкаф/тепловую витрину/ тепловую витрину Prince Castle, отмечая срок хранения": convertAnswer(document.querySelector('input[name="38"]:checked').value),
-        "Готовое филе хранится: в тепловом шкафу (+82 С) - 45 мин / в тепловой витрине/тепловой витрине Prince Castle (+65 С) - 30 мин": convertAnswer(document.querySelector('input[name="39"]:checked').value),
-        "Комментарий": comment,
-        "Дата": new Date().toLocaleString('ru-RU')
-      };
-
-      // подсчёт процента
-      let score = 0;
-      const total = 39;
-      for (let i = 1; i <= total; i++) {
-        if (document.querySelector(`input[name="${i}"]:checked`).value === "A") {
-          score++;
-        }
-      }
-      formData["Процент знаний"] = Math.round(score / total * 100) + "%";
-
-      // отправка
-      const sheetdbUrl = "https://sheetdb.io/api/v1/npzr9zt6al26l"; // ваш URL
-      fetch(sheetdbUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: formData })
-      })
-      .then(response => response.json())
-      .then(() => {
-        Swal.fire({
-          title: "Опрос - Филе OR/HS",
-          html: `<b>Сотрудник:</b> ${employeeName}<br><b>Комментарий:</b> ${comment || "—"}<br><b>Процент знаний:</b> ${formData["Процент знаний"]}`,
-          icon: "success",
-          confirmButtonText: "OK",
-          confirmButtonColor: "#d32f2f"
-        });
-        document.getElementById("customForm").reset();
-      })
-      .catch(() => {
-        Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
-      });
-    });
-  </script><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
-document.getElementById("customForm").addEventListener("submit", async function(event) {
-  event.preventDefault();
-  const fileInput = document.getElementById("cameraInput");
-  const file = fileInput.files[0];
-  if (!file) {
-    alert("Пожалуйста, сделайте фото.");
-    return;
-  }
-  const reader = new FileReader();
-  reader.onload = async function () {
-    const base64Image = reader.result;
-    const payload = new URLSearchParams();
-    payload.append("photo", base64Image);
-    payload.append("type", file.type);
-    await fetch("https://script.google.com/macros/s/AKfycbx7QvdyCBpSuSj4q9ypocfyLkZ1DeUQg2kD284b-TnmYHeeQMvovj7ypIkggdKR-Q8CiQ/exec", {
-      method: "POST",
-      body: payload,
-    })
-    .then(() => {
-      Swal.fire("Готово", "Фото успешно загружено", "success");
-      document.getElementById("customForm").reset();
-    })
-    .catch(() => {
-      Swal.fire("Ошибка", "Не удалось загрузить фото", "error");
-    });
-  };
-  reader.readAsDataURL(file);
-});
-</script><script class="cid-uLMEx0F3Y9" id="custom-html-2j" data-rv-view="1941">
-let isSubmitting = false;
-
-document.getElementById("customForm").addEventListener("submit", function(event) {
-  if (isSubmitting) {
-    event.preventDefault();
-    return;
+<style>
+  .photo-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
   }
 
-  isSubmitting = true;
-  const btn = document.querySelector(".submit-btn");
-  btn.disabled = true;
-  btn.textContent = "Подводим итоги...";
-});
-</script>
+  .photo-preview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+  }
 
-<style class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="1942">
-  .report-button {
+  .upload-label {
     display: inline-block;
-    background-color: #f44336;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 10px 16px;
+    background-color: #d81922;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
     font-weight: bold;
-    border-radius: 12px;
-    text-decoration: none;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, transform 0.2s;
   }
 
-  .report-button:hover {
-    background-color: #d32f2f;
-    transform: translateY(-3px);
+  .upload-label:hover {
+    background-color: #a50030;
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uLMExE8FyR" id="custom-html-2k" data-rv-view="1942">
-  <a href="https://docs.google.com/spreadsheets/d/1IkNcTfd0SnO29dzDXblnPg8B_YVUW6ZBorLqFOxfT-Q/edit?usp=sharing" target="_blank" class="report-button">
-    📊 Открыть отчёты
-  </a>
-</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+
+  .upload-note {
+    font-size: 12px;
+    color: #999;
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 16px;
+  }
+
+  .loader {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #d1003f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<div class="photo-upload">
+  <label for="photo" class="upload-label">📷 Сделать фото</label>
+  <input type="file" id="photo" accept="image/*" capture="environment" style="display: none">
+  <img id="preview" class="photo-preview" src="file:///C:/Users/rasul/AppData/Local/Mobirise.com/Mobirise/tehnopark280822_0040gmail_002ecom/addons/deltapi-code-editor/custom-html/" alt="Фото" media-simple="true">
+</div>
+
+<div class="upload-note">
+  <div class="loader" id="loader"></div>
+  <span id="uploadText">Фото загружается автоматически</span>
+</div>
+
+<input type="hidden" id="photoUrl" name="photoUrl">
+
+<script>
+  const photoInput = document.getElementById('photo');
+  const preview = document.getElementById('preview');
+  const photoUrlField = document.getElementById('photoUrl');
+  const loader = document.getElementById('loader');
+  const uploadText = document.getElementById('uploadText');
+
+  const uploadUrl = 'https://script.google.com/macros/s/AKfycbzjbYAfHSVAVr4Qyjczvakd-rZF48TkhbaffFZfxT7-_rf-J0suzC9YPw9_CPbPBmgGqw/exec'; // вставь сюда свой скрипт
+
+  photoInput.addEventListener('change', async function () {
+    const file = photoInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      preview.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+
+    // Показать анимацию загрузки
+    loader.style.display = 'inline-block';
+    uploadText.textContent = 'Загрузка фото...';
+
+    const readerUpload = new FileReader();
+    readerUpload.onloadend = async () => {
+      const base64Data = readerUpload.result.split(',')[1];
+
+      const formData = new FormData();
+      formData.append("photo", base64Data);
+      formData.append("filename", "photo_" + Date.now() + ".jpg");
+      formData.append("type", file.type);
+
+      try {
+        const res = await fetch(uploadUrl, {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          photoUrlField.value = data.url;
+        }
+      } catch (err) {
+        console.error("Ошибка загрузки фото:", err);
+      } finally {
+        loader.style.display = 'none';
+        uploadText.textContent = '';
+      }
+    };
+    readerUpload.readAsDataURL(file);
+  });
+</script>
+      
+      <!-- Поле для комментария -->
+      <div class="question-frame">
+        <label for="comment">Комментарий:</label>
+        <textarea id="comment" name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">Закончить опрос</button>
+    
+  </div></form>
+  
+  <script>
+    document.getElementById("customForm").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+      const btn = document.querySelector(".submit-btn");
+      if (btn.disabled) return; 
+
+      btn.disabled = true;
+      btn.textContent = "Отправка данных...";
+
+      try {
+        const form = event.target;
+        const surveyId = form.surveyId.value; 
+        const yourName = form.yourName.value.trim();
+        const employeeName = form.employeeName.value.trim();
+        const comment = form.comment.value.trim();
+        
+        // --- Расчет процента знаний ---
+        const correctAnswersValues = {
+          "q1_shoes_socks": "Знает", 
+          "q2_grooming": "Знает", 
+          "q3_no_piercing_jewelry": "Знает", 
+          "q4_no_visible_illness": "Знает", 
+          "q5_hand_washing_gloves": "Знает", 
+          "q6_no_cross_contamination": "Знает", 
+          "q7_shelf_life_rotation": "Знает", 
+          "q8_equipment_safety": "Знает", 
+          "q9_report_malfunctions": "Знает", 
+          "q10_blue_black_gastro": "Знает", 
+          "q11_fridge_filet": "Знает", 
+          "q12_gastro_to_breading_table": "Знает", 
+          "q13_open_packaging_scissors": "Знает", 
+          "q14_filet_basket_qty": "Знает", 
+          "q15_basket_shake_3times": "Знает", 
+          "q16_breading_spread": "Знает", 
+          "q17_filet_lift_7times": "Знает", 
+          "q18_rocking_basket_collect": "Знает", 
+          "q19_rocking_basket_swing": "Знает", 
+          "q20_filet_to_fryer_basket": "Знает", 
+          "q21_filet_water_dip": "Знает", 
+          "q22_no_bubbles_drain": "Знает", 
+          "q23_basket_shake_10times": "Знает", 
+          "q24_breading_spread_second": "Знает", 
+          "q25_filet_lift_7times_second": "Знает", 
+          "q26_breading_press": "Знает", 
+          "q27_two_pieces_shake": "Знает", 
+          "q28_breading_time_limit": "Знает", 
+          "q29_classic_filet_placement": "Знает", 
+          "q30_zinger_filet_placement": "Знает", 
+          "q31_oil_level_check": "Знает", 
+          "q32_fryer_start_process": "Знает", 
+          "q33_breading_sift_water_change": "Знает", 
+          "q34_fryer_cleaning_disinfection": "Знает", 
+          "q35_timer_stop_signal": "Знает", 
+          "q36_lid_lift_oil_drain": "Знает", 
+          "q37_filet_temperature": "Знает", 
+          "q38_transfer_to_hot_holding": "Знает", 
+          "q39_filet_storage_time": "Знает", 
+          "q40_safety_any_action": "Знает"
+        };
+        
+        let score = 0;
+        let totalQuestions = 0;
+        for (const qName in correctAnswersValues) {
+            // Проверяем, что элементы существуют в DOM, прежде чем пытаться получить их значения
+            const radioButtons = document.querySelectorAll(`input[name="${qName}"]`);
+            if (radioButtons.length > 0) {
+                totalQuestions++;
+                const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value;
+                if (selectedValue === correctAnswersValues[qName]) {
+                    score++;
+                }
+            } else {
+                console.warn(`Вопрос с name="${qName}" не найден в DOM. Возможно, он был удален из HTML.`);
+            }
+        }
+        const percent = Math.round((score / totalQuestions) * 100);
+
+        // --- Подготовка FormData для отправки только текстовых данных ---
+        const formDataToSend = new FormData();
+        formDataToSend.append("surveyId", surveyId); 
+        formDataToSend.append("yourName", yourName);
+        formDataToSend.append("employeeName", employeeName);
+        formDataToSend.append("comment", comment); 
+        formDataToSend.append("Процент знаний", percent + "%"); 
+
+        // Добавляем ответы на вопросы
+        for (const qName in correctAnswersValues) {
+            const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value || "";
+            formDataToSend.append(qName, selectedValue);
+        }
+        
+        // --- URL вашего Apps Script для опроса "Филе OR/HS" ---
+        // !!! ОБЯЗАТЕЛЬНО ЗАМЕНИТЕ ЭТОТ URL НА URL ВАШЕГО РАЗВЕРНУТОГО APPS SCRIPT ДЛЯ ОПРОСА "ФИЛЕ OR/HS" !!!
+        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbzJpuZ76AR34dT43dy561oo18xW4WEuCnP07SJzSHV2IMk4gdjioBf4tktQeYeu6QfK/exec'; 
+
+        // --- Отправка данных ---
+        const response = await fetch(appsScriptUrl, {
+          method: "POST",
+          body: formDataToSend 
+        });
+
+        const result = await response.json(); 
+        
+        if (response.ok && result.status === 'success') {
+          Swal.fire({
+            title: "Опрос - Филе OR/HS", 
+            html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d32f2f'
+          });
+          form.reset(); 
+        } else {
+          console.error("Error sending to Apps Script:", result);
+          Swal.fire({
+            title: "Ошибка",
+            text: `Не удалось отправить данные: ${result.message || 'Неизвестная ошибка.'}`,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d32f2f'
+          });
+        }
+      } catch (error) {
+        console.error("Общая ошибка:", error);
+        Swal.fire({
+          title: "Ошибка",
+          text: "Произошла непредвиденная ошибка. Проверьте консоль.",
+          icon: 'error',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#d32f2f'
+        });
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Закончить опрос";
+      }
+    });
+  </script>
+
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-builder.html">Free AI Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">

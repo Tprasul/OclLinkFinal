@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=SIjmCu"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=SIjmCu" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=rZYGMP"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=rZYGMP" type="text/css">
 
   
   
@@ -26,68 +26,117 @@
 </head>
 <body>
   
-  <meta charset="UTF-8" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953"><title class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">HR - Опрос</title><style class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
-    .form-container {
-      max-width: 600px;
-      margin: auto;
-      font-family: sans-serif;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      background-color: #FFE4E1;
+  <meta charset="UTF-8" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="641"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="641"><title class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="641">HR - Опрос</title><style class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="641">
+    /* Глобальные настройки для отзывчивого дизайна */
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
 
+    body {
+      background-color: #f8f8f8;
+      display: flex;
+      flex-direction: column; /* Элементы в столбик, для центрирования */
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px; /* Отступ по краям для адаптивности */
+      font-family: sans-serif;
+    }
+    .form-container {
+      max-width: 600px;
+      width: 100%; /* Занимает всю доступную ширину до max-width */
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #FFE4E1; /* Светло-розовый */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
     .avatar-img {
       width: 150px;
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 20px;
+      margin: 0 auto 20px auto; /* Центрирование */
       display: block;
+      border: 3px solid #d32f2f; /* Цвет как у кнопки */
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
     }
-
     .form-title {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
-      margin-bottom: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
     }
-
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 10px;
+    .question-frame { /* Рамка для вопросов и полей ввода */
+      border: 1px solid #ffcccb; 
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 25px; 
+      background-color: #fffafa; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .question-frame label { /* Стиль для текста вопроса/поля внутри рамки */
+        margin-top: 0 !important; 
+        margin-bottom: 12px !important; 
+        display: block !important; 
+        font-weight: bold !important; 
+        color: #555 !important; 
+        line-height: 1.4 !important; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word; 
+    }
+    label { /* Сброс общих стилей label, чтобы они не влияли на элементы внутри рамок */
+        font-weight: normal; 
+        display: inline; 
+        margin: 0; 
+        padding: 0; 
+        color: inherit;
+        line-height: normal;
     }
 
     input[type="text"], textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
+      width: 100%; 
+      padding: 12px;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      font-size: 14px;
+      font-size: 16px;
+      margin-bottom: 0; 
     }
-
+    textarea {
+      resize: vertical; 
+      min-height: 80px;
+    }
     .radio-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 10px;
+      display: flex; 
+      flex-direction: row; /* Варианты в ряд */
+      gap: 20px; 
+      margin-bottom: 0; 
+      flex-wrap: wrap; /* Перенос на новую строку, если не хватает места */
+      justify-content: flex-start; 
     }
-
     .radio-option {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       cursor: pointer;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: transparent; 
+      transition: background-color 0.2s ease;
+      flex-shrink: 0; 
     }
-
+    .radio-option:hover {
+      background-color: #f0f0f0; 
+    }
     .radio-option input[type="radio"] {
-      display: none;
+      display: none; 
     }
-
     .custom-radio {
-      width: 40px;
-      height: 40px;
+      flex-shrink: 0; 
+      width: 35px; 
+      height: 35px;
       background-color: #eee;
       border-radius: 50%;
       display: flex;
@@ -97,254 +146,446 @@
       color: #333;
       border: 2px solid transparent;
       transition: 0.2s;
+      font-size: 18px;
     }
-
     .radio-option input[type="radio"]:checked + .custom-radio {
       border-color: #d32f2f;
       background-color: #d32f2f;
       color: white;
+      box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
     }
-
     .submit-btn {
-      margin-top: 30px;
-      padding: 12px 20px;
+      margin-top: 40px;
+      padding: 15px 25px;
       background-color: #d32f2f;
       color: white;
-      font-size: 16px;
+      font-size: 18px;
+      font-weight: bold;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953"></script><div class="form-container cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
+    .submit-btn:hover:not(:disabled) {
+      background-color: #b71c1c;
+      transform: translateY(-2px);
+    }
+    .submit-btn:disabled {
+      background-color: #ff7f7f; 
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Медиа-запросы для адаптации под мобильные */
+    @media (max-width: 768px) {
+        body { padding: 15px; }
+        .form-container { padding: 20px; }
+        .form-title { font-size: 24px; margin-bottom: 20px; }
+        .question-frame { padding: 10px; margin-bottom: 20px; }
+        .question-frame label { font-size: 15px; }
+        input[type="text"], textarea { 
+            font-size: 15px;
+            padding: 10px;
+        }
+        .radio-group {
+            flex-direction: column; /* Варианты в столбик на мобильных */
+            gap: 8px; 
+        }
+        .radio-option {
+            padding: 8px;
+        }
+        .custom-radio {
+            width: 30px; 
+            height: 30px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            font-size: 16px;
+            padding: 12px 20px;
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: 480px) { /* Дополнительная адаптация для очень маленьких экранов */
+        body { padding: 10px; }
+        .form-container { padding: 15px; }
+        .form-title { font-size: 22px; margin-bottom: 15px; }
+        .avatar-img { width: 120px; height: 120px; }
+        .question-frame { margin-bottom: 15px; }
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="641"></script><div class="form-container cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="641">
     <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
+    
+    <div class="form-title">Опрос - HR</div>
 
-    <div class="form-title">HR - Опрос</div>
     <form id="customForm">
-      <label>Ваше имя:</label>
-      <input type="text" name="yourName" required="">
+      <!-- Скрытое поле для идентификации опроса -->
+      <input type="hidden" name="surveyId" value="hr_survey"> 
 
-      <label>Имя сотрудника:</label>
-      <input type="text" name="employeeName" required="">
-
-      <label>Цели на месяц, новости, коммуникация:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="goals" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="goals" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Имя HR -->
+      <div class="question-frame">
+        <label for="yourName">Ваше имя:</label>
+        <input type="text" id="yourName" name="yourName" required="">
+      </div>
+      
+      <!-- Имя сотрудника -->
+      <div class="question-frame">
+        <label for="employeeName">Имя сотрудника:</label>
+        <input type="text" id="employeeName" name="employeeName" required="">
+      </div>
+      
+      <!-- Вопрос 1 -->
+      <div class="question-frame">
+        <label>Цели на месяц, новости, коммуникация:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q1_goals_news_comm" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q1_goals_news_comm" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>Корпоративная культура:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="culture" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="culture" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 2 -->
+      <div class="question-frame">
+        <label>Корпоративная культура:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q2_corporate_culture" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q2_corporate_culture" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>Мотивационные программы:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="mot" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="mot" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 3 -->
+      <div class="question-frame">
+        <label>Мотивационные программы:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q3_motivation_programs" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q3_motivation_programs" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>CHAMPS:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="champs" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="champs" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 4 -->
+      <div class="question-frame">
+        <label>CHAMPS:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q4_champs" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q4_champs" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>ROCC, L3:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="rocc" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="rocc" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 5 -->
+      <div class="question-frame">
+        <label>ROCC, L3:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q5_rocc_l3" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q5_rocc_l3" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>3-х мойка / Дайверси:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="мойка" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="мойка" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 6 -->
+      <div class="question-frame">
+        <label>3-х мойка / Дайверси:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q6_3sink_diversy" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q6_3sink_diversy" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>CSL / Библиотека стандартов:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="CSL" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="CSL" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 7 -->
+      <div class="question-frame">
+        <label>CSL / Библиотека стандартов:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q7_csl_standards_library" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q7_csl_standards_library" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>ПВТР / Дисциплинарный бонус:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="pvtr" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="pvtr" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 8 -->
+      <div class="question-frame">
+        <label>ПВТР / Дисциплинарный бонус:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q8_pvtr_disciplinary_bonus" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q8_pvtr_disciplinary_bonus" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>ОРС / Тет-а-тет:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="opc" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="opc" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 9 -->
+      <div class="question-frame">
+        <label>ОРС / Тет-а-тет:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q9_ors_tete_a_tete" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q9_ors_tete_a_tete" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
 
-      <label>Охрана труда / Пожарная безопасность:</label>
-      <div class="radio-group">
-        <label class="radio-option"><input type="radio" name="OT" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-        <label class="radio-option"><input type="radio" name="OT" value="B"><div class="custom-radio">B</div> Не знает</label>
+      <!-- Вопрос 10 -->
+      <div class="question-frame">
+        <label>Охрана труда / Пожарная безопасность:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q10_labor_fire_safety" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q10_labor_fire_safety" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
       </div>
-      <label>Сделать фото сотрудника:</label>
-<input type="file" id="cameraInput" accept="image/*" capture="environment" required="" class="form-control mb-3">
+      
+      <style>
+.custom-file-upload {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-      <label>Комментарий:</label>
-      <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+.custom-file-upload:hover {
+  background-color: #e03e3e;
+}
 
-      <button type="submit" class="submit-btn">Закончить опрос</button>
-    </form>
-  </div><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
-  document.getElementById("customForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+</style>
+<div style="margin-bottom: 20px;">
+  <label style="font-weight: bold; display:block; margin-bottom: 5px;"></label>
 
-    function convertAnswer(value) {
-      return value === "A" ? "Знает" : value === "B" ? "Не знает" : "";
-    }
-
-    const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
-    const comment = document.querySelector('textarea[name="comment"]').value.trim();
-
-    // Собираем ответы
-    const formData = {
-      "Имя HR": document.querySelector('input[name="yourName"]').value.trim(),
-      "Имя сотрудника": employeeName,
-      "Цели на месяц, новости, коммуникация": convertAnswer(document.querySelector('input[name="goals"]:checked')?.value),
-      "Корпоративная культура": convertAnswer(document.querySelector('input[name="culture"]:checked')?.value),
-      "Мотивационные программы": convertAnswer(document.querySelector('input[name="mot"]:checked')?.value),
-      "CHAMPS": convertAnswer(document.querySelector('input[name="champs"]:checked')?.value),
-      "ROCC, L3": convertAnswer(document.querySelector('input[name="rocc"]:checked')?.value),
-      "3-х мойка / Дайверси": convertAnswer(document.querySelector('input[name="мойка"]:checked')?.value),
-      "CSL / Библиотека стандартов": convertAnswer(document.querySelector('input[name="CSL"]:checked')?.value),
-      "ПВТР / Дисциплинарный бонус": convertAnswer(document.querySelector('input[name="pvtr"]:checked')?.value),
-      "ОРС / Тет-а-тет": convertAnswer(document.querySelector('input[name="opc"]:checked')?.value),
-      "Охрана труда / Пожарная безопасность": convertAnswer(document.querySelector('input[name="OT"]:checked')?.value),
-      "Комментарий": comment,
-      "Дата": new Date().toLocaleString('ru-RU') // Например: 06.05.2025, 15:42:10
-    };
-
-    // Считаем процент правильных ответов
-    const correctAnswers = {
-      "Цели на месяц, новости, коммуникация": "Знает",
-      "Корпоративная культура": "Знает",
-      "Мотивационные программы": "Знает",
-      "CHAMPS": "Знает",
-      "ROCC, L3": "Знает",
-      "3-х мойка / Дайверси": "Знает",
-      "CSL / Библиотека стандартов": "Знает",
-      "ПВТР / Дисциплинарный бонус": "Знает",
-      "ОРС / Тет-а-тет": "Знает",
-      "Охрана труда / Пожарная безопасность": "Знает"
-    };
-
-    let score = 0;
-    for (const question in correctAnswers) {
-      if (formData[question] === correctAnswers[question]) {
-        score++;
-      }
-    }
-
-    const percent = Math.round((score / Object.keys(correctAnswers).length) * 100);
-    formData["Процент знаний"] = percent + "%";
-
-    // Отправка в SheetDB
-    const sheetdbUrl = "https://sheetdb.io/api/v1/0vx6esao2wsi5"; // Замените на ваш ID
-
-    fetch(sheetdbUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ data: formData })
-    })
-    .then(response => response.json())
-    .then(() => {
-      Swal.fire({
-        title: "HR - Опрос",
-        html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
-        icon: 'success',
-        confirmButtonText: 'OK',
-        confirmButtonColor: '#d32f2f'
-      });
-    })
-    .catch(error => {
-      Swal.fire({
-        title: "Ошибка",
-        text: "Не удалось отправить данные. Попробуйте позже.",
-        icon: 'error',
-        confirmButtonText: 'OK',
-        confirmButtonColor: '#d32f2f'
-      });
-      console.error("Ошибка отправки:", error);
-    });
-  });
-</script><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
-document.getElementById("customForm").addEventListener("submit", async function(event) {
-  event.preventDefault();
-  const fileInput = document.getElementById("cameraInput");
-  const file = fileInput.files[0];
-  if (!file) {
-    alert("Пожалуйста, сделайте фото.");
-    return;
-  }
-  const reader = new FileReader();
-  reader.onload = async function () {
-    const base64Image = reader.result;
-    const payload = new URLSearchParams();
-    payload.append("photo", base64Image);
-    payload.append("type", file.type);
-    await fetch("https://script.google.com/macros/s/AKfycbx7QvdyCBpSuSj4q9ypocfyLkZ1DeUQg2kD284b-TnmYHeeQMvovj7ypIkggdKR-Q8CiQ/exec", {
-      method: "POST",
-      body: payload,
-    })
-    .then(() => {
-      Swal.fire("Готово", "Фото успешно загружено", "success");
-      document.getElementById("customForm").reset();
-    })
-    .catch(() => {
-      Swal.fire("Ошибка", "Не удалось загрузить фото", "error");
-    });
-  };
-  reader.readAsDataURL(file);
-});
-</script><script class="cid-uMaoe8tSS2" id="custom-html-37" data-rv-view="1953">
-let isSubmitting = false;
-
-document.getElementById("customForm").addEventListener("submit", function(event) {
-  if (isSubmitting) {
-    event.preventDefault();
-    return;
+<style>
+  .photo-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
   }
 
-  isSubmitting = true;
-  const btn = document.querySelector(".submit-btn");
-  btn.disabled = true;
-  btn.textContent = "Подводим итоги...";
-});
-</script>
+  .photo-preview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+  }
 
-<style class="cid-uMaoeoRr7J" id="custom-html-38" data-rv-view="1954">
-  .report-button {
+  .upload-label {
     display: inline-block;
-    background-color: #f44336;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 10px 16px;
+    background-color: #d81922;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
     font-weight: bold;
-    border-radius: 12px;
-    text-decoration: none;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, transform 0.2s;
   }
 
-  .report-button:hover {
-    background-color: #d32f2f;
-    transform: translateY(-3px);
+  .upload-label:hover {
+    background-color: #a50030;
   }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uMaoeoRr7J" id="custom-html-38" data-rv-view="1954">
-  <a href="https://docs.google.com/spreadsheets/d/1NM3bdB3q8_DbP5V002a43awbvmR30qzDdb3X0yiMuj8/edit?usp=sharing" target="_blank" class="report-button">
-    📊 Открыть отчёты
-  </a>
-</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+
+  .upload-note {
+    font-size: 12px;
+    color: #999;
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 16px;
+  }
+
+  .loader {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #d1003f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<div class="photo-upload">
+  <label for="photo" class="upload-label">📷 Сделать фото</label>
+  <input type="file" id="photo" accept="image/*" capture="environment" style="display: none">
+  <img id="preview" class="photo-preview" src="file:///C:/Users/rasul/AppData/Local/Mobirise.com/Mobirise/tehnopark280822_0040gmail_002ecom/addons/deltapi-code-editor/custom-html/" alt="Фото" media-simple="true">
+</div>
+
+<div class="upload-note">
+  <div class="loader" id="loader"></div>
+  <span id="uploadText">Фото загружается автоматически</span>
+</div>
+
+<input type="hidden" id="photoUrl" name="photoUrl">
+
+<script>
+  const photoInput = document.getElementById('photo');
+  const preview = document.getElementById('preview');
+  const photoUrlField = document.getElementById('photoUrl');
+  const loader = document.getElementById('loader');
+  const uploadText = document.getElementById('uploadText');
+
+  const uploadUrl = 'https://script.google.com/macros/s/AKfycbzjbYAfHSVAVr4Qyjczvakd-rZF48TkhbaffFZfxT7-_rf-J0suzC9YPw9_CPbPBmgGqw/exec'; // вставь сюда свой скрипт
+
+  photoInput.addEventListener('change', async function () {
+    const file = photoInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      preview.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+
+    // Показать анимацию загрузки
+    loader.style.display = 'inline-block';
+    uploadText.textContent = 'Загрузка фото...';
+
+    const readerUpload = new FileReader();
+    readerUpload.onloadend = async () => {
+      const base64Data = readerUpload.result.split(',')[1];
+
+      const formData = new FormData();
+      formData.append("photo", base64Data);
+      formData.append("filename", "photo_" + Date.now() + ".jpg");
+      formData.append("type", file.type);
+
+      try {
+        const res = await fetch(uploadUrl, {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          photoUrlField.value = data.url;
+        }
+      } catch (err) {
+        console.error("Ошибка загрузки фото:", err);
+      } finally {
+        loader.style.display = 'none';
+        uploadText.textContent = '';
+      }
+    };
+    readerUpload.readAsDataURL(file);
+  });
+</script>
+      
+      <!-- Поле для комментария -->
+      <div class="question-frame">
+        <label for="comment">Комментарий:</label>
+        <textarea id="comment" name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">Закончить опрос</button>
+    
+  </div></form>
+  
+  <script>
+    document.getElementById("customForm").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+      const btn = document.querySelector(".submit-btn");
+      if (btn.disabled) return; 
+
+      btn.disabled = true;
+      btn.textContent = "Отправка данных...";
+
+      try {
+        const form = event.target;
+        const surveyId = form.surveyId.value; 
+        const yourName = form.yourName.value.trim();
+        const employeeName = form.employeeName.value.trim();
+        const comment = form.comment.value.trim();
+        
+        // --- Расчет процента знаний ---
+        const correctAnswersValues = {
+          "q1_goals_news_comm": "Знает", 
+          "q2_corporate_culture": "Знает", 
+          "q3_motivation_programs": "Знает", 
+          "q4_champs": "Знает", 
+          "q5_rocc_l3": "Знает", 
+          "q6_3sink_diversy": "Знает", 
+          "q7_csl_standards_library": "Знает", 
+          "q8_pvtr_disciplinary_bonus": "Знает", 
+          "q9_ors_tete_a_tete": "Знает", 
+          "q10_labor_fire_safety": "Знает"
+        };
+        
+        let score = 0;
+        let totalQuestions = 0;
+        for (const qName in correctAnswersValues) {
+            totalQuestions++;
+            const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value;
+            if (selectedValue === correctAnswersValues[qName]) {
+                score++;
+            }
+        }
+        const percent = Math.round((score / totalQuestions) * 100);
+
+        // --- Подготовка FormData для отправки только текстовых данных ---
+        const formDataToSend = new FormData();
+        formDataToSend.append("surveyId", surveyId); 
+        formDataToSend.append("yourName", yourName);
+        formDataToSend.append("employeeName", employeeName);
+        formDataToSend.append("comment", comment); 
+        formDataToSend.append("Процент знаний", percent + "%"); 
+
+        // Добавляем ответы на вопросы
+        for (const qName in correctAnswersValues) {
+            const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value || "";
+            formDataToSend.append(qName, selectedValue);
+        }
+        
+        // --- URL вашего Apps Script для опроса "Бренд Шеф" ---
+        // !!! ОБЯЗАТЕЛЬНО ЗАМЕНИТЕ ЭТОТ URL НА URL ВАШЕГО РАЗВЕРНУТОГО APPS SCRIPT ДЛЯ ОПРОСА "БРЕНД ШЕФ" !!!
+        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxYBnpIggzudnyKmXmkwGOp0PKRbg5p5GvbX-elC_Kr5lp1ftKqaQMHoHoUsJcLqWYU/exec'; 
+
+        // --- Отправка данных ---
+        const response = await fetch(appsScriptUrl, {
+          method: "POST",
+          body: formDataToSend 
+        });
+
+        const result = await response.json(); 
+
+        if (response.ok && result.status === 'success') {
+          Swal.fire({
+            title: "Опрос - HR", 
+            html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d32f2f'
+          });
+          form.reset(); 
+        } else {
+          console.error("Error sending to Apps Script:", result);
+          Swal.fire({
+            title: "Ошибка",
+            text: `Не удалось отправить данные: ${result.message || 'Неизвестная ошибка.'}`,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d32f2f'
+          });
+        }
+      } catch (error) {
+        console.error("Общая ошибка:", error);
+        Swal.fire({
+          title: "Ошибка",
+          text: "Произошла непредвиденная ошибка. Проверьте консоль.",
+          icon: 'error',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#d32f2f'
+        });
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Закончить опрос";
+      }
+    });
+  </script>
+
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag & Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
