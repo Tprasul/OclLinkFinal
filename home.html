@@ -6,30 +6,71 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <link rel="shortcut icon" data-href="assets/images/logo5.png" type="image/x-icon">
   <meta name="description" content="Необходим веб-сайт для шести ресторанов. Пользователь выбирает ресторан, затем переходит на страницу со ссылками на опросы, чтобы оставить свой отзыв и предложения. Удобный интерфейс.">
   
   
   <title>Выбор ресторана и переход к опросам: отзывы о ресторанах</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=xmShEX"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=xmShEX" type="text/css">
+  <link rel="stylesheet" data-href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" data-href="assets/bootstrap/css/bootstrap-grid.min.css">
+<link rel="stylesheet" data-href="assets/bootstrap/css/bootstrap-reboot.min.css">
+<link rel="stylesheet" data-href="assets/animatecss/animate.css">
+<link rel="stylesheet" data-href="assets/theme/css/style.css">
+<link rel="preload" data-href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="preload" as="style" data-href="assets/mobirise/css/mbr-additional.css?v=hux9MQ"><link rel="stylesheet" data-href="assets/mobirise/css/mbr-additional.css?v=hux9MQ" type="text/css">
 
   
   
   
 </head>
 <body>
-<section class="header16 mbr-fullscreen" style="padding: 100px 20px; text-align: center; color: white; font-family: 'Montserrat', sans-serif; position: relative; overflow: hidden;">
+
+<!-- Analytics -->
+<script type="text/plain">
+  document.addEventListener("DOMContentLoaded", function () {
+    const cardGrid = document.getElementById("cardGrid");
+    const search = document.getElementById("search");
+
+    const total = 40;
+    const links = Array.from({ length: total }, (_, i) => ({
+      title: `Опрос ${i + 1}`,
+      url: "#"
+    }));
+
+    function renderCards(list) {
+      cardGrid.innerHTML = '';
+      list.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.dataset.title = item.title.toLowerCase();
+        div.innerHTML = `
+          <h3>${item.title}</h3>
+          <a href="${item.url}" target="_blank">Пройти опрос</a>
+        `;
+        cardGrid.appendChild(div);
+      });
+    }
+
+    search.addEventListener('input', () => {
+      const term = search.value.trim().toLowerCase();
+      const filtered = links.filter(item => item.title.toLowerCase().includes(term));
+      renderCards(filtered);
+    });
+
+    renderCards(links);
+  });
+</script>
+
+<!-- /Analytics -->
+
+
+  
+  <section data-bs-version="5.1" class="header16 mbr-fullscreen cid-uKtQauaUOD" style="padding: 100px 20px; text-align: center; color: white; font-family: 'Montserrat', sans-serif; position: relative; overflow: hidden;" id="hero-17-uKtQauaUOD">
   <!-- Шрифты, анимации и частицы -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script type="text/plain" data-src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <!-- Яркий анимированный фон -->
   <div class="animated-bg"></div>
@@ -38,18 +79,17 @@
   <div id="particles-js" class="particles"></div>
 
   <!-- Контент -->
-  <div class="container-fluid px-0" style="position: relative; z-index: 2; width: 100vw; max-width: 100%;">
+  <div class="container" style="position: relative; z-index: 2;">
     <div class="row">
       <div class="content-wrap col-12">
-        <h1 class="mbr-section-title mb-4 animate__animated animate__fadeInDown" style="font-size: 3.5rem; font-weight: 800;"><b>Единая платформа</b></h1>
-        <h2 class="mbr-section-subtitle mb-4 animate__animated animate__fadeInUp" style="font-size: 2.5rem; font-weight: 600;"><b>OCL</b></h2>
+        <h1 class="mbr-section-title mb-4 animate__animated animate__fadeInDown" style="font-size: 3.5rem; font-weight: 800;"><strong>OcL Link</strong></h1>
         <p class="mb-5 animate__animated animate__fadeIn" style="font-size: 1.2rem; font-style: italic;">Одна платформа — 6 ресторанов</p>
 
         <!-- Стрелочка вниз -->
         <div class="animate__animated animate__fadeInUp animate__delay-1s" style="margin-top: 80px;">
           <a href="#next-section" style="display: inline-block; animation: bounce 2s infinite;">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="48" viewBox="0 0 24 24" width="48" stroke="white" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
         </div>
@@ -93,7 +133,7 @@
   </style>
 
   <!-- Настройки частиц -->
-  <script>
+  <script type="text/plain">
     particlesJS("particles-js", {
       particles: {
         number: { value: 50, density: { enable: true, value_area: 800 } },
@@ -118,49 +158,6 @@
     });
   </script>
 </section>
-
-
-<!-- Analytics -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const cardGrid = document.getElementById("cardGrid");
-    const search = document.getElementById("search");
-
-    const total = 40;
-    const links = Array.from({ length: total }, (_, i) => ({
-      title: `Опрос ${i + 1}`,
-      url: "#"
-    }));
-
-    function renderCards(list) {
-      cardGrid.innerHTML = '';
-      list.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'card';
-        div.dataset.title = item.title.toLowerCase();
-        div.innerHTML = `
-          <h3>${item.title}</h3>
-          <a href="${item.url}" target="_blank">Пройти опрос</a>
-        `;
-        cardGrid.appendChild(div);
-      });
-    }
-
-    search.addEventListener('input', () => {
-      const term = search.value.trim().toLowerCase();
-      const filtered = links.filter(item => item.title.toLowerCase().includes(term));
-      renderCards(filtered);
-    });
-
-    renderCards(links);
-  });
-</script>
-
-<!-- /Analytics -->
-
-
-  
-
 
 <section id="custom-html-1d" class="cid-uLua5wZrJM">
 <section style="background: linear-gradient(to right, #0f2027, #203a43, #2c5364); padding: 60px 20px;">
@@ -227,7 +224,7 @@
 
   <div class="restaurant-grid">
     <div class="restaurant-card">
-      <img src="assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png" alt="Технопарк">
+      <img data-src="assets/images/728845f9-a0ce-4392-9ea3-95ec30aa0d4c.png-634x951.png" alt="Технопарк">
       <div class="caption">
         <h3>Технопарк</h3>
         <a href="surveys/testt.html">Пройти опрос</a>
@@ -235,7 +232,7 @@
     </div>
 
     <div class="restaurant-card">
-      <img src="assets/images/image.jpg-634x634.jpg" alt="Донецкая">
+      <img data-src="assets/images/image.jpg-634x634.jpg" alt="Донецкая">
       <div class="caption">
         <h3>Донецкая</h3>
         <a href="form-donetskaya.html">Пройти опрос</a>
@@ -243,7 +240,7 @@
     </div>
 
     <div class="restaurant-card">
-      <img src="assets/images/image.jpg-1-634x634.jpg" alt="Горький">
+      <img data-src="assets/images/image.jpg-1-634x634.jpg" alt="Горький">
       <div class="caption">
         <h3>Горький</h3>
         <a href="form-gorky.html">Пройти опрос</a>
@@ -251,7 +248,7 @@
     </div>
 
     <div class="restaurant-card">
-      <img src="assets/images/image.jpg-2-634x634.jpg" alt="ГЭС 5">
+      <img data-src="assets/images/image.jpg-2-634x634.jpg" alt="ГЭС 5">
       <div class="caption">
         <h3>ГЭС 5</h3>
         <a href="form-ges5.html">Пройти опрос</a>
@@ -259,7 +256,7 @@
     </div>
 
     <div class="restaurant-card">
-      <img src="assets/images/photo-5413463753422404450-y.jpg-634x634.jpg" alt="Октябрь">
+      <img data-src="assets/images/photo-5413463753422404450-y.jpg-634x634.jpg" alt="Октябрь">
       <div class="caption">
         <h3>Октябрь</h3>
         <a href="form-oktyabr.html">Пройти опрос</a>
@@ -267,7 +264,7 @@
     </div>
 
     <div class="restaurant-card">
-      <img src="assets/images/abde105e-82d6-45a0-81c3-df00f9273ee1.png-634x951.png" alt="Азия Молл">
+      <img data-src="assets/images/abde105e-82d6-45a0-81c3-df00f9273ee1.png-634x951.png" alt="Азия Молл">
       <div class="caption">
         <h3>Азия Молл</h3>
         <a href="form-asia.html">Пройти опрос</a>
@@ -276,7 +273,7 @@
   </div>
 </section></section>
 
-<div id="custom-html-17" class="thanks-scroll cid-uLtIJebM6E" data-rv-view="459"></div><script type="module" class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="459">
+<div id="custom-html-17" class="thanks-scroll cid-uLtIJebM6E" data-rv-view="686"></div><script type="text/plain" type="module" class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="686">
   import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
   const supabase = createClient(
@@ -322,7 +319,7 @@
   };
 
   loadMessages();
-</script><style class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="459">
+</script><style class="cid-uLtIJebM6E" id="custom-html-17" data-rv-view="686">
   .thanks-scroll {
     max-height: 880px; /* ~8 карточек */
     overflow-y: auto;
@@ -404,7 +401,7 @@
   <div class="daily-tip-title">💬 Совет дня</div>
   <div class="daily-tip" id="dailyTip">Загрузка совета...</div>
 
-  <script>
+  <script type="text/plain">
     const tips = [
       "Улыбка на кассе — половина отличного обслуживания 😊",
       "Сначала срок годности — потом выкладка!",
@@ -470,7 +467,7 @@
   </script>
 </section>
 
-<meta charset="UTF-8" class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="461"><title class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="461">Калькулятор зарплаты</title><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="461"><style class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="461">
+<meta charset="UTF-8" class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="688"><title class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="688">Калькулятор зарплаты</title><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="688"><style class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="688">
     body {
       background-color: #121212 !important;
       margin: 0;
@@ -578,7 +575,7 @@
     .result b {
       color: #ff9800;
     }
-  </style><div class="salary-form cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="461">
+  </style><div class="salary-form cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="688">
     <h2>Калькулятор зарплаты</h2>
 
     <label for="position">Выберите должность:</label>
@@ -607,7 +604,7 @@
     <button onclick="calculate()">Посчитать зарплату</button>
 
     <div class="result" id="result"></div>
-  </div><script class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="461">
+  </div><script type="text/plain" class="cid-uOiskEC8lZ" id="custom-html-1s" data-rv-view="688">
     const rates = {
       trainer:  { day: 186, night: 246, advance: 8000 },
       trainer2: { day: 191, night: 253, advance: 8000 },
@@ -694,7 +691,7 @@
     ">✅ Сообщение отправлено!</div>
 
   </div>
-</section><script class="cid-uMaIyydjUN" id="custom-html-1l" data-rv-view="462">
+</section><script type="text/plain" class="cid-uMaIyydjUN" id="custom-html-1l" data-rv-view="689">
 function showToast(text, color = "#28a745") {
   const toast = document.getElementById("toast");
   toast.innerText = text;
@@ -848,7 +845,7 @@ document.getElementById("feedbackForm").addEventListener("submit", async functio
     </div>
   </div>
 
-  <script>
+  <script type="text/plain">
     function toggleFaq(el) {
       const answer = el.nextElementSibling;
       const arrow = el.querySelector('.arrow');
@@ -971,7 +968,7 @@ document.getElementById("feedbackForm").addEventListener("submit", async functio
     </div>
 
     <div class="block creator-block">
-      <img src="assets/images/photo-5280595512736739927-y.jpg-240x160.jpg" alt="Создатель проекта" class="creator-img">
+      <img data-src="assets/images/photo-5280595512736739927-y.jpg-240x160.jpg" alt="Создатель проекта" class="creator-img">
       <div class="creator-info">
         <h3>Создатель проекта</h3>
         <br>
@@ -1039,9 +1036,10 @@ document.getElementById("feedbackForm").addEventListener("submit", async functio
       <span><span class="label">Адрес:</span> ул. Горького / 1Зв</span>
     </div></div></section>
 
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="" class="cid-uOjdmiJ742" id="custom-html-1u" data-rv-view="466"></script><div class="commonninja_component pid-e9106c0d-435c-4413-9fdf-75ba3db630a3 cid-uOjdmiJ742" id="custom-html-1u" data-rv-view="466"></div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/html-builder.html">HTML Website Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+<script type="text/plain" data-src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="" class="cid-uOjdmiJ742" id="custom-html-1u" data-rv-view="693"></script><div class="commonninja_component pid-e9106c0d-435c-4413-9fdf-75ba3db630a3 cid-uOjdmiJ742" id="custom-html-1u" data-rv-view="693"></div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" data-src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">Free AI Website Maker</a></section><script type="text/plain" data-src="assets/bootstrap/js/bootstrap.bundle.min.js"></script><script src="assets/web/assets/cookies-alert-plugin/cookies-alert-core.js"></script><script src="assets/web/assets/cookies-alert-plugin/cookies-alert-script.js"></script><script type="text/plain" data-src="assets/smoothscroll/smooth-scroll.js"></script><script type="text/plain" data-src="assets/ytplayer/index.js"></script><script type="text/plain" data-src="assets/theme/js/script.js"></script>
   
   
-  <input name="animation" type="hidden">
+<input name="cookieData" type="hidden" data-cookie-cookiesAlertType='3' data-cookie-customDialogSelector='null' data-cookie-colorText='#424a4d' data-cookie-colorBg='rgb(255, 255, 255)' data-cookie-opacityOverlay='100' data-cookie-bgOpacity='100' data-cookie-textButton='ACCEPT' data-cookie-rejectText='REJECT' data-cookie-colorButton='#D90429' data-cookie-rejectColor='#ffffff' data-cookie-colorLink='#424a4d' data-cookie-underlineLink='true' data-cookie-text="We use cookies to give you the best experience as specified in the <a href='privacy.html'>cookie policy</a>.">
+    <input name="animation" type="hidden">
   </body>
 </html>
