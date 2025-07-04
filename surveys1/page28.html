@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>zalTp</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=ytaLwq"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=ytaLwq" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <meta charset="UTF-8" class="cid-uMsPdOq4IK" id="custom-html-3k" data-rv-view="467"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uMsPdOq4IK" id="custom-html-3k" data-rv-view="467"><title class="cid-uMsPdOq4IK" id="custom-html-3k" data-rv-view="467">Опрос - Жёлтая зона</title><style class="cid-uMsPdOq4IK" id="custom-html-3k" data-rv-view="467">
+    /* Глобальные настройки для отзывчивого дизайна */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      display: flex;
+      flex-direction: column; /* Элементы в столбик, для центрирования */
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px; /* Отступ по краям для адаптивности */
+      font-family: sans-serif;
+    }
+    .form-container {
+      max-width: 600px;
+      width: 100%; /* Занимает всю доступную ширину до max-width */
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #FFE4E1; /* Светло-розовый */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .avatar-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px auto; /* Центрирование */
+      display: block;
+      border: 3px solid #d32f2f; /* Цвет как у кнопки */
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+    .form-title {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .question-frame { /* Рамка для вопросов и полей ввода */
+      border: 1px solid #ffcccb; 
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 25px; 
+      background-color: #fffafa; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .question-frame label { /* Стиль для текста вопроса/поля внутри рамки */
+        margin-top: 0 !important; 
+        margin-bottom: 12px !important; 
+        display: block !important; 
+        font-weight: bold !important; 
+        color: #555 !important; 
+        line-height: 1.4 !important; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word; 
+    }
+    label { /* Сброс общих стилей label, чтобы они не влияли на элементы внутри рамок */
+        font-weight: normal; 
+        display: inline; 
+        margin: 0; 
+        padding: 0; 
+        color: inherit;
+        line-height: normal;
+    }
+
+    input[type="text"], textarea {
+      width: 100%; 
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 0; 
+    }
+    textarea {
+      resize: vertical; 
+      min-height: 80px;
+    }
+    .radio-group {
+      display: flex; 
+      flex-direction: row; /* Варианты в ряд */
+      gap: 20px; 
+      margin-bottom: 0; 
+      flex-wrap: wrap; /* Перенос на новую строку, если не хватает места */
+      justify-content: flex-start; 
+    }
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: transparent; 
+      transition: background-color 0.2s ease;
+      flex-shrink: 0; 
+    }
+    .radio-option:hover {
+      background-color: #f0f0f0; 
+    }
+    .radio-option input[type="radio"] {
+      display: none; 
+    }
+    .custom-radio {
+      flex-shrink: 0; 
+      width: 35px; 
+      height: 35px;
+      background-color: #eee;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+      border: 2px solid transparent;
+      transition: 0.2s;
+      font-size: 18px;
+    }
+    /* Цвет активной кнопки для Желтой Зоны */
+    .radio-option input[type="radio"]:checked + .custom-radio {
+      border-color: #fbc02d; 
+      background-color: #fbc02d; 
+      color: white;
+      box-shadow: 0 0 10px rgba(251, 192, 45, 0.5); /* Соответствующая тень */
+    }
+    .submit-btn {
+      margin-top: 40px;
+      padding: 15px 25px;
+      background-color: #d32f2f;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .submit-btn:hover:not(:disabled) {
+      background-color: #b71c1c;
+      transform: translateY(-2px);
+    }
+    .submit-btn:disabled {
+      background-color: #ff7f7f; 
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    /* Стиль для секционных заголовков (в вашем исходном HTML были, добавил в рамку) */
+    .section-title {
+        background: #f44336; /* Красный фон */
+        color: white;
+        padding: 10px;
+        margin-top: 30px;
+        margin-bottom: 20px; /* Добавил отступ снизу */
+        border-radius: 8px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* Медиа-запросы для адаптации под мобильные */
+    @media (max-width: 768px) {
+        body { padding: 15px; }
+        .form-container { padding: 20px; }
+        .form-title { font-size: 24px; margin-bottom: 20px; }
+        .question-frame { padding: 10px; margin-bottom: 20px; }
+        .question-frame label { font-size: 15px; }
+        input[type="text"], textarea { 
+            font-size: 15px;
+            padding: 10px;
+        }
+        .radio-group {
+            flex-direction: column; /* Варианты в столбик на мобильных */
+            gap: 8px; 
+        }
+        .radio-option {
+            padding: 8px;
+        }
+        .custom-radio {
+            width: 30px; 
+            height: 30px;
+            font-size: 16px;
+        }
+        .submit-btn {
+            font-size: 16px;
+            padding: 12px 20px;
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: 480px) { /* Дополнительная адаптация для очень маленьких экранов */
+        body { padding: 10px; }
+        .form-container { padding: 15px; }
+        .form-title { font-size: 22px; margin-bottom: 15px; }
+        .avatar-img { width: 120px; height: 120px; }
+        .question-frame { margin-bottom: 15px; }
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uMsPdOq4IK" id="custom-html-3k" data-rv-view="467"></script><div class="form-container cid-uMsPdOq4IK" id="custom-html-3k" data-rv-view="467">
+    <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
+    <div class="form-title">Опрос – Жёлтая зона</div>
+    <form id="customForm">
+      <!-- Скрытое поле для идентификации опроса -->
+      <input type="hidden" name="surveyId" value="yellow_zone_survey"> 
+
+      <!-- Имя HR -->
+      <div class="question-frame">
+        <label for="yourName">Ваше имя:</label>
+        <input type="text" id="yourName" name="yourName" required="">
+      </div>
+      
+      <!-- Имя сотрудника -->
+      <div class="question-frame">
+        <label for="employeeName">Имя сотрудника:</label>
+        <input type="text" id="employeeName" name="employeeName" required="">
+      </div>
+
+      <div class="section-title">Стандарты</div>
+      <!-- Вопрос 1 -->
+      <div class="question-frame">
+        <label>1. Надеть защитные перчатки зеленого цвета:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q1_green_gloves" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q1_green_gloves" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 2 -->
+      <div class="question-frame">
+        <label>2. Использовать инвентарь и салфетки желтого цвета:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q2_yellow_inventory" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q2_yellow_inventory" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Дезинфекция в зале в течение дня</div>
+      <!-- Вопрос 3 -->
+      <div class="question-frame">
+        <label>3. Протереть столы и подносы после каждого гостя желтой салфеткой, смоченной в растворе К – 214 (0,5%):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q3_wipe_tables_trays" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q3_wipe_tables_trays" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 4 -->
+      <div class="question-frame">
+        <label>4. Протереть столы, стулья, детские стулья, мебель, ручки всех дверей и киоски самообслуживания каждые 30 минут желтой салфеткой, смоченной в растворе К – 214 (0,5%):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q4_wipe_chairs_kiosks" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q4_wipe_chairs_kiosks" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 5 -->
+      <div class="question-frame">
+        <label>5. Прополоскать салфетку под проточной водой в моповой и положить в желтое ведро с раствором К-214 (0,5%):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q5_rinse_mop_room" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q5_rinse_mop_room" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Очистка мусорного бака в течение дня (при необходимости)</div>
+      <!-- Вопрос 6 -->
+      <div class="question-frame">
+        <label>6. Распылить на желтую салфетку раствор К-205 и протереть внешнюю поверхность мусорного бака от загрязнения:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q6_spray_wipe_bin" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q6_spray_wipe_bin" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 7 -->
+      <div class="question-frame">
+        <label>7. Прополоскать салфетку под проточной водой в моповой и положить в желтое ведро с раствором К-214 (0,5%):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q7_rinse_mop_room_2" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q7_rinse_mop_room_2" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Уборка полов в течение дня</div>
+      <!-- Вопрос 8 -->
+      <div class="question-frame">
+        <label>8. Подмести пол, используя инвентарь для подметания желтого цвета:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q8_sweep_floor" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q8_sweep_floor" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 9 -->
+      <div class="question-frame">
+        <label>9. Наполнить ведро с отжимом необходимым количеством раствора Н-101 из автоматического дозатора:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q9_fill_mop_bucket" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q9_fill_mop_bucket" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 10 -->
+      <div class="question-frame">
+        <label>10. Установить знак «Осторожно мокрый пол». Смочить моп в ведре с раствором Н-101, отжать и протереть пол. Дать высохнуть:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q10_wet_floor_sign_mop" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q10_wet_floor_sign_mop" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Очистка и дезинфекция в зале в конце дня</div>
+      <!-- Вопрос 11 -->
+      <div class="question-frame">
+        <label>11. Нанести раствор К-205 на поверхности столов, стулья, включая их ножки. Очистить их:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q11_apply_k205_clean_surfaces" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q11_apply_k205_clean_surfaces" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 12 -->
+      <div class="question-frame">
+        <label>12. Прополоскать салфетку под проточной водой в моповой:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q12_rinse_mop_room_3" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q12_rinse_mop_room_3" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 13 -->
+      <div class="question-frame">
+        <label>13. Протереть поверхности столов, стулья, ножки салфеткой, смоченной в растворе К-214 (0,5%) из желтого ведра:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q13_wipe_surfaces_k214" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q13_wipe_surfaces_k214" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Очистка мусорного бака в конце дня</div>
+      <!-- Вопрос 14 -->
+      <div class="question-frame">
+        <label>14. Извлечь заполненный мусорный мешок из бака:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q14_remove_trash_bag" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q14_remove_trash_bag" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 15 -->
+      <div class="question-frame">
+        <label>15. Распылить раствор К-205 на внешнюю и внутреннюю поверхности бака и протереть их желтой салфеткой:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q15_spray_wipe_bin_k205" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q15_spray_wipe_bin_k205" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 16 -->
+      <div class="question-frame">
+        <label>16. Прополоскать салфетку под проточной водой в моповой и смыть остатки моющего средства:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q16_rinse_mop_room_4" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q16_rinse_mop_room_4" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 17 -->
+      <div class="question-frame">
+        <label>17. Распылить средство К – 214 (0,5%) на внешнюю и внутреннюю поверхность бака и протереть желтой салфеткой. После этого салфетку необходимо выбросить:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q17_spray_wipe_bin_k214" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q17_spray_wipe_bin_k214" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Уборка полов в конце дня и каждые 6 часов</div>
+      <!-- Вопрос 18 -->
+      <div class="question-frame">
+        <label>18. Выполнить процедуру мытья пола раствором Н-101, удалить сильные загрязнения щеткой для пола:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q18_floor_wash_n101" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q18_floor_wash_n101" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 19 -->
+      <div class="question-frame">
+        <label>19. Промыть ведро и наполнить его необходимым количеством раствора К-214 (0,5%) из автоматического дозатора:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q19_rinse_bucket_fill_k214" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q19_rinse_bucket_fill_k214" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 20 -->
+      <div class="question-frame">
+        <label>20. Протереть пол раствором К-214 (0,5%). Дать высохнуть:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q20_wipe_floor_k214" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q20_wipe_floor_k214" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Мытье подносов в конце дня</div>
+      <!-- Вопрос 21 -->
+      <div class="question-frame">
+        <label>21. Очистить раствором К-205 раковины 3-х секционной мойки, продезинфицировать раствором К-214 (1%) перед мытьем подносов:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q21_clean_3sink_k205_k214" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q21_clean_3sink_k205_k214" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 22 -->
+      <div class="question-frame">
+        <label>22. Вымыть подносы методом 3-х ванн и положить на стеллаж для сушки:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q22_wash_trays_3sinks" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q22_wash_trays_3sinks" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 23 -->
+      <div class="question-frame">
+        <label>23. Очистить раствором К-205 раковины 3-х секционной мойки, продезинфицировать раствором К-214 (1%) после мытья подносов:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q23_clean_3sink_k205_k214_2" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q23_clean_3sink_k205_k214_2" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Очистка киосков в конце дня</div>
+      <!-- Вопрос 24 -->
+      <div class="question-frame">
+        <label>24. Нанести раствор F-307 на салфетку с помощью распылителя и протереть киоск самообслуживания:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q24_spray_wipe_kiosk_f307" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q24_spray_wipe_kiosk_f307" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 25 -->
+      <div class="question-frame">
+        <label>25. Прополоскать салфетку под проточной водой в моповой зала:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q25_rinse_kiosk_mop_room" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q25_rinse_kiosk_mop_room" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 26 -->
+      <div class="question-frame">
+        <label>26. Протереть киоск самообслуживания с помощью салфетки, смоченной в растворе К-214 (0,5%):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q26_wipe_kiosk_k214" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q26_wipe_kiosk_k214" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Удаление жевательной резинки с водостойких поверхностей</div>
+      <!-- Вопрос 27 -->
+      <div class="question-frame">
+        <label>27. С помощью желтого скребка удалить налипшую на поверхность жвачку:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q27_remove_gum_scraper" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q27_remove_gum_scraper" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 28 -->
+      <div class="question-frame">
+        <label>28. Распылить средство С – 405 на участок с остатками жвачки и оставить на 1 – 3 минуты:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q28_spray_s405_gum" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q28_spray_s405_gum" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 29 -->
+      <div class="question-frame">
+        <label>29. Влажной желтой салфеткой удалить остатки жвачки и средства:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q29_wipe_gum_residue" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q29_wipe_gum_residue" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Удаление жевательной резинки с поверхностей из кожи и текстиля</div>
+      <!-- Вопрос 30 -->
+      <div class="question-frame">
+        <label>30. Распылить средство С – 405 на желтую салфетку и методом промакивания нанести на жевательную резинку, стараясь не заходить за ее пределы. Выдержать 5 – 10 минут. При необходимости повторить процедуру:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q30_spray_s405_textile" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q30_spray_s405_textile" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 31 -->
+      <div class="question-frame">
+        <label>31. С помощью желтой салфетки удалить размякшие остатки жвачки и средства:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q31_wipe_gum_residue_2" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q31_wipe_gum_residue_2" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <div class="section-title">Удаление рисунков и надписей со стен</div>
+      <!-- Вопрос 32 -->
+      <div class="question-frame">
+        <label>32. Распылить средство Н-112 на зону с надписями. Оставить на 1-2 мин. Не допускать высыхания средства на поверхности:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q32_spray_h112_walls" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q32_spray_h112_walls" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 33 -->
+      <div class="question-frame">
+        <label>33. Очистить поверхность с помощью сухой желтой салфетки:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q33_wipe_walls_dry" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q33_wipe_walls_dry" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <!-- Вопрос 34 -->
+      <div class="question-frame">
+        <label>34. Прополоскать салфетку под проточной водой в моповой зала и протереть ранее обработанную поверхность. Дать высохнуть. По необходимости повторить процедуру:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q34_rinse_walls_mop_room" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q34_rinse_walls_mop_room" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      <div class="form-group">
+<style>
+.custom-file-upload {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.custom-file-upload:hover {
+  background-color: #e03e3e;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+</style>
+<div style="margin-bottom: 20px;">
+  <label style="font-weight: bold; display:block; margin-bottom: 5px;"></label>
+
+<style>
+  .photo-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .photo-preview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+  }
+
+  .upload-label {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #d81922;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .upload-label:hover {
+    background-color: #a50030;
+  }
+
+  .upload-note {
+    font-size: 12px;
+    color: #999;
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 16px;
+  }
+
+  .loader {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #d1003f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<div class="photo-upload">
+  <label for="photo" class="upload-label">📷 Сделать фото</label>
+  <input type="file" id="photo" accept="image/*" capture="environment" style="display: none">
+  <img id="preview" class="photo-preview" src="file:///C:/Users/rasul/AppData/Local/Mobirise.com/Mobirise/tehnopark280822_0040gmail_002ecom/addons/deltapi-code-editor/custom-html/" alt="Фото" media-simple="true">
+</div>
+
+<div class="upload-note">
+  <div class="loader" id="loader"></div>
+  <span id="uploadText">Фото загружается автоматически</span>
+</div>
+
+<input type="hidden" id="photoUrl" name="photoUrl">
+
+<script>
+  const photoInput = document.getElementById('photo');
+  const preview = document.getElementById('preview');
+  const photoUrlField = document.getElementById('photoUrl');
+  const loader = document.getElementById('loader');
+  const uploadText = document.getElementById('uploadText');
+
+  const uploadUrl = 'https://script.google.com/macros/s/AKfycbzjbYAfHSVAVr4Qyjczvakd-rZF48TkhbaffFZfxT7-_rf-J0suzC9YPw9_CPbPBmgGqw/exec'; // вставь сюда свой скрипт
+
+  photoInput.addEventListener('change', async function () {
+    const file = photoInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      preview.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+
+    // Показать анимацию загрузки
+    loader.style.display = 'inline-block';
+    uploadText.textContent = 'Загрузка фото...';
+
+    const readerUpload = new FileReader();
+    readerUpload.onloadend = async () => {
+      const base64Data = readerUpload.result.split(',')[1];
+
+      const formData = new FormData();
+      formData.append("photo", base64Data);
+      formData.append("filename", "photo_" + Date.now() + ".jpg");
+      formData.append("type", file.type);
+
+      try {
+        const res = await fetch(uploadUrl, {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          photoUrlField.value = data.url;
+        }
+      } catch (err) {
+        console.error("Ошибка загрузки фото:", err);
+      } finally {
+        loader.style.display = 'none';
+        uploadText.textContent = '';
+      }
+    };
+    readerUpload.readAsDataURL(file);
+  });
+</script>
+
+
+
+                   
+      <!-- Поле для комментария -->
+      <div class="question-frame">
+        <label for="comment">Комментарий:</label>
+        <textarea id="comment" name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">Закончить опрос</button>
+    
+  </div>
+  
+  <script>
+    document.getElementById("customForm").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+      const btn = document.querySelector(".submit-btn");
+      if (btn.disabled) return; 
+
+      btn.disabled = true;
+      btn.textContent = "Отправка данных...";
+
+      try {
+        const form = event.target;
+        const surveyId = form.surveyId.value; 
+        const yourName = form.yourName.value.trim();
+        const employeeName = form.employeeName.value.trim();
+        const comment = form.comment.value.trim();
+        
+        // --- Расчет процента знаний ---
+        const correctAnswersValues = {
+          "q1_green_gloves": "Знает", 
+          "q2_yellow_inventory": "Знает", 
+          "q3_wipe_tables_trays": "Знает", 
+          "q4_wipe_chairs_kiosks": "Знает", 
+          "q5_rinse_mop_room": "Знает", 
+          "q6_spray_wipe_bin": "Знает", 
+          "q7_rinse_mop_room_2": "Знает", // Исправлено, чтобы соответствовало HTML
+          "q8_sweep_floor": "Знает", 
+          "q9_fill_mop_bucket": "Знает", 
+          "q10_wet_floor_sign_mop": "Знает", 
+          "q11_apply_k205_clean_surfaces": "Знает", 
+          "q12_rinse_mop_room_3": "Знает", 
+          "q13_wipe_surfaces_k214": "Знает", 
+          "q14_remove_trash_bag": "Знает", 
+          "q15_spray_wipe_bin_k205": "Знает", 
+          "q16_rinse_mop_room_4": "Знает", 
+          "q17_spray_wipe_bin_k214": "Знает", 
+          "q18_floor_wash_n101": "Знает", 
+          "q19_rinse_bucket_fill_k214": "Знает", 
+          "q20_wipe_floor_k214": "Знает", 
+          "q21_clean_3sink_k205_k214": "Знает", 
+          "q22_wash_trays_3sinks": "Знает", 
+          "q23_clean_3sink_k205_k214_2": "Знает", 
+          "q24_spray_wipe_kiosk_f307": "Знает", 
+          "q25_rinse_kiosk_mop_room": "Знает", 
+          "q26_wipe_kiosk_k214": "Знает", 
+          "q27_remove_gum_scraper": "Знает", 
+          "q28_spray_s405_gum": "Знает", 
+          "q29_wipe_gum_residue": "Знает", 
+          "q30_spray_s405_textile": "Знает", 
+          "q31_wipe_gum_residue_2": "Знает", 
+          "q32_spray_h112_walls": "Знает", 
+          "q33_wipe_walls_dry": "Знает", 
+          "q34_rinse_walls_mop_room": "Знает"
+        };
+        
+        let score = 0;
+        let totalQuestions = 0;
+        for (const qName in correctAnswersValues) {
+            // Проверяем, что элементы существуют в DOM, прежде чем пытаться получить их значения
+            const radioButtons = document.querySelectorAll(`input[name="${qName}"]`);
+            if (radioButtons.length > 0) {
+                totalQuestions++;
+                const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value;
+                if (selectedValue === correctAnswersValues[qName]) {
+                    score++;
+                }
+            } else {
+                console.warn(`Вопрос с name="${qName}" не найден в DOM. Возможно, он был удален или имеет другое имя.`);
+            }
+        }
+        const percent = Math.round((score / totalQuestions) * 100);
+
+        // --- Подготовка FormData для отправки только текстовых данных ---
+        const formDataToSend = new FormData();
+        formDataToSend.append("surveyId", surveyId); 
+        formDataToSend.append("yourName", yourName);
+        formDataToSend.append("employeeName", employeeName);
+        formDataToSend.append("comment", comment); 
+        formDataToSend.append("Процент знаний", percent + "%"); 
+
+        // Добавляем ответы на вопросы
+        for (const qName in correctAnswersValues) {
+            const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value || "";
+            formDataToSend.append(qName, selectedValue);
+        }
+        
+        // --- URL вашего Apps Script для опроса "Желтая зона" ---
+        // !!! ОБЯЗАТЕЛЬНО ЗАМЕНИТЕ ЭТОТ URL НА URL ВАШЕГО РАЗВЕРНУТОГО APPS SCRIPT ДЛЯ ОПРОСА "ЖЕЛТАЯ ЗОНА" !!!
+        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbwbH6CZ5bWr24Dc-uozNHWXYzwPuFS-3iJXXehuEHdITfXGuwbwUdAIsrKgLlICeyzsOg/exec'; 
+
+        // --- Отправка данных ---
+        const response = await fetch(appsScriptUrl, {
+          method: "POST",
+          body: formDataToSend 
+        });
+
+        const result = await response.json(); 
+
+        if (response.ok && result.status === 'success') {
+          Swal.fire({
+            title: "Опрос - Жёлтая зона", 
+            html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#fbc02d' // Цвет кнопки соответствует зоне
+          });
+          form.reset(); 
+        } else {
+          console.error("Error sending to Apps Script:", result);
+          Swal.fire({
+            title: "Ошибка",
+            text: `Не удалось отправить данные: ${result.message || 'Неизвестная ошибка.'}`,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d32f2f'
+          });
+        }
+      } catch (error) {
+        console.error("Общая ошибка:", error);
+        Swal.fire({
+          title: "Ошибка",
+          text: "Произошла непредвиденная ошибка. Проверьте консоль.",
+          icon: 'error',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#d32f2f'
+        });
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Закончить опрос";
+      }
+    });
+  </script>
+
+</div></form></div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/offline-website-builder.html">Offline Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>pakertp</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=NILqc4"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=NILqc4" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <meta charset="UTF-8" class="cid-uLfJ1tLMJA" id="custom-html-1m" data-rv-view="442"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uLfJ1tLMJA" id="custom-html-1m" data-rv-view="442"><title class="cid-uLfJ1tLMJA" id="custom-html-1m" data-rv-view="442">Опрос - Пакер</title><style class="cid-uLfJ1tLMJA" id="custom-html-1m" data-rv-view="442">
+    /* Глобальные настройки для отзывчивого дизайна */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      display: flex;
+      flex-direction: column; /* Элементы в столбик, для центрирования */
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px; /* Отступ по краям для адаптивности */
+      font-family: sans-serif;
+    }
+    .form-container {
+      max-width: 600px;
+      width: 100%; /* Занимает всю доступную ширину до max-width */
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #FFE4E1; /* Светло-розовый */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .avatar-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px auto; /* Центрирование */
+      display: block;
+      border: 3px solid #d32f2f; /* Цвет как у кнопки */
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+    .form-title {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .question-frame { /* Рамка для вопросов и полей ввода */
+      border: 1px solid #ffcccb; 
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 25px; 
+      background-color: #fffafa; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .question-frame label { /* Стиль для текста вопроса/поля внутри рамки */
+        margin-top: 0; 
+        margin-bottom: 12px; 
+        display: block; 
+        font-weight: bold; 
+        color: #555; 
+        line-height: 1.4; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word; 
+    }
+
+    input[type="text"], textarea {
+      width: 100%; 
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 0; 
+    }
+    textarea {
+      resize: vertical; 
+      min-height: 80px;
+    }
+    .radio-group {
+      display: flex; 
+      flex-direction: row; /* Варианты в ряд */
+      gap: 20px; 
+      margin-bottom: 0; 
+      flex-wrap: wrap; /* Перенос на новую строку, если не хватает места */
+      justify-content: flex-start; /* Выравнивание по левому краю */
+    }
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: transparent; 
+      transition: background-color 0.2s ease;
+      flex-shrink: 0; 
+    }
+    .radio-option:hover {
+      background-color: #f0f0f0; 
+    }
+    .radio-option input[type="radio"] {
+      display: none; 
+    }
+    .custom-radio {
+      flex-shrink: 0; 
+      width: 35px; 
+      height: 35px;
+      background-color: #eee;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+      border: 2px solid transparent;
+      transition: 0.2s;
+      font-size: 18px;
+    }
+    .radio-option input[type="radio"]:checked + .custom-radio {
+      border-color: #d32f2f;
+      background-color: #d32f2f;
+      color: white;
+      box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+    }
+    .submit-btn {
+      margin-top: 40px;
+      padding: 15px 25px;
+      background-color: #d32f2f;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .submit-btn:hover:not(:disabled) {
+      background-color: #b71c1c;
+      transform: translateY(-2px);
+    }
+    .submit-btn:disabled {
+      background-color: #ff7f7f; 
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uLfJ1tLMJA" id="custom-html-1m" data-rv-view="442"></script><div class="form-container cid-uLfJ1tLMJA" id="custom-html-1m" data-rv-view="442">
+    <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
+    
+    <div class="form-title">Опрос - Пакер</div>
+
+    <form id="customForm">
+      <!-- Скрытое поле для идентификации опроса -->
+      <input type="hidden" name="surveyId" value="paker_survey"> 
+
+      <!-- Имя HR -->
+      <div class="question-frame">
+        <label for="yourName">Ваше имя:</label>
+        <input type="text" id="yourName" name="yourName" required="">
+      </div>
+      
+      <!-- Имя сотрудника -->
+      <div class="question-frame">
+        <label for="employeeName">Имя сотрудника:</label>
+        <input type="text" id="employeeName" name="employeeName" required="">
+      </div>
+      
+      <!-- Вопрос 1 -->
+      <div class="question-frame">
+        <label>1. Нет видимых признаков заболевания, которые могут послужить причиной для отстранения от работы:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q1_health_signs" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q1_health_signs" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div class="question-frame">
+        <label>2. Соблюдает правила мытья рук / правила использования перчаток при работе с продуктом:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q2_hand_washing" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q2_hand_washing" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="question-frame">
+        <label>3. Обеспечивает отсутствие перекрестного загрязнения:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q3_cross_contamination" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q3_cross_contamination" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="question-frame">
+        <label>4. Соблюдает прочие стандарты пищевой безопасности:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q4_food_safety_standards" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q4_food_safety_standards" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 5 -->
+      <div class="question-frame">
+        <label>5. Проверяет сроки годности, просроченный продукт списывает. Недостающие продукты пополняет, используя правило ротации продуктов:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q5_shelf_life_rotation" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q5_shelf_life_rotation" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 6 -->
+      <div class="question-frame">
+        <label>6. Кладет кондименты (салфетки, ложка, вилка и т.п.) на поднос:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q6_condiments_on_tray" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q6_condiments_on_tray" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 7 -->
+      <div class="question-frame">
+        <label>7. Ставит наливаться напиток:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q7_pour_drink" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q7_pour_drink" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 8 -->
+      <div class="question-frame">
+        <label>8. Кладет горячие блюда, предварительно правильно их упаковав:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q8_hot_food_packaging" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q8_hot_food_packaging" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 9 -->
+      <div class="question-frame">
+        <label>9. Кладет салат:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q9_salad_placement" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q9_salad_placement" value="Не знает"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 10 -->
+      <div class="question-frame">
+        <label>10. Кладет десерт:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q10_dessert_placement" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q10_dessert_placement" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 11 -->
+      <div class="question-frame">
+        <label>11. Ставит напиток на поднос или упаковывает на вынос (стакан с напитком нужно держать в руке так, чтобы не касаться краев стакана):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q11_drink_handling" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q11_drink_handling" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 12 -->
+      <div class="question-frame">
+        <label>12. Наливает и ставит на поднос пиво (стакан с пивом нужно держать в руке так, чтобы не касаться краев стакана):</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q12_beer_handling" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q12_beer_handling" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 13 -->
+      <div class="question-frame">
+        <label>13. Кладет на поднос картофель:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q13_fries_placement" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q13_fries_placement" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 14 -->
+      <div class="question-frame">
+        <label>14. При сборе заказа использует правило холодных и горячих зон, т.е. холодные и горячие блюда и напитки располагаются в разных частях подноса:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q14_hot_cold_zones" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q14_hot_cold_zones" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 15 -->
+      <div class="question-frame">
+        <label>15. Напиток на подносе ставится под правую (для правшей) и левую (для левшей) руку гостя, чтобы гостю удобнее было взять поднос и донести его до столика:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q15_drink_placement_guest_hand" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q15_drink_placement_guest_hand" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 16 -->
+      <div class="question-frame">
+        <label>16. Кондименты располагаются в углу подноса ближе к Гостю под его правую руку, также для удобства гостя:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q16_condiments_placement" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q16_condiments_placement" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 17 -->
+      <div class="question-frame">
+        <label>17. Все блюда и напитки на подносе должны располагаться логотипом к гостю, чтобы Гость мог прочитать информацию, представленную на упаковках:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q17_logo_orientation" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q17_logo_orientation" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 18 -->
+      <div class="question-frame">
+        <label>18. Если заказ маленький, то он располагается на подносе так, чтобы сохранялось равновесие:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q18_small_order_balance" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q18_small_order_balance" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 19 -->
+      <div class="question-frame">
+        <label>19. Если заказ очень большой, можно разместить его на нескольких подносах:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q19_large_order_trays" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q19_large_order_trays" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 20 -->
+      <div class="question-frame">
+        <label>20. На подносе все должно лежать правильно и аккуратно, ничего не должно падать:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q20_tray_neatness" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q20_tray_neatness" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+
+      <!-- Вопрос 21 -->
+      <div class="question-frame">
+        <label>21. Подает Гостю поднос таким образом, чтобы его удобно было взять:</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q21_tray_delivery" value="Знает" required=""><div class="custom-radio">A</div> Знает</label>
+          <label class="radio-option"><input type="radio" name="q21_tray_delivery" value="B"><div class="custom-radio">B</div> Не знает</label>
+        </div>
+      </div>
+      
+      <style>
+.custom-file-upload {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.custom-file-upload:hover {
+  background-color: #e03e3e;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+</style>
+<div style="margin-bottom: 20px;">
+  <label style="font-weight: bold; display:block; margin-bottom: 5px;"></label>
+
+<style>
+  .photo-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .photo-preview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+  }
+
+  .upload-label {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #d81922;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .upload-label:hover {
+    background-color: #a50030;
+  }
+
+  .upload-note {
+    font-size: 12px;
+    color: #999;
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 16px;
+  }
+
+  .loader {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #ccc;
+    border-top: 2px solid #d1003f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<div class="photo-upload">
+  <label for="photo" class="upload-label">📷 Сделать фото</label>
+  <input type="file" id="photo" accept="image/*" capture="environment" style="display: none">
+  <img id="preview" class="photo-preview" src="file:///C:/Users/rasul/AppData/Local/Mobirise.com/Mobirise/tehnopark280822_0040gmail_002ecom/addons/deltapi-code-editor/custom-html/" alt="Фото" media-simple="true">
+</div>
+
+<div class="upload-note">
+  <div class="loader" id="loader"></div>
+  <span id="uploadText">Фото загружается автоматически</span>
+</div>
+
+<input type="hidden" id="photoUrl" name="photoUrl">
+
+<script>
+  const photoInput = document.getElementById('photo');
+  const preview = document.getElementById('preview');
+  const photoUrlField = document.getElementById('photoUrl');
+  const loader = document.getElementById('loader');
+  const uploadText = document.getElementById('uploadText');
+
+  const uploadUrl = 'https://script.google.com/macros/s/AKfycbzjbYAfHSVAVr4Qyjczvakd-rZF48TkhbaffFZfxT7-_rf-J0suzC9YPw9_CPbPBmgGqw/exec'; // вставь сюда свой скрипт
+
+  photoInput.addEventListener('change', async function () {
+    const file = photoInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      preview.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+
+    // Показать анимацию загрузки
+    loader.style.display = 'inline-block';
+    uploadText.textContent = 'Загрузка фото...';
+
+    const readerUpload = new FileReader();
+    readerUpload.onloadend = async () => {
+      const base64Data = readerUpload.result.split(',')[1];
+
+      const formData = new FormData();
+      formData.append("photo", base64Data);
+      formData.append("filename", "photo_" + Date.now() + ".jpg");
+      formData.append("type", file.type);
+
+      try {
+        const res = await fetch(uploadUrl, {
+          method: "POST",
+          body: formData,
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          photoUrlField.value = data.url;
+        }
+      } catch (err) {
+        console.error("Ошибка загрузки фото:", err);
+      } finally {
+        loader.style.display = 'none';
+        uploadText.textContent = '';
+      }
+    };
+    readerUpload.readAsDataURL(file);
+  });
+</script>
+      
+      <!-- Поле для комментария -->
+      <div class="question-frame">
+        <label for="comment">Комментарий:</label>
+        <textarea id="comment" name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+      </div>
+      
+      <button type="submit" class="submit-btn">Закончить опрос</button>
+    
+  </div></form>
+  
+  <script>
+    document.getElementById("customForm").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+      const btn = document.querySelector(".submit-btn");
+      if (btn.disabled) return; 
+
+      btn.disabled = true;
+      btn.textContent = "Отправка данных...";
+
+      try {
+        const form = event.target;
+        const surveyId = form.surveyId.value; // Получаем ID опроса
+        const yourName = form.yourName.value.trim();
+        const employeeName = form.employeeName.value.trim();
+        const comment = form.comment.value.trim();
+        
+        // --- Расчет процента знаний ---
+        const correctAnswersValues = {
+          "q1_health_signs": "Знает", "q2_hand_washing": "Знает", "q3_cross_contamination": "Знает", 
+          "q4_food_safety_standards": "Знает", "q5_shelf_life_rotation": "Знает", 
+          "q6_condiments_on_tray": "Знает", "q7_pour_drink": "Знает", 
+          "q8_hot_food_packaging": "Знает", "q9_salad_placement": "Знает", 
+          "q10_dessert_placement": "Знает", "q11_drink_handling": "Знает", 
+          "q12_beer_handling": "Знает", "q13_fries_placement": "Знает", 
+          "q14_hot_cold_zones": "Знает", "q15_drink_placement_guest_hand": "Знает", 
+          "q16_condiments_placement": "Знает", "q17_logo_orientation": "Знает", 
+          "q18_small_order_balance": "Знает", "q19_large_order_trays": "Знает", 
+          "q20_tray_neatness": "Знает", "q21_tray_delivery": "Знает"
+        };
+        
+        let score = 0;
+        let totalQuestions = 0;
+        for (const qName in correctAnswersValues) {
+            totalQuestions++;
+            const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value;
+            if (selectedValue === correctAnswersValues[qName]) {
+                score++;
+            }
+        }
+        const percent = Math.round((score / totalQuestions) * 100);
+
+        // --- Подготовка FormData для отправки только текстовых данных ---
+        const formDataToSend = new FormData();
+        formDataToSend.append("surveyId", surveyId); 
+        formDataToSend.append("yourName", yourName);
+        formDataToSend.append("employeeName", employeeName);
+        formDataToSend.append("comment", comment); 
+        formDataToSend.append("Процент знаний", percent + "%"); 
+
+        // Добавляем ответы на вопросы
+        for (const qName in correctAnswersValues) {
+            const selectedValue = document.querySelector(`input[name="${qName}"]:checked`)?.value || "";
+            formDataToSend.append(qName, selectedValue);
+        }
+        
+        // --- URL вашего Apps Script для опроса "Пакер" (только текст) ---
+        // !!! ОБЯЗАТЕЛЬНО ЗАМЕНИТЕ ЭТОТ URL НА URL ВАШЕГО РАЗВЕРНУТОГО APPS SCRIPT ДЛЯ ОПРОСА "ПАКЕР" !!!
+        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycby4xcCAYEpY6Vt_L1e89euDiYD3-9_IVc9wEttis1SrWBxB07Bn93xuqrAAO15KgYVZ/exec'; 
+
+        // --- Отправка данных ---
+        const response = await fetch(appsScriptUrl, {
+          method: "POST",
+          body: formDataToSend 
+        });
+
+        const result = await response.json(); 
+
+        if (response.ok && result.status === 'success') {
+          Swal.fire({
+            title: "Опрос - Пакер", 
+            html: `<b>Сотрудник:</b> ${employeeName}<br><b>Результат:</b> ${percent}%<br><b>Комментарий:</b><br>${comment}`,
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d32f2f'
+          });
+          form.reset(); 
+        } else {
+          console.error("Error sending to Apps Script:", result);
+          Swal.fire({
+            title: "Ошибка",
+            text: `Не удалось отправить данные: ${result.message || 'Неизвестная ошибка.'}`,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d32f2f'
+          });
+        }
+      } catch (error) {
+        console.error("Общая ошибка:", error);
+        Swal.fire({
+          title: "Ошибка",
+          text: "Произошла непредвиденная ошибка. Проверьте консоль.",
+          icon: 'error',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#d32f2f'
+        });
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Закончить опрос";
+      }
+    });
+  </script>
+
+</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-maker.html">AI Website Maker</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
