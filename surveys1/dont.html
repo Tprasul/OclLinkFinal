@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=7DjuNS"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=7DjuNS" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <section class="section cid-uNszmOpXnh" style="padding: 40px 20px; text-align: center; background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: white;" id="custom-html-52">
+  <!-- Приз -->
+  <div id="leader-prize-block" style="display: none; max-width: 700px; margin: 30px auto 0; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+    <h3 style="color: gold; font-size: 24px;">🎁 Приз для лидера опросов</h3>
+    <p style="font-size: 18px;">Ты лучший! Получи 1000 Дрим Коинов 👑
+    <img src="https://i.postimg.cc/t4PxHs1f/7743-D19-C-D232-4204-A3-BB-29-C4-A24-DCCB4.jpg" alt="Приз" style="max-width: 100%; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4); margin-top: 20px;">
+  </p></div>
+
+  <!-- Таймер -->
+  <div id="leader-timer-block">
+    <h3>⏳ Лидер опросов будет выбран через:</h3>
+    <div id="leader-countdown" style="font-size: 24px; font-weight: bold; margin-top: 10px;">Загрузка...</div>
+  </div>
+
+  <!-- Звук -->
+  <audio id="winner-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_a9fa45e9ab.mp3"></audio>
+</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="474"></script><script class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="474">
+  const prizeBlock = document.getElementById("leader-prize-block");
+  const timerBlock = document.getElementById("leader-timer-block");
+  const countdown = document.getElementById("leader-countdown");
+  const sound = document.getElementById("winner-sound");
+
+  const testMode = false; // Включи true для проверкиfalse
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const target = testMode 
+    ? new Date(now.getTime() + 10000)
+    : new Date(year, month, 31, 12, 0, 0);
+
+  function launchConfetti() {
+    confetti({
+      particleCount: 200,
+      spread: 120,
+      origin: { y: 0.2 },
+      colors: ['#ffd700', '#ff5e57', '#4CAF50']
+    });
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      prizeBlock.style.display = "block";
+      timerBlock.style.display = "none";
+      sound.play();
+      launchConfetti();
+      clearInterval(timer);
+    } else {
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+      countdown.textContent = `${d}д ${h}ч ${m}м ${s}с`;
+    }
+  }
+
+  updateCountdown();
+  const timer = setInterval(updateCountdown, 1000);
+</script>
+
+<style class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="475">
+  .section-dark {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 40px 20px;
+    color: white;
+  }
+
+  .hr-entry {
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .top-1 {
+    background: linear-gradient(90deg, #ffe600, #fff2b1);
+    border: 2px solid #ffd700;
+    color: #000;
+    animation: pulse 1.5s infinite;
+  }
+
+  .top-2 {
+    background: linear-gradient(90deg, #c0c0c0, #e0e0e0);
+    border: 2px solid #c0c0c0;
+    color: #000;
+    animation: pulse 1.5s infinite;
+  }
+
+  .top-3 {
+    background: linear-gradient(90deg, #cd7f32, #e5c1a1);
+    border: 2px solid #cd7f32;
+    color: #000;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+    50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,255,255,0.4); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style><section class="section-dark cid-uMWk17w9l3" id="custom-html-41">
+  <div style="max-width: 700px; margin: auto;">
+    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px;">
+      <h2 style="text-align: center; font-weight: bold; margin-bottom: 20px;">🏆 Рейтинг Тренеров</h2>
+      <div id="topList" style="font-size: 18px;"></div>
+    </div>
+  </div>
+</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="475"></script><script class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="475">
+fetch("https://script.google.com/macros/s/AKfycbyoipMxs0TlH8YrNXWaqsVtv_cD2ckC_6lVB0HdCYjn2bMVV0fplG8he-8kWiNzMXMULA/exec")
+  .then(res => res.json())
+  .then(data => {
+    const medals = ['🥇', '🥈', '🥉'];
+    const container = document.getElementById("topList");
+    let html = "";
+
+    data.slice(0, 5).forEach((hr, index) => {
+      const place = index + 1;
+      const medal = medals[index] || `${place}-е место`;
+      const topClass = index < 3 ? `top-${place}` : "";
+      html += `
+        <div class="hr-entry ${topClass}">
+          <strong>${medal}</strong>: ${hr.name} — ${hr.count} опросов
+        </div>`;
+    });
+
+    container.innerHTML = html;
+
+    // 🎉 Конфетти для победителя
+    confetti({
+      particleCount: 200,
+      spread: 120,
+      origin: { y: 0.2 },
+      colors: ['#ffd700', '#ff5e57', '#4CAF50']
+    });
+  })
+  .catch(err => {
+    document.getElementById("topList").innerHTML = "Ошибка загрузки рейтинга.";
+    console.error("Ошибка загрузки данных:", err);
+  });
+</script>
+
+<section class="section-dark cid-uMaQkLeFz7" id="custom-html-3d">
+  <div style="max-width: 700px; margin: auto;">
+    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px;">
+      
+      <h2 style="color: #ffc107; font-weight: bold; font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+        <span style="font-size: 22px;">💡</span> Мотивация дня
+      </h2>
+
+      <div id="motivationBox" style="
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 16px;
+        padding: 20px;
+        color: white;
+        font-style: italic;
+        font-size: 16px;
+        text-align: center;
+      ">
+        Загрузка мотивации...
+      </div>
+    </div>
+  </div>
+</section><script class="cid-uMaQkLeFz7" id="custom-html-3d" data-rv-view="476">
+const motivationList = [
+  "Ты не просто работаешь — ты двигаешь команду вперёд.",
+  "Каждое действие приближает к большому результату.",
+  "Маленькие усилия каждый день — это огромный рост в будущем.",
+  "Твоя энергия сегодня — успех команды завтра.",
+  "Вдохновляй своим примером. Даже мелочи важны.",
+  "Ты часть сильной команды. А это уже мощь.",
+  "Действие рождает результат. Сделай первый шаг!",
+  "Лучше сделать мало, чем не сделать ничего.",
+  "Ты можешь больше, чем думаешь.",
+  "Рядом с тобой команда — ты не один.",
+  "Мотивация начинается с движения.",
+  "Верь в свои силы — ты уже многое сделал.",
+  "Результат — это накопление маленьких побед.",
+  "Смелость — не отсутствие страха, а действие несмотря на него.",
+  "Ошибки — путь к росту. Не бойся их делать.",
+  "Сегодняшние усилия — завтрашние достижения.",
+  "Ты — часть чего-то большого и важного.",
+  "Улыбнись — ты меняешь атмосферу вокруг.",
+  "Сначала сложно. Потом — гордость.",
+  "Каждый вклад имеет значение. И твой — тоже.",
+  "Начни с малого. Главное — начать.",
+  "Хорошее настроение — мощный инструмент в работе.",
+  "Работа с душой вдохновляет других.",
+  "Ты приносишь пользу — каждый день.",
+  "Будь тем, с кем хочется работать.",
+  "Сотрудничество — ключ к лучшему результату.",
+  "Ты создаёшь атмосферу — сделай её сильной.",
+  "Двигайся вперёд. Даже если шаги маленькие.",
+  "Ты пример для новых сотрудников.",
+  "Сегодня твоя энергия — завтра чей-то прогресс.",
+  "Внимание к деталям — это профессионализм.",
+  "Команда — это сила. А ты — её часть.",
+  "Хвалить других — значит быть сильным.",
+  "Стабильность начинается с тебя.",
+  "Ты не просто в команде. Ты и есть команда.",
+  "Результат невозможен без твоей вовлечённости.",
+  "Маленькая победа — тоже победа.",
+  "Ты делаешь больше, чем замечаешь.",
+  "Привычка делать хорошо — основа успеха.",
+  "Твоя работа — часть чего-то важного. Цени это."
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const random = Math.floor(Math.random() * motivationList.length);
+  document.getElementById("motivationBox").innerText = motivationList[random];
+});
+</script>
+
+<div class="challenge-container cid-uOQO1JfpqB" id="custom-html-58" data-rv-view="477">
+    <div class="card">
+         <h2 style="color: #ffc107; font-weight: bold; font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+        <span style="font-size: 22px;">💪</span> Челлендж дня
+      </h2>
+        
+        <div class="challenge-box" id="challengeBox">
+            Загрузка задания...
+        </div>
+        
+        <button class="btn" onclick="newChallenge()">Новый челлендж</button>
+    </div>
+</div><style class="cid-uOQO1JfpqB" id="custom-html-58" data-rv-view="477">
+.challenge-container {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.header {
+    color: #FFC107;
+    font-size: 20px;
+    /* ИЗМЕНЕНИЕ: Установлена точная 'нормальная' насыщенность шрифта (400) */
+    font-weight: 400;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: inherit;
+}
+
+.header span { } /* Этот стиль не нужен */
+
+.challenge-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-style: normal;
+    transition: opacity 0.2s;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+</style><script class="cid-uOQO1JfpqB" id="custom-html-58" data-rv-view="477">
+const challengeList_widget = [
+    "Скажи доброе утро 5 коллегам",
+            "Пожелай удачи соседу по смене",
+            "Улыбнись каждому гостю, даже уставшему",
+            "Похвали коллегу за его работу",
+            "Спроси у кого-то, как у него дела — по-настоящему",
+            "Сделай кому-то день легче — без лишних слов",
+            "Поделись позитивом в общем чате",
+            "Замени критику на поддержку сегодня",
+            "Сделай маленькое добро без ожидания ответа",
+            "Скажи: «Ты классно справляешься» — тому, кто это заслужил",
+            "Напомни коллеге, что он молодец",
+            "Пожелай хорошего дня кассиру/повару/уборщику",
+            "Помоги новенькому почувствовать себя частью команды",
+            "Попроси и скажи «Спасибо» — искренне",
+            "Поддержи того, кто в стрессе",
+            "Сделай комплимент по внешности или стилю",
+            "Найди 1 повод сказать: «Я горжусь, что мы работаем вместе»",
+            "Заметил хорошее — озвучь это",
+            "Позволь кому-то пройти первым",
+            "Обними друга по команде (если уместно 😄)",
+            "Поздоровайся с каждым, даже если не хочется",
+            "Признай ошибку без оправданий — это тоже сила",
+            "Напиши короткое доброе сообщение в общий чат",
+            "Скажи «Ты был(а) крут(а) сегодня!» кому-то до конца смены",
+            "Пожелай удачи следующей смене перед уходом",
+];
+
+function getRandomChallenge_widget() {
+    return challengeList_widget[Math.floor(Math.random() * challengeList_widget.length)];
+}
+
+function newChallenge() {
+    const box = document.getElementById("challengeBox");
+    if (box) {
+        box.style.opacity = 0;
+        setTimeout(() => {
+            box.textContent = getRandomChallenge_widget();
+            box.style.opacity = 1;
+        }, 200);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', newChallenge);
+} else {
+    newChallenge();
+}
+</script>
+
+<section class="section-dark cid-uPWdqUPK7t" id="custom-html-5d">
+  <div class="button-container">
+    <h2>Навигация</h2>
+    <a href="https://docs.google.com/spreadsheets/d/1oFUNvcD8Cbs5tWlvPaj94t3jWuXOsvD0M5cl2r6yEpM/edit?gid=0#gid=0" target="_blank" class="big-button">📊 ОТЧЁТЫ</a>
+    <a href="page34.html" class="big-button">📝 ОПРОСЫ</a>
+  </div>
+</section><style class="cid-uPWdqUPK7t" id="custom-html-5d" data-rv-view="478">
+  .section-dark {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 60px 20px;
+    color: white;
+  }
+
+  .button-container {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .button-container h2 {
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: white;
+  }
+
+  .big-button {
+    display: inline-block;
+    width: 90%;
+    max-width: 300px;
+    padding: 18px 0;
+    margin: 12px auto;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid white;
+    border-radius: 16px;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .big-button:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-4px);
+  }
+
+  @media (min-width: 600px) {
+    .big-button {
+      margin: 12px 20px;
+      width: 220px;
+    }
+  }
+</style>
+
+<meta charset="UTF-8" class="cid-uPWgsL4aWF" id="custom-html-5f" data-rv-view="479"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uPWgsL4aWF" id="custom-html-5f" data-rv-view="479"><title class="cid-uPWgsL4aWF" id="custom-html-5f" data-rv-view="479">Комментарии HR</title><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" class="cid-uPWgsL4aWF" id="custom-html-5f" data-rv-view="479"><style class="cid-uPWgsL4aWF" id="custom-html-5f" data-rv-view="479">
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      font-family: 'Inter', Arial, sans-serif;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .chat-section {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+    }
+    h2 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+      letter-spacing: 0.05em;
+    }
+    .chat-message {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
+      color: white;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .chat-message:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .chat-meta {
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: white;
+      font-weight: 600;
+    }
+    .chat-meta strong {
+      color: white;
+    }
+  </style><section class="chat-section cid-uPWgsL4aWF" id="custom-html-5f">
+    <h2>💬 Комментарии HR</h2>
+    <div id="commentList">Загрузка комментариев...</div>
+  </section><script class="cid-uPWgsL4aWF" id="custom-html-5f" data-rv-view="479">
+    fetch("https://script.google.com/macros/s/AKfycbz3aWnXDA6Xxy5ZRkQf5H3QJZFyhGNIbP9-WYB4N3rYXm4nq422Iy93hxP03YSedmVU/exec")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("commentList");
+        if (!data || data.length === 0) {
+          container.innerHTML = "Нет комментариев за этот месяц.";
+          return;
+        }
+
+        // Сортируем по дате (новые сверху)
+        const sorted = data.sort((a, b) => {
+          const [da, ma, ya] = a.date.split('.').map(Number);
+          const [db, mb, yb] = b.date.split('.').map(Number);
+          return new Date(yb, mb - 1, db) - new Date(ya, ma - 1, da);
+        });
+
+        // Берём максимум 10 комментариев
+        const limited = sorted.slice(0, 10);
+
+        container.innerHTML = limited.map(entry => `
+          <div class="chat-message">
+            <div class="chat-meta">${entry.date} — <strong>${entry.hr}</strong> оценил(а) <strong>${entry.employee}</strong> на станции <strong>${entry.station}</strong></div>
+            <div>${entry.comment}</div>
+          </div>
+        `).join('');
+      })
+      .catch(err => {
+        document.getElementById("commentList").innerHTML = "Ошибка загрузки комментариев.";
+        console.error(err);
+      });
+  </script>
+
+<section class="section-dark cid-uNrc7urH9B" style="padding: 60px 20px;" id="custom-html-4y">
+  <h2 style="text-align: center; font-size: 32px; font-weight: bold; color: white; margin-bottom: 40px;">
+    📸 Галерея сотрудников
+  </h2>
+
+  <div class="row-slider-wrapper" id="gallery-rows">
+    <div class="row-slider" data-direction="left"></div>
+    <div class="row-slider" data-direction="right"></div>
+    <div class="row-slider" data-direction="left"></div>
+  </div>
+</section><style class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="480">
+  .section-dark {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  }
+
+  .row-slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .row-slider {
+    display: flex;
+    gap: 6px; /* минимальный отступ между фото */
+    overflow: hidden;
+    position: relative;
+    height: 240px;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .row-slider::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .slider-item {
+    flex: none;
+    width: 240px;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style><script class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="480">
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  function duplicateImages(images, times = 2) {
+    const result = [];
+    for (let i = 0; i < times; i++) {
+      result.push(...images.map(img => img.cloneNode(true)));
+    }
+    return result;
+  }
+
+  function animateRow(row, direction) {
+    const speed = 0.5;
+    function step() {
+      if (direction === "left") {
+        row.scrollLeft += speed;
+        if (row.scrollLeft >= row.scrollWidth / 2) {
+          row.scrollLeft = 0;
+        }
+      } else {
+        row.scrollLeft -= speed;
+        if (row.scrollLeft <= 0) {
+          row.scrollLeft = row.scrollWidth / 2;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+    step();
+  }
+
+  fetch("https://script.google.com/macros/s/AKfycbyX7rk3Hw1CBA0r93ns_43XEj68pgFTU9IAJaWwvT2nVOpEHDylReRzSrnQLGRTStP_/exec")
+    .then(res => res.json())
+    .then(data => {
+      const last60 = data.slice(-60); // 20 фото на ряд
+      shuffle(last60);
+
+      const rows = document.querySelectorAll(".row-slider");
+      rows.forEach((row, index) => {
+        const direction = row.dataset.direction;
+        const slice = last60.slice(index * 20, (index + 1) * 20);
+        const items = slice.map(entry => {
+          const div = document.createElement("div");
+          div.className = "slider-item";
+          div.innerHTML = `<img src="${entry.url}" alt="Фото" referrerpolicy="no-referrer">`;
+          return div;
+        });
+
+        const looped = duplicateImages(items);
+        looped.forEach(el => row.appendChild(el));
+
+        animateRow(row, direction);
+      });
+    });
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag & Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
