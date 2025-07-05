@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Page 35</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=zjHvwO"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=zjHvwO" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <style class="cid-uQ0QoMHcgi" id="custom-html-5g" data-rv-view="668">
+  .section-dark {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 60px 20px;
+    color: white;
+  }
+
+  .rating-wrapper {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+  }
+
+  .rating-wrapper h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: white;
+  }
+
+  .hr-entry {
+    margin-bottom: 12px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 17px;
+    animation: fadeIn 0.5s ease forwards;
+    color: white;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px) {
+    .hr-entry {
+      font-size: 15px;
+      padding: 12px;
+    }
+
+    .rating-wrapper {
+      padding: 20px;
+    }
+
+    .rating-wrapper h2 {
+      font-size: 22px;
+    }
+  }
+</style><section class="section-dark cid-uQ0QoMHcgi" id="custom-html-5g">
+  <div class="rating-wrapper">
+    <h2>👥 Рейтинг сотрудников по активности</h2>
+    <div id="employeeList"></div>
+  </div>
+</section><script class="cid-uQ0QoMHcgi" id="custom-html-5g" data-rv-view="668">
+fetch("https://script.google.com/macros/s/AKfycbzeHulB4qYsizNVEUPE0zny5lGrCFP4UOO8_IiP3DxkmJappCXWXL8V1LNnkP5RPiAk2w/exec")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("employeeList");
+    let html = "";
+
+    // Просто первые 10 по убыванию
+    data.slice(0, 10).forEach(employee => {
+      html += `
+        <div class="hr-entry">
+          ${employee.name} — ${employee.count} заполнений
+        </div>`;
+    });
+
+    container.innerHTML = html;
+  })
+  .catch(err => {
+    document.getElementById("employeeList").innerHTML = "Ошибка загрузки рейтинга.";
+    console.error("Ошибка загрузки данных:", err);
+  });
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-creator.html">Best AI Website Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+  <input name="animation" type="hidden">
+  </body>
+</html>
