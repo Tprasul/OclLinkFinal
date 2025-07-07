@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=KeIAQr"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=KeIAQr" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=TUf1fg"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=TUf1fg" type="text/css">
 
   
   
@@ -42,7 +42,7 @@
 
   <!-- Звук -->
   <audio id="winner-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_a9fa45e9ab.mp3"></audio>
-</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="670"></script><script class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="670">
+</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="95"></script><script class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="95">
   const prizeBlock = document.getElementById("leader-prize-block");
   const timerBlock = document.getElementById("leader-timer-block");
   const countdown = document.getElementById("leader-countdown");
@@ -89,7 +89,7 @@
   const timer = setInterval(updateCountdown, 1000);
 </script>
 
-<style class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="671">
+<style class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="96">
   .section-dark {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     padding: 40px 20px;
@@ -158,7 +158,7 @@
       <div id="topList" style="font-size: 18px;"></div>
     </div>
   </div>
-</section><script class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="671">
+</section><script class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="96">
 fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4xHMx6ihyPNaHDF2BDTIQangziO9Da_to8N2/exec")
   .then(res => res.json())
   .then(data => {
@@ -184,30 +184,103 @@ fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4x
   });
 </script>
 
-<section class="section-dark cid-uMaQkLeFz7" id="custom-html-3d">
-  <div style="max-width: 700px; margin: auto;">
-    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px;">
-      
-      <h2 style="color: #ffc107; font-weight: bold; font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-        <span style="font-size: 22px;">💡</span> Мотивация дня
-      </h2>
+<section class="section-dark cid-uQ9z7Wl4lv" id="custom-html-5i">
+  <div class="info-box">
+    <h2>
+      <span style="font-size: 22px;">💡</span> Мотивация дня
+    </h2>
 
-      <div id="motivationBox" style="
-        background: rgba(255, 255, 255, 0.07);
-        border-radius: 16px;
-        padding: 20px;
-        color: white;
-        font-style: italic;
-        font-size: 16px;
-        text-align: center;
-      ">
-        Загрузка мотивации...
-      </div>
+    <div class="info-content" id="motivationBox">
+      Загрузка мотивации...
     </div>
   </div>
-</section><script class="cid-uMaQkLeFz7" id="custom-html-3d" data-rv-view="672">
-const motivationList = [
-  "Ты не просто работаешь — ты двигаешь команду вперёд.",
+
+  <div class="info-box">
+    <h2>
+      <span style="font-size: 22px;">💪</span> Челлендж дня
+    </h2>
+
+    <div class="info-content" id="challengeBox">
+      Загрузка задания...
+    </div>
+
+    <button class="btn" onclick="newChallenge()">Новый челлендж</button>
+  </div>
+</section><style class="cid-uQ9z7Wl4lv" id="custom-html-5i" data-rv-view="97">
+  .section-dark {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  .info-box {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .info-box h2 {
+    color: #ffc107;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .info-content {
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    min-height: 60px;
+    font-style: normal;
+    margin-bottom: 20px;
+    transition: opacity 0.2s;
+  }
+
+  .btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .info-box {
+      padding: 20px;
+      max-width: 95%;
+    }
+  }
+</style><script class="cid-uQ9z7Wl4lv" id="custom-html-5i" data-rv-view="97">
+  // Мотивация дня
+  const motivationList = [
+    "Ты не просто работаешь — ты двигаешь команду вперёд.",
   "Каждое действие приближает к большому результату.",
   "Маленькие усилия каждый день — это огромный рост в будущем.",
   "Твоя энергия сегодня — успех команды завтра.",
@@ -247,106 +320,17 @@ const motivationList = [
   "Ты делаешь больше, чем замечаешь.",
   "Привычка делать хорошо — основа успеха.",
   "Твоя работа — часть чего-то важного. Цени это."
-];
+  ];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const random = Math.floor(Math.random() * motivationList.length);
-  document.getElementById("motivationBox").innerText = motivationList[random];
-});
-</script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const rand = Math.floor(Math.random() * motivationList.length);
+    document.getElementById("motivationBox").innerText = motivationList[rand];
+  });
 
-<div class="challenge-container cid-uOQO1JfpqB" id="custom-html-58" data-rv-view="673">
-    <div class="card">
-         <h2 style="color: #ffc107; font-weight: bold; font-size: 20px; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-        <span style="font-size: 22px;">💪</span> Челлендж дня
-      </h2>
-        
-        <div class="challenge-box" id="challengeBox">
-            Загрузка задания...
-        </div>
-        
-        <button class="btn" onclick="newChallenge()">Новый челлендж</button>
-    </div>
-</div><style class="cid-uOQO1JfpqB" id="custom-html-58" data-rv-view="673">
-.challenge-container {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: white;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 30px;
-    width: 100%;
-    max-width: 700px;
-    box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-}
-
-.header {
-    color: #FFC107;
-    font-size: 20px;
-    /* ИЗМЕНЕНИЕ: Установлена точная 'нормальная' насыщенность шрифта (400) */
-    font-weight: 400;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: inherit;
-}
-
-.header span { } /* Этот стиль не нужен */
-
-.challenge-box {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    font-size: 16px;
-    text-align: center;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 25px;
-    line-height: 1.5;
-    font-style: normal;
-    transition: opacity 0.2s;
-}
-
-.btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: 500;
-    transition: background 0.2s;
-}
-
-.btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-</style><script class="cid-uOQO1JfpqB" id="custom-html-58" data-rv-view="673">
-const challengeList_widget = [
+  // Челлендж дня
+  const challengeList = [
     "Скажи доброе утро 5 коллегам",
-            "Пожелай удачи соседу по смене",
+    "Пожелай удачи соседу по смене",
             "Улыбнись каждому гостю, даже уставшему",
             "Похвали коллегу за его работу",
             "Спроси у кого-то, как у него дела — по-настоящему",
@@ -369,29 +353,25 @@ const challengeList_widget = [
             "Признай ошибку без оправданий — это тоже сила",
             "Напиши короткое доброе сообщение в общий чат",
             "Скажи «Ты был(а) крут(а) сегодня!» кому-то до конца смены",
-            "Пожелай удачи следующей смене перед уходом",
-];
+            "Пожелай удачи следующей смене перед уходом"
+  ];
 
-function getRandomChallenge_widget() {
-    return challengeList_widget[Math.floor(Math.random() * challengeList_widget.length)];
-}
-
-function newChallenge() {
+  function newChallenge() {
     const box = document.getElementById("challengeBox");
     if (box) {
-        box.style.opacity = 0;
-        setTimeout(() => {
-            box.textContent = getRandomChallenge_widget();
-            box.style.opacity = 1;
-        }, 200);
+      box.style.opacity = 0;
+      setTimeout(() => {
+        box.textContent = challengeList[Math.floor(Math.random() * challengeList.length)];
+        box.style.opacity = 1;
+      }, 200);
     }
-}
+  }
 
-if (document.readyState === 'loading') {
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', newChallenge);
-} else {
+  } else {
     newChallenge();
-}
+  }
 </script>
 
 <section class="section-dark cid-uPUce1P9uM" id="custom-html-5f">
@@ -401,7 +381,7 @@ if (document.readyState === 'loading') {
     <a href="page34.html" class="big-button">📝 ОПРОСЫ</a>
     <a href="page35.html" class="big-button">📈 РЕЙТИНГ СОТРУДНИКОВ</a>
   </div>
-</section><style class="cid-uPUce1P9uM" id="custom-html-5f" data-rv-view="674">
+</section><style class="cid-uPUce1P9uM" id="custom-html-5f" data-rv-view="98">
   .section-dark {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     padding: 60px 20px;
@@ -454,7 +434,7 @@ if (document.readyState === 'loading') {
   }
 </style>
 
-<style class="cid-uQ3LJPkpWO" id="custom-html-5h" data-rv-view="675">
+<style class="cid-uQ3LJPkpWO" id="custom-html-5h" data-rv-view="99">
   body, html {
     margin: 0; padding: 0; background: #0f2027;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -529,7 +509,7 @@ if (document.readyState === 'loading') {
   </div>
 
   <p>Загрузка...</p>
-</section><script class="cid-uQ3LJPkpWO" id="custom-html-5h" data-rv-view="675">
+</section><script class="cid-uQ3LJPkpWO" id="custom-html-5h" data-rv-view="99">
   const goals = [0, 50, 100, 150, 200, 300];
 
   function getProgressPercent(total) {
@@ -564,7 +544,7 @@ if (document.readyState === 'loading') {
     });
 </script>
 
-<meta charset="UTF-8" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="676"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="676"><title class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="676">Комментарии HR</title><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="676"><style class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="676">
+<meta charset="UTF-8" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="100"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="100"><title class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="100">Комментарии HR</title><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="100"><style class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="100">
     body {
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: white;
@@ -612,7 +592,7 @@ if (document.readyState === 'loading') {
   </style><section class="chat-section cid-uPRzotYz4I" id="custom-html-5c">
     <h2>💬 Комментарии HR</h2>
     <div id="commentList">Загрузка комментариев...</div>
-  </section><script class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="676">
+  </section><script class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="100">
     fetch("https://script.google.com/macros/s/AKfycbzSYgtfuDMirAPiKPG45OxtGq5H885Kf7hinq2lvj5U4I1sOw3mle3pOzkfoWR3wawS/exec")
       .then(res => res.json())
       .then(data => {
@@ -655,7 +635,7 @@ if (document.readyState === 'loading') {
     <div class="row-slider" data-direction="right"></div>
     <div class="row-slider" data-direction="left"></div>
   </div>
-</section><style class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="677">
+</section><style class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="101">
   .section-dark {
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   }
@@ -708,7 +688,7 @@ if (document.readyState === 'loading') {
       transform: translateY(0);
     }
   }
-</style><script class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="677">
+</style><script class="cid-uNrc7urH9B" id="custom-html-4y" data-rv-view="101">
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -779,7 +759,7 @@ if (document.readyState === 'loading') {
         animateRow(row, direction);
       });
     });
-</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-generator.html">AI Website Generator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-creator.html">Free AI Website Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
   <input name="animation" type="hidden">
