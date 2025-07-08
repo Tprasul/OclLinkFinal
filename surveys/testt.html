@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=FRDnoB"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=FRDnoB" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=wiywho"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=wiywho" type="text/css">
 
   
   
@@ -26,179 +26,7 @@
 </head>
 <body>
   
-  <section class="section-dark cid-uQkhA3ak1Q" id="custom-html-5w">
-  <div class="info-box">
-    <h2><span style="font-size: 22px;">💡</span> Мотивация дня</h2>
-    <div class="info-content" id="motivationBox">Загрузка мотивации...</div>
-  </div>
-
-  <div class="info-box">
-    <h2><span style="font-size: 22px;">💪</span> Челлендж дня</h2>
-    <div class="info-content" id="challengeBox">Загрузка задания...</div>
-    <button class="btn" onclick="newChallenge()">Новый челлендж</button>
-  </div>
-</section><style class="cid-uQkhA3ak1Q" id="custom-html-5w" data-rv-view="525">
-  .section-dark {
-    background-color: #03454E;
-    color: #D0E8E8;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  .info-box {
-    width: 100%;
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: rgba(5, 90, 100, 0.3); /* мягкий, почти сливающийся фон */
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: none;
-    box-sizing: border-box;
-  }
-
-  .info-box h2 {
-    color: #FFD93D;
-    font-weight: bold;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 3px rgba(0,0,0,0.3);
-  }
-
-  .info-content {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
-    padding: 18px;
-    color: #FFFFFF;
-    font-size: 16px;
-    text-align: center;
-    min-height: 60px;
-    font-style: normal;
-    margin-bottom: 20px;
-    transition: opacity 0.2s ease;
-  }
-
-  .btn {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-  }
-
-  .btn:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-
-  @media (max-width: 768px) {
-    .info-box {
-      padding: 20px;
-      max-width: 95%;
-    }
-  }
-</style><script class="cid-uQkhA3ak1Q" id="custom-html-5w" data-rv-view="525">
-  // Мотивация дня
-  const motivationList = [
-    "Ты не просто работаешь — ты двигаешь команду вперёд.",
-    "Каждое действие приближает к большому результату.",
-    "Маленькие усилия каждый день — это огромный рост в будущем.",
-    "Твоя энергия сегодня — успех команды завтра.",
-    "Вдохновляй своим примером. Даже мелочи важны.",
-    "Ты часть сильной команды. А это уже мощь.",
-    "Действие рождает результат. Сделай первый шаг!",
-    "Лучше сделать мало, чем не сделать ничего.",
-    "Ты можешь больше, чем думаешь.",
-    "Рядом с тобой команда — ты не один.",
-    "Мотивация начинается с движения.",
-    "Верь в свои силы — ты уже многое сделал.",
-    "Результат — это накопление маленьких побед.",
-    "Смелость — не отсутствие страха, а действие несмотря на него.",
-    "Ошибки — путь к росту. Не бойся их делать.",
-    "Сегодняшние усилия — завтрашние достижения.",
-    "Ты — часть чего-то большого и важного.",
-    "Улыбнись — ты меняешь атмосферу вокруг.",
-    "Сначала сложно. Потом — гордость.",
-    "Каждый вклад имеет значение. И твой — тоже.",
-    "Начни с малого. Главное — начать.",
-    "Хорошее настроение — мощный инструмент в работе.",
-    "Работа с душой вдохновляет других.",
-    "Ты приносишь пользу — каждый день.",
-    "Будь тем, с кем хочется работать.",
-    "Сотрудничество — ключ к лучшему результату.",
-    "Ты создаёшь атмосферу — сделай её сильной.",
-    "Двигайся вперёд. Даже если шаги маленькие.",
-    "Ты пример для новых сотрудников.",
-    "Сегодня твоя энергия — завтра чей-то прогресс.",
-    "Внимание к деталям — это профессионализм.",
-    "Команда — это сила. А ты — её часть.",
-    "Хвалить других — значит быть сильным.",
-    "Стабильность начинается с тебя.",
-    "Ты не просто в команде. Ты и есть команда.",
-    "Результат невозможен без твоей вовлечённости.",
-    "Маленькая победа — тоже победа.",
-    "Ты делаешь больше, чем замечаешь.",
-    "Привычка делать хорошо — основа успеха.",
-    "Твоя работа — часть чего-то важного. Цени это."
-  ];
-
-  const challengeList = [
-    "Скажи доброе утро 5 коллегам",
-    "Пожелай удачи соседу по смене",
-    "Улыбнись каждому гостю, даже уставшему",
-    "Похвали коллегу за его работу",
-    "Спроси у кого-то, как у него дела — по-настоящему",
-    "Сделай кому-то день легче — без лишних слов",
-    "Поделись позитивом в общем чате",
-    "Замени критику на поддержку сегодня",
-    "Сделай маленькое добро без ожидания ответа",
-    "Скажи: «Ты классно справляешься» — тому, кто это заслужил",
-    "Напомни коллеге, что он молодец",
-    "Пожелай хорошего дня кассиру/повару/уборщику",
-    "Помоги новенькому почувствовать себя частью команды",
-    "Попроси и скажи «Спасибо» — искренне",
-    "Поддержи того, кто в стрессе",
-    "Сделай комплимент по внешности или стилю",
-    "Найди 1 повод сказать: «Я горжусь, что мы работаем вместе»",
-    "Заметил хорошее — озвучь это",
-    "Позволь кому-то пройти первым",
-    "Обними друга по команде (если уместно 😄)",
-    "Поздоровайся с каждым, даже если не хочется",
-    "Признай ошибку без оправданий — это тоже сила",
-    "Напиши короткое доброе сообщение в общий чат",
-    "Скажи «Ты был(а) крут(а) сегодня!» кому-то до конца смены",
-    "Пожелай удачи следующей смене перед уходом"
-  ];
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const randMotivation = Math.floor(Math.random() * motivationList.length);
-    document.getElementById("motivationBox").innerText = motivationList[randMotivation];
-    newChallenge();
-  });
-
-  function newChallenge() {
-    const box = document.getElementById("challengeBox");
-    if (box) {
-      box.style.opacity = 0;
-      setTimeout(() => {
-        box.textContent = challengeList[Math.floor(Math.random() * challengeList.length)];
-        box.style.opacity = 1;
-      }, 200);
-    }
-  }
-</script>
-
-<meta charset="UTF-8" class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526"><title class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526">Навигация и Рейтинг Тренеров</title><style class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526">
+  <meta charset="UTF-8" class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742"><title class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742">Навигация и Рейтинг Тренеров</title><style class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742">
     body, html {
       margin: 0; padding: 0;
       background-color: #03454E;
@@ -356,7 +184,7 @@
         flex: 1 1 auto;
       }
     }
-  </style><div class="container cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526">
+  </style><div class="container cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742">
     <!-- Навигация слева -->
     <section class="nav-block">
       <h2>Навигация</h2>
@@ -371,7 +199,7 @@
       <h2>🏆 Рейтинг Тренеров</h2>
       <div id="topList" style="font-size: 18px;"></div>
     </section>
-  </div><script class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526">
+  </div><script class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742">
     fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4xHMx6ihyPNaHDF2BDTIQangziO9Da_to8N2/exec")
       .then(res => res.json())
       .then(data => {
@@ -397,7 +225,287 @@
       });
   </script>
 
-<meta charset="UTF-8" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527"><title class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527">Комментарии HR</title><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527"><style class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527">
+<section class="section-dark dual-layout cid-uQkhA3ak1Q" id="custom-html-5w">
+  <!-- Левая колонка -->
+  <div class="left-box">
+    <div class="info-box">
+      <h2>💡 Мотивация дня</h2>
+      <div class="info-content" id="motivationBox">Загрузка мотивации...</div>
+    </div>
+
+    <div class="info-box">
+      <h2>💪 Челлендж дня</h2>
+      <div class="info-content" id="challengeBox">Загрузка задания...</div>
+      <button class="btn" onclick="newChallenge()">Новый челлендж</button>
+    </div>
+  </div>
+
+  <!-- Правая колонка -->
+  <div class="right-box">
+    <div class="salary-form">
+      <h2>Калькулятор зарплаты</h2>
+
+      <label for="position">Выберите должность:</label>
+      <select id="position">
+        <option value="">-- Выбрать --</option>
+        <option value="trainer">Тренер</option>
+        <option value="trainer2">Тренер 2</option>
+        <option value="chk1">ЧК1</option>
+        <option value="chk2">ЧК2</option>
+        <option value="chk3">ЧК3</option>
+        <option value="tehn">Тех ночь</option>
+        <option value="tehz">Тех зал</option>
+      </select>
+
+      <label for="dayHours">Количество дневных часов:</label>
+      <input type="number" id="dayHours" placeholder="Например: 120">
+
+      <label for="nightHours">Количество ночных часов:</label>
+      <input type="number" id="nightHours" placeholder="Например: 40">
+
+      <div class="bonus-toggle">
+        <input type="checkbox" id="bonus">
+        <label for="bonus">Перфоманс бонус (+3000 сом)</label>
+      </div>
+
+      <button onclick="calculate()">Посчитать зарплату</button>
+
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+</section><style class="cid-uQkhA3ak1Q" id="custom-html-5w" data-rv-view="743">
+  .section-dark {
+    background-color: #03454E;
+    color: #D0E8E8;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .dual-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .left-box, .right-box {
+    flex: 1 1 400px;
+    max-width: 600px;
+  }
+
+  .info-box {
+    background-color: rgba(5, 90, 100, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
+
+  .info-box h2 {
+    color: #FFD93D;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-shadow: 0 0 3px rgba(0,0,0,0.3);
+  }
+
+  .info-content {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 16px;
+    min-height: 50px;
+  }
+
+  .btn {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .salary-form {
+    background: rgba(255,255,255,0.03);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .salary-form h2 {
+    text-align: center;
+    color: #FFD93D;
+    margin-bottom: 20px;
+  }
+
+  .salary-form label {
+    margin-top: 15px;
+    display: block;
+    font-weight: 500;
+  }
+
+  .salary-form input,
+  .salary-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 16px;
+  }
+
+  select option {
+    background-color: #03454E;
+    color: #fff;
+  }
+
+  .bonus-toggle {
+    margin-top: 20px;
+  }
+
+  .bonus-toggle input[type="checkbox"] {
+    display: none;
+  }
+
+  .bonus-toggle label {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.06);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .bonus-toggle input[type="checkbox"]:checked + label {
+    background-color: #FFD93D;
+    color: #000;
+  }
+
+  .salary-form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #FFD93D;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .result {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 15px;
+  }
+
+  .result b {
+    color: #FFD93D;
+  }
+
+  @media (max-width: 768px) {
+    .dual-layout {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style><script class="cid-uQkhA3ak1Q" id="custom-html-5w" data-rv-view="743">
+  const motivationList = [
+    "Ты не просто работаешь — ты двигаешь команду вперёд.",
+    "Маленькие усилия каждый день — это огромный рост в будущем.",
+    "Твоя энергия сегодня — успех команды завтра.",
+    "Ты часть сильной команды. А это уже мощь.",
+    "Верь в свои силы — ты уже многое сделал.",
+    "Результат — это накопление маленьких побед.",
+    "Смелость — не отсутствие страха, а действие несмотря на него.",
+    "Ошибки — путь к росту. Не бойся их делать.",
+    "Ты можешь больше, чем думаешь.",
+    "Ты делаешь больше, чем замечаешь."
+  ];
+
+  const challengeList = [
+    "Скажи доброе утро 5 коллегам",
+    "Похвали коллегу за его работу",
+    "Сделай кому-то день легче — без лишних слов",
+    "Замени критику на поддержку сегодня",
+    "Поделись позитивом в общем чате",
+    "Скажи: «Ты классно справляешься» — тому, кто это заслужил",
+    "Пожелай хорошего дня кассиру/повару/уборщику",
+    "Помоги новенькому почувствовать себя частью команды",
+    "Сделай комплимент по внешности или стилю",
+    "Напиши короткое доброе сообщение в общий чат"
+  ];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const randMotivation = Math.floor(Math.random() * motivationList.length);
+    document.getElementById("motivationBox").innerText = motivationList[randMotivation];
+    newChallenge();
+  });
+
+  function newChallenge() {
+    const box = document.getElementById("challengeBox");
+    box.style.opacity = 0;
+    setTimeout(() => {
+      const rand = Math.floor(Math.random() * challengeList.length);
+      box.textContent = challengeList[rand];
+      box.style.opacity = 1;
+    }, 200);
+  }
+
+  const rates = {
+    trainer:  { day: 186, night: 246, advance: 8000 },
+    trainer2: { day: 191, night: 253, advance: 8000 },
+    chk1:     { day: 151, night: 198, advance: 7000 },
+    chk2:     { day: 166, night: 218, advance: 7000 },
+    chk3:     { day: 171, night: 226, advance: 7000 },
+    tehn:     { day: 220, night: 220, advance: 7000 },
+    tehz:     { day: 156, night: 203, advance: 7000 }
+  };
+
+  function calculate() {
+    const position = document.getElementById('position').value;
+    const dayHours = +document.getElementById('dayHours').value || 0;
+    const nightHours = +document.getElementById('nightHours').value || 0;
+    const hasBonus = document.getElementById('bonus').checked;
+
+    if (!position || !rates[position]) {
+      document.getElementById('result').innerText = 'Пожалуйста, выберите должность.';
+      return;
+    }
+
+    const rate = rates[position];
+    const dayPay = rate.day * dayHours;
+    const nightPay = rate.night * nightHours;
+    const bonus = hasBonus ? 3000 : 0;
+    const advance = rate.advance || 0;
+    const gross = dayPay + nightPay + bonus;
+    const net = gross - advance;
+
+    document.getElementById('result').innerHTML = `
+      Дневные часы: ${dayHours} ч × ${rate.day} сом = <b>${dayPay.toLocaleString()} сом</b><br>
+      Ночные часы: ${nightHours} ч × ${rate.night} сом = <b>${nightPay.toLocaleString()} сом</b><br>
+      Бонус: <b>${bonus.toLocaleString()} сом</b><br>
+      Аванс: -<b>${advance.toLocaleString()} сом</b><br><br>
+      <span style="font-size: 20px;">💰 <b>Итого к выплате: ${Math.max(0, Math.round(net)).toLocaleString()} сом</b></span>
+    `;
+  }
+</script>
+
+<meta charset="UTF-8" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744"><title class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744">Комментарии HR</title><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744"><style class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744">
     body {
       background: #03454E;
       color: white;
@@ -468,7 +576,7 @@
   </style><section class="chat-section cid-uQkkZ6ZKFU" id="custom-html-5z">
     <h2>💬 Комментарии HR</h2>
     <div id="commentList">Загрузка комментариев...</div>
-  </section><script class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527">
+  </section><script class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744">
     fetch("https://script.google.com/macros/s/AKfycbzSYgtfuDMirAPiKPG45OxtGq5H885Kf7hinq2lvj5U4I1sOw3mle3pOzkfoWR3wawS/exec")
       .then(res => res.json())
       .then(data => {
@@ -500,7 +608,7 @@
         document.getElementById("commentList").innerHTML = "Ошибка загрузки комментариев.";
         console.error(err);
       });
-  </script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  </script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
