@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Галерея</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=Z1edoc"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=Z1edoc" type="text/css">
+
+  
+  
+  
+</head>
+<body>
+  
+  <meta charset="UTF-8" class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516"><title class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">Галерея сотрудников</title><style class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">
+    body, html {
+      margin: 0; padding: 0;
+      background: #03454E;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #D0E8E8;
+      min-height: 100vh;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #FFD93D;
+      text-shadow: 0 0 6px rgba(0,0,0,0.5);
+    }
+
+    .gallery-container {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .slider-row {
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.05);
+      position: relative;
+      height: 190px;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 14px;
+      will-change: transform;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      height: 100%;
+    }
+
+    .scroll-left {
+      animation-name: scrollLeft;
+    }
+
+    .scroll-right {
+      animation-name: scrollRight;
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes scrollRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .slider-item {
+      flex: none;
+      width: 190px;
+      height: 190px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      background: #0d3740;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.92);
+      transition: filter 0.3s ease;
+      user-select: none;
+    }
+
+    .slider-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 28px rgba(255, 217, 61, 0.7);
+    }
+
+    .slider-item:hover img {
+      filter: brightness(1);
+    }
+
+    @media (max-width: 768px) {
+      .slider-item {
+        width: 140px;
+        height: 140px;
+      }
+      .slider-row {
+        height: 140px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slider-item {
+        width: 110px;
+        height: 110px;
+      }
+      .slider-row {
+        height: 110px;
+      }
+    }
+  </style><h1 class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">✨ Галерея сотрудников</h1><div class="gallery-container cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">
+    <!-- Слайдеры динамически вставятся сюда -->
+  </div><script class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbyX7rk3Hw1CBA0r93ns_43XEj68pgFTU9IAJaWwvT2nVOpEHDylReRzSrnQLGRTStP_/exec";
+
+    fetch(scriptUrl)
+      .then(res => res.json())
+      .then(data => {
+        const photos = data.slice(-100); // максимум 100 фото для примера
+        const gallery = document.getElementById('galleryContainer');
+
+        const itemsPerRow = 20;
+        const rowCount = Math.ceil(photos.length / itemsPerRow);
+
+        for (let i = 0; i < rowCount; i++) {
+          // Создаём строку слайдера
+          const row = document.createElement('div');
+          row.className = 'slider-row';
+
+          // Создаём трек внутри строки
+          const track = document.createElement('div');
+          track.className = 'slider-track';
+
+          // Чередуем направление (чётные — влево, нечётные — вправо)
+          const directionClass = (i % 2 === 0) ? 'scroll-left' : 'scroll-right';
+          track.classList.add(directionClass);
+
+          // Скорость анимации — рандом в диапазоне 40-70 секунд
+          const speed = 40 + Math.floor(Math.random() * 30);
+          track.style.animationDuration = speed + 's';
+
+          // Берём группу фото для этой строки и дублируем для бесконечного скролла
+          const group = photos.slice(i * itemsPerRow, (i + 1) * itemsPerRow);
+          const loopPhotos = [...group, ...group];
+
+          loopPhotos.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'slider-item';
+            div.innerHTML = `<img src="${item.url}" alt="Фото сотрудника" loading="lazy" draggable="false" />`;
+            track.appendChild(div);
+          });
+
+          row.appendChild(track);
+          gallery.appendChild(row);
+        }
+      })
+      .catch(err => {
+        console.error("Ошибка загрузки галереи:", err);
+        document.getElementById('galleryContainer').innerHTML = '<p style="text-align:center; color:#FFD93D;">Ошибка загрузки галереи. Попробуйте обновить страницу.</p>';
+      });
+  </script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
+  </body>
+</html>

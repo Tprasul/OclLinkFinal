@@ -10,7 +10,7 @@
   <meta name="description" content="">
   
   
-  <title>Home</title>
+  <title>Page 37</title>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=N9wJCL"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=N9wJCL" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=FRDnoB"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=FRDnoB" type="text/css">
 
   
   
@@ -26,195 +26,26 @@
 </head>
 <body>
   
-  <section class="section cid-uNszmOpXnh" style="padding: 40px 20px; text-align: center; background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color: white;" id="custom-html-52">
-  <!-- Приз -->
-  <div id="leader-prize-block" style="display: none; max-width: 700px; margin: 30px auto 0; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-    <h3 style="color: gold; font-size: 24px;">🎁 Приз для лидера опросов</h3>
-    <p style="font-size: 18px;">Ты лучший! Получи 1000 Дрим Коинов 👑
-    <img src="https://i.postimg.cc/t4PxHs1f/7743-D19-C-D232-4204-A3-BB-29-C4-A24-DCCB4.jpg" alt="Приз" style="max-width: 100%; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4); margin-top: 20px;">
-  </p></div>
-
-  <!-- Таймер -->
-  <div id="leader-timer-block">
-    <h3>⏳ Лидер опросов будет выбран через:</h3>
-    <div id="leader-countdown" style="font-size: 24px; font-weight: bold; margin-top: 10px;">Загрузка...</div>
-  </div>
-
-  <!-- Звук -->
-  <audio id="winner-sound" src="https://cdn.pixabay.com/audio/2022/03/10/audio_a9fa45e9ab.mp3"></audio>
-</section><script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="647"></script><script class="cid-uNszmOpXnh" id="custom-html-52" data-rv-view="647">
-  const prizeBlock = document.getElementById("leader-prize-block");
-  const timerBlock = document.getElementById("leader-timer-block");
-  const countdown = document.getElementById("leader-countdown");
-  const sound = document.getElementById("winner-sound");
-
-  const testMode = false; // Включи true для проверкиfalse
-
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth();
-  const target = testMode 
-    ? new Date(now.getTime() + 10000)
-    : new Date(year, month, 31, 12, 0, 0);
-
-  function launchConfetti() {
-    confetti({
-      particleCount: 200,
-      spread: 120,
-      origin: { y: 0.2 },
-      colors: ['#ffd700', '#ff5e57', '#4CAF50']
-    });
-  }
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = target - now;
-
-    if (diff <= 0) {
-      prizeBlock.style.display = "block";
-      timerBlock.style.display = "none";
-      sound.play();
-      launchConfetti();
-      clearInterval(timer);
-    } else {
-      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const m = Math.floor((diff / (1000 * 60)) % 60);
-      const s = Math.floor((diff / 1000) % 60);
-      countdown.textContent = `${d}д ${h}ч ${m}м ${s}с`;
-    }
-  }
-
-  updateCountdown();
-  const timer = setInterval(updateCountdown, 1000);
-</script>
-
-<style class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="648">
-  .section-dark {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    padding: 40px 20px;
-    color: white;
-  }
-
-  .hr-entry {
-    position: relative;
-    margin-bottom: 10px;
-    padding: 12px 16px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    animation: fadeIn 0.5s ease forwards;
-  }
-
-  .top-1 {
-    background: linear-gradient(90deg, #ffe600, #fff2b1);
-    border: 2px solid #ffd700;
-    color: #000;
-    animation: pulse 1.5s infinite;
-  }
-
-  .top-2 {
-    background: linear-gradient(90deg, #c0c0c0, #e0e0e0);
-    border: 2px solid #c0c0c0;
-    color: #000;
-    animation: pulse 1.5s infinite;
-  }
-
-  .top-3 {
-    background: linear-gradient(90deg, #cd7f32, #e5c1a1);
-    border: 2px solid #cd7f32;
-    color: #000;
-    animation: pulse 1.5s infinite;
-  }
-
-  .top-1::before {
-    content: "👑";
-    position: absolute;
-    top: -16px;
-    left: -12px;
-    font-size: 24px;
-    animation: crownFloat 1.5s infinite ease-in-out;
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
-    50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(255,255,255,0.4); }
-    100% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.2); }
-  }
-
-  @keyframes crownFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style><section class="section-dark cid-uMWk17w9l3" id="custom-html-41">
-  <div style="max-width: 700px; margin: auto;">
-    <div style="background: rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px;">
-      <h2 style="text-align: center; font-weight: bold; margin-bottom: 20px;">🏆 Рейтинг Тренеров</h2>
-      <div id="topList" style="font-size: 18px;"></div>
-    </div>
-  </div>
-</section><script class="cid-uMWk17w9l3" id="custom-html-41" data-rv-view="648">
-fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4xHMx6ihyPNaHDF2BDTIQangziO9Da_to8N2/exec")
-  .then(res => res.json())
-  .then(data => {
-    const medals = ['🥇', '🥈', '🥉'];
-    const container = document.getElementById("topList");
-    let html = "";
-
-    data.slice(0, 5).forEach((hr, index) => {
-      const place = index + 1;
-      const medal = medals[index] || `${place}-е место`;
-      const topClass = index < 3 ? `top-${place}` : "";
-      html += `
-        <div class="hr-entry ${topClass}">
-          <strong>${medal}</strong>: ${hr.name} — ${hr.count} опросов
-        </div>`;
-    });
-
-    container.innerHTML = html;
-  })
-  .catch(err => {
-    document.getElementById("topList").innerHTML = "Ошибка загрузки рейтинга.";
-    console.error("Ошибка загрузки данных:", err);
-  });
-</script>
-
-<section class="section-dark cid-uQ9z7Wl4lv" id="custom-html-5i">
+  <section class="section-dark cid-uQkhA3ak1Q" id="custom-html-5w">
   <div class="info-box">
-    <h2>
-      <span style="font-size: 22px;">💡</span> Мотивация дня
-    </h2>
-
-    <div class="info-content" id="motivationBox">
-      Загрузка мотивации...
-    </div>
+    <h2><span style="font-size: 22px;">💡</span> Мотивация дня</h2>
+    <div class="info-content" id="motivationBox">Загрузка мотивации...</div>
   </div>
 
   <div class="info-box">
-    <h2>
-      <span style="font-size: 22px;">💪</span> Челлендж дня
-    </h2>
-
-    <div class="info-content" id="challengeBox">
-      Загрузка задания...
-    </div>
-
+    <h2><span style="font-size: 22px;">💪</span> Челлендж дня</h2>
+    <div class="info-content" id="challengeBox">Загрузка задания...</div>
     <button class="btn" onclick="newChallenge()">Новый челлендж</button>
   </div>
-</section><style class="cid-uQ9z7Wl4lv" id="custom-html-5i" data-rv-view="649">
+</section><style class="cid-uQkhA3ak1Q" id="custom-html-5w" data-rv-view="525">
   .section-dark {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: white;
+    background-color: #03454E;
+    color: #D0E8E8;
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   .info-box {
@@ -222,53 +53,52 @@ fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4x
     max-width: 900px;
     margin: 20px auto;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    box-sizing: border-box;
+    background-color: rgba(5, 90, 100, 0.3); /* мягкий, почти сливающийся фон */
+    border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    box-shadow: none;
+    box-sizing: border-box;
   }
 
   .info-box h2 {
-    color: #ffc107;
+    color: #FFD93D;
     font-weight: bold;
     font-size: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
+    text-shadow: 0 0 3px rgba(0,0,0,0.3);
   }
 
   .info-content {
-    background: rgba(255, 255, 255, 0.07);
-    border-radius: 16px;
-    padding: 20px;
-    color: white;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 18px;
+    color: #FFFFFF;
     font-size: 16px;
     text-align: center;
     min-height: 60px;
     font-style: normal;
     margin-bottom: 20px;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s ease;
   }
 
   .btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
     padding: 10px;
     font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
     font-weight: 500;
-    transition: background 0.2s;
+    transition: background-color 0.2s ease;
   }
 
   .btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
   }
 
   @media (max-width: 768px) {
@@ -277,84 +107,84 @@ fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4x
       max-width: 95%;
     }
   }
-</style><script class="cid-uQ9z7Wl4lv" id="custom-html-5i" data-rv-view="649">
+</style><script class="cid-uQkhA3ak1Q" id="custom-html-5w" data-rv-view="525">
   // Мотивация дня
   const motivationList = [
     "Ты не просто работаешь — ты двигаешь команду вперёд.",
-  "Каждое действие приближает к большому результату.",
-  "Маленькие усилия каждый день — это огромный рост в будущем.",
-  "Твоя энергия сегодня — успех команды завтра.",
-  "Вдохновляй своим примером. Даже мелочи важны.",
-  "Ты часть сильной команды. А это уже мощь.",
-  "Действие рождает результат. Сделай первый шаг!",
-  "Лучше сделать мало, чем не сделать ничего.",
-  "Ты можешь больше, чем думаешь.",
-  "Рядом с тобой команда — ты не один.",
-  "Мотивация начинается с движения.",
-  "Верь в свои силы — ты уже многое сделал.",
-  "Результат — это накопление маленьких побед.",
-  "Смелость — не отсутствие страха, а действие несмотря на него.",
-  "Ошибки — путь к росту. Не бойся их делать.",
-  "Сегодняшние усилия — завтрашние достижения.",
-  "Ты — часть чего-то большого и важного.",
-  "Улыбнись — ты меняешь атмосферу вокруг.",
-  "Сначала сложно. Потом — гордость.",
-  "Каждый вклад имеет значение. И твой — тоже.",
-  "Начни с малого. Главное — начать.",
-  "Хорошее настроение — мощный инструмент в работе.",
-  "Работа с душой вдохновляет других.",
-  "Ты приносишь пользу — каждый день.",
-  "Будь тем, с кем хочется работать.",
-  "Сотрудничество — ключ к лучшему результату.",
-  "Ты создаёшь атмосферу — сделай её сильной.",
-  "Двигайся вперёд. Даже если шаги маленькие.",
-  "Ты пример для новых сотрудников.",
-  "Сегодня твоя энергия — завтра чей-то прогресс.",
-  "Внимание к деталям — это профессионализм.",
-  "Команда — это сила. А ты — её часть.",
-  "Хвалить других — значит быть сильным.",
-  "Стабильность начинается с тебя.",
-  "Ты не просто в команде. Ты и есть команда.",
-  "Результат невозможен без твоей вовлечённости.",
-  "Маленькая победа — тоже победа.",
-  "Ты делаешь больше, чем замечаешь.",
-  "Привычка делать хорошо — основа успеха.",
-  "Твоя работа — часть чего-то важного. Цени это."
+    "Каждое действие приближает к большому результату.",
+    "Маленькие усилия каждый день — это огромный рост в будущем.",
+    "Твоя энергия сегодня — успех команды завтра.",
+    "Вдохновляй своим примером. Даже мелочи важны.",
+    "Ты часть сильной команды. А это уже мощь.",
+    "Действие рождает результат. Сделай первый шаг!",
+    "Лучше сделать мало, чем не сделать ничего.",
+    "Ты можешь больше, чем думаешь.",
+    "Рядом с тобой команда — ты не один.",
+    "Мотивация начинается с движения.",
+    "Верь в свои силы — ты уже многое сделал.",
+    "Результат — это накопление маленьких побед.",
+    "Смелость — не отсутствие страха, а действие несмотря на него.",
+    "Ошибки — путь к росту. Не бойся их делать.",
+    "Сегодняшние усилия — завтрашние достижения.",
+    "Ты — часть чего-то большого и важного.",
+    "Улыбнись — ты меняешь атмосферу вокруг.",
+    "Сначала сложно. Потом — гордость.",
+    "Каждый вклад имеет значение. И твой — тоже.",
+    "Начни с малого. Главное — начать.",
+    "Хорошее настроение — мощный инструмент в работе.",
+    "Работа с душой вдохновляет других.",
+    "Ты приносишь пользу — каждый день.",
+    "Будь тем, с кем хочется работать.",
+    "Сотрудничество — ключ к лучшему результату.",
+    "Ты создаёшь атмосферу — сделай её сильной.",
+    "Двигайся вперёд. Даже если шаги маленькие.",
+    "Ты пример для новых сотрудников.",
+    "Сегодня твоя энергия — завтра чей-то прогресс.",
+    "Внимание к деталям — это профессионализм.",
+    "Команда — это сила. А ты — её часть.",
+    "Хвалить других — значит быть сильным.",
+    "Стабильность начинается с тебя.",
+    "Ты не просто в команде. Ты и есть команда.",
+    "Результат невозможен без твоей вовлечённости.",
+    "Маленькая победа — тоже победа.",
+    "Ты делаешь больше, чем замечаешь.",
+    "Привычка делать хорошо — основа успеха.",
+    "Твоя работа — часть чего-то важного. Цени это."
   ];
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const rand = Math.floor(Math.random() * motivationList.length);
-    document.getElementById("motivationBox").innerText = motivationList[rand];
-  });
-
-  // Челлендж дня
   const challengeList = [
     "Скажи доброе утро 5 коллегам",
     "Пожелай удачи соседу по смене",
-            "Улыбнись каждому гостю, даже уставшему",
-            "Похвали коллегу за его работу",
-            "Спроси у кого-то, как у него дела — по-настоящему",
-            "Сделай кому-то день легче — без лишних слов",
-            "Поделись позитивом в общем чате",
-            "Замени критику на поддержку сегодня",
-            "Сделай маленькое добро без ожидания ответа",
-            "Скажи: «Ты классно справляешься» — тому, кто это заслужил",
-            "Напомни коллеге, что он молодец",
-            "Пожелай хорошего дня кассиру/повару/уборщику",
-            "Помоги новенькому почувствовать себя частью команды",
-            "Попроси и скажи «Спасибо» — искренне",
-            "Поддержи того, кто в стрессе",
-            "Сделай комплимент по внешности или стилю",
-            "Найди 1 повод сказать: «Я горжусь, что мы работаем вместе»",
-            "Заметил хорошее — озвучь это",
-            "Позволь кому-то пройти первым",
-            "Обними друга по команде (если уместно 😄)",
-            "Поздоровайся с каждым, даже если не хочется",
-            "Признай ошибку без оправданий — это тоже сила",
-            "Напиши короткое доброе сообщение в общий чат",
-            "Скажи «Ты был(а) крут(а) сегодня!» кому-то до конца смены",
-            "Пожелай удачи следующей смене перед уходом"
+    "Улыбнись каждому гостю, даже уставшему",
+    "Похвали коллегу за его работу",
+    "Спроси у кого-то, как у него дела — по-настоящему",
+    "Сделай кому-то день легче — без лишних слов",
+    "Поделись позитивом в общем чате",
+    "Замени критику на поддержку сегодня",
+    "Сделай маленькое добро без ожидания ответа",
+    "Скажи: «Ты классно справляешься» — тому, кто это заслужил",
+    "Напомни коллеге, что он молодец",
+    "Пожелай хорошего дня кассиру/повару/уборщику",
+    "Помоги новенькому почувствовать себя частью команды",
+    "Попроси и скажи «Спасибо» — искренне",
+    "Поддержи того, кто в стрессе",
+    "Сделай комплимент по внешности или стилю",
+    "Найди 1 повод сказать: «Я горжусь, что мы работаем вместе»",
+    "Заметил хорошее — озвучь это",
+    "Позволь кому-то пройти первым",
+    "Обними друга по команде (если уместно 😄)",
+    "Поздоровайся с каждым, даже если не хочется",
+    "Признай ошибку без оправданий — это тоже сила",
+    "Напиши короткое доброе сообщение в общий чат",
+    "Скажи «Ты был(а) крут(а) сегодня!» кому-то до конца смены",
+    "Пожелай удачи следующей смене перед уходом"
   ];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const randMotivation = Math.floor(Math.random() * motivationList.length);
+    document.getElementById("motivationBox").innerText = motivationList[randMotivation];
+    newChallenge();
+  });
 
   function newChallenge() {
     const box = document.getElementById("challengeBox");
@@ -366,233 +196,279 @@ fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4x
       }, 200);
     }
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', newChallenge);
-  } else {
-    newChallenge();
-  }
 </script>
 
-<section class="section-dark cid-uPUce1P9uM" id="custom-html-5f">
-  <div class="button-container">
-    <h2>Навигация</h2>
-    <a href="https://docs.google.com/spreadsheets/d/1oFUNvcD8Cbs5tWlvPaj94t3jWuXOsvD0M5cl2r6yEpM/edit?gid=0#gid=0" target="_blank" class="big-button">📊 ОТЧЁТЫ</a>
-    <a href="page34.html" class="big-button">📝 ОПРОСЫ</a>
-    <a href="page35.html" class="big-button">📈 РЕЙТИНГ СОТРУДНИКОВ</a>
-  </div>
-</section><style class="cid-uPUce1P9uM" id="custom-html-5f" data-rv-view="650">
-  .section-dark {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    padding: 60px 20px;
-    color: white;
-  }
-
-  .button-container {
-    max-width: 700px;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .button-container h2 {
-    font-weight: bold;
-    margin-bottom: 30px;
-    font-size: 28px;
-    color: white;
-  }
-
-  .big-button {
-    display: inline-block;
-    width: 90%;
-    max-width: 300px;
-    padding: 18px 0;
-    margin: 12px auto;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background: rgba(255,255,255,0.1);
-    border: 2px solid white;
-    border-radius: 16px;
-    transition: background 0.3s, transform 0.2s;
-  }
-
-  .big-button:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-4px);
-  }
-
-  @media (min-width: 600px) {
-    .big-button {
-      margin: 12px 20px;
-      width: 220px;
+<meta charset="UTF-8" class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526"><title class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526">Навигация и Рейтинг Тренеров</title><style class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526">
+    body, html {
+      margin: 0; padding: 0;
+      background-color: #03454E;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #D0E8E8;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
-  }
-</style>
 
-<style class="cid-uQ3LJPkpWO" id="custom-html-5h" data-rv-view="651">
-  body, html {
-    margin: 0; padding: 0; background: #0f2027;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-  }
+    .container {
+      display: flex;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
 
-  .section-dark {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    padding: 40px 20px;
-    color: white;
-    width: 100vw;  /* на всю ширину окна */
-    box-sizing: border-box;
-  }
+    /* Навигация (слева) */
+    .nav-block {
+      flex: 1 1 320px;
+      max-width: 350px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 16px;
+      padding: 40px 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      text-align: center;
+    }
 
-  .progress-container {
-    background: rgba(255,255,255,0.1);
-    border-radius: 12px;
-    height: 30px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;  /* растягиваем на всю ширину */
-  }
+    .nav-block h2 {
+      font-weight: 700;
+      margin-bottom: 30px;
+      font-size: 26px;
+      color: #FFD93D;
+      text-shadow: 0 0 4px rgba(0,0,0,0.3);
+    }
 
-  .progress-bar {
-    height: 100%;
-    width: 0;
-    background: linear-gradient(90deg, #4caf50, #81c784);
-    border-radius: 12px 0 0 12px;
-    transition: width 1.2s ease;
-  }
+    .big-button {
+      display: inline-block;
+      width: 90%;
+      max-width: 280px;
+      padding: 16px 0;
+      margin: 12px auto;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 14px;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
 
-  .progress-goals {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ddd;
-    user-select: none;
-    width: 100%; /* на всю ширину */
-    box-sizing: border-box;
-  }
+    .big-button:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-3px);
+    }
 
-  #progressText {
-    margin-top: 14px;
-    font-weight: 700;
-    font-size: 18px;
-    text-align: center;
-    color: white;
-  }
+    /* Рейтинг (справа) */
+    .rating-block {
+      flex: 1 1 600px;
+      max-width: 700px;
+      background-color: rgba(5, 90, 100, 0.3);
+      border-radius: 16px;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      color: #D0E8E8;
+    }
 
-  h2 {
-    font-weight: 700;
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-</style><section class="section-dark cid-uQ3LJPkpWO" id="custom-html-5h">
-  <h2>Общий прогресс опросов</h2>
+    .rating-block h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #FFD93D;
+      text-shadow: 0 0 4px rgba(0,0,0,0.4);
+    }
 
-  <div class="progress-container">
-    <div id="progressBar" class="progress-bar"></div>
-  </div>
+    .hr-entry {
+      position: relative;
+      margin-bottom: 15px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      background-color: rgba(5, 90, 100, 0.3);
+      color: #D0E8E8;
+      border: 1px solid rgba(5, 90, 100, 0.5);
+      transition: background-color 0.3s ease, transform 0.25s ease;
+      cursor: default;
+    }
 
-  <div class="progress-goals">
-    <span>0</span>
-    <span>50</span>
-    <span>100</span>
-    <span>150</span>
-    <span>200</span>
-    <span>300</span>
-  </div>
+    .hr-entry:hover {
+      background-color: rgba(5, 90, 100, 0.5);
+      transform: translateY(-2px);
+    }
 
-  <p>Загрузка...</p>
-</section><script class="cid-uQ3LJPkpWO" id="custom-html-5h" data-rv-view="651">
-  const goals = [0, 50, 100, 150, 200, 300];
+    .top-1 {
+      background-color: rgba(255, 230, 100, 0.85);
+      border: 2px solid #F0C419;
+      color: #2E2E2E;
+      font-weight: 600;
+      text-shadow: 0 0 4px rgba(0,0,0,0.15);
+      animation: pulse 1.5s infinite;
+    }
 
-  function getProgressPercent(total) {
-    for (let i = 1; i < goals.length; i++) {
-      if (total <= goals[i]) {
-        const lower = goals[i - 1];
-        const upper = goals[i];
-        const range = upper - lower;
-        const progressInRange = total - lower;
-        return ((i - 1) + progressInRange / range) / (goals.length - 1) * 100;
+    .top-2 {
+      background-color: rgba(192, 192, 192, 0.85);
+      border: 2px solid #A9A9A9;
+      color: #2E2E2E;
+      font-weight: 600;
+      text-shadow: 0 0 4px rgba(0,0,0,0.15);
+      animation: pulse 1.5s infinite;
+    }
+
+    .top-3 {
+      background-color: rgba(184, 115, 51, 0.85);
+      border: 2px solid #995C33;
+      color: #2E2E2E;
+      font-weight: 600;
+      text-shadow: 0 0 4px rgba(0,0,0,0.15);
+      animation: pulse 1.5s infinite;
+    }
+
+    .top-1::before {
+      content: "👑";
+      position: absolute;
+      top: -18px;
+      left: -14px;
+      font-size: 28px;
+      animation: crownFloat 1.5s infinite ease-in-out;
+      filter: drop-shadow(0 0 3px #F0C419);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 12px rgba(255, 255, 255, 0.3); }
+      50% { transform: scale(1.05); box-shadow: 0 0 24px rgba(255, 255, 255, 0.5); }
+    }
+
+    @keyframes crownFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Адаптив */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        margin: 30px auto;
+      }
+      .nav-block, .rating-block {
+        max-width: 100%;
+        flex: 1 1 auto;
       }
     }
-    return 100;
-  }
+  </style><div class="container cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526">
+    <!-- Навигация слева -->
+    <section class="nav-block">
+      <h2>Навигация</h2>
+      <a href="https://docs.google.com/spreadsheets/d/1oFUNvcD8Cbs5tWlvPaj94t3jWuXOsvD0M5cl2r6yEpM/edit?gid=0#gid=0" target="_blank" class="big-button">📊 ОТЧЁТЫ</a>
+      <a href="page34.html" class="big-button">📝 ОПРОСЫ</a>
+      <a href="reits.html" class="big-button">📈 РЕЙТИНГ СОТРУДНИКОВ</a>
+       <a href="photo.html" class="big-button">📷ГАЛЕРЕЯ</a>
+    </section>
 
-  fetch("https://script.google.com/macros/s/AKfycbzgKWavctlzcbZRDSUNBENzEHeRiyoUNNwrjOxWDlNaVmc6h6IgKaBNWG7gGBN5RmO0/exec")
-    .then(res => res.json())
-    .then(data => {
-      const total = data.total || 0;
-      const percent = getProgressPercent(total);
+    <!-- Рейтинг тренеров справа -->
+    <section class="rating-block">
+      <h2>🏆 Рейтинг Тренеров</h2>
+      <div id="topList" style="font-size: 18px;"></div>
+    </section>
+  </div><script class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="526">
+    fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4xHMx6ihyPNaHDF2BDTIQangziO9Da_to8N2/exec")
+      .then(res => res.json())
+      .then(data => {
+        const medals = ['🥇', '🥈', '🥉'];
+        const container = document.getElementById("topList");
+        let html = "";
 
-      const progressBar = document.getElementById('progressBar');
-      const progressText = document.getElementById('progressText');
+        data.slice(0, 5).forEach((hr, index) => {
+          const place = index + 1;
+          const medal = medals[index] || `${place}-е место`;
+          const topClass = index < 3 ? `top-${place}` : "";
+          html += `
+            <div class="hr-entry ${topClass}">
+              <strong>${medal}</strong>: ${hr.name} — ${hr.count} опросов
+            </div>`;
+        });
 
-      progressBar.style.width = percent + '%';
+        container.innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById("topList").innerHTML = "Ошибка загрузки рейтинга.";
+        console.error("Ошибка загрузки данных:", err);
+      });
+  </script>
 
-      let nextGoal = goals.find(g => g > total) || goals[goals.length - 1];
-      progressText.textContent = `Пройдено опросов: ${total} из ${nextGoal} (Следующая цель)`;
-    })
-    .catch(() => {
-      document.getElementById('progressText').textContent = "Ошибка загрузки данных.";
-    });
-</script>
-
-<meta charset="UTF-8" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="652"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="652"><title class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="652">Комментарии HR</title><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="652"><style class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="652">
+<meta charset="UTF-8" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527"><title class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527">Комментарии HR</title><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527"><style class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527">
     body {
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      background: #03454E;
       color: white;
       font-family: 'Inter', Arial, sans-serif;
       padding: 20px;
+      margin: 0;
       min-height: 100vh;
     }
+
     .chat-section {
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 30px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 30px 24px;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
     }
+
     h2 {
       text-align: center;
       font-weight: 700;
-      margin-bottom: 20px;
-      color: white;
-      letter-spacing: 0.05em;
+      font-size: 26px;
+      margin-bottom: 30px;
+      color: #FFD93D;
+      text-shadow: 0 0 4px rgba(0,0,0,0.2);
     }
+
     .chat-message {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 16px;
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 16px 20px;
+      border-radius: 16px;
       margin-bottom: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: background-color 0.3s;
-      color: white;
-      font-size: 16px;
-      line-height: 1.4;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: transform 0.2s, background-color 0.3s;
     }
+
     .chat-message:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
     }
+
     .chat-meta {
-      font-size: 14px;
-      margin-bottom: 8px;
-      color: white;
-      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: #ccc;
+      font-weight: 500;
     }
+
     .chat-meta strong {
-      color: white;
+      color: #fff;
+      font-weight: 700;
     }
-  </style><section class="chat-section cid-uPRzotYz4I" id="custom-html-5c">
+
+    @media (max-width: 600px) {
+      .chat-message {
+        padding: 14px;
+        font-size: 14px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .chat-meta {
+        font-size: 13px;
+      }
+    }
+  </style><section class="chat-section cid-uQkkZ6ZKFU" id="custom-html-5z">
     <h2>💬 Комментарии HR</h2>
     <div id="commentList">Загрузка комментариев...</div>
-  </section><script class="cid-uPRzotYz4I" id="custom-html-5c" data-rv-view="652">
+  </section><script class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="527">
     fetch("https://script.google.com/macros/s/AKfycbzSYgtfuDMirAPiKPG45OxtGq5H885Kf7hinq2lvj5U4I1sOw3mle3pOzkfoWR3wawS/exec")
       .then(res => res.json())
       .then(data => {
@@ -602,19 +478,20 @@ fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4x
           return;
         }
 
-        // Сортируем по дате (новые сверху)
+        // Сортировка по дате (новые сверху)
         const sorted = data.sort((a, b) => {
           const [da, ma, ya] = a.date.split('.').map(Number);
           const [db, mb, yb] = b.date.split('.').map(Number);
           return new Date(yb, mb - 1, db) - new Date(ya, ma - 1, da);
         });
 
-        // Берём максимум 10 комментариев
         const limited = sorted.slice(0, 10);
 
         container.innerHTML = limited.map(entry => `
           <div class="chat-message">
-            <div class="chat-meta">${entry.date} — <strong>${entry.hr}</strong> оценил(а) <strong>${entry.employee}</strong> на станции <strong>${entry.station}</strong></div>
+            <div class="chat-meta">
+              ${entry.date} — <strong>${entry.hr}</strong> оценил(а) <strong>${entry.employee}</strong> на станции <strong>${entry.station}</strong>
+            </div>
             <div>${entry.comment}</div>
           </div>
         `).join('');
@@ -623,143 +500,10 @@ fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4x
         document.getElementById("commentList").innerHTML = "Ошибка загрузки комментариев.";
         console.error(err);
       });
-  </script>
-
-<div class="section-dark cid-uQk1gfvKWy" style="padding: 60px 20px;" id="custom-html-5o" data-rv-view="653">
-  <h2 style="text-align: center; font-size: 32px; font-weight: bold; color: white; margin-bottom: 40px;">
-    ✨ Галерея сотрудников
-  </h2>
-
-  <div class="row-slider-wrapper">
-    <div class="slider-outer">
-      <div class="row-slider" data-direction="left" data-speed="90"></div>
-    </div>
-    <div class="slider-outer">
-      <div class="row-slider" data-direction="right" data-speed="110"></div>
-    </div>
-    <div class="slider-outer">
-      <div class="row-slider" data-direction="left" data-speed="130"></div>
-    </div>
-  </div>
-</div><style class="cid-uQk1gfvKWy" id="custom-html-5o" data-rv-view="653">
-  .section-dark {
-    background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
-  }
-
-  .row-slider-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .slider-outer {
-    overflow: hidden;
-    width: 100%;
-    border-radius: 16px;
-  }
-
-  .row-slider {
-    display: flex;
-    height: 220px;
-    position: relative;
-  }
-
-  .scroller {
-    display: flex;
-    width: max-content;
-    gap: 10px;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-name: scroll;
-  }
-
-  @keyframes scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  .slider-item {
-    flex: none;
-    width: 200px;
-    height: 100%;
-    border-radius: 16px;
-    position: relative;
-    overflow: hidden;
-    transform: scale(0.95);
-    transition: transform 0.4s ease, box-shadow 0.3s;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  }
-
-  .slider-item:hover {
-    transform: scale(1.05);
-    z-index: 2;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
-  }
-
-  .slider-item::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-  }
-
-  .slider-item:hover::after {
-    opacity: 1;
-  }
-
-  .slider-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 16px;
-    filter: brightness(0.95);
-  }
-
-  @media (max-width: 768px) {
-    .slider-item { width: 150px; }
-  }
-
-  @media (max-width: 480px) {
-    .slider-item { width: 120px; }
-  }
-</style><script class="cid-uQk1gfvKWy" id="custom-html-5o" data-rv-view="653">
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbyX7rk3Hw1CBA0r93ns_43XEj68pgFTU9IAJaWwvT2nVOpEHDylReRzSrnQLGRTStP_/exec";
-
-  fetch(scriptUrl)
-    .then(res => res.json())
-    .then(data => {
-      const photos = data.slice(-60);
-      const rows = document.querySelectorAll(".row-slider");
-
-      rows.forEach((row, index) => {
-        const direction = row.dataset.direction || "left";
-        const speed = row.dataset.speed || 90;
-
-        const scroller = document.createElement("div");
-        scroller.classList.add("scroller");
-        scroller.style.animationDuration = `${speed}s`;
-        if (direction === "right") scroller.style.animationDirection = "reverse";
-
-        const group = photos.slice(index * 20, (index + 1) * 20);
-        const combined = [...group, ...group]; // дублируем для бесконечной прокрутки
-
-        combined.forEach(entry => {
-          const div = document.createElement("div");
-          div.className = "slider-item";
-          div.innerHTML = `<img src="${entry.url}" loading="lazy" alt="Фото">`;
-          scroller.appendChild(div);
-        });
-
-        row.appendChild(scroller);
-      });
-    });
-</script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  </script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/no-code-website-builder.html">No Code Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
-  <input name="animation" type="hidden">
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
   </body>
 </html>
