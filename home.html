@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OcL Link | Минимализм</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0F0F0F;
+      --card: #1A1A1A;
+      --text: #E0E0E0;
+      --text-light: #A0A0A0;
+      --primary: #7C3AED;
+      --accent: #10B981;
+      --border: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Хедер */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary);
+    }
+
+    /* Герой секция */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 5rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #6D28D9;
+      transform: translateY(-2px);
+    }
+
+    /* Секции */
+    .section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      font-weight: 700;
+    }
+
+    /* Карточки ресторанов */
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .restaurant-card {
+      background: var(--card);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    .restaurant-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .restaurant-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .restaurant-info {
+      padding: 1.5rem;
+    }
+
+    .restaurant-name {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    /* Калькулятор */
+    .calculator {
+      background: var(--card);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .result {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: var(--bg);
+      border-radius: 0.25rem;
+      border: 1px solid var(--border);
+    }
+
+    /* Форма обратной связи */
+    .feedback-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Футер */
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      
+      nav ul {
+        gap: 1.5rem;
+      }
+      
+      .section {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Хедер -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">OcL<span>Link</span></a>
+      <nav>
+        <ul>
+          <li><a href="#restaurants">Рестораны</a></li>
+          
+          <li><a href="#about">О проекте</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Герой секция -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Единая платформа для <span>ресторанов</span></h1>
+      <p class="hero-subtitle">Все самое нужное в одном месте</p>
+      <a href="#restaurants" class="btn">Выбрать ресторан</a>
+    </div>
+  </section>
+  <!-- Рестораны -->
+  <section class="section" id="restaurants">
+    <div class="container">
+      <h2 class="section-title">Рестораны</h2>
+      <div class="restaurant-grid">
+        <div class="restaurant-card">
+          <img src="https://i.postimg.cc/1XqkGYzK/image.png" alt="Технопарк" class="restaurant-img">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">Технопарк</h3>
+            <a href="surveys/testt.html" class="btn">Пройти опрос</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card">
+          <img src="https://i.postimg.cc/pVp157hN/image.jpg" alt="Донецкая" class="restaurant-img">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">Донецкая</h3>
+            <a href="surveys1/donp.html" class="btn">Пройти опрос</a>
+          </div>
+        </div>
+        <div class="restaurant-card">
+          <img src="https://i.postimg.cc/vZZdjh2G/KFC.png" alt="Азия Молл" class="restaurant-img">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">Азия Молл</h3>
+            <a href="surveys2/azm.html" class="btn">Пройти опрос</a>
+          </div>
+        </div>
+        <div class="restaurant-card">
+          <img src="https://i.postimg.cc/y8VmcgQJ/image.jpg" alt="Октябрь" class="restaurant-img">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">Октябрь</h3>
+            <a href="surveys3/okt.html" class="btn">Пройти опрос</a>
+          </div>
+        </div>
+        <div class="restaurant-card">
+          <img src="https://i.postimg.cc/x8zRxwMc/image.jpg" alt="ГЭС5" class="restaurant-img">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">ГЭС5</h3>
+            <a href="surveys/ges.html" class="btn">Пройти опрос</a>
+          </div>
+        </div>
+
+        <div class="restaurant-card">
+          <img src="https://i.postimg.cc/SKkckFhB/image.jpg" alt="Горький" class="restaurant-img">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">Горький</h3>
+            <a href="surveys/gor.html" class="btn">Пройти опрос</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   
+ <!-- О проекте -->
+<section class="section" id="about">
+  <div class="container">
+    <h2 class="section-title">О проекте</h2>
+    <div class="about-content" style="max-width: 800px; margin: 0 auto;">
+      <div style="background: var(--card); padding: 2rem; border-radius: 0.5rem; border: 1px solid var(--border);">
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">OcL Link - единая платформа для ресторанов</h3>
+        <p style="margin-bottom: 1rem;">Наш проект создан для удобного взаимодействия между сотрудниками и их посетителями. Мы объединяем все необходимые инструменты в одном месте.</p>
+        
+        <h4 style="font-size: 1.25rem; margin: 1.5rem 0 1rem; color: var(--accent);">Наши преимущества:</h4>
+        <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;">Удобная система сбора обратной связи</li>
+          <li style="margin-bottom: 0.5rem;">Единая платформа для всех ресторанов сети</li>
+          <li style="margin-bottom: 0.5rem;">Простое и интуитивно понятное управление</li>
+          <li style="margin-bottom: 0.5rem;">Аналитика и отчеты в реальном времени</li>
+        </ul>
+        
+        <!-- Добавленный блок с создателем -->
+        <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+          <img src="https://i.postimg.cc/J0FbLP3S/qq.jpg" alt="Создатель проекта" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+          <div>
+            <p style="font-weight: 500; margin-bottom: 0.25rem;">Создатель проекта</p>
+            <p style="color: var(--primary); font-weight: 600;">Расул Жунусов</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Часто задаваемые вопросы -->
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    
+    <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+      <!-- Вопрос 1 -->
+      <div class="faq-item" style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); margin-bottom: 1rem; overflow: hidden;">
+        <div class="faq-question" style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s;" onclick="toggleFaq(this)">
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Как найти ваш web адрес?</h3>
+          <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+        </div>
+        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+          <div style="padding-bottom: 1.5rem; color: var(--text-light);">
+            Сайт находится по адресу www.ocllink.online или можно отсканировать QR в ресторане.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Вопрос 2 -->
+      <div class="faq-item" style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); margin-bottom: 1rem; overflow: hidden;">
+        <div class="faq-question" style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s;" onclick="toggleFaq(this)">
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Как часто обновляются данные?</h3>
+          <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+        </div>
+        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+          <div style="padding-bottom: 1.5rem; color: var(--text-light);">
+            Данные обновляются в реальном времени. Все изменения и новая информация отображаются в системе сразу после внесения.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Вопрос 3 -->
+      <div class="faq-item" style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); margin-bottom: 1rem; overflow: hidden;">
+        <div class="faq-question" style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s;" onclick="toggleFaq(this)">
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Есть ли мобильное приложение?</h3>
+          <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+        </div>
+        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+          <div style="padding-bottom: 1.5rem; color: var(--text-light);">
+            В настоящее время доступна мобильная версия сайта. Разработка нативного приложения планируется в ближайшем будущем.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Вопрос 4 -->
+      <div class="faq-item" style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); margin-bottom: 1rem; overflow: hidden;">
+        <div class="faq-question" style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s;" onclick="toggleFaq(this)">
+          <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Как обеспечивается безопасность данных?</h3>
+          <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+        </div>
+        <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+          <div style="padding-bottom: 1.5rem; color: var(--text-light);">
+            Мы используем современные методы шифрования и защиты данных. Все персональные данные хранятся в соответствии с требованиями законодательства.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Добавьте этот JavaScript перед закрывающим тегом body -->
+<script>
+  function toggleFaq(element) {
+    const faqItem = element.parentElement;
+    const answer = faqItem.querySelector('.faq-answer');
+    const icon = element.querySelector('i');
+    
+    // Закрываем все открытые вопросы
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (item !== faqItem) {
+        item.querySelector('.faq-answer').style.maxHeight = '0';
+        item.querySelector('.faq-answer').style.padding = '0 1.5rem';
+        item.querySelector('i').style.transform = 'rotate(0deg)';
+        item.querySelector('.faq-question').style.background = 'transparent';
+      }
+    });
+    
+    // Переключаем текущий вопрос
+    if (answer.style.maxHeight === '0px' || !answer.style.maxHeight) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      answer.style.padding = '0 1.5rem 1.5rem';
+      icon.style.transform = 'rotate(180deg)';
+      element.style.background = 'rgba(124, 58, 237, 0.1)';
+    } else {
+      answer.style.maxHeight = '0';
+      answer.style.padding = '0 1.5rem';
+      icon.style.transform = 'rotate(0deg)';
+      element.style.background = 'transparent';
+    }
+  }
+</script>
+  <!-- Контакты -->
+  <section class="section" id="contacts">
+    <div class="container">
+      <h2 class="section-title">Контакты</h2>
+      <div class="restaurant-card" style="max-width: 600px; margin: 0 auto; text-align: center; padding: 2rem;">
+        <p style="margin-bottom: 1rem;"><i class="fas fa-phone-alt"></i> +996 (550) 880-451</p>
+        <p style="margin-bottom: 1rem;"><i class="fas fa-envelope"></i> kfc_tp@fooddream.kg</p>
+        <p><i class="fas fa-map-marker-alt"></i> ул. Горького 1/Зв</p>
+      </div>
+    </div>
+  </section>
+  <!-- Футер -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#restaurants">Рестораны</a>
+        <a href="#about">О проекте</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <p class="copyright">© 2025 OcL Link. Все права защищены.</p>
+    </div>
+  </footer>
+  <script>
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Калькулятор зарплаты
+    const rates = {
+      trainer: { day: 186, night: 246, advance: 8000 },
+      trainer2: { day: 191, night: 253, advance: 8000 },
+      chk1: { day: 151, night: 198, advance: 7000 },
+      chk2: { day: 166, night: 218, advance: 7000 },
+      chk3: { day: 171, night: 226, advance: 7000 }
+    };
+
+    function calculateSalary() {
+      const position = document.getElementById('position').value;
+      const dayHours = parseInt(document.getElementById('dayHours').value) || 0;
+      const nightHours = parseInt(document.getElementById('nightHours').value) || 0;
+      const bonus = document.getElementById('bonus').checked ? 3000 : 0;
+
+      if (!position || !rates[position]) {
+        document.getElementById('result').innerHTML = '<p style="color: #10B981;">Выберите должность</p>';
+        return;
+      }
+
+      const rate = rates[position];
+      const dayPay = dayHours * rate.day;
+      const nightPay = nightHours * rate.night;
+      const total = dayPay + nightPay + bonus - rate.advance;
+
+      document.getElementById('result').innerHTML = `
+        <p>Дневные: ${dayHours}ч × ${rate.day}сом = ${dayPay}сом</p>
+        <p>Ночные: ${nightHours}ч × ${rate.night}сом = ${nightPay}сом</p>
+        <p>Бонус: ${bonus}сом</p>
+        <p>Аванс: -${rate.advance}сом</p>
+        <hr style="margin: 1rem 0; border-color: var(--border);">
+        <p><strong>Итого: ${total}сом</strong></p>
+      `;
+    }
+
+    // Обработка формы обратной связи
+    document.querySelector('.feedback-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Спасибо за ваше сообщение!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
