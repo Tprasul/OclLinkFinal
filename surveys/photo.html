@@ -1,203 +1,413 @@
 <!DOCTYPE html>
-<html  >
+<html lang="ru">
 <head>
-  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
-  <title>Галерея</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=Z1edoc"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=Z1edoc" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Gallery | Галерея успеха</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-secondary: #1E1E1E;
+      --card: #252525;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --primary: #BB86FC;
+      --primary-dark: #3700B3;
+      --accent: #03DAC6;
+      --accent-dark: #018786;
+      --border: #333333;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 8px 32px rgba(187, 134, 252, 0.3);
+    }
 
-  
-  
-  
-</head>
-<body>
-  
-  <meta charset="UTF-8" class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516"><title class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">Галерея сотрудников</title><style class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">
-    body, html {
-      margin: 0; padding: 0;
-      background: #03454E;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #D0E8E8;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
       min-height: 100vh;
-      overflow-x: hidden;
-      user-select: none;
     }
 
-    h1 {
-      text-align: center;
-      margin: 40px 0 20px;
+    .app-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Шапка */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.8rem;
       font-weight: 700;
-      font-size: 2.8rem;
-      color: #FFD93D;
-      text-shadow: 0 0 6px rgba(0,0,0,0.5);
-    }
-
-    .gallery-container {
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .slider-row {
-      overflow: hidden;
-      border-radius: 18px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-      background: rgba(255,255,255,0.05);
-      position: relative;
-      height: 190px;
-    }
-
-    .slider-track {
-      display: flex;
-      gap: 14px;
-      will-change: transform;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      height: 100%;
-    }
-
-    .scroll-left {
-      animation-name: scrollLeft;
-    }
-
-    .scroll-right {
-      animation-name: scrollRight;
-    }
-
-    @keyframes scrollLeft {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    @keyframes scrollRight {
-      0% { transform: translateX(-50%); }
-      100% { transform: translateX(0); }
-    }
-
-    .slider-item {
-      flex: none;
-      width: 190px;
-      height: 190px;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 3px 14px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      background: #0d3740;
+      color: var(--primary);
+      text-decoration: none;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 0.75rem;
     }
 
-    .slider-item img {
+    .logo-icon {
+      color: var(--accent);
+    }
+
+    .nav-link {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      padding: 0.5rem 0;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    /* Основной контент */
+    .main-title {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--primary);
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Классическая сетка галереи */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Улучшенные карточки */
+    .gallery-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      aspect-ratio: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .gallery-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(187,134,252,0.1) 0%, rgba(3,218,198,0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+
+    .gallery-card:hover::before {
+      opacity: 1;
+    }
+
+    .gallery-img-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .gallery-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      filter: brightness(0.92);
-      transition: filter 0.3s ease;
-      user-select: none;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .slider-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 28px rgba(255, 217, 61, 0.7);
+    .gallery-card:hover .gallery-img {
+      transform: scale(1.08);
     }
 
-    .slider-item:hover img {
-      filter: brightness(1);
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      padding: 1.5rem;
+      color: white;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    @media (max-width: 768px) {
-      .slider-item {
-        width: 140px;
-        height: 140px;
+    .gallery-card:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+
+    .gallery-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .gallery-date {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .gallery-date i {
+      color: var(--primary);
+    }
+
+    .gallery-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary-dark);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 2;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--accent);
+      font-size: 1.2rem;
+      grid-column: 1 / -1;
+    }
+
+    .error {
+      text-align: center;
+      padding: 2rem;
+      color: #FF6B6B;
+      font-size: 1.2rem;
+      grid-column: 1 / -1;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    /* Кнопка назад */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: all 0.2s;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      background: rgba(187, 134, 252, 0.1);
+    }
+
+    .back-btn:hover {
+      color: var(--accent);
+      background: rgba(3, 218, 198, 0.1);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 900px) {
+      .app-container {
+        padding: 1.75rem;
       }
-      .slider-row {
-        height: 140px;
+      
+      .main-title {
+        font-size: 2.25rem;
+      }
+      
+      .subtitle {
+        font-size: 1.15rem;
+      }
+      
+      .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       }
     }
 
-    @media (max-width: 480px) {
-      .slider-item {
-        width: 110px;
-        height: 110px;
+    @media (max-width: 600px) {
+      .gallery-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
-      .slider-row {
-        height: 110px;
+      
+      .main-title {
+        font-size: 2rem;
+      }
+      
+      .gallery-overlay {
+        padding: 1rem;
       }
     }
-  </style><h1 class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">✨ Галерея сотрудников</h1><div class="gallery-container cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">
-    <!-- Слайдеры динамически вставятся сюда -->
-  </div><script class="cid-uQkfJxn8CX" id="custom-html-5u" data-rv-view="516">
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbyX7rk3Hw1CBA0r93ns_43XEj68pgFTU9IAJaWwvT2nVOpEHDylReRzSrnQLGRTStP_/exec";
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header fade-in">
+      <a href="index.html" class="logo">
+        <i class="fas fa-crown logo-icon"></i>
+        Ocl Link Gallery
+      </a>
+      <a href="testt.html" class="nav-link back-btn">
+        <i class="fas fa-arrow-left"></i> На главную
+      </a>
+    </header>
 
-    fetch(scriptUrl)
-      .then(res => res.json())
-      .then(data => {
-        const photos = data.slice(-100); // максимум 100 фото для примера
-        const gallery = document.getElementById('galleryContainer');
+    <main>
+      <section id="welcome" class="fade-in delay-1">
+        <h1 class="main-title">Галерея успеха</h1>
+        <p class="subtitle">Лучшие моменты нашей команды и яркие достижения сотрудников</p>
+      </section>
 
-        const itemsPerRow = 20;
-        const rowCount = Math.ceil(photos.length / itemsPerRow);
+      <section id="gallery" class="fade-in delay-2">
+        <div class="gallery-container" id="galleryContainer">
+          <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i> Загрузка галереи...
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 
-        for (let i = 0; i < rowCount; i++) {
-          // Создаём строку слайдера
-          const row = document.createElement('div');
-          row.className = 'slider-row';
-
-          // Создаём трек внутри строки
-          const track = document.createElement('div');
-          track.className = 'slider-track';
-
-          // Чередуем направление (чётные — влево, нечётные — вправо)
-          const directionClass = (i % 2 === 0) ? 'scroll-left' : 'scroll-right';
-          track.classList.add(directionClass);
-
-          // Скорость анимации — рандом в диапазоне 40-70 секунд
-          const speed = 40 + Math.floor(Math.random() * 30);
-          track.style.animationDuration = speed + 's';
-
-          // Берём группу фото для этой строки и дублируем для бесконечного скролла
-          const group = photos.slice(i * itemsPerRow, (i + 1) * itemsPerRow);
-          const loopPhotos = [...group, ...group];
-
-          loopPhotos.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'slider-item';
-            div.innerHTML = `<img src="${item.url}" alt="Фото сотрудника" loading="lazy" draggable="false" />`;
-            track.appendChild(div);
+  <script>
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 120,
+            behavior: 'smooth'
           });
-
-          row.appendChild(track);
-          gallery.appendChild(row);
         }
-      })
-      .catch(err => {
-        console.error("Ошибка загрузки галереи:", err);
-        document.getElementById('galleryContainer').innerHTML = '<p style="text-align:center; color:#FFD93D;">Ошибка загрузки галереи. Попробуйте обновить страницу.</p>';
       });
-  </script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
- <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
-    <input name="animation" type="hidden">
-  </body>
+    });
+
+    // Загрузка галереи из Google Apps Script
+    document.addEventListener('DOMContentLoaded', () => {
+      const galleryContainer = document.getElementById('galleryContainer');
+      const scriptUrl = "https://script.google.com/macros/s/AKfycbyX7rk3Hw1CBA0r93ns_43XEj68pgFTU9IAJaWwvT2nVOpEHDylReRzSrnQLGRTStP_/exec";
+      
+      fetch(scriptUrl)
+        .then(res => {
+          if (!res.ok) throw new Error('Ошибка сети');
+          return res.json();
+        })
+        .then(photos => {
+          if (!photos || photos.length === 0) {
+            galleryContainer.innerHTML = `
+              <div class="error">
+                <i class="fas fa-exclamation-circle"></i> Нет доступных фото
+              </div>
+            `;
+            return;
+          }
+          
+          // Сортируем фото по дате (новые сначала)
+          const sortedPhotos = photos.sort((a, b) => new Date(b.date) - new Date(a.date));
+          
+          // Создаем HTML для галереи
+          let galleryHTML = '';
+          sortedPhotos.forEach((photo, index) => {
+            const isFeatured = index % 5 === 0; // Каждое 5-е фото - избранное
+            
+            galleryHTML += `
+              <div class="gallery-card fade-in delay-${index % 3}">
+                <div class="gallery-img-container">
+                  <img src="${photo.url}" alt="${photo.title || 'Фото сотрудника'}" class="gallery-img" loading="lazy">
+                  
+                  ${isFeatured ? `<div class="gallery-badge"><i class="fas fa-star"></i> Избранное</div>` : ''}
+                  
+                  <div class="gallery-overlay">
+                    <h3 class="gallery-title">${photo.title || 'Командный момент'}</h3>
+                    <p class="gallery-date"><i class="far fa-calendar-alt"></i> ${formatDate(photo.date)}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+          
+          galleryContainer.innerHTML = galleryHTML;
+        })
+        .catch(err => {
+          console.error('Ошибка загрузки галереи:', err);
+          galleryContainer.innerHTML = `
+            <div class="error">
+              <i class="fas fa-exclamation-circle"></i> Ошибка загрузки галереи. Попробуйте позже.
+            </div>
+          `;
+        });
+    });
+
+    // Форматирование даты
+    function formatDate(dateString) {
+      if (!dateString) return 'Дата не указана';
+      
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const date = new Date(dateString);
+      
+      if (isNaN(date.getTime())) {
+        return dateString;
+      }
+      
+      return date.toLocaleDateString('ru-RU', options);
+    }
+  </script>
+</body>
 </html>
