@@ -482,126 +482,9 @@
     .delay-2 { animation-delay: 0.2s; }
     .delay-3 { animation-delay: 0.3s; }
     .delay-4 { animation-delay: 0.4s; }
-    
-    /* Стили для пасхалок */
-    .easter-egg {
-      position: fixed;
-      width: 30px;
-      height: 30px;
-      opacity: 0.01;
-      z-index: 1000;
-      cursor: pointer;
-    }
-    
-    #easter1 { top: 20px; left: 20px; }
-    #easter2 { top: 20px; right: 20px; }
-    #easter3 { bottom: 20px; right: 20px; }
-    
-    .easter-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    
-    .easter-content {
-      background: var(--card);
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 90%;
-      text-align: center;
-      position: relative;
-      animation: fadeIn 0.3s ease-out;
-    }
-    
-    .easter-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      color: var(--text-light);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    
-    .easter-title {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
-    
-    .easter-text {
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-    
-    .easter-image {
-      max-width: 100%;
-      max-height: 300px;
-      border-radius: 8px;
-      margin: 1rem 0;
-    }
-    
-    /* Секретный код */
-    .secret-code {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      color: transparent;
-      font-size: 4px;
-      user-select: none;
-    }
   </style>
 </head>
 <body>
-  <!-- Невидимые пасхалки (кликабельные области) -->
-  <div class="easter-egg" id="easter1" title=""></div>
-  <div class="easter-egg" id="easter2" title=""></div>
-  <div class="easter-egg" id="easter3" title=""></div>
-  
-  <!-- Секретный код для третьей пасхалки -->
-  <div class="secret-code">3845</div>
-  
-  <!-- Модальные окна для пасхалок -->
-  <div class="easter-modal" id="easterModal1">
-    <div class="easter-content">
-      <button class="easter-close" onclick="closeEaster(1)">&times;</button>
-      <h2 class="easter-title">🍗 Секретный рецепт!</h2>
-      <p class="easter-text">Ты нашёл секретный ингредиент KFC! 11 трав и специй теперь твои.</p>
-      <img src="https://i.postimg.cc/3wZQYJ0J/secret-recipe.jpg" alt="Секретный рецепт" class="easter-image">
-      <p>Настоящий секрет - это внимание к деталям и любовь к своему делу!</p>
-    </div>
-  </div>
-  
-  <div class="easter-modal" id="easterModal2">
-    <div class="easter-content">
-      <button class="easter-close" onclick="closeEaster(2)">&times;</button>
-      <h2 class="easter-title">🎮 Игровая пауза!</h2>
-      <p class="easter-text">Ты обнаружил секретную мини-игру от команды KFC!</p>
-      <div style="width: 100%; height: 200px; background: #1E1E1E; display: flex; justify-content: center; align-items: center; border-radius: 8px; margin: 1rem 0;">
-        <p>Покажи этот код HR: KFC-EGG-2024</p>
-      </div>
-      <p>Скажи этот код своему менеджеру для получения бонуса!</p>
-    </div>
-  </div>
-  
-  <div class="easter-modal" id="easterModal3">
-    <div class="easter-content">
-      <button class="easter-close" onclick="closeEaster(3)">&times;</button>
-      <h2 class="easter-title">🔐 Секретный уровень!</h2>
-      <p class="easter-text">Ты нашёл самый секретный раздел!</p>
-      <img src="https://i.postimg.cc/8zKJZJQ0/secret-level.jpg" alt="Секретный уровень" class="easter-image">
-      <p>Введи код 3845 в любом поле калькулятора для активации скрытой функции.</p>
-    </div>
-  </div>
-
   <div class="app-container">
     <header class="header fade-in">
       <a href="#" class="logo">
@@ -686,26 +569,26 @@
             </div>
           </div>
           
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-images"></i></div>
-            <h3 class="card-title">Галерея успеха</h3>
-            <div class="card-text">
-              <div class="gallery-preview">
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/cJcP2LS6/photo-1751506794971.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/tJ6KrtCG/photo-1751544738702.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/BvtwYcM7/photo-1751715126306.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/GtjQhHXs/photo.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/DyyQPfCB/photo-1.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/6q180K3m/photo-1751814184858.jpg')"></div>
-              </div>
-              Лучшие моменты нашей команды
-            </div>
-            <div class="card-buttons">
-              <a href="photo.html" class="btn">
-                Открыть галерею <i class="fas fa-images"></i>
-              </a>
-            </div>
-          </div>
+        <div class="card">
+  <div class="card-icon"><i class="fas fa-images"></i></div>
+  <h3 class="card-title">Галерея успеха</h3>
+  <div class="card-text">
+    <div class="gallery-preview">
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/cJcP2LS6/photo-1751506794971.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/tJ6KrtCG/photo-1751544738702.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/BvtwYcM7/photo-1751715126306.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/GtjQhHXs/photo.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/DyyQPfCB/photo-1.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/6q180K3m/photo-1751814184858.jpg')"></div>
+    </div>
+    Лучшие моменты нашей команды
+  </div>
+  <div class="card-buttons">
+    <a href="photo.html" class="btn">
+      Открыть галерею <i class="fas fa-images"></i>
+    </a>
+  </div>
+</div>
           
           <div class="card">
             <div class="card-icon"><i class="fas fa-tasks"></i></div>
@@ -963,9 +846,6 @@
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("motivationBox").textContent = getRandomItem(motivationList);
       document.getElementById("challengeBox").textContent = getRandomItem(challengeList);
-      
-      // Инициализация пасхалок
-      initEasterEggs();
     });
 
     // Калькулятор зарплаты
@@ -985,12 +865,6 @@
       const nightHours = parseInt(document.getElementById('nightHours').value) || 0;
       const hasBonus = document.getElementById('bonus').checked;
       const bonus = hasBonus ? 3000 : 0;
-
-      // Проверка на секретный код (пасхалка 3)
-      if ((dayHours == 3845 || nightHours == 3845) {
-        showEaster(3);
-        return;
-      }
 
       if (!position || !rates[position]) {
         document.getElementById('result').innerHTML = '<p style="color: var(--accent); text-align: center;">Пожалуйста, выберите должность</p>';
@@ -1050,41 +924,6 @@
         document.getElementById("commentList").innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки комментариев</p>';
         console.error(err);
       });
-      
-    // Функции для пасхалок
-    function initEasterEggs() {
-      // Пасхалка 1: клик в левом верхнем углу
-      document.getElementById('easter1').addEventListener('click', () => showEaster(1));
-      
-      // Пасхалка 2: клик в правом верхнем углу
-      document.getElementById('easter2').addEventListener('click', () => showEaster(2));
-      
-      // Пасхалка 3: ввод секретного кода 3845 в калькуляторе (обрабатывается в функции calculate)
-    }
-    
-    function showEaster(eggNumber) {
-      const modal = document.getElementById(`easterModal${eggNumber}`);
-      if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-    }
-    
-    function closeEaster(eggNumber) {
-      const modal = document.getElementById(`easterModal${eggNumber}`);
-      if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-      }
-    }
-    
-    // Закрытие модального окна при клике вне его
-    window.addEventListener('click', (e) => {
-      if (e.target.classList.contains('easter-modal')) {
-        e.target.style.display = 'none';
-        document.body.style.overflow = '';
-      }
-    });
   </script>
 </body>
 </html>
