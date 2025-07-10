@@ -1,617 +1,830 @@
 <!DOCTYPE html>
-<html  >
+<html lang="ru">
 <head>
-  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
-  <title>Page 37</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=wiywho"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=wiywho" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Training | Профессиональный портал</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-secondary: #1E1E1E;
+      --card: #252525;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --primary: #BB86FC; /* Фиолетовый акцент */
+      --primary-dark: #3700B3;
+      --accent: #03DAC6; /* Бирюзовый акцент */
+      --accent-dark: #018786;
+      --border: #333333;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
 
-  
-  
-  
-</head>
-<body>
-  
-  <meta charset="UTF-8" class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742"><title class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742">Навигация и Рейтинг Тренеров</title><style class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742">
-    body, html {
-      margin: 0; padding: 0;
-      background-color: #03454E;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #D0E8E8;
-      min-height: 100vh;
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    .container {
-      display: flex;
-      gap: 30px;
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .app-container {
       max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 20px;
-      flex-wrap: wrap;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
-    /* Навигация (слева) */
-    .nav-block {
-      flex: 1 1 320px;
-      max-width: 350px;
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 16px;
-      padding: 40px 20px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-      text-align: center;
+    /* Шапка */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav-block h2 {
+    .logo {
+      font-size: 1.8rem;
       font-weight: 700;
-      margin-bottom: 30px;
-      font-size: 26px;
-      color: #FFD93D;
-      text-shadow: 0 0 4px rgba(0,0,0,0.3);
-    }
-
-    .big-button {
-      display: inline-block;
-      width: 90%;
-      max-width: 280px;
-      padding: 16px 0;
-      margin: 12px auto;
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
+      color: var(--primary);
       text-decoration: none;
-      color: #fff;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 14px;
-      transition: background 0.3s, transform 0.2s;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    .big-button:hover {
-      background: rgba(255,255,255,0.12);
+    .logo-icon {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-link {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      padding: 0.5rem 0;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Основной контент */
+    .main-title {
+      font-size: 2.75rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--primary);
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      max-width: 700px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-title i {
+      color: var(--accent);
+    }
+
+    /* Карточки */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+      transition: width 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover::before {
+      width: 6px;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .card-text {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    .card-buttons {
+      margin-top: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 12px rgba(187, 134, 252, 0.2);
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, var(--primary), #9B51E0);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(187, 134, 252, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: rgba(187, 134, 252, 0.1);
+      color: var(--primary);
+    }
+
+    /* Галерея */
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      background-size: cover;
+      background-position: center;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Рейтинг */
+    .rating-container {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 4rem;
+      border: 1px solid var(--border);
+    }
+
+    .rating-item {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+      background: var(--bg-secondary);
+    }
+
+    .rating-item:hover {
+      background: rgba(187, 134, 252, 0.05);
+    }
+
+    .medal {
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+      width: 40px;
+      text-align: center;
+    }
+
+    .rating-details {
+      flex-grow: 1;
+    }
+
+    .rating-name {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .rating-count {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* Калькулятор */
+    .calculator {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 4rem;
+      border: 1px solid var(--border);
+    }
+
+    .form-group {
+      margin-bottom: 1.75rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      background: var(--bg-secondary);
+      color: var(--text);
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.1);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .checkbox-group input {
+      width: auto;
+      transform: scale(1.3);
+    }
+
+    .checkbox-group label {
+      margin-bottom: 0;
+      color: var(--text);
+    }
+
+    .result {
+      margin-top: 2.5rem;
+      padding: 1.75rem;
+      background: rgba(187, 134, 252, 0.03);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .result p {
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .result p:last-child {
+      margin-bottom: 0;
+    }
+
+    .result strong {
+      color: var(--primary);
+    }
+
+    /* Комментарии */
+    .comments-container {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .comment {
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      transition: transform 0.2s;
+    }
+
+    .comment:hover {
       transform: translateY(-3px);
     }
 
-    /* Рейтинг (справа) */
-    .rating-block {
-      flex: 1 1 600px;
-      max-width: 700px;
-      background-color: rgba(5, 90, 100, 0.3);
-      border-radius: 16px;
-      padding: 30px 40px;
-      box-sizing: border-box;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      color: #D0E8E8;
+    .comment-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
     }
 
-    .rating-block h2 {
-      text-align: center;
-      font-weight: 700;
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      color: #FFD93D;
-      text-shadow: 0 0 4px rgba(0,0,0,0.4);
+    .comment-meta span:first-child {
+      font-weight: 500;
+      color: var(--primary);
     }
 
-    .hr-entry {
-      position: relative;
-      margin-bottom: 15px;
-      padding: 14px 20px;
-      border-radius: 14px;
-      background-color: rgba(5, 90, 100, 0.3);
-      color: #D0E8E8;
-      border: 1px solid rgba(5, 90, 100, 0.5);
-      transition: background-color 0.3s ease, transform 0.25s ease;
-      cursor: default;
+    .comment-text {
+      line-height: 1.7;
     }
 
-    .hr-entry:hover {
-      background-color: rgba(5, 90, 100, 0.5);
-      transform: translateY(-2px);
-    }
-
-    .top-1 {
-      background-color: rgba(255, 230, 100, 0.85);
-      border: 2px solid #F0C419;
-      color: #2E2E2E;
-      font-weight: 600;
-      text-shadow: 0 0 4px rgba(0,0,0,0.15);
-      animation: pulse 1.5s infinite;
-    }
-
-    .top-2 {
-      background-color: rgba(192, 192, 192, 0.85);
-      border: 2px solid #A9A9A9;
-      color: #2E2E2E;
-      font-weight: 600;
-      text-shadow: 0 0 4px rgba(0,0,0,0.15);
-      animation: pulse 1.5s infinite;
-    }
-
-    .top-3 {
-      background-color: rgba(184, 115, 51, 0.85);
-      border: 2px solid #995C33;
-      color: #2E2E2E;
-      font-weight: 600;
-      text-shadow: 0 0 4px rgba(0,0,0,0.15);
-      animation: pulse 1.5s infinite;
-    }
-
-    .top-1::before {
-      content: "👑";
-      position: absolute;
-      top: -18px;
-      left: -14px;
-      font-size: 28px;
-      animation: crownFloat 1.5s infinite ease-in-out;
-      filter: drop-shadow(0 0 3px #F0C419);
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 12px rgba(255, 255, 255, 0.3); }
-      50% { transform: scale(1.05); box-shadow: 0 0 24px rgba(255, 255, 255, 0.5); }
-    }
-
-    @keyframes crownFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    /* Адаптив */
+    /* Адаптивность */
     @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-        margin: 30px auto;
+      .app-container {
+        padding: 1.75rem;
       }
-      .nav-block, .rating-block {
-        max-width: 100%;
-        flex: 1 1 auto;
+      
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+      
+      .nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+      }
+      
+      .main-title {
+        font-size: 2.25rem;
+      }
+      
+      .subtitle {
+        font-size: 1.15rem;
       }
     }
-  </style><div class="container cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742">
-    <!-- Навигация слева -->
-    <section class="nav-block">
-      <h2>Навигация</h2>
-      <a href="https://docs.google.com/spreadsheets/d/1oFUNvcD8Cbs5tWlvPaj94t3jWuXOsvD0M5cl2r6yEpM/edit?gid=0#gid=0" target="_blank" class="big-button">📊 ОТЧЁТЫ</a>
-      <a href="page34.html" class="big-button">📝 ОПРОСЫ</a>
-      <a href="reits.html" class="big-button">📈 РЕЙТИНГ СОТРУДНИКОВ</a>
-       <a href="photo.html" class="big-button">📷ГАЛЕРЕЯ</a>
-    </section>
 
-    <!-- Рейтинг тренеров справа -->
-    <section class="rating-block">
-      <h2>🏆 Рейтинг Тренеров</h2>
-      <div id="topList" style="font-size: 18px;"></div>
-    </section>
-  </div><script class="cid-uQkhk6hRKf" id="custom-html-5v" data-rv-view="742">
+    @media (max-width: 600px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .card {
+        padding: 1.75rem;
+      }
+      
+      .rating-container, 
+      .calculator,
+      .comments-container {
+        padding: 1.75rem;
+      }
+
+      .gallery-preview {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header fade-in">
+      <a href="#" class="logo">
+        <i class="fas fa-crown logo-icon"></i>
+        OcL Link
+      </a>
+      <nav class="nav">
+        <a href="#navigation" class="nav-link">Навигация</a>
+        <a href="#rating" class="nav-link">Рейтинг</a>
+        <a href="#calculator" class="nav-link">Калькулятор</a>
+        <a href="#comments" class="nav-link">Комментарии</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="welcome" class="fade-in delay-1">
+        <h1 class="main-title">Профессиональный портал для сотрудников KFC</h1>
+        <p class="subtitle">Все инструменты для эффективной работы, обучения и профессионального роста в одном месте</p>
+      </section>
+
+      <section id="navigation" class="fade-in delay-2">
+        <h2 class="section-title">
+          <i class="fas fa-compass"></i>
+          Быстрый доступ
+        </h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+            <h3 class="card-title">Аналитика и отчёты</h3>
+            <p class="card-text">Детальная статистика по работе ресторанов и показателям сотрудников</p>
+            <div class="card-buttons">
+              <a href="https://docs.google.com/spreadsheets/d/1oFUNvcD8Cbs5tWlvPaj94t3jWuXOsvD0M5cl2r6yEpM/edit?gid=0#gid=0" target="_blank" class="btn">
+                Открыть отчёты <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-poll"></i></div>
+            <h3 class="card-title">Оценка работы</h3>
+            <p class="card-text">Пройти опросы и оценить работу коллег для улучшения показателей</p>
+            <div class="card-buttons">
+              <a href="page34.html" class="btn">
+                Пройти опрос <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-star"></i></div>
+            <h3 class="card-title">Рейтинг сотрудников</h3>
+            <p class="card-text">Текущие показатели и достижения сотрудников сети ресторанов</p>
+            <div class="card-buttons">
+              <a href="reits.html" class="btn">
+                Смотреть рейтинг <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rating" class="fade-in delay-3">
+        <div class="rating-container">
+          <h2 class="section-title">
+            <i class="fas fa-trophy"></i>
+            Топ тренеров
+          </h2>
+          <div id="topList">Загрузка рейтинга...</div>
+        </div>
+      </section>
+
+      <section id="motivation" class="fade-in delay-4">
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+            <h3 class="card-title">Мотивация дня</h3>
+            <div id="motivationBox" class="card-text">Загрузка...</div>
+            <div class="card-buttons">
+              <button class="btn" onclick="newMotivation()">
+                Обновить <i class="fas fa-redo"></i>
+              </button>
+            </div>
+          </div>
+          
+        <div class="card">
+  <div class="card-icon"><i class="fas fa-images"></i></div>
+  <h3 class="card-title">Галерея успеха</h3>
+  <div class="card-text">
+    <div class="gallery-preview">
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/cJcP2LS6/photo-1751506794971.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/tJ6KrtCG/photo-1751544738702.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/BvtwYcM7/photo-1751715126306.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/GtjQhHXs/photo.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/DyyQPfCB/photo-1.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/6q180K3m/photo-1751814184858.jpg')"></div>
+    </div>
+    Лучшие моменты нашей команды
+  </div>
+  <div class="card-buttons">
+    <a href="gallery.html" class="btn">
+      Открыть галерею <i class="fas fa-images"></i>
+    </a>
+  </div>
+</div>
+          
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-tasks"></i></div>
+            <h3 class="card-title">Челлендж дня</h3>
+            <div id="challengeBox" class="card-text">Загрузка...</div>
+            <div class="card-buttons">
+              <button class="btn" onclick="newChallenge()">
+                Новый челлендж <i class="fas fa-redo"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculator">
+        <div class="calculator">
+          <h2 class="section-title">
+            <i class="fas fa-calculator"></i>
+            Калькулятор зарплаты
+          </h2>
+          
+          <div class="form-group">
+            <label for="position">Ваша должность</label>
+            <select id="position">
+              <option value="">-- Выберите должность --</option>
+              <option value="trainer">Тренер</option>
+              <option value="trainer2">Тренер 2</option>
+              <option value="chk1">ЧК1</option>
+              <option value="chk2">ЧК2</option>
+              <option value="chk3">ЧК3</option>
+              <option value="tehn">Тех ночь</option>
+              <option value="tehz">Тех зал</option>
+            </select>
+          </div>
+          
+          <div class="dual-input">
+            <div class="form-group">
+              <label for="dayHours">Дневные часы</label>
+              <input type="number" id="dayHours" placeholder="Введите количество часов">
+            </div>
+            
+            <div class="form-group">
+              <label for="nightHours">Ночные часы</label>
+              <input type="number" id="nightHours" placeholder="Введите количество часов">
+            </div>
+          </div>
+          
+          <div class="checkbox-group">
+            <input type="checkbox" id="bonus">
+            <label for="bonus">Перфоманс бонус (+3000 сом)</label>
+          </div>
+          
+          <button class="btn" onclick="calculate()">
+            Рассчитать зарплату <i class="fas fa-calculator"></i>
+          </button>
+          
+          <div class="result" id="result"></div>
+        </div>
+      </section>
+
+      <section id="comments">
+        <div class="comments-container">
+          <h2 class="section-title">
+            <i class="fas fa-comment-alt"></i>
+            Последние комментарии HR
+          </h2>
+          <div id="commentList">Загрузка комментариев...</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 120,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Рейтинг тренеров
     fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4xHMx6ihyPNaHDF2BDTIQangziO9Da_to8N2/exec")
       .then(res => res.json())
       .then(data => {
-        const medals = ['🥇', '🥈', '🥉'];
         const container = document.getElementById("topList");
-        let html = "";
+        if (!data || data.length === 0) {
+          container.innerHTML = '<p style="color: var(--text-light); text-align: center;">Нет данных о рейтинге</p>';
+          return;
+        }
+
+        const medals = ['🥇', '🥈', '🥉'];
+        let html = '';
 
         data.slice(0, 5).forEach((hr, index) => {
-          const place = index + 1;
-          const medal = medals[index] || `${place}-е место`;
-          const topClass = index < 3 ? `top-${place}` : "";
           html += `
-            <div class="hr-entry ${topClass}">
-              <strong>${medal}</strong>: ${hr.name} — ${hr.count} опросов
+            <div class="rating-item">
+              <span class="medal">${medals[index] || `${index + 1}.`}</span>
+              <div class="rating-details">
+                <div class="rating-name">${hr.name}</div>
+                <div class="rating-count">${hr.count} опросов</div>
+              </div>
             </div>`;
         });
 
         container.innerHTML = html;
       })
       .catch(err => {
-        document.getElementById("topList").innerHTML = "Ошибка загрузки рейтинга.";
+        document.getElementById("topList").innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки рейтинга</p>';
         console.error("Ошибка загрузки данных:", err);
       });
-  </script>
 
-<section class="section-dark dual-layout cid-uQkhA3ak1Q" id="custom-html-5w">
-  <!-- Левая колонка -->
-  <div class="left-box">
-    <div class="info-box">
-      <h2>💡 Мотивация дня</h2>
-      <div class="info-content" id="motivationBox">Загрузка мотивации...</div>
-    </div>
+    // Мотивация и челлендж
+    const motivationList = [
+      "Сегодняшний день - это новая возможность превзойти свои вчерашние достижения!",
+      "Ваша работа создает тот уникальный опыт, который клиенты KFC ценят и любят.",
+      "Каждое ваше действие влияет на общий успех команды - делайте это с гордостью!",
+      "Помните: даже небольшие улучшения в работе приводят к значительным результатам.",
+      "Вы - лицо KFC для наших гостей. Ваше отношение делает их день лучше!"
+    ];
 
-    <div class="info-box">
-      <h2>💪 Челлендж дня</h2>
-      <div class="info-content" id="challengeBox">Загрузка задания...</div>
-      <button class="btn" onclick="newChallenge()">Новый челлендж</button>
-    </div>
-  </div>
+    const challengeList = [
+      "Помогите новому сотруднику освоить один новый навык сегодня",
+      "Найдите и похвалите трех коллег за их профессиональные качества",
+      "Предложите одну идею по улучшению работы вашего ресторана",
+      "Сделайте комплимент гостю, который выглядит уставшим или грустным",
+      "Поделитесь своим лучшим профессиональным советом с командой"
+    ];
 
-  <!-- Правая колонка -->
-  <div class="right-box">
-    <div class="salary-form">
-      <h2>Калькулятор зарплаты</h2>
-
-      <label for="position">Выберите должность:</label>
-      <select id="position">
-        <option value="">-- Выбрать --</option>
-        <option value="trainer">Тренер</option>
-        <option value="trainer2">Тренер 2</option>
-        <option value="chk1">ЧК1</option>
-        <option value="chk2">ЧК2</option>
-        <option value="chk3">ЧК3</option>
-        <option value="tehn">Тех ночь</option>
-        <option value="tehz">Тех зал</option>
-      </select>
-
-      <label for="dayHours">Количество дневных часов:</label>
-      <input type="number" id="dayHours" placeholder="Например: 120">
-
-      <label for="nightHours">Количество ночных часов:</label>
-      <input type="number" id="nightHours" placeholder="Например: 40">
-
-      <div class="bonus-toggle">
-        <input type="checkbox" id="bonus">
-        <label for="bonus">Перфоманс бонус (+3000 сом)</label>
-      </div>
-
-      <button onclick="calculate()">Посчитать зарплату</button>
-
-      <div class="result" id="result"></div>
-    </div>
-  </div>
-</section><style class="cid-uQkhA3ak1Q" id="custom-html-5w" data-rv-view="743">
-  .section-dark {
-    background-color: #03454E;
-    color: #D0E8E8;
-    padding: 40px 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  .dual-layout {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
-
-  .left-box, .right-box {
-    flex: 1 1 400px;
-    max-width: 600px;
-  }
-
-  .info-box {
-    background-color: rgba(5, 90, 100, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 25px;
-    border-radius: 14px;
-    margin-bottom: 20px;
-  }
-
-  .info-box h2 {
-    color: #FFD93D;
-    margin-bottom: 15px;
-    font-size: 20px;
-    text-shadow: 0 0 3px rgba(0,0,0,0.3);
-  }
-
-  .info-content {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
-    padding: 16px;
-    font-size: 15px;
-    text-align: center;
-    margin-bottom: 16px;
-    min-height: 50px;
-  }
-
-  .btn {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  .btn:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-
-  .salary-form {
-    background: rgba(255,255,255,0.03);
-    padding: 25px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .salary-form h2 {
-    text-align: center;
-    color: #FFD93D;
-    margin-bottom: 20px;
-  }
-
-  .salary-form label {
-    margin-top: 15px;
-    display: block;
-    font-weight: 500;
-  }
-
-  .salary-form input,
-  .salary-form select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #fff;
-    font-size: 16px;
-  }
-
-  select option {
-    background-color: #03454E;
-    color: #fff;
-  }
-
-  .bonus-toggle {
-    margin-top: 20px;
-  }
-
-  .bonus-toggle input[type="checkbox"] {
-    display: none;
-  }
-
-  .bonus-toggle label {
-    display: block;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: rgba(255,255,255,0.06);
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .bonus-toggle input[type="checkbox"]:checked + label {
-    background-color: #FFD93D;
-    color: #000;
-  }
-
-  .salary-form button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    background-color: #FFD93D;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .result {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.15);
-    font-size: 15px;
-  }
-
-  .result b {
-    color: #FFD93D;
-  }
-
-  @media (max-width: 768px) {
-    .dual-layout {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  }
-</style><script class="cid-uQkhA3ak1Q" id="custom-html-5w" data-rv-view="743">
-  const motivationList = [
-    "Ты не просто работаешь — ты двигаешь команду вперёд.",
-    "Маленькие усилия каждый день — это огромный рост в будущем.",
-    "Твоя энергия сегодня — успех команды завтра.",
-    "Ты часть сильной команды. А это уже мощь.",
-    "Верь в свои силы — ты уже многое сделал.",
-    "Результат — это накопление маленьких побед.",
-    "Смелость — не отсутствие страха, а действие несмотря на него.",
-    "Ошибки — путь к росту. Не бойся их делать.",
-    "Ты можешь больше, чем думаешь.",
-    "Ты делаешь больше, чем замечаешь."
-  ];
-
-  const challengeList = [
-    "Скажи доброе утро 5 коллегам",
-    "Похвали коллегу за его работу",
-    "Сделай кому-то день легче — без лишних слов",
-    "Замени критику на поддержку сегодня",
-    "Поделись позитивом в общем чате",
-    "Скажи: «Ты классно справляешься» — тому, кто это заслужил",
-    "Пожелай хорошего дня кассиру/повару/уборщику",
-    "Помоги новенькому почувствовать себя частью команды",
-    "Сделай комплимент по внешности или стилю",
-    "Напиши короткое доброе сообщение в общий чат"
-  ];
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const randMotivation = Math.floor(Math.random() * motivationList.length);
-    document.getElementById("motivationBox").innerText = motivationList[randMotivation];
-    newChallenge();
-  });
-
-  function newChallenge() {
-    const box = document.getElementById("challengeBox");
-    box.style.opacity = 0;
-    setTimeout(() => {
-      const rand = Math.floor(Math.random() * challengeList.length);
-      box.textContent = challengeList[rand];
-      box.style.opacity = 1;
-    }, 200);
-  }
-
-  const rates = {
-    trainer:  { day: 186, night: 246, advance: 8000 },
-    trainer2: { day: 191, night: 253, advance: 8000 },
-    chk1:     { day: 151, night: 198, advance: 7000 },
-    chk2:     { day: 166, night: 218, advance: 7000 },
-    chk3:     { day: 171, night: 226, advance: 7000 },
-    tehn:     { day: 220, night: 220, advance: 7000 },
-    tehz:     { day: 156, night: 203, advance: 7000 }
-  };
-
-  function calculate() {
-    const position = document.getElementById('position').value;
-    const dayHours = +document.getElementById('dayHours').value || 0;
-    const nightHours = +document.getElementById('nightHours').value || 0;
-    const hasBonus = document.getElementById('bonus').checked;
-
-    if (!position || !rates[position]) {
-      document.getElementById('result').innerText = 'Пожалуйста, выберите должность.';
-      return;
+    function getRandomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    const rate = rates[position];
-    const dayPay = rate.day * dayHours;
-    const nightPay = rate.night * nightHours;
-    const bonus = hasBonus ? 3000 : 0;
-    const advance = rate.advance || 0;
-    const gross = dayPay + nightPay + bonus;
-    const net = gross - advance;
-
-    document.getElementById('result').innerHTML = `
-      Дневные часы: ${dayHours} ч × ${rate.day} сом = <b>${dayPay.toLocaleString()} сом</b><br>
-      Ночные часы: ${nightHours} ч × ${rate.night} сом = <b>${nightPay.toLocaleString()} сом</b><br>
-      Бонус: <b>${bonus.toLocaleString()} сом</b><br>
-      Аванс: -<b>${advance.toLocaleString()} сом</b><br><br>
-      <span style="font-size: 20px;">💰 <b>Итого к выплате: ${Math.max(0, Math.round(net)).toLocaleString()} сом</b></span>
-    `;
-  }
-</script>
-
-<meta charset="UTF-8" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744"><title class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744">Комментарии HR</title><link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744"><style class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744">
-    body {
-      background: #03454E;
-      color: white;
-      font-family: 'Inter', Arial, sans-serif;
-      padding: 20px;
-      margin: 0;
-      min-height: 100vh;
+    function newMotivation() {
+      const box = document.getElementById("motivationBox");
+      box.textContent = "Загрузка...";
+      setTimeout(() => {
+        box.textContent = getRandomItem(motivationList);
+      }, 300);
     }
 
-    .chat-section {
-      max-width: 900px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 20px;
-      padding: 30px 24px;
-      box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+    function newChallenge() {
+      const box = document.getElementById("challengeBox");
+      box.textContent = "Загрузка...";
+      setTimeout(() => {
+        box.textContent = getRandomItem(challengeList);
+      }, 300);
     }
 
-    h2 {
-      text-align: center;
-      font-weight: 700;
-      font-size: 26px;
-      margin-bottom: 30px;
-      color: #FFD93D;
-      text-shadow: 0 0 4px rgba(0,0,0,0.2);
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("motivationBox").textContent = getRandomItem(motivationList);
+      document.getElementById("challengeBox").textContent = getRandomItem(challengeList);
+    });
 
-    .chat-message {
-      background: rgba(255, 255, 255, 0.07);
-      padding: 16px 20px;
-      border-radius: 16px;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      transition: transform 0.2s, background-color 0.3s;
-    }
+    // Калькулятор зарплаты
+    const rates = {
+      trainer: { day: 186, night: 246, advance: 8000 },
+      trainer2: { day: 191, night: 253, advance: 8000 },
+      chk1: { day: 151, night: 198, advance: 7000 },
+      chk2: { day: 166, night: 218, advance: 7000 },
+      chk3: { day: 171, night: 226, advance: 7000 },
+      tehn: { day: 220, night: 220, advance: 7000 },
+      tehz: { day: 156, night: 203, advance: 7000 }
+    };
 
-    .chat-message:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
+    function calculate() {
+      const position = document.getElementById('position').value;
+      const dayHours = parseInt(document.getElementById('dayHours').value) || 0;
+      const nightHours = parseInt(document.getElementById('nightHours').value) || 0;
+      const hasBonus = document.getElementById('bonus').checked;
+      const bonus = hasBonus ? 3000 : 0;
 
-    .chat-meta {
-      font-size: 15px;
-      margin-bottom: 10px;
-      color: #ccc;
-      font-weight: 500;
-    }
-
-    .chat-meta strong {
-      color: #fff;
-      font-weight: 700;
-    }
-
-    @media (max-width: 600px) {
-      .chat-message {
-        padding: 14px;
-        font-size: 14px;
+      if (!position || !rates[position]) {
+        document.getElementById('result').innerHTML = '<p style="color: var(--accent); text-align: center;">Пожалуйста, выберите должность</p>';
+        return;
       }
 
-      h2 {
-        font-size: 22px;
-      }
+      const rate = rates[position];
+      const dayPay = dayHours * rate.day;
+      const nightPay = nightHours * rate.night;
+      const total = dayPay + nightPay + bonus - rate.advance;
 
-      .chat-meta {
-        font-size: 13px;
-      }
+      document.getElementById('result').innerHTML = `
+        <p><span>Дневные часы:</span> <strong>${dayHours} × ${rate.day} = ${dayPay} сом</strong></p>
+        <p><span>Ночные часы:</span> <strong>${nightHours} × ${rate.night} = ${nightPay} сом</strong></p>
+        <p><span>Бонус:</span> <strong>${bonus} сом</strong></p>
+        <p><span>Аванс:</span> <strong>-${rate.advance} сом</strong></p>
+        <hr>
+        <p style="font-size: 1.1rem;"><span>Итого к выплате:</span> <strong style="color: var(--primary);">${total} сом</strong></p>
+      `;
     }
-  </style><section class="chat-section cid-uQkkZ6ZKFU" id="custom-html-5z">
-    <h2>💬 Комментарии HR</h2>
-    <div id="commentList">Загрузка комментариев...</div>
-  </section><script class="cid-uQkkZ6ZKFU" id="custom-html-5z" data-rv-view="744">
+
+    // Комментарии HR
     fetch("https://script.google.com/macros/s/AKfycbzSYgtfuDMirAPiKPG45OxtGq5H885Kf7hinq2lvj5U4I1sOw3mle3pOzkfoWR3wawS/exec")
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById("commentList");
         if (!data || data.length === 0) {
-          container.innerHTML = "Нет комментариев за этот месяц.";
+          container.innerHTML = '<p style="color: var(--text-light); text-align: center;">Нет новых комментариев</p>';
           return;
         }
 
-        // Сортировка по дате (новые сверху)
         const sorted = data.sort((a, b) => {
           const [da, ma, ya] = a.date.split('.').map(Number);
           const [db, mb, yb] = b.date.split('.').map(Number);
           return new Date(yb, mb - 1, db) - new Date(ya, ma - 1, da);
         });
 
-        const limited = sorted.slice(0, 10);
+        let html = '';
+        sorted.slice(0, 10).forEach(entry => {
+          html += `
+            <div class="comment">
+              <div class="comment-meta">
+                <span>${entry.hr}</span>
+                <span>${entry.date}</span>
+              </div>
+              <div class="comment-meta">
+                <span>Сотрудник: ${entry.employee}</span>
+                <span>Станция: ${entry.station}</span>
+              </div>
+              <p class="comment-text">${entry.comment}</p>
+            </div>`;
+        });
 
-        container.innerHTML = limited.map(entry => `
-          <div class="chat-message">
-            <div class="chat-meta">
-              ${entry.date} — <strong>${entry.hr}</strong> оценил(а) <strong>${entry.employee}</strong> на станции <strong>${entry.station}</strong>
-            </div>
-            <div>${entry.comment}</div>
-          </div>
-        `).join('');
+        container.innerHTML = html;
       })
       .catch(err => {
-        document.getElementById("commentList").innerHTML = "Ошибка загрузки комментариев.";
+        document.getElementById("commentList").innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки комментариев</p>';
         console.error(err);
       });
-  </script><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3981373" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html">Drag and Drop Website Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
- <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
-    <input name="animation" type="hidden">
-  </body>
+  </script>
+</body>
 </html>
