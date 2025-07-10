@@ -1,32 +1,153 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Доступ к сайту</title>
+  <title>OcL Link | Проверка доступа</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: #0f2027;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      padding: 60px 20px;
+    :root {
+      --bg: #0F0F0F;
+      --card: #1A1A1A;
+      --text: #E0E0E0;
+      --text-light: #A0A0A0;
+      --primary: #7C3AED;
+      --accent: #10B981;
+      --border: #333333;
+      --error: #EF4444;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 30px;
-      border-radius: 16px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 3rem 2.5rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .icon {
+      font-size: 2.5rem;
+    }
+
+    .icon-success {
+      color: var(--accent);
+    }
+
+    .icon-error {
+      color: var(--error);
+    }
+
+    .icon-warning {
+      color: #F59E0B;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-light);
+      font-size: 1.1rem;
+    }
+
+    .ip-address {
+      display: inline-block;
+      background: var(--bg);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      font-family: monospace;
+      margin-top: 1rem;
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(124, 58, 237, 0.2);
+      border-radius: 50%;
+      border-top-color: var(--primary);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-top: 1.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #6D28D9;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        padding: 2rem 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.75rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>🔐 Проверка доступа...</h1>
-    <p>Пожалуйста, подождите. Проверяем подключение.</p>
+  <div class="card" id="access-card">
+    <div id="loading-state">
+      <h1><i class="fas fa-lock icon"></i> Проверка доступа</h1>
+      <p>Пожалуйста, подождите. Идёт проверка подключения...</p>
+      <div class="loading">
+        <div class="spinner"></div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -39,26 +160,50 @@
       "77.235.29.111"  // ресторан 6
     ];
 
-    fetch("https://api.ipify.org?format=json")
-      .then(res => res.json())
-      .then(data => {
-        if (allowedIps.includes(data.ip)) {
-          window.location.href = "home.html";
-        } else {
-          document.querySelector(".card").innerHTML = `
-            <h1>🚫 Доступ запрещён</h1>
-            <p>Вы должны быть подключены к Wi-Fi ресторана для доступа к сайту.</p>
-            <p>Ваш IP: <b>${data.ip}</b></p>
+    // Имитация задержки для демонстрации (можно убрать в продакшене)
+    setTimeout(() => {
+      fetch("https://api.ipify.org?format=json")
+        .then(res => res.json())
+        .then(data => {
+          if (allowedIps.includes(data.ip)) {
+            // Успешный доступ
+            document.getElementById("access-card").innerHTML = `
+              <h1><i class="fas fa-check-circle icon icon-success"></i> Доступ разрешён</h1>
+              <p>Вы успешно подключены к сети ресторана.</p>
+              <p>Идёт перенаправление на главную страницу...</p>
+              <div class="loading">
+                <div class="spinner" style="border-top-color: var(--accent);"></div>
+              </div>
+            `;
+            setTimeout(() => {
+              window.location.href = "home.html";
+            }, 2000);
+          } else {
+            // Доступ запрещён
+            document.getElementById("access-card").innerHTML = `
+              <h1><i class="fas fa-times-circle icon icon-error"></i> Доступ запрещён</h1>
+              <p>Вы должны быть подключены к Wi-Fi ресторана для доступа к сайту.</p>
+              <p>Ваш IP-адрес:</p>
+              <div class="ip-address">${data.ip}</div>
+              <p style="margin-top: 1.5rem;">Пожалуйста, подключитесь к сети ресторана и попробуйте снова.</p>
+              <button class="btn" onclick="window.location.reload()">
+                <i class="fas fa-sync-alt"></i> Попробовать снова
+              </button>
+            `;
+          }
+        })
+        .catch(err => {
+          // Ошибка подключения
+          document.getElementById("access-card").innerHTML = `
+            <h1><i class="fas fa-exclamation-triangle icon icon-warning"></i> Ошибка подключения</h1>
+            <p>Не удалось определить ваш IP-адрес. Пожалуйста, проверьте подключение к интернету.</p>
+            <button class="btn" onclick="window.location.reload()">
+              <i class="fas fa-sync-alt"></i> Попробовать снова
+            </button>
           `;
-        }
-      })
-      .catch(err => {
-        document.querySelector(".card").innerHTML = `
-          <h1>⚠️ Ошибка</h1>
-          <p>Не удалось определить ваш IP-адрес. Проверьте подключение.</p>
-        `;
-        console.error("Ошибка получения IP:", err);
-      });
+          console.error("Ошибка получения IP:", err);
+        });
+    }, 1500); // Искусственная задержка для демонстрации
   </script>
 </body>
 </html>
