@@ -19,6 +19,7 @@
       --border: #333333;
       --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
       --shadow-hover: 0 8px 32px rgba(187, 134, 252, 0.3);
+      --heart: #FF4081;
     }
 
     * {
@@ -198,20 +199,6 @@
       color: var(--primary);
     }
 
-    .gallery-badge {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: var(--primary-dark);
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      z-index: 2;
-    }
-
     .loading {
       text-align: center;
       padding: 2rem;
@@ -226,6 +213,53 @@
       color: #FF6B6B;
       font-size: 1.2rem;
       grid-column: 1 / -1;
+    }
+
+    /* Кнопка сердца */
+    .heart-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .heart-btn:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: scale(1.1);
+    }
+
+    .heart-btn i {
+      color: white;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .heart-btn.liked i {
+      color: var(--heart);
+      transform: scale(1.2);
+    }
+
+    .likes-count {
+      position: absolute;
+      top: 1rem;
+      right: 3.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 2;
     }
 
     /* Анимации */
@@ -293,6 +327,17 @@
       .gallery-overlay {
         padding: 1rem;
       }
+      
+      .heart-btn {
+        width: 30px;
+        height: 30px;
+      }
+      
+      .likes-count {
+        top: 0.8rem;
+        right: 3rem;
+        font-size: 0.7rem;
+      }
     }
   </style>
 </head>
@@ -339,6 +384,10 @@
       });
     });
 
+    // Локальное хранилище для лайков
+    const LIKES_STORAGE_KEY = 'gallery_likes';
+    let likesData = JSON.parse(localStorage.getItem(LIKES_STORAGE_KEY)) || {};
+
     // Загрузка галереи из Google Apps Script
     document.addEventListener('DOMContentLoaded', () => {
       const galleryContainer = document.getElementById('galleryContainer');
@@ -365,25 +414,86 @@
           // Создаем HTML для галереи
           let galleryHTML = '';
           sortedPhotos.forEach((photo, index) => {
-            const isFeatured = index % 5 === 0; // Каждое 5-е фото - избранное
+            const photoId = photo.id || photo.url; // Используем URL как ID, если нет специального ID
+            const isLiked = likesData[photoId]?.liked || false;
+            const likesCount = likesData[photoId]?.count || 0;
+            
+            // Формируем содержимое оверлея
+            let overlayContent = '';
+            if (photo.date) {
+              overlayContent += `<p class="gallery-date"><i class="far fa-calendar-alt"></i> ${formatDate(photo.date)}</p>`;
+            }
+            if (photo.title) {
+              overlayContent = `<h3 class="gallery-title">${photo.title}</h3>` + overlayContent;
+            }
             
             galleryHTML += `
               <div class="gallery-card fade-in delay-${index % 3}">
                 <div class="gallery-img-container">
-                  <img src="${photo.url}" alt="${photo.title || 'Фото сотрудника'}" class="gallery-img" loading="lazy">
+                  <img src="${photo.url}" alt="${photo.title || 'Фото'}" class="gallery-img" loading="lazy">
                   
-                  ${isFeatured ? `<div class="gallery-badge"><i class="fas fa-star"></i> Избранное</div>` : ''}
+                  <button class="heart-btn ${isLiked ? 'liked' : ''}" data-photo-id="${photoId}">
+                    <i class="fas fa-heart"></i>
+                  </button>
                   
+                  ${likesCount > 0 ? `<span class="likes-count">${likesCount}</span>` : ''}
+                  
+                  ${overlayContent ? `
                   <div class="gallery-overlay">
-                    <h3 class="gallery-title">${photo.title || 'Командный момент'}</h3>
-                    <p class="gallery-date"><i class="far fa-calendar-alt"></i> ${formatDate(photo.date)}</p>
+                    ${overlayContent}
                   </div>
+                  ` : ''}
                 </div>
               </div>
             `;
           });
           
           galleryContainer.innerHTML = galleryHTML;
+          
+          // Добавляем обработчики событий для кнопок сердечек
+          document.querySelectorAll('.heart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const photoId = this.getAttribute('data-photo-id');
+              const isLiked = this.classList.contains('liked');
+              
+              // Обновляем состояние
+              if (!likesData[photoId]) {
+                likesData[photoId] = { liked: true, count: 1 };
+              } else {
+                likesData[photoId].liked = !isLiked;
+                likesData[photoId].count = isLiked 
+                  ? Math.max(0, likesData[photoId].count - 1)
+                  : likesData[photoId].count + 1;
+              }
+              
+              // Сохраняем в localStorage
+              localStorage.setItem(LIKES_STORAGE_KEY, JSON.stringify(likesData));
+              
+              // Обновляем UI
+              this.classList.toggle('liked');
+              const likesCountEl = this.nextElementSibling;
+              
+              if (likesData[photoId].count > 0) {
+                if (!likesCountEl || !likesCountEl.classList.contains('likes-count')) {
+                  const newLikesCount = document.createElement('span');
+                  newLikesCount.className = 'likes-count';
+                  newLikesCount.textContent = likesData[photoId].count;
+                  this.parentNode.insertBefore(newLikesCount, this.nextSibling);
+                } else {
+                  likesCountEl.textContent = likesData[photoId].count;
+                }
+              } else if (likesCountEl && likesCountEl.classList.contains('likes-count')) {
+                likesCountEl.remove();
+              }
+              
+              // Анимация сердца
+              const heartIcon = this.querySelector('i');
+              heartIcon.style.transform = 'scale(1.5)';
+              setTimeout(() => {
+                heartIcon.style.transform = isLiked ? 'scale(1)' : 'scale(1.2)';
+              }, 300);
+            });
+          });
         })
         .catch(err => {
           console.error('Ошибка загрузки галереи:', err);
@@ -397,7 +507,7 @@
 
     // Форматирование даты
     function formatDate(dateString) {
-      if (!dateString) return 'Дата не указана';
+      if (!dateString) return '';
       
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       const date = new Date(dateString);
