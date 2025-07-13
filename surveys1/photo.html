@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Gallery | Галерея успеха</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-secondary: #1E1E1E;
+      --card: #252525;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --primary: #BB86FC;
+      --primary-dark: #3700B3;
+      --accent: #03DAC6;
+      --accent-dark: #018786;
+      --border: #333333;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 8px 32px rgba(187, 134, 252, 0.3);
+      --heart: #FF4081;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .app-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Шапка */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      color: var(--accent);
+    }
+
+    .nav-link {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      padding: 0.5rem 0;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    /* Основной контент */
+    .main-title {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--primary);
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      text-align: center;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Классическая сетка галереи */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Улучшенные карточки */
+    .gallery-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      aspect-ratio: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .gallery-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(187,134,252,0.1) 0%, rgba(3,218,198,0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--primary);
+    }
+
+    .gallery-card:hover::before {
+      opacity: 1;
+    }
+
+    .gallery-img-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .gallery-card:hover .gallery-img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      padding: 1.5rem;
+      color: white;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .gallery-card:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+
+    .gallery-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .gallery-date {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .gallery-date i {
+      color: var(--primary);
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--accent);
+      font-size: 1.2rem;
+      grid-column: 1 / -1;
+    }
+
+    .error {
+      text-align: center;
+      padding: 2rem;
+      color: #FF6B6B;
+      font-size: 1.2rem;
+      grid-column: 1 / -1;
+    }
+
+    /* Кнопка сердца */
+    .heart-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .heart-btn:hover {
+      background: rgba(0, 0, 0, 0.7);
+      transform: scale(1.1);
+    }
+
+    .heart-btn i {
+      color: white;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .heart-btn.liked i {
+      color: var(--heart);
+      transform: scale(1.2);
+    }
+
+    .likes-count {
+      position: absolute;
+      top: 1rem;
+      right: 3.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    /* Кнопка назад */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: all 0.2s;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      background: rgba(187, 134, 252, 0.1);
+    }
+
+    .back-btn:hover {
+      color: var(--accent);
+      background: rgba(3, 218, 198, 0.1);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 900px) {
+      .app-container {
+        padding: 1.75rem;
+      }
+      
+      .main-title {
+        font-size: 2.25rem;
+      }
+      
+      .subtitle {
+        font-size: 1.15rem;
+      }
+      
+      .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      
+      .main-title {
+        font-size: 2rem;
+      }
+      
+      .gallery-overlay {
+        padding: 1rem;
+      }
+      
+      .heart-btn {
+        width: 30px;
+        height: 30px;
+      }
+      
+      .likes-count {
+        top: 0.8rem;
+        right: 3rem;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header fade-in">
+      <a href="testt.html" class="logo">
+        <i class="fas fa-crown logo-icon"></i>
+        Ocl Link Gallery
+      </a>
+      <a href="testt.html" class="nav-link back-btn">
+        <i class="fas fa-arrow-left"></i> На главную
+      </a>
+    </header>
+
+    <main>
+      <section id="welcome" class="fade-in delay-1">
+        <h1 class="main-title">Галерея успеха</h1>
+        <p class="subtitle">Лучшие моменты нашей команды и яркие достижения сотрудников</p>
+      </section>
+
+      <section id="gallery" class="fade-in delay-2">
+        <div class="gallery-container" id="galleryContainer">
+          <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i> Загрузка галереи...
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 120,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Локальное хранилище для лайков
+    const LIKES_STORAGE_KEY = 'gallery_likes';
+    let likesData = JSON.parse(localStorage.getItem(LIKES_STORAGE_KEY)) || {};
+
+    // Загрузка галереи из Google Apps Script
+    document.addEventListener('DOMContentLoaded', () => {
+      const galleryContainer = document.getElementById('galleryContainer');
+      const scriptUrl = "https://script.google.com/macros/s/AKfycbyX7rk3Hw1CBA0r93ns_43XEj68pgFTU9IAJaWwvT2nVOpEHDylReRzSrnQLGRTStP_/exec";
+      
+      fetch(scriptUrl)
+        .then(res => {
+          if (!res.ok) throw new Error('Ошибка сети');
+          return res.json();
+        })
+        .then(photos => {
+          if (!photos || photos.length === 0) {
+            galleryContainer.innerHTML = `
+              <div class="error">
+                <i class="fas fa-exclamation-circle"></i> Нет доступных фото
+              </div>
+            `;
+            return;
+          }
+          
+          // Сортируем фото по дате (новые сначала)
+          const sortedPhotos = photos.sort((a, b) => new Date(b.date) - new Date(a.date));
+          
+          // Создаем HTML для галереи
+          let galleryHTML = '';
+          sortedPhotos.forEach((photo, index) => {
+            const photoId = photo.id || photo.url; // Используем URL как ID, если нет специального ID
+            const isLiked = likesData[photoId]?.liked || false;
+            const likesCount = likesData[photoId]?.count || 0;
+            
+            // Формируем содержимое оверлея
+            let overlayContent = '';
+            if (photo.date) {
+              overlayContent += `<p class="gallery-date"><i class="far fa-calendar-alt"></i> ${formatDate(photo.date)}</p>`;
+            }
+            if (photo.title) {
+              overlayContent = `<h3 class="gallery-title">${photo.title}</h3>` + overlayContent;
+            }
+            
+            galleryHTML += `
+              <div class="gallery-card fade-in delay-${index % 3}">
+                <div class="gallery-img-container">
+                  <img src="${photo.url}" alt="${photo.title || 'Фото'}" class="gallery-img" loading="lazy">
+                  
+                  <button class="heart-btn ${isLiked ? 'liked' : ''}" data-photo-id="${photoId}">
+                    <i class="fas fa-heart"></i>
+                  </button>
+                  
+                  ${likesCount > 0 ? `<span class="likes-count">${likesCount}</span>` : ''}
+                  
+                  ${overlayContent ? `
+                  <div class="gallery-overlay">
+                    ${overlayContent}
+                  </div>
+                  ` : ''}
+                </div>
+              </div>
+            `;
+          });
+          
+          galleryContainer.innerHTML = galleryHTML;
+          
+          // Добавляем обработчики событий для кнопок сердечек
+          document.querySelectorAll('.heart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+              const photoId = this.getAttribute('data-photo-id');
+              const isLiked = this.classList.contains('liked');
+              
+              // Обновляем состояние
+              if (!likesData[photoId]) {
+                likesData[photoId] = { liked: true, count: 1 };
+              } else {
+                likesData[photoId].liked = !isLiked;
+                likesData[photoId].count = isLiked 
+                  ? Math.max(0, likesData[photoId].count - 1)
+                  : likesData[photoId].count + 1;
+              }
+              
+              // Сохраняем в localStorage
+              localStorage.setItem(LIKES_STORAGE_KEY, JSON.stringify(likesData));
+              
+              // Обновляем UI
+              this.classList.toggle('liked');
+              const likesCountEl = this.nextElementSibling;
+              
+              if (likesData[photoId].count > 0) {
+                if (!likesCountEl || !likesCountEl.classList.contains('likes-count')) {
+                  const newLikesCount = document.createElement('span');
+                  newLikesCount.className = 'likes-count';
+                  newLikesCount.textContent = likesData[photoId].count;
+                  this.parentNode.insertBefore(newLikesCount, this.nextSibling);
+                } else {
+                  likesCountEl.textContent = likesData[photoId].count;
+                }
+              } else if (likesCountEl && likesCountEl.classList.contains('likes-count')) {
+                likesCountEl.remove();
+              }
+              
+              // Анимация сердца
+              const heartIcon = this.querySelector('i');
+              heartIcon.style.transform = 'scale(1.5)';
+              setTimeout(() => {
+                heartIcon.style.transform = isLiked ? 'scale(1)' : 'scale(1.2)';
+              }, 300);
+            });
+          });
+        })
+        .catch(err => {
+          console.error('Ошибка загрузки галереи:', err);
+          galleryContainer.innerHTML = `
+            <div class="error">
+              <i class="fas fa-exclamation-circle"></i> Ошибка загрузки галереи. Попробуйте позже.
+            </div>
+          `;
+        });
+    });
+
+    // Форматирование даты
+    function formatDate(dateString) {
+      if (!dateString) return '';
+      
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const date = new Date(dateString);
+      
+      if (isNaN(date.getTime())) {
+        return dateString;
+      }
+      
+      return date.toLocaleDateString('ru-RU', options);
+    }
+  </script>
+</body>
+</html>

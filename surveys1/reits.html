@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC | Рейтинг сотрудников</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-secondary: #1E1E1E;
+      --card: #252525;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --primary: #BB86FC;
+      --primary-dark: #3700B3;
+      --accent: #03DAC6;
+      --accent-dark: #018786;
+      --border: #333333;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Шапка */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      color: var(--accent);
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(135deg, var(--primary), #9B51E0);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(187, 134, 252, 0.3);
+    }
+
+    .rating-section {
+      background: linear-gradient(135deg, var(--primary-dark), var(--bg-secondary));
+      padding: 3rem 1rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .rating-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .section-title i {
+      color: var(--accent);
+    }
+
+    .rating-item {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background: var(--bg-secondary);
+      border-left: 4px solid transparent;
+    }
+
+    .rating-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      border-left-color: var(--primary);
+    }
+
+    .medal {
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+      width: 40px;
+      text-align: center;
+    }
+
+    .rating-details {
+      flex-grow: 1;
+    }
+
+    .rating-name {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      font-size: 1.1rem;
+    }
+
+    .rating-count {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rating-count i {
+      color: var(--accent);
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 3px;
+      transition: width 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem;
+      }
+      
+      .rating-container {
+        padding: 1.75rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .rating-item {
+        padding: 1rem;
+      }
+      
+      .medal {
+        margin-right: 1rem;
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 1.3rem;
+      }
+      
+      .back-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .rating-container {
+        padding: 1.5rem;
+      }
+      
+      .rating-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .medal {
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Шапка с лого и кнопкой -->
+    <header class="header fade-in">
+      <a href="index.html" class="logo">
+        <i class="fas fa-crown logo-icon"></i>
+        OcL Link
+      </a>
+      <a href="testt.html" class="back-btn">
+        <i class="fas fa-home"></i> На главную
+      </a>
+    </header>
+
+    <section class="rating-section fade-in">
+      <div class="rating-container">
+        <h2 class="section-title">
+          <i class="fas fa-trophy"></i>
+          Рейтинг сотрудников
+        </h2>
+        <div id="employeeList" class="fade-in delay-1">
+          <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i> Загрузка рейтинга...
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbzeHulB4qYsizNVEUPE0zny5lGrCFP4UOO8_IiP3DxkmJappCXWXL8V1LNnkP5RPiAk2w/exec")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("employeeList");
+        
+        if (!data || data.length === 0) {
+          container.innerHTML = '<div class="error">Нет данных о рейтинге</div>';
+          return;
+        }
+
+        // Сортируем по убыванию активности
+        const sortedData = data.sort((a, b) => b.count - a.slice);
+        const maxCount = sortedData[0].count;
+        
+        let html = '';
+        const medals = ['🥇', '🥈', '🥉'];
+        
+        sortedData.slice(0, 80).forEach((employee, index) => {
+          const percentage = (employee.count / maxCount) * 100;
+          
+          html += `
+            <div class="rating-item">
+              <span class="medal">${medals[index] || `${index + 1}.`}</span>
+              <div class="rating-details">
+                <div class="rating-name">${employee.name}</div>
+                <div class="rating-count">
+                  <i class="fas fa-chart-line"></i> ${employee.count} активностей
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: ${percentage}%"></div>
+                </div>
+              </div>
+            </div>`;
+        });
+
+        container.innerHTML = html;
+        
+        // Анимируем прогресс-бары после загрузки
+        setTimeout(() => {
+          document.querySelectorAll('.progress-fill').forEach(bar => {
+            bar.style.transition = 'width 1.5s cubic-bezier(0.65, 0, 0.35, 1)';
+          });
+        }, 100);
+      })
+      .catch(err => {
+        console.error("Ошибка загрузки данных:", err);
+        document.getElementById("employeeList").innerHTML = `
+          <div class="error">
+            <i class="fas fa-exclamation-circle"></i> Ошибка загрузки рейтинга
+          </div>`;
+      });
+  </script>
+</body>
+</html>
