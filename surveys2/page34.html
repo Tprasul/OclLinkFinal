@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OcL Link | Выбор станции</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-secondary: #1E1E1E;
+      --card: #252525;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --primary: #BB86FC;
+      --primary-dark: #3700B3;
+      --accent: #03DAC6;
+      --accent-dark: #018786;
+      --border: #333333;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .app-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Шапка */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      color: var(--accent);
+    }
+
+    /* Аккордеон */
+    .accordion {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .accordion-item {
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--card);
+    }
+
+    .accordion-header {
+      padding: 1.5rem 2rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+      background: rgba(187, 134, 252, 0.1);
+    }
+
+    .accordion-header:hover {
+      background: rgba(187, 134, 252, 0.2);
+    }
+
+    .accordion-header i {
+      transition: transform 0.3s;
+    }
+
+    .accordion-item.active .accordion-header i {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Карточки станций */
+    .station-card {
+      background: var(--bg-secondary);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s;
+      border: 1px solid var(--border);
+    }
+
+    .station-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .station-card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .station-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      background: rgba(187, 134, 252, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .station-title {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .coming-soon {
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .app-container {
+        padding: 1.5rem;
+      }
+      
+      .accordion-content {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      .station-card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header fade-in">
+      <a href="testt.html" class="logo">
+        <i class="fas fa-utensils logo-icon"></i>
+        OcL Link
+      </a>
+    </header>
+
+    <main>
+      <div class="accordion">
+        <!-- Касса -->
+        <div class="accordion-item fade-in delay-1">
+          <div class="accordion-header">
+            <span><i class="fas fa-cash-register"></i> Касса</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="station-card">
+              <a href="pakertp.html">
+                <div class="station-icon"><i class="fas fa-box-open"></i></div>
+                <h3 class="station-title">Пакер</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="kassatp.html">
+                <div class="station-icon"><i class="fas fa-calculator"></i></div>
+                <h3 class="station-title">Касса</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page2.html">
+                <div class="station-icon"><i class="fas fa-bullhorn"></i></div>
+                <h3 class="station-title">Презентор</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="naptp.html">
+                <div class="station-icon"><i class="fas fa-coffee"></i></div>
+                <h3 class="station-title">Напиточник</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Кухня -->
+        <div class="accordion-item fade-in delay-2">
+          <div class="accordion-header">
+            <span><i class="fas fa-utensils"></i> Кухня</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="station-card">
+              <a href="page5.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Фри</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page6.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Твистер</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page7.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Твистер веджи чиз</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page8.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Боксмастер</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page9.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Шефбургер Делюкс OR</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page10.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Шефбургер Делюкс HS</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page11.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Шеф Тауэр OR</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page12.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Шеф Тауэр HS</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page13.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Чизбургер</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page14.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Чизбургер делюкс</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page15.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Шефбургер OR</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page16.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Шефбургер HS</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page25.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Твистер Джуниор</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page26.html">
+                <div class="station-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="station-title">Ай твистер чиз</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <div class="station-icon"><i class="fas fa-clock"></i></div>
+              <h3 class="station-title">Скоро...</h3>
+              <p class="coming-soon">В разработке</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Панера -->
+        <div class="accordion-item fade-in delay-3">
+          <div class="accordion-header">
+            <span><i class="fas fa-drumstick-bite"></i> Панера</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="station-card">
+              <a href="page17.html">
+                <div class="station-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <h3 class="station-title">Крылья | Стрипсы HS</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page20.html">
+                <div class="station-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <h3 class="station-title">Ножки OR</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page19.html">
+                <div class="station-icon"><i class="fas fa-bacon"></i></div>
+                <h3 class="station-title">Стрипсы OR</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page18.html">
+                <div class="station-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <h3 class="station-title">Филе OR\HS</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <div class="station-icon"><i class="fas fa-clipboard-question"></i></div>
+              <h3 class="station-title">Общий опрос</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Тайгета -->
+        <div class="accordion-item fade-in delay-4">
+          <div class="accordion-header">
+            <span><i class="fas fa-clock"></i> Тайгета</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="station-card">
+              <a href="page29.html">
+                <div class="station-icon" style="color: #3B82F6;"><i class="fas fa-stopwatch"></i></div>
+                <h3 class="station-title">Синяя зона</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page32.html">
+                <div class="station-icon" style="color: #10B981;"><i class="fas fa-stopwatch"></i></div>
+                <h3 class="station-title">Зеленая зона</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page28.html">
+                <div class="station-icon" style="color: #F59E0B;"><i class="fas fa-stopwatch"></i></div>
+                <h3 class="station-title">Желтая зона</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page30.html">
+                <div class="station-icon" style="color: #EF4444;"><i class="fas fa-stopwatch"></i></div>
+                <h3 class="station-title">Красная зона</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page31.html">
+                <div class="station-icon" style="color: #000000;"><i class="fas fa-stopwatch"></i></div>
+                <h3 class="station-title">Черная зона</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page33.html">
+                <div class="station-icon"><i class="fas fa-clipboard-question"></i></div>
+                <h3 class="station-title">Общий опрос</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Прочее -->
+        <div class="accordion-item fade-in delay-4">
+          <div class="accordion-header">
+            <span><i class="fas fa-ellipsis-h"></i> Прочее</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="station-card">
+              <a href="page24.html">
+                <div class="station-icon"><i class="fas fa-user-tie"></i></div>
+                <h3 class="station-title">HR Опрос</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page27.html">
+                <div class="station-icon"><i class="fas fa-table"></i></div>
+                <h3 class="station-title">Table visit</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page22.html">
+                <div class="station-icon"><i class="fas fa-bell"></i></div>
+                <h3 class="station-title">Кликун</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page21.html">
+                <div class="station-icon"><i class="fas fa-user-check"></i></div>
+                <h3 class="station-title">Хостесс</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page23.html">
+                <div class="station-icon"><i class="fas fa-search"></i></div>
+                <h3 class="station-title">Скаут</h3>
+              </a>
+            </div>
+            <div class="station-card">
+              <a href="page35.html">
+                <div class="station-icon"><i class="fas fa-user-tie"></i></div>
+                <h3 class="station-title">Бренд Шеф</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Анимация аккордеона
+    document.addEventListener('DOMContentLoaded', function() {
+      const accordionHeaders = document.querySelectorAll('.accordion-header');
+      
+      accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+          const item = this.parentElement;
+          const content = this.nextElementSibling;
+          
+          // Закрываем все открытые элементы
+          document.querySelectorAll('.accordion-item').forEach(el => {
+            if (el !== item) {
+              el.classList.remove('active');
+              el.querySelector('.accordion-content').style.display = 'none';
+            }
+          });
+          
+          // Переключаем текущий элемент
+          item.classList.toggle('active');
+          if (content.style.display === 'grid') {
+            content.style.display = 'none';
+          } else {
+            content.style.display = 'grid';
+          }
+        });
+      });
+      
+      // Открываем первый элемент по умолчанию
+      if (accordionHeaders.length > 0) {
+        accordionHeaders[0].click();
+      }
+    });
+  </script>
+</body>
+</html>

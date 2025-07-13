@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Training | Профессиональный портал</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-secondary: #1E1E1E;
+      --card: #252525;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --primary: #BB86FC; /* Фиолетовый акцент */
+      --primary-dark: #3700B3;
+      --accent: #03DAC6; /* Бирюзовый акцент */
+      --accent-dark: #018786;
+      --border: #333333;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .app-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Шапка */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-icon {
+      color: var(--accent);
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-link {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      padding: 0.5rem 0;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Основной контент */
+    .main-title {
+      font-size: 2.75rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--primary);
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      max-width: 700px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-title i {
+      color: var(--accent);
+    }
+
+    /* Карточки */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.25rem 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+      transition: width 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover::before {
+      width: 6px;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .card-text {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    .card-buttons {
+      margin-top: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 12px rgba(187, 134, 252, 0.2);
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, var(--primary), #9B51E0);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(187, 134, 252, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: rgba(187, 134, 252, 0.1);
+      color: var(--primary);
+    }
+
+    /* Галерея */
+    .gallery-preview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      background-size: cover;
+      background-position: center;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Рейтинг */
+    .rating-container {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 4rem;
+      border: 1px solid var(--border);
+    }
+
+    .rating-item {
+      display: flex;
+      align-items: center;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+      background: var(--bg-secondary);
+    }
+
+    .rating-item:hover {
+      background: rgba(187, 134, 252, 0.05);
+    }
+
+    .medal {
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+      width: 40px;
+      text-align: center;
+    }
+
+    .rating-details {
+      flex-grow: 1;
+    }
+
+    .rating-name {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .rating-count {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* Калькулятор */
+    .calculator {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 4rem;
+      border: 1px solid var(--border);
+    }
+
+    .form-group {
+      margin-bottom: 1.75rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      background: var(--bg-secondary);
+      color: var(--text);
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.1);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .checkbox-group input {
+      width: auto;
+      transform: scale(1.3);
+    }
+
+    .checkbox-group label {
+      margin-bottom: 0;
+      color: var(--text);
+    }
+
+    .result {
+      margin-top: 2.5rem;
+      padding: 1.75rem;
+      background: rgba(187, 134, 252, 0.03);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .result p {
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .result p:last-child {
+      margin-bottom: 0;
+    }
+
+    .result strong {
+      color: var(--primary);
+    }
+
+    /* Комментарии */
+    .comments-container {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .comment {
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      transition: transform 0.2s;
+    }
+
+    .comment:hover {
+      transform: translateY(-3px);
+    }
+
+    .comment-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .comment-meta span:first-child {
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .comment-text {
+      line-height: 1.7;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 900px) {
+      .app-container {
+        padding: 1.75rem;
+      }
+      
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+      
+      .nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+      }
+      
+      .main-title {
+        font-size: 2.25rem;
+      }
+      
+      .subtitle {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .card {
+        padding: 1.75rem;
+      }
+      
+      .rating-container, 
+      .calculator,
+      .comments-container {
+        padding: 1.75rem;
+      }
+
+      .gallery-preview {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+   /* Стили для пасхалок */
+    .easter-egg-trigger {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      opacity: 0.01;
+      z-index: 1000;
+      cursor: pointer;
+    }
+    
+    #easter1-trigger { top: 20px; left: 20px; }
+    #easter2-trigger { top: 20px; right: 20px; }
+    #easter3-trigger { bottom: 20px; right: 20px; }
+    
+    .easter-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    .easter-content {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 90%;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    .easter-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .easter-title {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    
+    .easter-text {
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    
+    .easter-image {
+      max-width: 100%;
+      max-height: 300px;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Триггеры для пасхалок (невидимые кликабельные области) -->
+  <div class="easter-egg-trigger" id="easter1-trigger" title=""></div>
+  <div class="easter-egg-trigger" id="easter2-trigger" title=""></div>
+  <div class="easter-egg-trigger" id="easter3-trigger" title=""></div>
+  
+  <!-- Модальные окна для пасхалок -->
+  <div class="easter-modal" id="easterModal1">
+    <div class="easter-content">
+      <button class="easter-close" onclick="closeEaster(1)">&times;</button>
+      <h2 class="easter-title">🍗 Секретный рецепт!</h2>
+      <p class="easter-text">Поздравляем! Вы нашли первую пасхалку!</p>
+      <p>11 трав и специй - это важно, но настоящий секрет KFC - это люди, которые с любовью готовят для наших гостей!</p>
+    </div>
+  </div>
+  
+  <div class="easter-modal" id="easterModal2">
+    <div class="easter-content">
+      <button class="easter-close" onclick="closeEaster(2)">&times;</button>
+      <h2 class="easter-title">🎮 Игровая пауза!</h2>
+      <p class="easter-text">Вы нашли вторую пасхалку!</p>
+      <p>"Курочка наше всё!"</p>
+    </div>
+  </div>
+  
+  <div class="easter-modal" id="easterModal3">
+    <div class="easter-content">
+      <button class="easter-close" onclick="closeEaster(3)">&times;</button>
+      <h2 class="easter-title">🔐 Секретный уровень!</h2>
+      <p class="easter-text">Вы нашли третью пасхалку!</p>
+      <p>Поздравляю!</p>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <!-- Весь предыдущий HTML-код портала остается без изменений -->
+    <!-- ... -->
+  </div>
+
+  <script>
+    // Все предыдущие скрипты портала остаются без изменений
+    // Только добавляем новые функции для пасхалок в конец скрипта
+
+    // Инициализация пасхалок после загрузки DOM
+    document.addEventListener("DOMContentLoaded", function() {
+      initEasterEggs();
+      
+      // Третья пасхалка - тройной клик по логотипу
+      const logo = document.querySelector('.logo');
+      let clickCount = 0;
+      
+      logo.addEventListener('click', function() {
+        clickCount++;
+        if (clickCount === 3) {
+          showEaster(3);
+          clickCount = 0;
+        }
+        setTimeout(() => { clickCount = 0; }, 1000);
+      });
+    });
+
+    // Функции для работы пасхалок
+    function initEasterEggs() {
+      // Пасхалка 1: клик в левом верхнем углу
+      document.getElementById('easter1-trigger').addEventListener('click', () => showEaster(1));
+      
+      // Пасхалка 2: клик в правом верхнем углу
+      document.getElementById('easter2-trigger').addEventListener('click', () => showEaster(2));
+      
+      // Пасхалка 3: тройной клик по логотипу (обрабатывается выше)
+    }
+    
+    function showEaster(eggNumber) {
+      const modal = document.getElementById(`easterModal${eggNumber}`);
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    function closeEaster(eggNumber) {
+      const modal = document.getElementById(`easterModal${eggNumber}`);
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+    
+    // Закрытие модального окна при клике вне его
+    window.addEventListener('click', function(e) {
+      if (e.target.classList.contains('easter-modal')) {
+        e.target.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</body>
+</html>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header fade-in">
+      <a href="#" class="logo">
+        <i class="fas fa-crown logo-icon"></i>
+        OcL Link
+      </a>
+      <nav class="nav">
+        <a href="#navigation" class="nav-link">Навигация</a>
+        <a href="#rating" class="nav-link">Рейтинг</a>
+        <a href="#calculator" class="nav-link">Калькулятор</a>
+        <a href="#comments" class="nav-link">Комментарии</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="welcome" class="fade-in delay-1">
+        <h1 class="main-title">Профессиональный портал для сотрудников KFC</h1>
+        <p class="subtitle">Все инструменты для эффективной работы, обучения и профессионального роста в одном месте</p>
+      </section>
+
+      <section id="navigation" class="fade-in delay-2">
+        <h2 class="section-title">
+          <i class="fas fa-compass"></i>
+          Быстрый доступ
+        </h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+            <h3 class="card-title">Аналитика и отчёты</h3>
+            <p class="card-text">Детальная статистика по работе ресторанов и показателям сотрудников</p>
+            <div class="card-buttons">
+              <a href="https://docs.google.com/spreadsheets/d/1oFUNvcD8Cbs5tWlvPaj94t3jWuXOsvD0M5cl2r6yEpM/edit?gid=0#gid=0" target="_blank" class="btn">
+                Открыть отчёты <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-poll"></i></div>
+            <h3 class="card-title">Оценка работы</h3>
+            <p class="card-text">Пройти опросы и оценить работу коллег для улучшения показателей</p>
+            <div class="card-buttons">
+              <a href="page34.html" class="btn">
+                Пройти опрос <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-star"></i></div>
+            <h3 class="card-title">Рейтинг сотрудников</h3>
+            <p class="card-text">Текущие показатели и достижения сотрудников сети ресторанов</p>
+            <div class="card-buttons">
+              <a href="reits.html" class="btn">
+                Смотреть рейтинг <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rating" class="fade-in delay-3">
+        <div class="rating-container">
+          <h2 class="section-title">
+            <i class="fas fa-trophy"></i>
+            Топ тренеров
+          </h2>
+          <div id="topList">Загрузка рейтинга...</div>
+        </div>
+      </section>
+
+      <section id="motivation" class="fade-in delay-4">
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+            <h3 class="card-title">Мотивация дня</h3>
+            <div id="motivationBox" class="card-text">Загрузка...</div>
+            <div class="card-buttons">
+              <button class="btn" onclick="newMotivation()">
+                Обновить <i class="fas fa-redo"></i>
+              </button>
+            </div>
+          </div>
+          
+        <div class="card">
+  <div class="card-icon"><i class="fas fa-images"></i></div>
+  <h3 class="card-title">Галерея успеха</h3>
+  <div class="card-text">
+    <div class="gallery-preview">
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/cJcP2LS6/photo-1751506794971.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/tJ6KrtCG/photo-1751544738702.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/BvtwYcM7/photo-1751715126306.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/GtjQhHXs/photo.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/DyyQPfCB/photo-1.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/6q180K3m/photo-1751814184858.jpg')"></div>
+    </div>
+    Лучшие моменты нашей команды
+  </div>
+  <div class="card-buttons">
+    <a href="photo.html" class="btn">
+      Открыть галерею <i class="fas fa-images"></i>
+    </a>
+  </div>
+</div>
+          
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-tasks"></i></div>
+            <h3 class="card-title">Челлендж дня</h3>
+            <div id="challengeBox" class="card-text">Загрузка...</div>
+            <div class="card-buttons">
+              <button class="btn" onclick="newChallenge()">
+                Новый челлендж <i class="fas fa-redo"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="calculator">
+        <div class="calculator">
+          <h2 class="section-title">
+            <i class="fas fa-calculator"></i>
+            Калькулятор зарплаты
+          </h2>
+          
+          <div class="form-group">
+            <label for="position">Ваша должность</label>
+            <select id="position">
+              <option value="">-- Выберите должность --</option>
+              <option value="trainer">Тренер</option>
+              <option value="trainer2">Тренер 2</option>
+              <option value="chk1">ЧК1</option>
+              <option value="chk2">ЧК2</option>
+              <option value="chk3">ЧК3</option>
+              <option value="tehn">Тех ночь</option>
+              <option value="tehz">Тех зал</option>
+            </select>
+          </div>
+          
+          <div class="dual-input">
+            <div class="form-group">
+              <label for="dayHours">Дневные часы</label>
+              <input type="number" id="dayHours" placeholder="Введите количество часов">
+            </div>
+            
+            <div class="form-group">
+              <label for="nightHours">Ночные часы</label>
+              <input type="number" id="nightHours" placeholder="Введите количество часов">
+            </div>
+          </div>
+          
+          <div class="checkbox-group">
+            <input type="checkbox" id="bonus">
+            <label for="bonus">Перфоманс бонус (+3000 сом)</label>
+          </div>
+          
+          <button class="btn" onclick="calculate()">
+            Рассчитать зарплату <i class="fas fa-calculator"></i>
+          </button>
+          
+          <div class="result" id="result"></div>
+        </div>
+      </section>
+
+      <section id="comments">
+        <div class="comments-container">
+          <h2 class="section-title">
+            <i class="fas fa-comment-alt"></i>
+            Последние комментарии HR
+          </h2>
+          <div id="commentList">Загрузка комментариев...</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 120,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Рейтинг тренеров
+    fetch("https://script.google.com/macros/s/AKfycby7Bu_8xVgf8qht4ifdDuv_DXyY5NeI4xHMx6ihyPNaHDF2BDTIQangziO9Da_to8N2/exec")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("topList");
+        if (!data || data.length === 0) {
+          container.innerHTML = '<p style="color: var(--text-light); text-align: center;">Нет данных о рейтинге</p>';
+          return;
+        }
+
+        const medals = ['🥇', '🥈', '🥉'];
+        let html = '';
+
+        data.slice(0, 5).forEach((hr, index) => {
+          html += `
+            <div class="rating-item">
+              <span class="medal">${medals[index] || `${index + 1}.`}</span>
+              <div class="rating-details">
+                <div class="rating-name">${hr.name}</div>
+                <div class="rating-count">${hr.count} опросов</div>
+              </div>
+            </div>`;
+        });
+
+        container.innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById("topList").innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки рейтинга</p>';
+        console.error("Ошибка загрузки данных:", err);
+      });
+
+    // Мотивация и челлендж
+    const motivationList = [
+      "Сегодняшний день - это новая возможность превзойти свои вчерашние достижения!",
+      "Ваша работа создает тот уникальный опыт, который клиенты KFC ценят и любят.",
+      "Каждое ваше действие влияет на общий успех команды - делайте это с гордостью!",
+      "Помните: даже небольшие улучшения в работе приводят к значительным результатам.",
+      "Вы - лицо KFC для наших гостей. Ваше отношение делает их день лучше!"
+    ];
+
+    const challengeList = [
+      "Помогите новому сотруднику освоить один новый навык сегодня",
+      "Найдите и похвалите трех коллег за их профессиональные качества",
+      "Предложите одну идею по улучшению работы вашего ресторана",
+      "Сделайте комплимент гостю, который выглядит уставшим или грустным",
+      "Поделитесь своим лучшим профессиональным советом с командой"
+    ];
+
+    function getRandomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function newMotivation() {
+      const box = document.getElementById("motivationBox");
+      box.textContent = "Загрузка...";
+      setTimeout(() => {
+        box.textContent = getRandomItem(motivationList);
+      }, 300);
+    }
+
+    function newChallenge() {
+      const box = document.getElementById("challengeBox");
+      box.textContent = "Загрузка...";
+      setTimeout(() => {
+        box.textContent = getRandomItem(challengeList);
+      }, 300);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("motivationBox").textContent = getRandomItem(motivationList);
+      document.getElementById("challengeBox").textContent = getRandomItem(challengeList);
+    });
+
+    // Калькулятор зарплаты
+    const rates = {
+      trainer: { day: 186, night: 246, advance: 8000 },
+      trainer2: { day: 191, night: 253, advance: 8000 },
+      chk1: { day: 151, night: 198, advance: 7000 },
+      chk2: { day: 166, night: 218, advance: 7000 },
+      chk3: { day: 171, night: 226, advance: 7000 },
+      tehn: { day: 220, night: 220, advance: 7000 },
+      tehz: { day: 156, night: 203, advance: 7000 }
+    };
+
+    function calculate() {
+      const position = document.getElementById('position').value;
+      const dayHours = parseInt(document.getElementById('dayHours').value) || 0;
+      const nightHours = parseInt(document.getElementById('nightHours').value) || 0;
+      const hasBonus = document.getElementById('bonus').checked;
+      const bonus = hasBonus ? 3000 : 0;
+
+      if (!position || !rates[position]) {
+        document.getElementById('result').innerHTML = '<p style="color: var(--accent); text-align: center;">Пожалуйста, выберите должность</p>';
+        return;
+      }
+
+      const rate = rates[position];
+      const dayPay = dayHours * rate.day;
+      const nightPay = nightHours * rate.night;
+      const total = dayPay + nightPay + bonus - rate.advance;
+
+      document.getElementById('result').innerHTML = `
+        <p><span>Дневные часы:</span> <strong>${dayHours} × ${rate.day} = ${dayPay} сом</strong></p>
+        <p><span>Ночные часы:</span> <strong>${nightHours} × ${rate.night} = ${nightPay} сом</strong></p>
+        <p><span>Бонус:</span> <strong>${bonus} сом</strong></p>
+        <p><span>Аванс:</span> <strong>-${rate.advance} сом</strong></p>
+        <hr>
+        <p style="font-size: 1.1rem;"><span>Итого к выплате:</span> <strong style="color: var(--primary);">${total} сом</strong></p>
+      `;
+    }
+
+    // Комментарии HR
+    fetch("https://script.google.com/macros/s/AKfycbzSYgtfuDMirAPiKPG45OxtGq5H885Kf7hinq2lvj5U4I1sOw3mle3pOzkfoWR3wawS/exec")
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("commentList");
+        if (!data || data.length === 0) {
+          container.innerHTML = '<p style="color: var(--text-light); text-align: center;">Нет новых комментариев</p>';
+          return;
+        }
+
+        const sorted = data.sort((a, b) => {
+          const [da, ma, ya] = a.date.split('.').map(Number);
+          const [db, mb, yb] = b.date.split('.').map(Number);
+          return new Date(yb, mb - 1, db) - new Date(ya, ma - 1, da);
+        });
+
+        let html = '';
+        sorted.slice(0, 10).forEach(entry => {
+          html += `
+            <div class="comment">
+              <div class="comment-meta">
+                <span>${entry.hr}</span>
+                <span>${entry.date}</span>
+              </div>
+              <div class="comment-meta">
+                <span>Сотрудник: ${entry.employee}</span>
+                <span>Станция: ${entry.station}</span>
+              </div>
+              <p class="comment-text">${entry.comment}</p>
+            </div>`;
+        });
+
+        container.innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById("commentList").innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки комментариев</p>';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
