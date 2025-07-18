@@ -123,9 +123,35 @@
       cursor: pointer;
     }
 
+    .btn-secondary {
+      background: var(--border);
+      margin-top: 0.5rem;
+    }
+
     .btn:hover {
       background: #6D28D9;
       transform: translateY(-2px);
+    }
+
+    .btn-secondary:hover {
+      background: #444444;
+    }
+
+    .password-input {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      color: var(--text);
+      font-size: 1rem;
+      width: 100%;
+      max-width: 300px;
+      margin: 1rem auto;
+      outline: none;
+    }
+
+    .password-input:focus {
+      border-color: var(--primary);
     }
 
     @media (max-width: 768px) {
@@ -158,9 +184,12 @@
       "77.235.27.103", // ресторан дон
       "77.235.28.185", // ресторан гор
       "77.235.28.84",  // ресторан маг
-       "92.245.114.61",  // ресторан азия
+      "92.245.114.61",  // ресторан азия
       "212.112.125.167"  // Офис Рустам
     ];
+
+    // Пароль для специального доступа (можно изменить)
+    const specialAccessPassword = "ges123";
 
     // Имитация задержки для демонстрации (можно убрать в продакшене)
     setTimeout(() => {
@@ -169,26 +198,19 @@
         .then(data => {
           if (allowedIps.includes(data.ip)) {
             // Успешный доступ
-            document.getElementById("access-card").innerHTML = `
-              <h1><i class="fas fa-check-circle icon icon-success"></i> Доступ разрешён</h1>
-              <p>Вы успешно подключены к сети ресторана.</p>
-              <p>Идёт перенаправление на главную страницу...</p>
-              <div class="loading">
-                <div class="spinner" style="border-top-color: var(--accent);"></div>
-              </div>
-            `;
-            setTimeout(() => {
-              window.location.href = "home.html";
-            }, 2000);
+            grantAccess();
           } else {
-            // Доступ запрещён
+            // Доступ запрещён - показываем кнопку для специального входа
             document.getElementById("access-card").innerHTML = `
               <h1><i class="fas fa-times-circle icon icon-error"></i> Доступ запрещён</h1>
               <p>Вы должны быть подключены к Wi-Fi ресторана для доступа к сайту.</p>
               <p>Ваш IP-адрес:</p>
               <div class="ip-address">${data.ip}</div>
-              <p style="margin-top: 1.5rem;">Пожалуйста, подключитесь к сети ресторана и попробуйте снова.</p>
-              <button class="btn" onclick="window.location.reload()">
+              <p style="margin-top: 1.5rem;">Если Wi-Fi ресторана не работает, вы можете использовать специальный вход.</p>
+              <button class="btn" onclick="showSpecialAccessForm()">
+                <i class="fas fa-key"></i> Специальный вход
+              </button>
+              <button class="btn btn-secondary" onclick="window.location.reload()">
                 <i class="fas fa-sync-alt"></i> Попробовать снова
               </button>
             `;
@@ -206,6 +228,52 @@
           console.error("Ошибка получения IP:", err);
         });
     }, 1500); // Искусственная задержка для демонстрации
+
+    function showSpecialAccessForm() {
+      document.getElementById("access-card").innerHTML = `
+        <h1><i class="fas fa-key icon"></i> Специальный доступ</h1>
+        <p>Введите пароль для доступа к сайту без Wi-Fi ресторана.</p>
+        <input type="password" class="password-input" id="special-access-password" placeholder="Введите пароль">
+        <button class="btn" onclick="checkSpecialAccess()">
+          <i class="fas fa-unlock"></i> Войти
+        </button>
+        <button class="btn btn-secondary" onclick="window.location.reload()">
+          <i class="fas fa-arrow-left"></i> Назад
+        </button>
+      `;
+    }
+
+    function checkSpecialAccess() {
+      const enteredPassword = document.getElementById("special-access-password").value;
+      if (enteredPassword === specialAccessPassword) {
+        grantAccess();
+      } else {
+        document.getElementById("access-card").innerHTML = `
+          <h1><i class="fas fa-times-circle icon icon-error"></i> Неверный пароль</h1>
+          <p>Введённый пароль неверный. Пожалуйста, попробуйте снова.</p>
+          <button class="btn" onclick="showSpecialAccessForm()">
+            <i class="fas fa-key"></i> Попробовать снова
+          </button>
+          <button class="btn btn-secondary" onclick="window.location.reload()">
+            <i class="fas fa-arrow-left"></i> Назад
+          </button>
+        `;
+      }
+    }
+
+    function grantAccess() {
+      document.getElementById("access-card").innerHTML = `
+        <h1><i class="fas fa-check-circle icon icon-success"></i> Доступ разрешён</h1>
+        <p>Вы успешно подключены к сети ресторана.</p>
+        <p>Идёт перенаправление на главную страницу...</p>
+        <div class="loading">
+          <div class="spinner" style="border-top-color: var(--accent);"></div>
+        </div>
+      `;
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 2000);
+    }
   </script>
 </body>
 </html>
