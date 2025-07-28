@@ -534,7 +534,6 @@
       </a>
       <nav class="nav">
         <a href="#navigation" class="nav-link">Навигация</a>
-        <a href="#news" class="nav-link">Новости</a>
         <a href="#rating" class="nav-link">Рейтинг</a>
         <a href="#calculator" class="nav-link">Калькулятор</a>
         <a href="#comments" class="nav-link">Комментарии</a>
@@ -543,22 +542,12 @@
 
     <main>
       <section id="welcome" class="fade-in delay-1">
-        <h1 class="main-title">Профессиональный портал для сотрудников KFC</h1>
+        <h2 class="main-title">Профессиональный портал для сотрудников KFC</h2>
         <p class="subtitle">Все инструменты для эффективной работы, обучения и профессионального роста в одном месте</p>
       </section>
 
-      <!-- Новости -->
-      <section id="news" class="fade-in delay-2">
-        <div class="news-container">
-          <h2 class="section-title">
-            <i class="fas fa-newspaper"></i>
-            Последние новости
-          </h2>
-          <div id="newsList">Загрузка новостей...</div>
-        </div>
-      </section>
 
-      <section id="navigation" class="fade-in delay-3">
+      <section id="navigation" class="fade-in delay-2">
         <h2 class="section-title">
           <i class="fas fa-compass"></i>
           Быстрый доступ
@@ -610,7 +599,7 @@
         </div>
       </section>
 
-      <section id="rating" class="fade-in delay-4">
+      <section id="rating" class="fade-in delay-3">
         <div class="rating-container">
           <h2 class="section-title">
             <i class="fas fa-trophy"></i>
@@ -620,7 +609,7 @@
         </div>
       </section>
 
-      <section id="motivation" class="fade-in delay-5">
+      <section id="motivation" class="fade-in delay-4">
         <div class="card-grid">
           <div class="card">
             <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
@@ -633,26 +622,26 @@
             </div>
           </div>
           
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-images"></i></div>
-            <h3 class="card-title">Галерея успеха</h3>
-            <div class="card-text">
-              <div class="gallery-preview">
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/cJcP2LS6/photo-1751506794971.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/tJ6KrtCG/photo-1751544738702.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/BvtwYcM7/photo-1751715126306.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/GtjQhHXs/photo.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/DyyQPfCB/photo-1.jpg')"></div>
-                <div class="gallery-item" style="background-image: url('https://i.postimg.cc/6q180K3m/photo-1751814184858.jpg')"></div>
-              </div>
-              Лучшие моменты нашей команды
-            </div>
-            <div class="card-buttons">
-              <a href="photo.html" class="btn">
-                Открыть галерею <i class="fas fa-images"></i>
-              </a>
-            </div>
-          </div>
+        <div class="card">
+  <div class="card-icon"><i class="fas fa-images"></i></div>
+  <h3 class="card-title">Галерея успеха</h3>
+  <div class="card-text">
+    <div class="gallery-preview">
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/cJcP2LS6/photo-1751506794971.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/tJ6KrtCG/photo-1751544738702.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/BvtwYcM7/photo-1751715126306.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/GtjQhHXs/photo.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/DyyQPfCB/photo-1.jpg')"></div>
+      <div class="gallery-item" style="background-image: url('https://i.postimg.cc/6q180K3m/photo-1751814184858.jpg')"></div>
+    </div>
+    Лучшие моменты нашей команды
+  </div>
+  <div class="card-buttons">
+    <a href="photo.html" class="btn">
+      Открыть галерею <i class="fas fa-images"></i>
+    </a>
+  </div>
+</div>
           
           <div class="card">
             <div class="card-icon"><i class="fas fa-tasks"></i></div>
@@ -756,7 +745,7 @@
         data.slice(0, 5).forEach((hr, index) => {
           html += `
             <div class="rating-item">
-              <span class="medal">${medals[index] || ${index + 1}.}</span>
+              <span class="medal">${medals[index] || `${index + 1}.`}</span>
               <div class="rating-details">
                 <div class="rating-name">${hr.name}</div>
                 <div class="rating-count">${hr.count} опросов</div>
@@ -770,106 +759,75 @@
         document.getElementById("topList").innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки рейтинга</p>';
         console.error("Ошибка загрузки данных:", err);
       });
-
-    // Загрузка новостей
-    function loadNews() {
-      const scriptUrl = "https://script.google.com/macros/s/AKfycbzFHt756fLiH8R-vYQ3AVXxjl2EMFJUKPeWIMLSRaczQ9tPN2PH7s0MSspXiL0DYgql/exec";
-      
-      fetch(scriptUrl + "?action=getNews")
-        .then(response => response.json())
-        .then(data => {
-          const container = document.getElementById("newsList");
-          
-          if (!data || data.length === 0) {
-            container.innerHTML = '<p style="color: var(--text-light); text-align: center;">Нет новостей</p>';
-            return;
-          }
-
-          let html = '';
-          data.forEach(news => {
-            html += `
-              <div class="news-item">
-                <div class="news-date">${news.date}</div>
-                <h3 class="news-title">${news.title}</h3>
-                <p class="news-text">${news.text}</p>
-              </div>`;
-          });
-          
-          container.innerHTML = html;
-        })
-        .catch(error => {
-          console.error("Ошибка загрузки новостей:", error);
-          document.getElementById("newsList").innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки новостей</p>';
-        });
-    }
+       
 
     // Мотивация и челлендж
     const motivationList = [
-      "Сегодня ты на шаг ближе к своим целям, чем вчера",
-      "Клиент может забыть, что ты сказал, но не забудет, как ты его обслужил",
-      "Твоя работа - это живое воплощение нашего бренда",
-      "Даже маленькие улучшения приводят к большим результатам",
-      "Ты не просто сотрудник - ты лицо KFC для наших гостей",
-      "Каждый правильно собранный заказ - это мини-победа",
-      "Работа в команде - наш секрет успеха",
-      "Твои руки создают то, что люди будут вспоминать с удовольствием",
-      "Сложности делают нас сильнее - ты справишься!",
-      "Сегодняшние усилия - завтрашние результаты",
-      "Каждый клиент заслуживает твоего лучшего сервиса",
-      "Ты делаешь больше, чем просто работу - ты создаёшь эмоции",
-      "Даже в самый загруженный день находи повод для улыбки",
-      "Твой энтузиазм вдохновляет всю команду",
-      "Качество - это не случайность, а результат твоего труда",
-      "Ты - часть большой семьи KFC, и мы ценим тебя!",
-      "Каждая смена - новый шанс стать лучше",
-      "Клиенты приходят за едой, а возвращаются за атмосферой",
-      "Твоя аккуратность - гарантия нашего стандарта",
-      "Даже маленькая победа сегодня - шаг к большому успеху",
-      "Ты не просто выполняешь работу - ты создаёшь традиции",
-      "Самые лучшие команды начинаются с таких как ты",
-      "Твой профессионализм делает нас лучше каждый день",
-      "Запомни: ты можешь больше, чем думаешь",
-      "Даже если трудно - ты справишься, мы верим в тебя!",
-      "Каждый день - возможность научиться чему-то новому",
-      "Твоя работа делает людей счастливее - это важно",
-      "Стандарты - это минимум, а ты можешь дать максимум!",
-      "Ты - часть чего-то большего, чем просто ресторан",
-      "Даже в рутине можно найти вдохновение",
-      "Твой настрой задаёт тон всей смене",
-      "Качество - это когда клиент возвращается, а не еда",
-      "Ты не просто сотрудник - ты создатель хорошего настроения",
-      "Сегодняшние усилия - завтрашние достижения",
-      "Гордись своей работой - ты делаешь мир вкуснее!"
+       "Сегодня ты на шаг ближе к своим целям, чем вчера",
+    "Клиент может забыть, что ты сказал, но не забудет, как ты его обслужил",
+    "Твоя работа - это живое воплощение нашего бренда",
+    "Даже маленькие улучшения приводят к большим результатам",
+    "Ты не просто сотрудник - ты лицо KFC для наших гостей",
+    "Каждый правильно собранный заказ - это мини-победа",
+    "Работа в команде - наш секрет успеха",
+    "Твои руки создают то, что люди будут вспоминать с удовольствием",
+    "Сложности делают нас сильнее - ты справишься!",
+    "Сегодняшние усилия - завтрашние результаты",
+    "Каждый клиент заслуживает твоего лучшего сервиса",
+    "Ты делаешь больше, чем просто работу - ты создаёшь эмоции",
+    "Даже в самый загруженный день находи повод для улыбки",
+    "Твой энтузиазм вдохновляет всю команду",
+    "Качество - это не случайность, а результат твоего труда",
+    "Ты - часть большой семьи KFC, и мы ценим тебя!",
+    "Каждая смена - новый шанс стать лучше",
+    "Клиенты приходят за едой, а возвращаются за атмосферой",
+    "Твоя аккуратность - гарантия нашего стандарта",
+    "Даже маленькая победа сегодня - шаг к большому успеху",
+    "Ты не просто выполняешь работу - ты создаёшь традиции",
+    "Самые лучшие команды начинаются с таких как ты",
+    "Твой профессионализм делает нас лучше каждый день",
+    "Запомни: ты можешь больше, чем думаешь",
+    "Даже если трудно - ты справишься, мы верим в тебя!",
+    "Каждый день - возможность научиться чему-то новому",
+    "Твоя работа делает людей счастливее - это важно",
+    "Стандарты - это минимум, а ты можешь дать максимум!",
+    "Ты - часть чего-то большего, чем просто ресторан",
+    "Даже в рутине можно найти вдохновение",
+    "Твой настрой задаёт тон всей смене",
+    "Качество - это когда клиент возвращается, а не еда",
+    "Ты не просто сотрудник - ты создатель хорошего настроения",
+    "Сегодняшние усилия - завтрашние достижения",
+    "Гордись своей работой - ты делаешь мир вкуснее!"
     ];
 
     const challengeList = [
       "Найди нестандартное решение для сложной ситуации сегодня",
-      "Сделай комплимент каждому члену своей смены",
-      "Придумай способ сэкономить 1 минуту на каждом заказе",
-      "Покажи пример идеального соблюдения стандартов сегодня",
-      "Обрати внимание на 3 вещи, которые можно улучшить в ресторане",
-      "Создай 'момент wow' для одного клиента сегодня",
-      "Пройди весь чек-лист своей станции без единой ошибки",
-      "Найди способ сделать работу коллеги немного легче",
-      "Собери 20 заказов подряд без замечаний по качеству",
-      "Создай позитивную атмосферу в команде сегодня",
-      "Предложи одну идею по улучшению работы ресторана",
-      "Пройди смену с идеальным соблюдением таймингов",
-      "Сделай 3 добрых жеста для коллег без причины",
-      "Научись готовить продукт, который обычно не готовишь",
-      "Создай самый фотогеничный заказ за день",
-      "Пройди смену с максимальной концентрацией",
-      "Помоги разрешить сложную ситуацию с клиентом сегодня",
-      "Собери заказ быстрее своего обычного времени",
-      "Создай 'идеальную зону' на своём рабочем месте",
-      "Пройди смену без единого нарушения стандартов",
-      "Найди способ сделать работу более эффективной сегодня",
-      "Создай приятный момент для нового сотрудника",
-      "Пройди смену с максимально позитивным настроем",
-      "Сделай 5 клиентов сегодня постоянными своими действиями",
-      "Найди баланс между скоростью и качеством сегодня",
-      "Создай атмосферу праздника для одного клиента",
-      "Стань примером для коллег в чём-то сегодня"
+    "Сделай комплимент каждому члену своей смены",
+    "Придумай способ сэкономить 1 минуту на каждом заказе",
+    "Покажи пример идеального соблюдения стандартов сегодня",
+    "Обрати внимание на 3 вещи, которые можно улучшить в ресторане",
+    "Создай 'момент wow' для одного клиента сегодня",
+    "Пройди весь чек-лист своей станции без единой ошибки",
+    "Найди способ сделать работу коллеги немного легче",
+    "Собери 20 заказов подряд без замечаний по качеству",
+    "Создай позитивную атмосферу в команде сегодня",
+    "Предложи одну идею по улучшению работы ресторана",
+    "Пройди смену с идеальным соблюдением таймингов",
+    "Сделай 3 добрых жеста для коллег без причины",
+    "Научись готовить продукт, который обычно не готовишь",
+    "Создай самый фотогеничный заказ за день",
+    "Пройди смену с максимальной концентрацией",
+    "Помоги разрешить сложную ситуацию с клиентом сегодня",
+    "Собери заказ быстрее своего обычного времени",
+    "Создай 'идеальную зону' на своём рабочем месте",
+    "Пройди смену без единого нарушения стандартов",
+    "Найди способ сделать работу более эффективной сегодня",
+    "Создай приятный момент для нового сотрудника",
+    "Пройди смену с максимально позитивным настроем",
+    "Сделай 5 клиентов сегодня постоянными своими действиями",
+    "Найди баланс между скоростью и качеством сегодня",
+    "Создай атмосферу праздника для одного клиента",
+    "Стань примером для коллег в чём-то сегодня"
     ];
 
     function getRandomItem(arr) {
@@ -891,6 +849,11 @@
         box.textContent = getRandomItem(challengeList);
       }, 300);
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("motivationBox").textContent = getRandomItem(motivationList);
+      document.getElementById("challengeBox").textContent = getRandomItem(challengeList);
+    });
 
     // Калькулятор зарплаты
     const rates = {
@@ -968,13 +931,6 @@
         document.getElementById("commentList").innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки комментариев</p>';
         console.error(err);
       });
-
-    // Инициализация при загрузке
-    document.addEventListener("DOMContentLoaded", () => {
-      loadNews();
-      document.getElementById("motivationBox").textContent = getRandomItem(motivationList);
-      document.getElementById("challengeBox").textContent = getRandomItem(challengeList);
-    });
   </script>
 </body>
 </html>
