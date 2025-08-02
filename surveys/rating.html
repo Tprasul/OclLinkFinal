@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рейтинг тренеров | KFC Training</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #121212;
+      --bg-secondary: #1E1E1E;
+      --card: #252525;
+      --text: #E0E0E0;
+      --text-light: #B0B0B0;
+      --primary: #BB86FC;
+      --primary-dark: #3700B3;
+      --accent: #03DAC6;
+      --accent-dark: #018786;
+      --border: #333333;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    .app-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
+    .logo-icon { color: var(--accent); }
+    .nav-link { color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .nav-link:hover { color: var(--primary); }
+    .section-title { font-size: 2.25rem; margin-bottom: 1rem; color: var(--primary); font-weight: 700; display: flex; align-items: center; gap: 1rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { font-size: 1.2rem; color: var(--text-light); margin-bottom: 2rem; max-width: 700px; }
+    
+    /* НОВЫЕ СТИЛИ для фильтра */
+    .filter-container {
+      margin-bottom: 2rem;
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .filter-container label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+    .filter-container select {
+      width: 100%;
+      padding: 0.9rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      background: var(--bg-secondary);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .filter-container select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.1);
+    }
+
+    .rating-container { background: var(--card); border-radius: 12px; padding: 2.5rem; box-shadow: var(--shadow); border: 1px solid var(--border); }
+    .rating-item { display: flex; align-items: center; padding: 1.25rem; margin-bottom: 1rem; border-radius: 8px; transition: background 0.2s; background: var(--bg-secondary); }
+    .rating-item:last-child { margin-bottom: 0; }
+    .rating-item:hover { background: rgba(187, 134, 252, 0.05); }
+    .medal { font-size: 1.5rem; margin-right: 1.5rem; flex-shrink: 0; width: 40px; text-align: center; color: var(--accent); }
+    .rating-details { flex-grow: 1; }
+    .rating-name { font-weight: 600; color: var(--primary); margin-bottom: 0.25rem; font-size: 1.1rem; }
+    .rating-count { color: var(--text-light); font-size: 0.95rem; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeIn 0.6s ease-out forwards; }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header fade-in">
+      <a href="index.html" class="logo">
+        <i class="fas fa-crown logo-icon"></i>
+        OcL Link
+      </a>
+      <nav>
+        <a href="index.html" class="nav-link">
+          <i class="fas fa-arrow-left"></i> На главную
+        </a>
+      </nav>
+    </header>
+
+    <main class="fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-trophy"></i>
+        Рейтинг лучших тренеров
+      </h2>
+      <p class="subtitle">Рейтинг формируется на основе количества проведенных опросов по работе сотрудников.</p>
+
+      <div class="filter-container">
+        <label for="restaurantFilter">Фильтр по ресторану</label>
+        <select id="restaurantFilter" disabled>
+          <option value="all">Загрузка ресторанов...</option>
+        </select>
+      </div>
+
+      <div class="rating-container">
+        <div id="topList">
+          <p style="color: var(--text-light); text-align: center; padding: 2rem 0;">Загрузка рейтинга...</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const topListContainer = document.getElementById("topList");
+    const filterSelect = document.getElementById("restaurantFilter");
+    let allTrainers = []; // Переменная для хранения всех данных
+
+    // Функция для отображения рейтинга
+    function displayRatings(trainers) {
+      if (!trainers || trainers.length === 0) {
+        topListContainer.innerHTML = '<p style="color: var(--text-light); text-align: center;">Нет данных для отображения</p>';
+        return;
+      }
+
+      const medals = ['🥇', '🥈', '🥉'];
+      let html = '';
+      
+      // Сортируем массив по убыванию 'count' перед отображением
+      const sortedTrainers = trainers.sort((a, b) => b.count - a.count);
+
+      sortedTrainers.forEach((hr, index) => {
+        html += `
+          <div class="rating-item">
+            <span class="medal">${medals[index] || `${index + 1}.`}</span>
+            <div class="rating-details">
+              <div class="rating-name">${hr.name}</div>
+              <div class="rating-count">${hr.count} опросов</div>
+            </div>
+          </div>`;
+      });
+      topListContainer.innerHTML = html;
+    }
+    
+    // Функция для заполнения фильтра ресторанами
+    function populateFilter(trainers) {
+        // Получаем уникальный список ресторанов
+        const restaurantNames = [...new Set(trainers.map(t => t.restaurant))];
+        restaurantNames.sort(); // Сортируем по алфавиту
+        
+        filterSelect.innerHTML = '<option value="all">Все рестораны</option>'; // Опция по умолчанию
+        
+        restaurantNames.forEach(name => {
+            if(name) { // Добавляем только если имя ресторана не пустое
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                filterSelect.appendChild(option);
+            }
+        });
+        
+        filterSelect.disabled = false; // Включаем фильтр
+    }
+
+    // Основная логика загрузки данных
+    fetch("https://script.google.com/macros/s/AKfycbwyJISYLqceQb3MigkQbsLjDimJZcYe_v8Zps_9WTMBN8kWmVe5UPbOKeu_hF4vviZdXQ/exec")
+      .then(res => res.json())
+      .then(data => {
+        // Проверяем, есть ли в данных свойство 'restaurant'. Если нет - выводим ошибку.
+        if (data.length > 0 && data[0].restaurant === undefined) {
+             topListContainer.innerHTML = '<p style="color: var(--accent); text-align: center; font-weight: bold;">Ошибка: в данных отсутствует информация о ресторанах. Пожалуйста, выполните Шаг 1.</p>';
+             console.error("Данные не содержат поле 'restaurant'");
+             return;
+        }
+      
+        allTrainers = data;
+        populateFilter(allTrainers);
+        displayRatings(allTrainers);
+      })
+      .catch(err => {
+        topListContainer.innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки рейтинга. Попробуйте обновить страницу.</p>';
+        console.error("Ошибка загрузки данных:", err);
+      });
+      
+    // Слушатель событий для фильтра
+    filterSelect.addEventListener('change', (event) => {
+        const selectedRestaurant = event.target.value;
+        
+        if (selectedRestaurant === 'all') {
+            displayRatings(allTrainers); // Показываем всех
+        } else {
+            const filteredTrainers = allTrainers.filter(trainer => trainer.restaurant === selectedRestaurant);
+            displayRatings(filteredTrainers); // Показываем отфильтрованный список
+        }
+    });
+  </script>
+</body>
+</html>
