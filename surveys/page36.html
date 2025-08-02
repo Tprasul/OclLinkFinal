@@ -1,361 +1,426 @@
 <!DOCTYPE html>
-<html  >
+<html lang="ru">
 <head>
-  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
-  <title>Page 36</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=wnemLo"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=wnemLo" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос: Химия</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  
-  
-  
+    <style>
+        :root {
+            --bg: #121212;
+            --bg-secondary: #1E1E1E;
+            --card: #252525;
+            --text: #E0E0E0;
+            --text-light: #B0B0B0;
+            --primary: #BB86FC;
+            --primary-dark: #3700B3;
+            --accent: #03DAC6;
+            --accent-dark: #018786;
+            --border: #333333;
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            --error: #CF6679;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+            overflow-y: scroll;
+        }
+
+        .form-wrapper { width: 100%; max-width: 750px; }
+
+        #welcome-screen {
+            background: var(--card); border-radius: 12px; padding: 3rem 2.5rem;
+            box-shadow: var(--shadow); border: 1px solid var(--border); text-align: center;
+        }
+        .welcome-title {
+            font-size: 2.25rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;
+            display: flex; align-items: center; justify-content: center; gap: 1rem;
+        }
+        .welcome-subtitle { color: var(--text-light); margin-bottom: 2.5rem; font-size: 1.1rem; }
+        #welcome-screen .form-group { text-align: left; margin-bottom: 1.5rem; }
+        #welcome-screen .input-label {
+            display: block; margin-bottom: 0.75rem; font-weight: 600; color: var(--primary);
+        }
+
+        #survey-screen {
+             background: var(--card); border-radius: 12px; padding: 2.5rem;
+             box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        .survey-logo { text-align: center; font-size: 3.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+        .selected-info-title {
+            text-align: center; color: var(--accent); font-size: 1.5rem;
+            margin-bottom: 2rem; font-weight: 600;
+        }
+
+        .question-frame {
+            background: var(--bg-secondary); border-radius: 8px; padding: 1.5rem;
+            margin-bottom: 1.75rem; border: 1px solid var(--border); transition: all 0.3s;
+        }
+        
+        .error-frame {
+            border-color: var(--error);
+            box-shadow: 0 0 10px rgba(207, 102, 121, 0.4);
+            animation: shake 0.5s ease-in-out;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+
+        .question-frame > label {
+            display: block; margin-bottom: 1.25rem; font-weight: 500;
+            color: var(--text); font-size: 1.1rem; line-height: 1.5;
+        }
+        .input-label {
+             color: var(--primary); font-weight: 600; display: block;
+             margin-bottom: 0.75rem; text-align: left;
+        }
+        
+        .required-star { color: var(--error); font-weight: 700; margin-left: 4px; }
+
+        input[type="text"], select, textarea {
+            width: 100%; padding: 1rem 1.25rem; border: 1px solid var(--border);
+            border-radius: 8px; font-size: 1rem; transition: all 0.2s;
+            background: var(--bg); color: var(--text);
+        }
+        input[type="text"]:focus, select:focus, textarea:focus {
+            outline: none; border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.1);
+        }
+        textarea { min-height: 120px; resize: vertical; }
+
+        .radio-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .radio-option { flex-grow: 1; }
+        .radio-option input[type="radio"] { display: none; }
+        .radio-option .custom-radio {
+            display: block; padding: 0.8rem 1.25rem; border-radius: 8px; background: var(--bg);
+            border: 1px solid var(--border); color: var(--text-light); text-align: center;
+            cursor: pointer; transition: all 0.2s; font-weight: 500;
+        }
+        .radio-option input[type="radio"]:checked + .custom-radio {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white; border-color: var(--primary); transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(187, 134, 252, 0.2);
+        }
+        .radio-option:hover .custom-radio { border-color: var(--primary); color: var(--primary); }
+        .radio-option input[type="radio"]:checked:hover + .custom-radio { color: white; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem;
+            padding: 0.9rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700;
+            transition: all 0.2s; border: none; cursor: pointer; font-size: 1.1rem;
+            width: 100%; text-align: center; margin-top: 1.5rem;
+        }
+        .btn:hover:not(:disabled) { transform: translateY(-3px); }
+        .btn:disabled { background: var(--border); color: var(--text-light); cursor: not-allowed; box-shadow: none; }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #FFFFFF; box-shadow: 0 4px 12px rgba(187, 134, 252, 0.2);
+        }
+        .btn-primary:hover:not(:disabled) { box-shadow: 0 6px 16px rgba(187, 134, 252, 0.3); }
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #FFFFFF; box-shadow: 0 4px 12px rgba(3, 218, 198, 0.2);
+        }
+        .btn-accent:hover:not(:disabled) { box-shadow: 0 6px 16px rgba(3, 218, 198, 0.3); }
+
+        .photo-upload { display: flex; align-items: center; gap: 1rem; }
+        .upload-label {
+            display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.8rem 1.25rem;
+            border-radius: 8px; background: transparent; border: 1px solid var(--primary);
+            color: var(--primary); cursor: pointer; font-weight: 500; transition: all 0.2s;
+        }
+        .upload-label:hover { background: rgba(187, 134, 252, 0.1); }
+        #preview { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 2px solid var(--border); }
+        .loader {
+            width: 16px; height: 16px; border: 2px solid var(--border); border-top: 2px solid var(--primary);
+            border-radius: 50%; animation: spin 1s linear infinite; display: none;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.5s ease-out forwards; }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; align-items: flex-start; }
+            #welcome-screen, #survey-screen { padding: 1.5rem; }
+            .welcome-title { font-size: 1.75rem; }
+        }
+    </style>
 </head>
 <body>
-  
-  <meta charset="UTF-8" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973"><meta name="viewport" content="width=device-width, initial-scale=1" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973"><title class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">Опрос - Химия</title><style class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
-    .form-container {
-      max-width: 600px;
-      margin: auto;
-      font-family: sans-serif;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      background-color: #FFE4E1;
-    }
-    .avatar-img {
-      width: 150px; height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 20px;
-      display: block;
-    }
-    .form-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-    input[type="text"], textarea {
-      width: 100%; padding: 10px;
-      border-radius: 6px; border: 1px solid #ccc;
-      font-size: 14px;
-    }
-    .radio-group {
-      display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px;
-    }
-    .radio-option {
-      display: flex; align-items: center; gap: 10px; cursor: pointer;
-    }
-    .radio-option input[type="radio"] { display: none; }
-    .custom-radio {
-      width: 40px; height: 40px; background-color: #eee;
-      border-radius: 50%; display: flex;
-      align-items: center; justify-content: center;
-      font-weight: bold; color: #333;
-      border: 2px solid transparent; transition: 0.2s;
-    }
-    .radio-option input[type="radio"]:checked + .custom-radio {
-      border-color: #d32f2f; background-color: #d32f2f; color: white;
-    }
-    .submit-btn {
-      margin-top: 30px; padding: 12px 20px;
-      background-color: #d32f2f; color: white;
-      font-size: 16px; border: none; border-radius: 8px;
-      cursor: pointer; width: 100%;
-    }
-  </style><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973"></script><div class="form-container cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
-    <img src="https://i.imgur.com/SxzkAWe.jpeg" alt="Аватар" class="avatar-img" media-simple="true">
-    <div class="form-title">Опрос - Химия</div>
 
-    <form id="customForm">
-      <label>Ваше имя:</label>
-      <input type="text" name="yourName" required="">
+    <div class="form-wrapper">
+        <form id="main-form" novalidate>
+            <div id="welcome-screen">
+                <h1 class="welcome-title"><i class="fas fa-flask"></i> Химия</h1>
+                <p class="welcome-subtitle">Пожалуйста, заполните данные, чтобы начать оценку.</p>
+                <div class="form-group">
+                    <label for="restaurant" class="input-label">1. Выберите ресторан</label>
+                    <select id="restaurant" name="restaurant" required>
+                        <option value="" disabled selected>-- Нажмите, чтобы выбрать --</option>
+                        <option value="ГУМ">ГУМ</option>
+                        <option value="Азия Молл">Азия Молл</option>
+                        <option value="Аламедин 1">Аламедин 1</option>
+                        <option value="Ортосай">Ортосай</option>
+                        <option value="Бишкек Парк">Бишкек Парк</option>
+                        <option value="ЦУМ">ЦУМ</option>
+                        <option value="Мос-Совет">Мос-Совет</option>
+                        <option value="Магистраль">Магистраль</option>
+                        <option value="Горького">Горького</option>
+                        <option value="Донецкая">Донецкая</option>
+                        <option value="Аламедин">Аламедин</option>
+                        <option value="Детский мир">Детский мир</option>
+                        <option value="ГЭС 5">ГЭС 5</option>
+                        <option value="Бета Сторес">Бета Сторес</option>
+                        <option value="Технопарк">Технопарк</option>
+                        <option value="Авторынок">Авторынок</option>
+                        <option value="Кант">Кант</option>
+                        <option value="Октябрь">Октябрь</option>
+                        <option value="Ош Глобус">Ош Глобус</option>
+                        <option value="Ош Триумф">Ош Триумф</option>
+                        <option value="Ош Раззакова">Ош Раззакова</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="yourName" class="input-label">2. Ваше имя (HR)</label>
+                    <input type="text" id="yourName" name="yourName" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label for="employeeName" class="input-label">3. Имя сотрудника</label>
+                    <input type="text" id="employeeName" name="employeeName" required placeholder="Введите имя проверяемого сотрудника">
+                </div>
+                <button type="button" id="start-survey-btn" class="btn btn-primary">
+                    Начать опрос <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
 
-      <label>Имя сотрудника:</label>
-      <input type="text" name="employeeName" required="">
+            <div id="survey-screen" style="display: none;">
+                <div class="survey-logo"><i class="fas fa-user-check"></i></div>
+                <h2 id="display-info" class="selected-info-title"></h2>
+                
+                <input type="hidden" name="surveyName" value="Химия">
 
-      <!-- Сгенерированные вопросы -->
-      <label>1. К 205 - Удаление загрязнений с поверхностей и оборудования</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="1" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="1" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>2. К 215 - Ежедневное мытье полов в зоне кухни</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="2" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="2" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>3. К 206 - Удаление нагара и сильных жировых загрязнений с поверхностей</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="3" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="3" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>4. К 204 - Замачивание и мытье кухонной посуды и инвентаря</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="4" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="4" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>5. К 214 - Дезинфекция всех поверхностей, оборудования, кухонной посуды и инвентаря</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="5" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="5" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>6. H 104 - Полировка поверхностей из нержавеющей стали</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="6" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="6" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>7. Велум - Увлажняющий регенерирующий крем для рук</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="7" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="7" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>8. C 405 - Удаление жвачки и следов скотча</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="8" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="8" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>9. H112 - Удаление следов маркера и аэрозольной краски с поверхностей</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="9" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="9" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>10. K 207 - Очистка морозильника</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="10" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="10" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>11. H 107 - Очистка унитазов</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="11" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="11" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>12. F 307 - Очистка глянцевых поверхностей и стекла</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="12" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="12" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>13. P 506 - Антибактериальное пенное мыло для рук</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="13" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="13" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>14. P 504 - Антисептик для рук</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="14" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="14" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>15. H 109 - Удаление водяного камня с пищевого оборудования ,ПММ</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="15" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="15" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>16. H 101 - Ежедневное мытье полов в зале и в гостевом туалете</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="16" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="16" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>17. Серволин протект - Защитный крем .Наносится перед работой с моющими средствами</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="17" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="17" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>18. F 304 - Генеральная уборка полов с помощью уборочных машин;очистка асфальта и плитки</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="18" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="18" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>19. P 503 - Пенное мыло для гостевых туалетов</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="19" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="19" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>20. H 108 - Удаление неприятных запахов в туалете</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="20" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="20" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
-<label>21. K 208 - Предотвращение пригорания тостов</label>
-<div class="radio-group">
-  <label class="radio-option"><input type="radio" name="21" value="A" required=""><div class="custom-radio">A</div> Знает</label>
-  <label class="radio-option"><input type="radio" name="21" value="B"><div class="custom-radio">B</div> Не знает</label>
-</div>
+                <div id="questions-container"></div>
 
-<label>Сделать фото сотрудника:</label>
-<input type="file" id="cameraInput" accept="image/*" capture="environment" required="" class="form-control mb-3">
+                <div class="question-frame" id="final-block">
+                     <div class="form-group" style="margin-bottom: 1.5rem;">
+                         <label class="input-label">Фотоотчёт<span class="required-star">*</span></label>
+                         <div class="photo-upload">
+                            <label for="photo" class="upload-label"><i class="fas fa-camera"></i> Сделать фото</label>
+                            <input type="file" id="photo" name="photo_file" accept="image/*" capture="environment" style="display: none">
+                            <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Превью фото">
+                            <div class="loader" id="loader"></div>
+                         </div>
+                         <input type="hidden" id="photoUrl" name="photoUrl">
+                     </div>
+                     <div class="form-group">
+                        <label for="comment" class="input-label">Комментарий<span class="required-star">*</span></label>
+                        <textarea id="comment" name="comment" required rows="4" placeholder="Оставьте комментарий..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-accent">
+                    Завершить опрос <i class="fas fa-check-circle"></i>
+                </button>
+            </div>
+        </form>
+    </div>
 
-      <label>Комментарий:</label>
-      <textarea name="comment" rows="4" placeholder="Напишите свой комментарий..."></textarea>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainForm = document.getElementById('main-form');
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const surveyScreen = document.getElementById('survey-screen');
+            const startBtn = document.getElementById('start-survey-btn');
+            const restaurantSelect = document.getElementById('restaurant');
+            const yourNameInput = document.getElementById('yourName');
+            const employeeNameInput = document.getElementById('employeeName');
+            const displayInfo = document.getElementById('display-info');
+            const photoUrlField = document.getElementById('photoUrl');
+            const commentField = document.getElementById('comment');
+            
+            // ✅ ИЗМЕНЕНИЕ: Новый список из 21 вопроса
+            const questions = [
+                "1. К 205 - Удаление загрязнений с поверхностей и оборудования",
+                "2. К 215 - Ежедневное мытье полов в зоне кухни",
+                "3. К 206 - Удаление нагара и сильных жировых загрязнений с поверхностей",
+                "4. К 204 - Замачивание и мытье кухонной посуды и инвентаря",
+                "5. К 214 - Дезинфекция всех поверхностей, оборудования, кухонной посуды и инвентаря",
+                "6. H 104 - Полировка поверхностей из нержавеющей стали",
+                "7. Велум - Увлажняющий регенерирующий крем для рук",
+                "8. C 405 - Удаление жвачки и следов скотча",
+                "9. H112 - Удаление следов маркера и аэрозольной краски с поверхностей",
+                "10. K 207 - Очистка морозильника",
+                "11. H 107 - Очистка унитазов",
+                "12. F 307 - Очистка глянцевых поверхностей и стекла",
+                "13. P 506 - Антибактериальное пенное мыло для рук",
+                "14. P 504 - Антисептик для рук",
+                "15. H 109 - Удаление водяного камня с пищевого оборудования ,ПММ",
+                "16. H 101 - Ежедневное мытье полов в зале и в гостевом туалете",
+                "17. Серволин протект - Защитный крем .Наносится перед работой с моющими средствами",
+                "18. F 304 - Генеральная уборка полов с помощью уборочных машин;очистка асфальта и плитки",
+                "19. P 503 - Пенное мыло для гостевых туалетов",
+                "20. H 108 - Удаление неприятных запахов в туалете",
+                "21. K 208 - Предотвращение пригорания тостов"
+            ];
 
-      <button type="submit" class="submit-btn">Закончить опрос</button>
-    </form>
-  </div><script class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
-    document.getElementById("customForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+            const questionsContainer = document.getElementById('questions-container');
+            questions.forEach((qText, index) => {
+                const qName = `q${index + 1}`;
+                questionsContainer.innerHTML += `<div class="question-frame" id="q-frame-${qName}"><label>${qText}</label><div class="radio-group"><label class="radio-option"><input type="radio" name="${qName}" value="Знает" required><span class="custom-radio">Знает</span></label><label class="radio-option"><input type="radio" name="${qName}" value="Не знает"><span class="custom-radio">Не знает</span></label></div></div>`;
+            });
 
-      function convertAnswer(value) {
-        return value === "A" ? "Знает" : "Не знает";
-      }
+            startBtn.addEventListener('click', () => {
+                if (!restaurantSelect.value || !yourNameInput.value.trim() || !employeeNameInput.value.trim()) {
+                    Swal.fire({ title: 'Ошибка', text: 'Пожалуйста, заполните все поля, чтобы продолжить.', icon: 'error', background: 'var(--card)', color: 'var(--text)', confirmButtonText: 'Понятно', confirmButtonColor: 'var(--error)' });
+                    return;
+                }
+                displayInfo.textContent = `Оценка: ${employeeNameInput.value.trim()} (${restaurantSelect.value})`;
+                welcomeScreen.style.display = 'none';
+                surveyScreen.style.display = 'block';
+                surveyScreen.classList.add('fade-in');
+            });
 
-      const hrName       = document.querySelector('input[name="yourName"]').value.trim();
-      const employeeName = document.querySelector('input[name="employeeName"]').value.trim();
-      const comment      = document.querySelector('textarea[name="comment"]').value.trim();
+            const photoInput = document.getElementById('photo');
+            const preview = document.getElementById('preview');
+            const loader = document.getElementById('loader');
+            const uploadUrl = 'https://script.google.com/macros/s/AKfycbzjbYAfHSVAVr4Qyjczvakd-rZF48TkhbaffFZfxT7-_rf-J0suzC9YPw9_CPbPBmgGqw/exec';
+            photoInput.addEventListener('change', async function() {
+                const file = photoInput.files[0];
+                if (!file) return;
+                preview.src = URL.createObjectURL(file);
+                loader.style.display = 'inline-block';
+                photoUrlField.value = '';
+                const reader = new FileReader();
+                reader.onloadend = async () => {
+                    const base64Data = reader.result.split(',')[1];
+                    const formData = new FormData();
+                    formData.append("photo", base64Data);
+                    formData.append("filename", `photo_${Date.now()}.jpg`);
+                    formData.append("type", file.type);
+                    try {
+                        const res = await fetch(uploadUrl, { method: "POST", body: formData });
+                        const data = await res.json();
+                        if (data.success) { photoUrlField.value = data.url; } 
+                        else { throw new Error(data.message || 'Ошибка загрузки'); }
+                    } catch (err) {
+                        Swal.fire({ title: 'Ошибка фото', text: 'Не удалось загрузить фотографию.', icon: 'error', background: 'var(--card)', color: 'var(--text)', confirmButtonColor: 'var(--error)' });
+                    } finally { loader.style.display = 'none'; }
+                };
+                reader.readAsDataURL(file);
+            });
 
-      const formData = {
-  "Имя HR": hrName,
-  "Имя сотрудника": employeeName,
-  "К 205 - Удаление загрязнений с поверхностей и оборудования": convertAnswer(document.querySelector('input[name="1"]:checked').value),
-  "К 215 - Ежедневное мытье полов в зоне кухни": convertAnswer(document.querySelector('input[name="2"]:checked').value),
-  "К 206 - Удаление нагара и сильных жировых загрязнений с поверхностей": convertAnswer(document.querySelector('input[name="3"]:checked').value),
-  "К 204 - Замачивание и мытье кухонной посуды и инвентаря": convertAnswer(document.querySelector('input[name="4"]:checked').value),
-  "К 214 - Дезинфекция всех поверхностей, оборудования, кухонной посуды и инвентаря": convertAnswer(document.querySelector('input[name="5"]:checked').value),
-  "H 104 - Полировка поверхностей из нержавеющей стали": convertAnswer(document.querySelector('input[name="6"]:checked').value),
-  "Велум - Увлажняющий регенерирующий крем для рук": convertAnswer(document.querySelector('input[name="7"]:checked').value),
-  "C 405 - Удаление жвачки и следов скотча": convertAnswer(document.querySelector('input[name="8"]:checked').value),
-  "H112 - Удаление следов маркера и аэрозольной краски с поверхностей": convertAnswer(document.querySelector('input[name="9"]:checked').value),
-  "K 207 - Очистка морозильника": convertAnswer(document.querySelector('input[name="10"]:checked').value),
-  "H 107 - Очистка унитазов": convertAnswer(document.querySelector('input[name="11"]:checked').value),
-  "F 307 - Очистка глянцевых поверхностей и стекла": convertAnswer(document.querySelector('input[name="12"]:checked').value),
-  "P 506 - Антибактериальное пенное мыло для рук": convertAnswer(document.querySelector('input[name="13"]:checked').value),
-  "P 504 - Антисептик для рук": convertAnswer(document.querySelector('input[name="14"]:checked').value),
-  "H 109 - Удаление водяного камня с пищевого оборудования ,ПММ": convertAnswer(document.querySelector('input[name="15"]:checked').value),
-  "H 101 - Ежедневное мытье полов в зале и в гостевом туалете": convertAnswer(document.querySelector('input[name="16"]:checked').value),
-  "Серволин протект - Защитный крем .Наносится перед работой с моющими средствами": convertAnswer(document.querySelector('input[name="17"]:checked').value),
-  "F 304 - Генеральная уборка полов с помощью уборочных машин;очистка асфальта и плитки": convertAnswer(document.querySelector('input[name="18"]:checked').value),
-  "P 503 - Пенное мыло для гостевых туалетов": convertAnswer(document.querySelector('input[name="19"]:checked').value),
-  "H 108 - Удаление неприятных запахов в туалете": convertAnswer(document.querySelector('input[name="20"]:checked').value),
-  "K 208 - Предотвращение пригорания тостов": convertAnswer(document.querySelector('input[name="21"]:checked').value),
-  "Комментарий": comment,
-  "Дата": new Date().toLocaleString('ru-RU')
-};
+            mainForm.addEventListener("submit", async function(event) {
+                event.preventDefault();
+                
+                const handleError = (element, message) => {
+                    Swal.fire({
+                        title: 'Не все поля заполнены', text: message, icon: 'warning',
+                        background: 'var(--card)', color: 'var(--text)',
+                        confirmButtonText: 'Хорошо', confirmButtonColor: 'var(--error)',
+                        returnFocus: false
+                    });
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    element.classList.add('error-frame');
+                    setTimeout(() => element.classList.remove('error-frame'), 2500);
+                };
 
-      const total = 21;
-      let score = 0;
+                for (let i = 1; i <= questions.length; i++) {
+                    if (!mainForm.querySelector(`input[name="q${i}"]:checked`)) {
+                        handleError(document.getElementById(`q-frame-q${i}`), 'Пожалуйста, ответьте на все вопросы.');
+                        return;
+                    }
+                }
+                
+                if (!commentField.value.trim()) {
+                    handleError(commentField.closest('.question-frame'), 'Пожалуйста, оставьте комментарий.');
+                    return;
+                }
 
-      for (let i = 1; i <= total; i++) {
-        const input = document.querySelector(`input[name="${i}"]:checked`);
-        if (input) {
-          formData[`Вопрос ${i}`] = convertAnswer(input.value);
-          if (input.value === "A") score++;
-        }
-      }
+                if (!photoUrlField.value) {
+                    handleError(photoUrlField.closest('.question-frame'), 'Пожалуйста, сделайте и загрузите фото.');
+                    return;
+                }
 
-      const percent = Math.round((score / total) * 100);
-      formData["Комментарий"] = comment;
-      formData["Процент знаний"] = percent + "%";
-      formData["Дата"] = new Date().toLocaleString('ru-RU');
+                const submitBtn = mainForm.querySelector(".btn-accent");
+                if (submitBtn.disabled) return;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = "Отправка... <i class='fas fa-spinner fa-spin'></i>";
 
-      fetch("https://sheetdb.io/api/v1/vvrb41qzxjhqk", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: formData })
-      })
-      .then(() => {
-        Swal.fire({
-          title: "Опрос завершён",
-          html: `<b>Сотрудник:</b> ${employeeName}<br>
-                 <b>Комментарий:</b> ${comment || "—"}<br>
-                 <b>Процент знаний:</b> ${percent}%`,
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#d32f2f'
+                try {
+                    let score = 0;
+                    const formDataToSend = new FormData(mainForm);
+                    
+                    for (let i = 1; i <= questions.length; i++) {
+                        if (mainForm.querySelector(`input[name="q${i}"]:checked`).value === "Знает") { score++; }
+                    }
+                    const percent = Math.round((score / questions.length) * 100);
+                    formDataToSend.append("Процент знаний", percent + "%");
+                    
+                    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxQX6MVRa2E2_5w7mleJC9Dy5_1job-0m3IeEPKEURJwF56ekXCjqAB8E_JfAXlxivv/exec';
+                    
+                    await fetch(appsScriptUrl, { 
+                        method: "POST", 
+                        body: formDataToSend,
+                        mode: 'no-cors' 
+                    });
+
+                    const surveyName = mainForm.querySelector('input[name="surveyName"]').value;
+                    const commentText = commentField.value.trim().replace(/\n/g, '<br>');
+                    
+                    const modalHtml = `
+                        <div style="text-align: left; line-height: 1.8;">
+                            <p><b>Опрос:</b> ${surveyName}</p>
+                            <p><b>Сотрудник:</b> ${employeeNameInput.value.trim()}</p>
+                            <p><b>Результат:</b> <strong style="color: var(--accent); font-size: 1.1em;">${percent}%</strong></p>
+                        </div>
+                        ${commentText ? `<div style="margin-top: 1rem; text-align: left;"><b style="color: var(--primary);">Комментарий:</b><p style="background: var(--bg); padding: 12px; border-radius: 6px; margin-top: 0.5rem; white-space: pre-wrap; word-wrap: break-word; color: var(--text-light);">${commentText}</p></div>` : ''}
+                        <div style="font-size: 0.85rem; text-align: center; color: var(--text-light); margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+                            Вы можете сделать скриншот и отправить его в тренерский чат.
+                        </div>
+                    `;
+
+                    Swal.fire({
+                        title: "Опрос завершён", 
+                        html: modalHtml,
+                        icon: 'success', 
+                        background: 'var(--card)', 
+                        color: 'var(--text)',
+                        confirmButtonText: 'Отлично!', 
+                        confirmButtonColor: 'var(--accent)',
+                    }).then(() => {
+                       mainForm.reset();
+                       preview.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+                       surveyScreen.style.display = 'none';
+                       welcomeScreen.style.display = 'block';
+                       welcomeScreen.classList.remove('fade-in');
+                    });
+
+                } catch (error) {
+                    Swal.fire({ title: "Ошибка сети", text: "Не удалось связаться с сервером. Проверьте подключение к интернету.", icon: 'error', background: 'var(--card)', color: 'var(--text)', confirmButtonText: 'Попробовать снова', confirmButtonColor: 'var(--error)' });
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = "Завершить опрос <i class='fas fa-check-circle'></i>";
+                }
+            });
         });
-        document.getElementById("customForm").reset();
-      })
-      .catch(() => {
-        Swal.fire("Ошибка", "Не удалось отправить данные. Попробуйте позже.", "error");
-      });
-    });
-  </script><script class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
-document.getElementById("customForm").addEventListener("submit", async function(event) {
-  event.preventDefault();
-  const fileInput = document.getElementById("cameraInput");
-  const file = fileInput.files[0];
-  if (!file) {
-    alert("Пожалуйста, сделайте фото.");
-    return;
-  }
-  const reader = new FileReader();
-  reader.onload = async function () {
-    const base64Image = reader.result;
-    const payload = new URLSearchParams();
-    payload.append("photo", base64Image);
-    payload.append("type", file.type);
-    await fetch("https://script.google.com/macros/s/AKfycbx7QvdyCBpSuSj4q9ypocfyLkZ1DeUQg2kD284b-TnmYHeeQMvovj7ypIkggdKR-Q8CiQ/exec", {
-      method: "POST",
-      body: payload,
-    })
-    .then(() => {
-      Swal.fire("Готово", "Фото успешно загружено", "success");
-      document.getElementById("customForm").reset();
-    })
-    .catch(() => {
-      Swal.fire("Ошибка", "Не удалось загрузить фото", "error");
-    });
-  };
-  reader.readAsDataURL(file);
-});
-</script><script class="cid-uNneZYuc1h" id="custom-html-4r" data-rv-view="1973">
-let isSubmitting = false;
-
-document.getElementById("customForm").addEventListener("submit", function(event) {
-  if (isSubmitting) {
-    event.preventDefault();
-    return;
-  }
-
-  isSubmitting = true;
-  const btn = document.querySelector(".submit-btn");
-  btn.disabled = true;
-  btn.textContent = "Подводим итоги...";
-});
-</script>
-
-<style class="cid-uNnf00eLLo" id="custom-html-4t" data-rv-view="1974">
-  .report-button {
-    display: inline-block;
-    background-color: #f44336;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 12px;
-    text-decoration: none;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, transform 0.2s;
-  }
-
-  .report-button:hover {
-    background-color: #d32f2f;
-    transform: translateY(-3px);
-  }
-</style><div style="text-align:center; margin: 40px 0;" class="cid-uNnf00eLLo" id="custom-html-4t" data-rv-view="1974">
-  <a href="https://docs.google.com/spreadsheets/d/1tQwzeuNDgJG3fxssknz1rigE2BOez-n_DzFthO8ogq0/edit?usp=sharing" target="_blank" class="report-button">
-    📊 Открыть отчёты
-  </a>
-</div><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-generator.html">AI Website Generator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
-  <input name="animation" type="hidden">
-  </body>
+    </script>
+</body>
 </html>
