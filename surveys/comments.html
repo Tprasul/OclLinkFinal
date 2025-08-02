@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Комментарии | KFC Training</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #121212; --bg-secondary: #1E1E1E; --card: #252525; --text: #E0E0E0; --text-light: #B0B0B0; --primary: #BB86FC; --primary-dark: #3700B3; --accent: #03DAC6; --accent-dark: #018786; --border: #333333; --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    .app-container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
+    .logo-icon { color: var(--accent); }
+    .nav-link { color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .nav-link:hover { color: var(--primary); }
+    .section-title { font-size: 2.25rem; margin-bottom: 1rem; color: var(--primary); font-weight: 700; display: flex; align-items: center; gap: 1rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { font-size: 1.2rem; color: var(--text-light); margin-bottom: 2rem; max-width: 700px; }
+
+    .filter-container { margin-bottom: 2rem; background: var(--card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); }
+    .filter-container label { display: block; margin-bottom: 0.75rem; font-weight: 500; color: var(--primary); }
+    .filter-container select { width: 100%; padding: 0.9rem 1.25rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: var(--bg-secondary); color: var(--text); cursor: pointer; }
+    .filter-container select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.1); }
+
+    .comments-container { background: var(--card); border-radius: 12px; padding: 2.5rem; box-shadow: var(--shadow); border: 1px solid var(--border); }
+    .comment { padding: 1.75rem; margin-bottom: 1.5rem; border-radius: 8px; background: var(--bg-secondary); }
+    .comment:last-child { margin-bottom: 0; }
+    .comment-title { font-size: 1.2rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; }
+    .comment-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-light); }
+    .comment-meta span { font-weight: 500; }
+    .comment-text { line-height: 1.7; border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1rem; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeIn 0.6s ease-out forwards; }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <header class="header fade-in">
+      <a href="index.html" class="logo">
+        <i class="fas fa-crown logo-icon"></i> OcL Link
+      </a>
+      <nav>
+        <a href="index.html" class="nav-link">
+          <i class="fas fa-arrow-left"></i> На главную
+        </a>
+      </nav>
+    </header>
+
+    <main class="fade-in">
+      <h2 class="section-title">
+        <i class="fas fa-comment-alt"></i> Комментарии по опросам
+      </h2>
+      <p class="subtitle">Просматривайте обратную связь от тренеров. Выберите ресторан, чтобы отфильтровать список.</p>
+
+      <div class="filter-container">
+        <label for="restaurantFilter">Фильтр по ресторану</label>
+        <select id="restaurantFilter" disabled>
+          <option value="all">Загрузка ресторанов...</option>
+        </select>
+      </div>
+
+      <div class="comments-container">
+        <div id="commentList">
+          <p style="color: var(--text-light); text-align: center; padding: 2rem 0;">Загрузка комментариев...</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const commentListContainer = document.getElementById("commentList");
+    const filterSelect = document.getElementById("restaurantFilter");
+    let allComments = [];
+
+    function displayComments(comments) {
+      if (!comments || comments.length === 0) {
+        commentListContainer.innerHTML = '<p style="color: var(--text-light); text-align: center;">Комментарии не найдены.</p>';
+        return;
+      }
+      
+      const recentComments = comments.slice(-15).reverse();
+      
+      let html = '';
+      recentComments.forEach(entry => {
+        // Преобразуем процент в целое число
+        const percent = Math.round(entry.knowledge_percent * 100);
+
+        html += `
+          <div class="comment">
+            <h3 class="comment-title">${entry.survey_title || 'Без названия'}</h3>
+            <div class="comment-meta">
+              <span>HR: <strong style="color: var(--accent);">${entry.hr}</strong></span>
+              <span>Сотрудник: <strong style="color: var(--accent);">${entry.employee}</strong></span>
+            </div>
+            <div class="comment-meta">
+              <span>Знания: <strong style="color: var(--text-light);">${percent}%</strong></span>
+              <span>Дата: <strong style="color: var(--text-light);">${entry.datetime}</strong></span>
+            </div>
+            <p class="comment-text">${entry.comment}</p>
+          </div>`;
+      });
+      commentListContainer.innerHTML = html;
+    }
+    
+    function populateFilter(comments) {
+      const restaurantNames = [...new Set(comments.map(c => c.restaurant))].filter(Boolean);
+      restaurantNames.sort();
+      
+      filterSelect.innerHTML = '<option value="all">Все рестораны</option>';
+      restaurantNames.forEach(name => {
+        const option = document.createElement('option');
+        option.value = name;
+        option.textContent = name;
+        filterSelect.appendChild(option);
+      });
+      filterSelect.disabled = false;
+    }
+
+    // ВАЖНО: Замените URL на ваш
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNgxq7Aw6YJq7foMgi7LxCEJOniYaHZcPRmJ6E9OKoQpl6jPnrCyXnabsX0td4FS6bKQ/exec";
+
+    fetch(SCRIPT_URL)
+      .then(res => res.json())
+      .then(data => {
+        allComments = data;
+        populateFilter(allComments);
+        displayComments(allComments);
+      })
+      .catch(err => {
+        commentListContainer.innerHTML = '<p style="color: var(--text-light); text-align: center;">Ошибка загрузки комментариев.</p>';
+        console.error("Ошибка загрузки данных:", err);
+      });
+      
+    filterSelect.addEventListener('change', (event) => {
+      const selectedRestaurant = event.target.value;
+      if (selectedRestaurant === 'all') {
+        displayComments(allComments);
+      } else {
+        const filteredComments = allComments.filter(comment => comment.restaurant === selectedRestaurant);
+        displayComments(filteredComments);
+      }
+    });
+  </script>
+</body>
+</html>
