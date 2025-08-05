@@ -108,6 +108,7 @@
       background: linear-gradient(90deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-align: center; /* Центрируем для лучшего вида при переносе */
     }
 
     .subtitle {
@@ -115,6 +116,9 @@
       color: var(--text-light);
       margin-bottom: 3rem;
       max-width: 700px;
+      text-align: center; /* Центрируем подзаголовок */
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-title {
@@ -322,20 +326,18 @@
     
     /* Адаптивность */
     @media (max-width: 900px) {
-      .app-container {
-        padding: 1.75rem;
-      }
-      
       .header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* ИЗМЕНЕНИЕ: центрируем для мобильных */
         gap: 1.5rem;
+        text-align: center; /* ИЗМЕНЕНИЕ: центрируем текст в лого */
       }
       
       .nav {
         width: 100%;
         overflow-x: auto;
         padding-bottom: 0.5rem;
+        justify-content: center; /* ИЗМЕНЕНИЕ: центрируем навигацию */
       }
       
       .main-title {
@@ -348,8 +350,19 @@
     }
 
     @media (max-width: 600px) {
+      /* ИЗМЕНЕНИЕ: Уменьшаем отступы для большего пространства */
+      .app-container {
+        padding: 1.5rem 1rem;
+      }
+
       .card-grid {
         grid-template-columns: 1fr;
+      }
+
+      /* ИЗМЕНЕНИЕ: Уменьшаем основной заголовок, чтобы он помещался */
+      .main-title {
+        font-size: 1.9rem;
+        line-height: 1.3;
       }
       
       .section-title {
@@ -656,4 +669,3 @@
   </script>
 </body>
 </html>
-
