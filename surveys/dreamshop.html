@@ -7,301 +7,69 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --bg: #121212;
-      --bg-secondary: #1E1E1E;
-      --card: #252525;
-      --text: #E0E0E0;
-      --text-light: #B0B0B0;
-      --primary: #BB86FC;
-      --primary-dark: #3700B3;
-      --accent: #03DAC6;
-      --accent-dark: #018786;
-      --border: #333333;
-      --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      --bg: #121212; --bg-secondary: #1E1E1E; --card: #252525; --text: #E0E0E0; --text-light: #B0B0B0; --primary: #BB86FC; --primary-dark: #3700B3; --accent: #03DAC6; --accent-dark: #018786; --border: #333333; --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    .app-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .logo-icon {
-      color: var(--accent);
-    }
-
-    .main-title {
-      font-size: 2.75rem;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--primary);
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .subtitle {
-      font-size: 1.3rem;
-      color: var(--text-light);
-      margin-bottom: 3rem;
-      max-width: 700px;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      color: var(--primary);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .section-title i {
-      color: var(--accent);
-    }
-
-    .merch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .merch-card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .merch-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .merch-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--primary), var(--accent));
-      transition: width 0.3s;
-    }
-
-    .merch-card:hover::before {
-      width: 6px;
-    }
-
-    .merch-image-container {
-      position: relative;
-      width: 100%;
-      height: 250px;
-      margin-bottom: 1rem;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .merch-images {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s ease;
-    }
-
-    .merch-image {
-      min-width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background: var(--bg-secondary);
-      padding: 1rem;
-    }
-
-    .merch-title {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: var(--primary);
-      text-align: center;
-    }
-
-    .merch-price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--accent);
-      text-align: center;
-      margin-top: 0.5rem;
-    }
-
-    .image-indicators {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      z-index: 2;
-    }
-
-    .indicator {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .indicator.active {
-      background: var(--primary);
-    }
-
-    .exchange-info {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 3rem auto 0;
-      border-left: 4px solid var(--primary);
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      max-width: 800px;
-      box-shadow: var(--shadow);
-    }
-
-    .exchange-info strong {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .exchange-info p {
-      margin-bottom: 0.5rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-in {
-      animation: fadeIn 0.6s ease-out forwards;
-    }
-
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.3s; }
-    .delay-4 { animation-delay: 0.4s; }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    .app-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 0.75rem; }
+    .logo-icon { color: var(--accent); }
+    .main-title { font-size: 2.75rem; margin-bottom: 1.5rem; font-weight: 700; line-height: 1.2; color: var(--primary); background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { font-size: 1.3rem; color: var(--text-light); margin-bottom: 3rem; max-width: 700px; text-align: center; margin-left: auto; margin-right: auto; }
+    .section-title { font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 1rem; justify-content: center; }
+    .section-title i { color: var(--accent); }
+    .merch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+    .merch-card { background: var(--card); border-radius: 12px; padding: 1.5rem; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--border); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .merch-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); }
+    .merch-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary), var(--accent)); transition: width 0.3s; }
+    .merch-card:hover::before { width: 6px; }
+    .merch-image-container { position: relative; width: 100%; height: 250px; margin-bottom: 1rem; overflow: hidden; border-radius: 8px; }
+    .merch-images { display: flex; width: 100%; height: 100%; transition: transform 0.5s ease; }
+    .merch-image { min-width: 100%; height: 100%; object-fit: cover; background: var(--bg-secondary); }
+    .merch-title { font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary); text-align: center; }
+    .merch-price { font-size: 1.4rem; font-weight: 700; color: var(--accent); text-align: center; margin-top: auto; padding-top: 1rem; }
+    .image-indicators { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; z-index: 2; }
+    .indicator { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.5); cursor: pointer; transition: background 0.3s; }
+    .indicator.active { background: var(--primary); }
+    .exchange-info { background: var(--card); border-radius: 12px; padding: 2rem; margin: 3rem auto 0; border-left: 4px solid var(--primary); text-align: center; font-size: 1.1rem; line-height: 1.7; max-width: 800px; box-shadow: var(--shadow); }
+    .exchange-info strong { color: var(--accent); font-weight: 600; }
+    .exchange-info p { margin-bottom: 0.5rem; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeIn 0.6s ease-out forwards; }
     @media (max-width: 900px) {
-      .app-container {
-        padding: 1.75rem;
-      }
-      
-      .header {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-      }
-      
-      .main-title {
-        font-size: 2.25rem;
-        text-align: center;
-      }
-      
-      .subtitle {
-        font-size: 1.15rem;
-      }
+      .app-container { padding: 1.75rem; }
+      .header { flex-direction: column; align-items: center; gap: 1.5rem; }
+      .main-title { font-size: 2.25rem; text-align: center; }
+      .subtitle { font-size: 1.15rem; }
     }
-
     @media (max-width: 600px) {
-      .merch-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .section-title {
-        font-size: 1.5rem;
-      }
-      
-      .merch-image-container {
-        height: 220px;
-      }
-      
-      .exchange-info {
-        padding: 1.5rem;
-        font-size: 1rem;
-        margin: 2rem 0 0;
-      }
+      .merch-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="app-container">
     <header class="header fade-in">
-      <a href="#" class="logo">
+      <a href="index.html" class="logo">
         <i class="fas fa-crown logo-icon"></i>
         Dream Shop
       </a>
     </header>
 
     <main>
-      <section id="welcome" class="fade-in delay-1">
-        <h1 class="main-title">Корпоративный мерч</h1>
+      <section id="welcome" class="fade-in">
+        <h1 class="main-title" style="text-align: center;">Корпоративный мерч</h1>
         <p class="subtitle">Это не просто одежда, это часть нашей культуры и ценностей!</p>
       </section>
 
-      <section id="merch" class="fade-in delay-2">
+      <section id="merch" class="fade-in">
         <h2 class="section-title">
           <i class="fas fa-tshirt"></i>
           Наши товары
         </h2>
         
         <div class="merch-grid" id="merchGrid">
-          <!-- Бомбер -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -317,7 +85,6 @@
             <div class="merch-price">3 000 DC</div>
           </div>
           
-          <!-- Свитшот 1 -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -333,7 +100,6 @@
             <div class="merch-price">2 000 DC</div>
           </div>
           
-          <!-- Свитшот 2 -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -351,7 +117,6 @@
             <div class="merch-price">2 000 DC</div>
           </div>
           
-          <!-- Худи -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -365,7 +130,6 @@
             <div class="merch-price">3 800 DC</div>
           </div>
           
-          <!-- Свитшот 3 -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -380,8 +144,7 @@
             <h3 class="merch-title">Свитшот</h3>
             <div class="merch-price">2 000 DC</div>
           </div>
-              
-          <!-- Свитшот 4 -->
+                    
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -397,7 +160,6 @@
             <div class="merch-price">2 000 DC</div>
           </div>
           
-          <!-- Рюкзак -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -413,7 +175,6 @@
             <div class="merch-price">1 500 DC</div>
           </div>
           
-          <!-- Шоппер 1 -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -429,7 +190,6 @@
             <div class="merch-price">1 000 DC</div>
           </div>
           
-          <!-- Шоппер 2 -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -443,7 +203,6 @@
             <div class="merch-price">1 000 DC</div>
           </div>
           
-          <!-- Термобутылка -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -459,7 +218,6 @@
             <div class="merch-price">1 000 DC</div>
           </div>
           
-          <!-- Кружка -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -473,7 +231,6 @@
             <div class="merch-price">600 DC</div>
           </div>
           
-          <!-- Кепка -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -489,7 +246,6 @@
             <div class="merch-price">700 DC</div>
           </div>
           
-          <!-- Носки -->
           <div class="merch-card">
             <div class="merch-image-container">
               <div class="merch-images">
@@ -504,7 +260,7 @@
           </div>
         </div>
         
-        <div class="exchange-info fade-in delay-3">
+        <div class="exchange-info fade-in">
           <p><strong>DREAM COINS</strong> можно обменять на корпоративный мерч каждый четверг</p>
           <p>с 9:00 до 17:00 в ЦПР</p>
           <p>по адресу: Жукеева-Пудовкина 87/2, 3 этаж, офис Food Dream</p>
@@ -522,21 +278,36 @@
         const images = card.querySelectorAll('.merch-image');
         const indicators = card.querySelectorAll('.indicator');
         
-        if (images.length <= 1) return;
+        if (images.length <= 1) {
+          // Если фото одно, скрываем индикаторы
+          const indicatorContainer = card.querySelector('.image-indicators');
+          if (indicatorContainer) {
+            indicatorContainer.style.display = 'none';
+          }
+          return;
+        }
         
         let currentIndex = 0;
         let intervalId;
         
-        function showNextImage() {
-          currentIndex = (currentIndex + 1) % images.length;
-          imagesContainer.style.transform = translateX(-${currentIndex * 100}%);
+        function showImage(index) {
+          // ИСПРАВЛЕНО: Используем обратные кавычки (`)
+          imagesContainer.style.transform = `translateX(-${index * 100}%)`;
           
-          indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentIndex);
+          indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
           });
+          currentIndex = index;
+        }
+        
+        function showNextImage() {
+          let nextIndex = (currentIndex + 1) % images.length;
+          showImage(nextIndex);
         }
         
         function startAutoScroll() {
+          // Предотвращаем запуск нескольких таймеров
+          clearInterval(intervalId); 
           intervalId = setInterval(showNextImage, 3000);
         }
         
@@ -552,12 +323,7 @@
         
         indicators.forEach((indicator, index) => {
           indicator.addEventListener('click', () => {
-            clearInterval(intervalId);
-            currentIndex = index;
-            imagesContainer.style.transform = translateX(-${currentIndex * 100}%);
-            indicators.forEach((ind, i) => {
-              ind.classList.toggle('active', i === currentIndex);
-            });
+            showImage(index);
           });
         });
       });
