@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд | KFC Training</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root { --bg: #121212; --bg-secondary: #1E1E1E; --card: #252525; --text: #E0E0E0; --text-light: #B0B0B0; --primary: #BB86FC; --accent: #03DAC6; --border: #333333; --shadow: 0 4px 16px rgba(0, 0, 0, 0.3); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); }
+        .app-container { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        
+        /* --- НОВЫЙ КОНТЕЙНЕР ДЛЯ КНОПОК В ШАПКЕ --- */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem; /* Увеличим расстояние между блоками */
+        }
+        
+        .filters { display: flex; gap: 0.5rem; }
+        .filter-btn { background: var(--card); color: var(--text-light); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+        .filter-btn:hover { background: var(--bg-secondary); color: var(--text); }
+        .filter-btn.active { background: var(--primary); color: #000; font-weight: 600; border-color: var(--primary); }
+
+        /* --- НОВЫЕ СТИЛИ ДЛЯ КНОПКИ --- */
+        .reports-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .reports-btn:hover {
+            background: rgba(3, 218, 198, 0.1);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .kpi-card { background: var(--card); padding: 1.5rem; border-radius: 12px; border-left: 5px solid var(--primary); }
+        .kpi-card .value { font-size: 2.5rem; font-weight: 700; color: var(--accent); }
+        .kpi-card .title { font-size: 1rem; color: var(--text-light); }
+        .main-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .chart-card, .leaderboard-card { background: var(--card); padding: 1.5rem; border-radius: 12px; }
+        .chart-card-full { grid-column: 1 / -1; }
+        .card-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
+        .leaderboard-list { list-style: none; }
+        .leaderboard-item { display: flex; flex-direction: column; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+        .leaderboard-item:last-child { border-bottom: none; }
+        .leaderboard-item .name-line { display: flex; justify-content: space-between; width: 100%; align-items: center; }
+        .leaderboard-item .name { font-weight: 500; }
+        .leaderboard-item .score { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
+        .leaderboard-item .restaurant { font-size: 0.85rem; color: var(--text-light); }
+        #loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; color: var(--text); transition: opacity 0.3s; }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay"><i class="fas fa-spinner fa-spin"></i>&nbsp; Загрузка данных...</div>
+    <div class="app-container">
+        <header class="header">
+            <a href="#" class="logo"><i class="fas fa-tachometer-alt"></i> Ультимативный дашборд</a>
+            
+            <div class="header-actions">
+                <div class="filters">
+                    <button class="filter-btn active" data-range="30">За 30 дней</button>
+                    <button class="filter-btn" data-range="90">За квартал</button>
+                    <button class="filter-btn" data-range="all">За всё время</button>
+                </div>
+                
+                <a href="https://docs.google.com/spreadsheets/d/16Q5o1FFwyqe8Xi3MbLUotWTd80PD8yebFr_ZADcq94w/edit?usp=sharing" target="_blank" class="reports-btn">
+                    <i class="fas fa-file-alt"></i> Смотреть отчёты
+                </a>
+            </div>
+        </header>
+
+        <main id="dashboard-body" style="visibility: hidden;">
+            <section class="kpi-grid">
+                <div class="kpi-card">
+                    <div id="kpi-total-surveys" class="value">0</div>
+                    <div class="title">Всего опросов</div>
+                </div>
+                <div class="kpi-card">
+                    <div id="kpi-avg-score" class="value">0%</div>
+                    <div class="title">Общий средний балл</div>
+                </div>
+                <div class="kpi-card">
+                    <div id="kpi-top-restaurant" class="value">Н/Д</div>
+                    <div class="title">Лучший ресторан</div>
+                </div>
+            </section>
+
+            <section class="main-grid">
+                <div class="leaderboard-card">
+                    <h3 class="card-title"><i class="fas fa-trophy"></i> Топ-5 Ресторанов</h3>
+                    <ol id="leaderboard-restaurants" class="leaderboard-list"></ol>
+                </div>
+                <div class="leaderboard-card">
+                    <h3 class="card-title"><i class="fas fa-user-graduate"></i> Топ-5 Сотрудников</h3>
+                    <ol id="leaderboard-employees" class="leaderboard-list"></ol>
+                </div>
+                <div class="leaderboard-card">
+                    <h3 class="card-title"><i class="fas fa-user-tie"></i> Топ-5 Тренеров</h3>
+                    <ol id="leaderboard-hrs" class="leaderboard-list"></ol>
+                </div>
+                
+                <div class="chart-card chart-card-full">
+                     <h3 class="card-title">Сравнение ресторанов по среднему баллу</h3>
+                    <canvas id="restaurantComparisonChart"></canvas>
+                </div>
+
+                <div class="chart-card chart-card-full">
+                    <h3 class="card-title">Активность по дням недели</h3>
+                    <canvas id="activityByDayChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzcbzJBGqKm70NltUeCfIGKj7kv-Nse2047T0nvMQtzdDtIU8MCBY3cpgS8SCHVpUvR/exec";
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const dashboardBody = document.getElementById('dashboard-body');
+
+        let chartInstances = {};
+        Chart.defaults.color = 'rgba(224, 224, 224, 0.7)';
+        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+        
+        function renderChart(canvasId, type, data, options = {}) {
+            if (chartInstances[canvasId]) chartInstances[canvasId].destroy();
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            chartInstances[canvasId] = new Chart(ctx, { type, data, options });
+        }
+
+        function updateDashboard(data) {
+            document.getElementById('kpi-total-surveys').textContent = data.kpis.totalSurveys;
+            document.getElementById('kpi-avg-score').textContent = `${Math.round(data.kpis.averageScore * 100)}%`;
+            document.getElementById('kpi-top-restaurant').textContent = data.kpis.topRestaurant;
+
+            const updateLeaderboard = (elemId, items, options = {}) => {
+                const { showRestaurant = false, displayType = 'score' } = options;
+                const list = document.getElementById(elemId);
+                
+                list.innerHTML = items.map(item => {
+                    let scoreDisplay = '';
+                    if (displayType === 'score') {
+                        scoreDisplay = `${Math.round(item.avg_score * 100)}%`;
+                    } else { // displayType === 'count'
+                        scoreDisplay = `${item.count} опросов`;
+                    }
+                    
+                    let detailsLine = '';
+                    if (showRestaurant) {
+                        detailsLine = `<div class="restaurant">${item.restaurant}`;
+                        if (elemId === 'leaderboard-hrs') {
+                            detailsLine += ` | ${item.count} опросов`;
+                        }
+                        detailsLine += `</div>`;
+                    }
+
+                    return `
+                        <li class="leaderboard-item">
+                            <div class="name-line">
+                                <span class="name">${item.name}</span>
+                                <span class="score">${scoreDisplay}</span>
+                            </div>
+                            ${detailsLine} 
+                        </li>
+                    `;
+                }).join('') || '<li class="leaderboard-item">Нет данных</li>';
+            };
+            
+            updateLeaderboard('leaderboard-restaurants', data.leaderboards.restaurants, { displayType: 'count' });
+            updateLeaderboard('leaderboard-employees', data.leaderboards.employees, { showRestaurant: true, displayType: 'score' });
+            updateLeaderboard('leaderboard-hrs', data.leaderboards.hrs, { showRestaurant: true, displayType: 'score' });
+
+            renderChart('restaurantComparisonChart', 'bar', {
+                labels: data.charts.restaurantComparison.map(r => r.name),
+                datasets: [{ label: 'Средний балл', data: data.charts.restaurantComparison.map(r => Math.round(r.avg_score * 100)), backgroundColor: '#BB86FC' }]
+            });
+            
+            renderChart('activityByDayChart', 'bar', {
+                labels: data.charts.activityByDay.map(d => d.name),
+                datasets: [{ label: 'Кол-во опросов', data: data.charts.activityByDay.map(d => d.count), backgroundColor: '#03DAC6' }]
+            });
+        }
+
+        async function fetchData(range) {
+            loadingOverlay.style.opacity = 1;
+            loadingOverlay.style.visibility = 'visible';
+            
+            let url = SCRIPT_URL;
+            if (range !== 'all') {
+                const endDate = new Date();
+                const startDate = new Date();
+                startDate.setDate(endDate.getDate() - parseInt(range));
+                url += `?startDate=${startDate.toISOString().split('T')[0]}&endDate=${endDate.toISOString().split('T')[0]}`;
+            }
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                updateDashboard(data);
+            } catch (error) {
+                console.error("Ошибка загрузки данных:", error);
+                alert("Не удалось загрузить данные. Проверьте консоль.");
+            } finally {
+                loadingOverlay.style.opacity = 0;
+                loadingOverlay.style.visibility = 'hidden';
+                dashboardBody.style.visibility = 'visible';
+            }
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                button.classList.add('active');
+                fetchData(button.dataset.range);
+            });
+        });
+
+        fetchData('30');
+    </script>
+</body>
+</html>
