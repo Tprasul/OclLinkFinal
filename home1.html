@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OcL Link | Портал для сотрудников</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0F0F0F;
+      --card: #1A1A1A;
+      --text: #E0E0E0;
+      --text-light: #A0A0A0;
+      --primary: #7C3AED;
+      --accent: #10B981;
+      --border: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Хедер */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    /* Герой секция */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding-top: 5rem;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Секции */
+    .section {
+      padding: 6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    
+    /* Секция с кнопкой входа */
+    .portal-entry-section {
+        text-align: center;
+    }
+    
+    .portal-entry-section .section-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .portal-entry-section p {
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto 3rem auto;
+    }
+
+    /* Стили для главной кнопки */
+    .btn-main {
+        padding: 1rem 3rem;
+        font-size: 1.25rem;
+        border-radius: 50px;
+        background: linear-gradient(45deg, var(--primary), #9333EA);
+        border: none;
+        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-main:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.6);
+        background: linear-gradient(45deg, #9333EA, var(--primary));
+    }
+    
+    .btn-main i {
+        font-size: 1.2rem;
+    }
+
+    /* Футер */
+    footer {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      color: var(--text-light);
+      font-size: 0.875rem;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      .section {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">OcL<span>Link</span></a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Единый портал для <span>сотрудников</span></h1>
+      <p class="hero-subtitle">Добро пожаловать! Здесь собраны все необходимые инструменты для вашей работы: опросы, материалы и многое другое.</p>
+    </div>
+  </section>
+  
+  <section class="section portal-entry-section" id="portal-entry">
+    <div class="container">
+      <h2 class="section-title">Вход на портал</h2>
+      <p>Нажмите на кнопку ниже, чтобы перейти к опросам, учебным материалам и другим рабочим инструментам.</p>
+      <a href="testt.html" class="btn btn-main">
+        <i class="fas fa-arrow-right-to-bracket"></i> Перейти на портал
+      </a>
+    </div>
+  </section>
+  
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">О проекте</h2>
+      <div class="about-content" style="max-width: 800px; margin: 0 auto;">
+        <div style="background: var(--card); padding: 2rem; border-radius: 0.5rem; border: 1px solid var(--border);">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary);">OcL Link - единая платформа для ресторанов</h3>
+          <p style="margin-bottom: 1rem;">Наш проект создан для удобного взаимодействия между сотрудниками и их посетителями. Мы объединяем все необходимые инструменты в одном месте.</p>
+          
+          <h4 style="font-size: 1.25rem; margin: 1.5rem 0 1rem; color: var(--accent);">Наши преимущества:</h4>
+          <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+            <li style="margin-bottom: 0.5rem;">Удобная система сбора обратной связи</li>
+            <li style="margin-bottom: 0.5rem;">Единая платформа для всех ресторанов сети</li>
+            <li style="margin-bottom: 0.5rem;">Простое и интуитивно понятное управление</li>
+            <li style="margin-bottom: 0.5rem;">Аналитика и отчеты в реальном времени</li>
+            <li style="margin-bottom: 0.5rem;">Галерея успеха - ваши лучшие моменты и яркие достижения</li>
+            <li style="margin-bottom: 0.5rem;">Рейтинг тренеров и сотрудников</li>
+          </ul>
+          
+          <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+            <img src="https://i.postimg.cc/J0FbLP3S/qq.jpg" alt="Создатель проекта" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+            <div>
+              <p style="font-weight: 500; margin-bottom: 0.25rem;">Создатель проекта</p>
+              <p style="color: var(--primary); font-weight: 600;">Расул Жунусов</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title">Часто задаваемые вопросы</h2>
+      <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+        <div class="faq-item" style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); margin-bottom: 1rem; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s;" onclick="toggleFaq(this)">
+            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Как найти ваш web адрес?</h3>
+            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+          </div>
+          <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+            <div style="padding-bottom: 1.5rem; color: var(--text-light);">
+              Сайт находится по адресу www.ocllink.online или можно отсканировать QR в ресторане.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item" style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); margin-bottom: 1rem; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s;" onclick="toggleFaq(this)">
+            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Как часто обновляются данные?</h3>
+            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+          </div>
+          <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+            <div style="padding-bottom: 1.5rem; color: var(--text-light);">
+              Данные обновляются в реальном времени. Все изменения и новая информация отображаются в системе сразу после внесения.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item" style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); margin-bottom: 1rem; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s;" onclick="toggleFaq(this)">
+            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Есть ли мобильное приложение?</h3>
+            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+          </div>
+          <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+            <div style="padding-bottom: 1.5rem; color: var(--text-light);">
+              В настоящее время доступна мобильная версия сайта. Разработка нативного приложения планируется в ближайшем будущем.
+            </div>
+          </div>
+        </div>
+        
+        <div class="faq-item" style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); margin-bottom: 1rem; overflow: hidden;">
+          <div class="faq-question" style="padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.3s;" onclick="toggleFaq(this)">
+            <h3 style="font-size: 1.1rem; font-weight: 600; margin: 0;">Как обеспечивается безопасность данных?</h3>
+            <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+          </div>
+          <div class="faq-answer" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+            <div style="padding-bottom: 1.5rem; color: var(--text-light);">
+              Мы используем современные методы шифрования и защиты данных. Все персональные данные хранятся в соответствии с требованиями законодательства.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contacts">
+    <div class="container">
+      <h2 class="section-title">Контакты</h2>
+      <div style="background: var(--card); border-radius: 0.5rem; border: 1px solid var(--border); max-width: 600px; margin: 0 auto; text-align: center; padding: 2rem;">
+        <p style="margin-bottom: 1rem;">По вопросам работы платформы обращайтесь к своему менеджеру.</p>
+        <p style="margin-bottom: 1rem;"><i class="fas fa-envelope"></i> kfc_tp@fooddream.kg</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#portal-entry">Вход на портал</a>
+        <a href="#about">О проекте</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <p class="copyright">© 2025 OcL Link. Все права защищены.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // FAQ аккордеон
+    function toggleFaq(element) {
+      const faqItem = element.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = element.querySelector('i');
+      
+      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+            item.querySelector('.faq-answer').style.maxHeight = '0';
+            item.querySelector('.faq-question').style.background = 'var(--card)';
+            item.querySelector('i').style.transform = 'rotate(0deg)';
+        }
+      });
+      
+      if (!isOpen) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        element.style.background = 'rgba(124, 58, 237, 0.1)';
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        answer.style.maxHeight = '0';
+        element.style.background = 'var(--card)';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+</body>
+</html>
