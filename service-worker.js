@@ -1,13 +1,28 @@
-const CACHE_NAME = 'kfc-portal-cache-v4'; // Версия кэша
+// Увеличиваем версию кэша. Меняйте эту цифру КАЖДЫЙ раз, когда обновляете сайт.
+const CACHE_NAME = 'kfc-portal-cache-v5'; 
+const URLS_TO_CACHE = [
+  '/',
+  '/index.html',
+  '/home.html', 
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+];
 
-// 1. Установка Service Worker
+// --- Установка Service Worker ---
+// Этот шаг срабатывает, когда браузер видит новую версию скрипта (из-за смены CACHE_NAME).
 self.addEventListener('install', (event) => {
-  console.log('Service Worker устанавливается, офлайн-кэш отключен.');
-  self.skipWaiting();
+  console.log('Установка новой версии Service Worker...');
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      // Кэшируем основные файлы "про запас".
+      return cache.addAll(URLS_TO_CACHE);
+    }).then(() => self.skipWaiting()) // Принудительно активируем новый Service Worker
+  );
 });
 
-// 2. Активация Service Worker и удаление старых кэшей
+// --- Активация Service Worker ---
+// Здесь происходит очистка старых кэшей.
 self.addEventListener('activate', (event) => {
+  console.log('Активация новой версии и очистка старого кэша.');
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
@@ -17,13 +32,21 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Перехватываем управление страницей
   );
-  self.clients.claim();
 });
 
-// 3. Обработка запросов (оставляем пустым)
+// --- Обработка запросов (Стратегия "Network First") ---
 self.addEventListener('fetch', (event) => {
-  // Ничего не делаем, браузер будет работать как обычно
-  return;
+  event.respondWith(
+    // 1. Сначала всегда идем в интернет
+    fetch(event.request)
+      .catch((err) => {
+        // 2. Если интернета нет, браузер сам покажет ошибку.
+        // Мы НЕ отдаем старую версию из кэша, как вы и просили.
+        console.error('Ошибка сети, офлайн-режим отключен:', err);
+        // Эта ошибка приведет к стандартной странице "Нет подключения к интернету" в браузере.
+        throw err;
+      })
+  );
 });
