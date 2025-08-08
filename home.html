@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#BB86FC"/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OcL Link | Портал для сотрудников</title>
@@ -362,6 +364,20 @@
       }
     }
   </script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker зарегистрирован:', registration);
+        })
+        .catch(error => {
+          console.log('Ошибка регистрации Service Worker:', error);
+        });
+    });
+  }
+</script>
 </body>
 </html>
+
 
