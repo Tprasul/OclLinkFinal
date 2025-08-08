@@ -1,29 +1,29 @@
-self.addEventListener('install', event => {
+const CACHE_NAME = 'kfc-portal-cache-v4'; // Версия кэша
+
+// 1. Установка Service Worker
+self.addEventListener('install', (event) => {
+  console.log('Service Worker устанавливается, офлайн-кэш отключен.');
+  self.skipWaiting();
+});
+
+// 2. Активация Service Worker и удаление старых кэшей
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.open('ocl-cache').then(cache => {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/manifest.json',
-        '/icon-192.png',
-        '/icon-512.png'
-      ]);
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
     })
   );
+  self.clients.claim();
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
-  );
-});
-
-self.addEventListener('activate', event => {
-  event.waitUntil(clients.claim());
-});
-
-self.addEventListener('message', event => {
-  if (event.data === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
+// 3. Обработка запросов (оставляем пустым)
+self.addEventListener('fetch', (event) => {
+  // Ничего не делаем, браузер будет работать как обычно
+  return;
 });
