@@ -35,11 +35,18 @@
             padding: 2rem;
         }
 
+        /* ИЗМЕНЕНИЯ В ШАПКЕ */
         .main-header {
-            text-align: center;
+            display: flex; /* Добавлено для расположения элементов в ряд */
+            justify-content: space-between; /* Заголовок слева, кнопка справа */
+            align-items: center; /* Выравнивание по центру по вертикали */
+            text-align: left; /* Выравнивание текста заголовка по левому краю */
             margin-bottom: 3rem;
             border-bottom: 1px solid var(--border);
             padding-bottom: 2rem;
+        }
+        .header-title {
+            text-align: left;
         }
         .main-header .icon {
             font-size: 3rem;
@@ -47,12 +54,35 @@
             margin-bottom: 1rem;
         }
         .main-header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem; /* Немного уменьшил, чтобы поместилось */
             font-weight: 700;
             background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        /* НОВЫЙ СТИЛЬ ДЛЯ КНОПКИ В ШАПКЕ */
+        .btn-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-header:hover {
+            background-color: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(3, 218, 198, 0.2);
+        }
+
 
         .section-title {
             font-size: 1.8rem;
@@ -137,9 +167,18 @@
             border-color: var(--primary);
         }
         
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+            .main-header h1 { font-size: 2.2rem; }
+            .header-title { text-align: center; }
+        }
+        
         @media (max-width: 600px) {
             .app-container { padding: 1.5rem 1rem; }
-            .main-header h1 { font-size: 2.2rem; }
             .card-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -148,8 +187,14 @@
 
 <div class="app-container">
     <header class="main-header">
-        <div class="icon"><i class="fas fa-trophy"></i></div>
-        <h1>Панель Оценки CHAMPS</h1>
+        <div class="header-title">
+            <div class="icon"><i class="fas fa-trophy"></i></div>
+            <h1>Панель Оценки CHAMPS</h1>
+        </div>
+        <a href="reports.html" class="btn-header">
+            <i class="fas fa-chart-line"></i>
+            <span>Отчеты</span>
+        </a>
     </header>
 
     <section>
@@ -247,12 +292,12 @@
                 <h3 class="card-title">Ножки HS</h3>
                 <div class="btn">Начать оценку</div>
             </a>
-            <a href="CHAMPS/champsaitvch.html" class="survey-card">
+            <a href="champs_twister.html" class="survey-card">
                 <div class="card-icon"><i class="fas fa-tornado"></i></div>
                 <h3 class="card-title">Твистер</h3>
                 <div class="btn">Начать оценку</div>
             </a>
-            <a href="surveys/CHAMPS/champsaitvch.html" class="survey-card">
+            <a href="champs_itwister_cheese.html" class="survey-card">
                 <div class="card-icon"><i class="fas fa-tornado"></i></div>
                 <h3 class="card-title">Ай-Твистер Чиз</h3>
                 <div class="btn">Начать оценку</div>
