@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAMPS | Панель Оценки</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #121212;
+            --bg-secondary: #1E1E1E;
+            --card: #252525;
+            --text: #E0E0E0;
+            --text-light: #B0B0B0;
+            --primary: #BB86FC;
+            --primary-dark: #3700B3;
+            --accent: #03DAC6;
+            --border: #333333;
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .main-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+        }
+        .main-header .icon {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        .main-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+        .section-title i {
+            color: var(--accent);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .survey-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .survey-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            height: 40px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: auto;
+            padding-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: var(--bg-secondary);
+            color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .survey-card:hover .btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        @media (max-width: 600px) {
+            .app-container { padding: 1.5rem 1rem; }
+            .main-header h1 { font-size: 2.2rem; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <header class="main-header">
+        <div class="icon"><i class="fas fa-trophy"></i></div>
+        <h1>Панель Оценки CHAMPS</h1>
+    </header>
+
+    <section>
+        <h2 class="section-title"><i class="fas fa-users"></i>Основные роли</h2>
+        <div class="card-grid">
+            <a href="champs_kassir.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-cash-register"></i></div>
+                <h3 class="card-title">Кассир</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_paker.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-box-open"></i></div>
+                <h3 class="card-title">Пакер</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_presenter.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
+                <h3 class="card-title">Презентор</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_runner.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-running"></i></div>
+                <h3 class="card-title">Раннер</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+             <a href="champs_napitochnik.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-coffee"></i></div>
+                <h3 class="card-title">Напиточник</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_hostess.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-concierge-bell"></i></div>
+                <h3 class="card-title">Хостесс</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title"><i class="fas fa-car-side"></i>Роли на Драйв-Ин (DT)</h2>
+        <div class="card-grid">
+            <a href="champs_dt_order_taker.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-headset"></i></div>
+                <h3 class="card-title">Приемщик заказа DT</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+             <a href="champs_dt_cashier.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-cash-register"></i></div>
+                <h3 class="card-title">Кассир DT</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+             <a href="champs_dt_assembler.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-box-open"></i></div>
+                <h3 class="card-title">Сборщик DT</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+             <a href="champs_dt_checker.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-check-double"></i></div>
+                <h3 class="card-title">Проверка заказа DT</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+             <a href="champs_dt_presenter.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h3 class="card-title">Выдача заказа DT</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+             <a href="champs_dt_runner.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-running"></i></div>
+                <h3 class="card-title">Разносчик DT</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+             <a href="champs_dt_drink_maker.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-coffee"></i></div>
+                <h3 class="card-title">Напиточник DT</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+        </div>
+    </section>
+    
+    <section>
+        <h2 class="section-title"><i class="fas fa-hamburger"></i>Продукты</h2>
+        <div class="card-grid">
+            <a href="champs_wings_strips_hs.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <h3 class="card-title">Крылья / Стрипсы HS</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_nozhki_or.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <h3 class="card-title">Ножки OR</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_nozhki_hs.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <h3 class="card-title">Ножки HS</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="CHAMPS/champsaitvch.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-tornado"></i></div>
+                <h3 class="card-title">Твистер</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="surveys/CHAMPS/champsaitvch.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-tornado"></i></div>
+                <h3 class="card-title">Ай-Твистер Чиз</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_boxmaster.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-hamburger"></i></div>
+                <h3 class="card-title">Боксмастер</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_shefburger_or.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-hamburger"></i></div>
+                <h3 class="card-title">Шефбургер OR</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_shefburger_hs.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-hamburger"></i></div>
+                <h3 class="card-title">Шефбургер HS</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_fri.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="card-title">Фри</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title"><i class="fas fa-clipboard-check"></i>Контроль качества</h2>
+        <div class="card-grid">
+            <a href="champs_brakerazh.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
+                <h3 class="card-title">Бракераж готового продукта</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_degustaciya.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                <h3 class="card-title">Дегустация</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+            <a href="champs_klikun.html" class="survey-card">
+                <div class="card-icon"><i class="fas fa-clipboard-list"></i></div>
+                <h3 class="card-title">Кликун</h3>
+                <div class="btn">Начать оценку</div>
+            </a>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
