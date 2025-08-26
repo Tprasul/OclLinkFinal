@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты опросов</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #121212; --bg-secondary: #1E1E1E; --card: #252525;
+            --text: #E0E0E0; --text-light: #B0B0B0; --primary: #BB86FC;
+            --border: #333333; --accent: #03DAC6; --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg); color: var(--text); padding: 2rem;
+            margin: 0; line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 {
+            color: var(--primary); text-align: center; margin-bottom: 1rem;
+            font-size: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;
+        }
+
+        /* Карточки с итогами */
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .summary-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .summary-card .icon {
+            font-size: 2rem;
+            color: var(--accent);
+            background-color: rgba(3, 218, 198, 0.1);
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+        }
+        .summary-card .value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .summary-card .label {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Фильтры */
+        .filters {
+            display: flex; gap: 1rem; margin-bottom: 2rem; background: var(--card);
+            padding: 1.5rem; border-radius: 12px; flex-wrap: wrap; border: 1px solid var(--border);
+        }
+        .filters input, .filters select {
+            flex-grow: 1; min-width: 180px; padding: 0.75rem 1rem; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text); font-size: 1rem;
+        }
+        .filters button {
+            padding: 0.75rem 1.5rem; border: none; border-radius: 8px;
+            background: var(--accent); color: #121212; font-weight: bold;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .filters button:hover { background: #32f8e5; transform: translateY(-2px); }
+
+        /* Таблица */
+        .table-container { overflow-x: auto; }
+        table {
+            width: 100%; border-collapse: collapse; background: var(--card);
+            border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+        }
+        th, td { padding: 1rem 1.25rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background-color: #333; font-weight: 600; }
+        tbody tr { transition: background-color 0.2s; }
+        tbody tr:hover { background-color: var(--bg-secondary); }
+        tbody tr:last-child td { border-bottom: none; }
+        td a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        td a:hover { text-decoration: underline; }
+        .comment-cell { max-width: 300px; white-space: pre-wrap; word-wrap: break-word; color: var(--text-light); }
+        td b { color: var(--accent); font-size: 1.1em; }
+
+        #loader, #no-results { text-align: center; padding: 3rem; font-size: 1.2rem; color: var(--text-light); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1><i class="fas fa-chart-bar"></i> Аналитика опросов</h1>
+
+        <div class="summary-cards">
+            <div class="summary-card">
+                <div class="icon"><i class="fas fa-file-alt"></i></div>
+                <div>
+                    <div id="total-count" class="value">-</div>
+                    <div class="label">Всего записей</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="icon"><i class="fas fa-percentage"></i></div>
+                <div>
+                    <div id="avg-score" class="value">-</div>
+                    <div class="label">Средний балл</div>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="icon"><i class="fas fa-store"></i></div>
+                <div>
+                    <div id="restaurant-count" class="value">-</div>
+                    <div class="label">Ресторанов</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="filters">
+            <select id="filter-survey">
+                <option value="">Все опросы</option>
+                </select>
+            <input type="text" id="filter-employee" placeholder="Имя сотрудника...">
+            <input type="text" id="filter-hr" placeholder="Имя проверяющего...">
+            <select id="filter-restaurant">
+                <option value="">Все рестораны</option>
+                </select>
+            <button id="apply-filters"><i class="fas fa-filter"></i> Применить</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Опрос</th>
+                        <th>Ресторан</th>
+                        <th>Сотрудник</th>
+                        <th>Проверяющий</th>
+                        <th>Результат</th>
+                        <th>Комментарий</th>
+                        <th>Фото</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+            <div id="loader">Загрузка...</div>
+            <div id="no-results" style="display: none;">Ничего не найдено.</div>
+        </div>
+    </div>
+
+    <script>
+        const resultsBody = document.getElementById('results-body');
+        const loader = document.getElementById('loader');
+        const noResults = document.getElementById('no-results');
+        const applyBtn = document.getElementById('apply-filters');
+        
+        const totalCountEl = document.getElementById('total-count');
+        const avgScoreEl = document.getElementById('avg-score');
+        const restaurantCountEl = document.getElementById('restaurant-count');
+
+        const filterSurveyEl = document.getElementById('filter-survey');
+        const filterEmployeeEl = document.getElementById('filter-employee');
+        const filterHrEl = document.getElementById('filter-hr');
+        const filterRestaurantEl = document.getElementById('filter-restaurant');
+
+        async function fetchResults() {
+            loader.style.display = 'block';
+            noResults.style.display = 'none';
+            resultsBody.innerHTML = '';
+
+            const params = new URLSearchParams();
+            if (filterSurveyEl.value) params.append('survey_name', filterSurveyEl.value);
+            if (filterEmployeeEl.value) params.append('employee_name', filterEmployeeEl.value);
+            if (filterHrEl.value) params.append('hr_name', filterHrEl.value);
+            if (filterRestaurantEl.value) params.append('restaurant', filterRestaurantEl.value);
+            
+            try {
+                const response = await fetch(`/api/results?${params.toString()}`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const results = await response.json();
+
+                updateSummaryCards(results);
+                populateFilters(results);
+
+                if (results.length === 0) {
+                    noResults.style.display = 'block';
+                } else {
+                    results.forEach(row => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${new Date(row.created_at).toLocaleDateString('ru-RU')}</td>
+                            <td>${row.survey_name || '-'}</td>
+                            <td>${row.restaurant || '-'}</td>
+                            <td>${row.employee_name || '-'}</td>
+                            <td>${row.hr_name || '-'}</td>
+                            <td><b>${row.score_percent}%</b></td>
+                            <td class="comment-cell">${row.comment || '-'}</td>
+                            <td>${row.photo_url ? `<a href="${row.photo_url}" target="_blank">Смотреть</a>` : 'Нет'}</td>
+                        `;
+                        resultsBody.appendChild(tr);
+                    });
+                }
+            } catch (error) {
+                noResults.style.display = 'block';
+                noResults.textContent = 'Ошибка загрузки данных.';
+                console.error('Fetch error:', error);
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+
+        function updateSummaryCards(results) {
+            totalCountEl.textContent = results.length;
+
+            if (results.length > 0) {
+                const totalScore = results.reduce((sum, row) => sum + (row.score_percent || 0), 0);
+                avgScoreEl.textContent = `${Math.round(totalScore / results.length)}%`;
+
+                const uniqueRestaurants = new Set(results.map(row => row.restaurant));
+                restaurantCountEl.textContent = uniqueRestaurants.size;
+            } else {
+                avgScoreEl.textContent = 'N/A';
+                restaurantCountEl.textContent = '0';
+            }
+        }
+        
+        let filtersPopulated = false;
+        function populateFilters(allResults) {
+            // Заполняем фильтры только один раз, чтобы не сбрасывать выбор пользователя
+            if (filtersPopulated) return;
+
+            const uniqueSurveys = [...new Set(allResults.map(r => r.survey_name))].sort();
+            const uniqueRestaurants = [...new Set(allResults.map(r => r.restaurant))].sort();
+
+            uniqueSurveys.forEach(name => {
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                filterSurveyEl.appendChild(option);
+            });
+
+            uniqueRestaurants.forEach(name => {
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                filterRestaurantEl.appendChild(option);
+            });
+            
+            filtersPopulated = true;
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchResults);
+        applyBtn.addEventListener('click', fetchResults);
+    </script>
+</body>
+</html>
